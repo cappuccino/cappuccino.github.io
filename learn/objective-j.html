@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino - Learning Objective-J</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-objective-j-html folder-learn">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container learn">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Learn</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="span3">
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/">What is Cappuccino?</a>
+</li>
+<li>
+<a href="/learn/environment.html">Your development environment</a>
+</li>
+<li>
+<a href="/learn/starter.html">Get Started</a>
+</li>
+<li>
+<a href="/learn/build-source.html">Advanced: Install from Source</a>
+</li>
+<li class="active">
+<a href="/learn/objective-j.html">Learning Objective-J</a>
+</li>
+<li>
+<a href="/learn/scrapbook-1.html">Scrapbook #1 - Views and Layers</a>
+</li>
+<li>
+<a href="/learn/scrapbook-2.html">Scrapbook #2 - Drag and Drop</a>
+</li>
+<li>
+<a href="/learn/automatic-layout.html">Tutorial: Automatic Layout</a>
+</li>
+<li>
+<a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
+</li>
+<li>
+<a href="/learn/debugging.html">Debugging</a>
+</li>
+</ul>
+<h5>Resources</h5>
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/demos.html">Demos</a>
+</li>
+<li>
+<a href="/learn/documentation/">API Documentation</a>
+</li>
+<li>
+<a href="/support/faq.html">FAQ</a>
+</li>
+</ul>
+</div>
+<div class="span9 text-body markdown">
+<h3>
+Learning Objective-J
+</h3>
+<p>Objective-J is a new programming language based on Objective-C. It is a
+superset of JavaScript, which means that any valid JavaScript code is
+also valid Objective-J code. Anyone familiar with JavaScript and
+object-oriented programming concepts, classical inheritance in
+particular, should have no difficulty learning Objective-J. Familiarity
+with Objective-C will be helpful, but it is not required.</p>
+
+<h3>Classes</h3>
+
+<p>Objective-J has two types of objects: native JavaScript objects and
+Objective-J objects. Native JS objects are exactly what they sound like,
+the objects native to JavaScript. Objective-J objects are a special type
+of native object added by Objective-J. These new objects are based on
+classes and classical inheritance, like C++ or Java, instead of the
+prototypal model.</p>
+
+<p>Creating a class in Objective-J is simple. Here’s an example of a Person
+class that contains one member variable, name:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="n">CPString</span> <span class="n">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>The beginning of a class is always the keyword <code>@implementation</code>, followed
+by the class name. The third term, after the colon, is the class you
+want to subclass. In this case, we’re subclassing <code>CPObject</code>, which is the
+root class for most classes. You don’t need a superclass, but nearly all
+the time you will want one.</p>
+
+<p>After the declaration, a block enclosed with brackets is used to define
+all your member variables. Each variable is declared on its own line
+with a type and variable name, and a semicolon. Technically the type is
+optional, but its highly recommended. Declaring your member variables is
+important, because any variable used elsewhere in your class that isn’t
+declared will automatically become a global variable.</p>
+
+<p>To end a class declaration, add the keyword @end.</p>
+
+<h3>Methods</h3>
+
+<p>Just as with objects, native JavaScript functions work unchanged in
+Objective-J. In addition to native functions, Objective-J adds methods
+which are part of the new class system. Let’s add a set of accessor
+methods to our Person class:</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aName
+<span class="p">{</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">aName</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">CPString</span><span class="p">)</span><span class="nf">name</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>These lines go anywhere after the initial <code>@implementation</code> line and
+instance variable declaration block, but before the <code>@end</code> keyword. This
+syntax should be familiar to anyone who’s programmed a C style language
+before, including JavaScript. The only interesting thing is the method
+declaration.</p>
+
+<p>Each method signature starts with either a dash (-) or a plus (+).
+Dashes are used for instance methods, which are methods you can call on
+instance variables. Both of our methods above are instance methods,
+which makes sense because they set and retrieve instance variables of
+our <code>Person</code> objects.</p>
+
+<p>Following the dash/plus is a return type, in parentheses. Nothing
+special about this. Again, type declarations are optional but highly
+recommended, as they help document your code. Finally, we declare the
+method name. In Objective-J, method parameters are interspersed within
+the method name. Our two methods above are name, and <code>setName:</code>. Note the
+colon after “setName” - it indicates that a parameter follows.</p>
+
+<p>When methods have more than one parameter, each parameter is separated
+by a colon. In the declaration of such a method, parameters are split by
+a label, followed by a colon, the type, and the parameter name:</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="k">void</span><span class="p">)</span><span class="n">setJobTitle</span><span class="o">:</span><span class="p">(</span><span class="n">CPString</span><span class="p">)</span><span class="n">aJobTitle</span> <span class="n">company</span><span class="o">:</span><span class="p">(</span><span class="n">CPString</span><span class="p">)</span><span class="n">aCompany</span>
+</pre></div>
+
+<p>In Objective-J, method names are split across all of the arguments to a
+method. These are not technically named arguments. The method above is
+named <code>setJobTitle:company:</code>. This is achieved by concatenating the first
+part of the method with all the subsequent labels, in order.</p>
+
+<p>The parameters to a method must be passed in order, and all of the
+parameters are required. To call such a multiple parameter method, we
+pass our data after each label:</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">myPerson</span> <span class="n">setJobTitle</span><span class="o">:</span><span class="s">"Founder"</span> <span class="n">company</span><span class="o">:</span><span class="s">"Cappuccino Foundation"</span><span class="p">];</span>
+</pre></div>
+
+<p>As you can see, each colon is followed by the input that will be mapped
+to that parameter name. That sequence of label, colon, input is repeated
+for each parameter.</p>
+
+<p>You may be wondering why it matters what the actual name of the method
+is. One pattern you’ll find in Objective-J and Cappuccino is the idea of
+passing a method as an argument to another method. This is used commonly
+in delegation and in the event system. Since methods aren’t first class
+objects in the same way as JavaScript, we use a special notation to
+refer to them, <code>@selector</code>. If I wanted to pass the previous method as an
+argument to another method, I would use the following code:</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">fooObject</span> <span class="n">setCallbackSelector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">setJobTitle</span><span class="o">:</span><span class="n">company</span><span class="o">:</span><span class="p">)];</span>
+</pre></div>
+
+<p>As you can see, the method name is passed to @selector complete with its
+colons and parameter labels.</p>
+
+<h3>Using Objects &amp; Classes</h3>
+
+<p>Now that we’ve covered the basics Objective-J objects and classes, let’s
+see how you use them. This block of code creates a new Person object,
+and sets the name:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">myPerson</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Person</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="p">[</span><span class="n">myPerson</span> <span class="n">setName</span><span class="o">:</span><span class="s">"John"</span><span class="p">];</span>
+</pre></div>
+
+<p>Method calls in Objective-J are called “messages”, and you send an
+object a message using bracket notation like this: <code>[object message]</code>. I
+mentioned earlier that some methods are class methods, which are meant
+to be called on a class itself – alloc is one of these methods. Every
+class in Objective-J has a special class method called <code>alloc</code>, which
+returns a new instance of that class.</p>
+
+<p>In the example above, we’re calling the <code>alloc</code> method on the <code>Person</code>
+class, which returns a <code>Person</code> instance. Then, we call the init method on
+that instance. Both <code>alloc</code> and <code>init</code> return a reference to the object,
+which we can assign our variable myPerson. Just like <code>alloc</code>, every class
+inherits the <code>init</code> method from <code>CPObject</code>.</p>
+
+<p>The <code>alloc</code> class method is analogous to the “new” keyword in many
+languages like JavaScript, C++, and Java, in that they create a new
+instance. The <code>init</code> instance methods are like the constructors in those
+languages, in that they perform initialization on the newly created
+instance.</p>
+
+<p>Some classes specify their own custom <code>init</code> method, like <code>CPView</code>, which
+uses the following signature:</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">initWithFrame</span><span class="o">:</span><span class="p">(</span><span class="n">CGRect</span><span class="p">)</span><span class="n">aFrame</span>
+</pre></div>
+
+<p>Every subclass should be sure to call its parent class’s init method.
+Here’s a custom init method for our <code>Person</code> class which takes the name
+directly:</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">initWithName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aName
+<span class="p">{</span>
+    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">aName</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>First we call our superclass <code>init</code> method, which returns a reference to
+the newly initialized instance. We must assign this reference to the
+<code>self</code> variable (in case the super class’s <code>init</code> method swapped out the
+original instance for a new one). We check to make sure <code>self</code> was
+returned correctly, and if so we can do our class specific task of
+assigning <code>aName</code> to <code>name</code>, and finally, we return <code>self</code> so that calling
+code will have a reference to the newly initialized object.</p>
+
+<p><code>self</code> is the Objective-J equivalent to JavaScript’s <code>this</code>. Just as
+<code>this</code> references the JavaScript object, <code>self</code> references the
+Objective-J object. Like JavaScript, <code>self.foo</code> will refer to the <code>foo</code>
+instance variable, but unlike JavaScript <code>self</code> isn’t required, you can
+just use <code>foo</code> within any instance methods.</p>
+
+<p>Many classes in Cappuccino offer a slightly different model for creating
+objects, which can be more convenient. Instead of calling <code>alloc</code> and
+<code>init</code>, these classes implement their own class method to return new
+objects. Note that in class methods, <code>self</code> refers to the class itself.</p>
+
+<div class="highlight"><pre><span class="o">+</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">personWithName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aName
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="nb">self</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithName</span><span class="o">:</span><span class="n">aName</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Which would be called like this:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">joe</span> <span class="o">=</span> <span class="p">[</span><span class="n">Person</span> <span class="n">personWithName</span><span class="o">:</span><span class="s">"Joe"</span><span class="p">];</span>
+</pre></div>
+
+<h3>Importing Code</h3>
+
+<p>One commonly desired technique missing from JavaScript is the ability to
+import code in the same way that languages like Java or C allow. To that
+effect, Objective-J adds the <code>@import</code> statement:</p>
+
+<div class="highlight"><pre><span class="cp">@import</span> <span class="s2">&lt;Foundation/CPObject.j&gt;</span>
+<span class="cp">@import</span> <span class="s2">&lt;AppKit/CPView.j&gt;</span>
+<span class="cp">@import</span> <span class="s2">"MyClass.j"</span>
+</pre></div>
+
+<p>There are two types of import statements. The angle brackets indicate
+framework code, while the quotation marks indicate local project code.
+Framework imports use the built in search path mechanism to search for
+the desired file in any of the defined locations. Local imports only
+look in the location relative to the importing file.</p>
+
+<h3>Memory Management</h3>
+
+<p>JavaScript is garbage collected, and so is Objective-J, so you won’t see
+any calls to <code>retain</code> or <code>release</code> in Objective-J code as you would in
+Objective-C. Many common leaks caused by DOM manipulation are handled by
+the Cappuccino frameworks.</p>
+
+<p>That isn’t to say it’s impossible to leak objects. As with any garbage
+collected language, it’s possible to accidentally hold on to reference
+to objects such that they can’t be freed, so keep this in mind.</p>
+
+<h3>Categories</h3>
+
+<p>Categories allow you to add methods to a class without needing to create
+a new subclass or modify the class’s source code. The new method (or
+methods) become part of all instances of the class once the category is
+loaded.</p>
+
+<p>This is useful in many different scenarios, for example adding methods
+to built-in classes. If you wanted all your <code>CPString</code> objects to have a
+method that would return the reverse string, you could define a category
+like this:</p>
+
+<div class="highlight"><pre><span class="cp">@import</span> <span class="s2">&lt;Foundation/CPString.j&gt;</span>
+
+<span class="k">@implementation</span> <span class="nc">CPString</span> <span class="p">(</span><span class="nl">Reversing</span>)
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">CPString</span><span class="p">)</span><span class="nf">reverse</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="n">reversedString</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">length</span><span class="p">];</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">index</span><span class="o">--</span><span class="p">)</span>
+        <span class="n">reversedString</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">characterAtIndex</span><span class="o">:</span><span class="n">index</span><span class="p">];</span>
+
+    <span class="k">return</span> <span class="n">reversedString</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>Now you can call reverse on any string to get the reversed string.</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">myString</span> <span class="o">=</span> <span class="s">"hello world"</span><span class="p">,</span>
+    <span class="n">reversed</span> <span class="o">=</span> <span class="p">[</span><span class="n">myString</span> <span class="n">reverse</span><span class="p">];</span>
+<span class="nf">alert</span><span class="p">(</span><span class="n">reversed</span><span class="p">);</span>  <span class="c1">// alerts "dlrow olleh"</span>
+</pre></div>
+
+<p>The syntax for the category is <code>@implementation</code>, followed by the class
+you’re adding to, followed by the name of your category in parentheses.
+Any methods added before the <code>@end</code> keyword will be part of the category.
+Note that you can’t add instance variables via categories, though due to
+the dynamic nature of JavaScript objects it’s possible to add one by
+simply modifying the object’s properties directly:</p>
+
+<pre>instance.newProperty = "foo";
+</pre>
+
+<p>It’s interesting to note some of the techniques used in the
+implementation of the reverse method above. For example, <code>reversedString</code>
+is declared just like any typical JavaScript string. This is thanks to a
+technique called toll-free bridging which allows any JavaScript object
+like an array or a string to act both as a JavaScript object and a
+Cappuccino object at the same time. It responds to <code>CPString</code> methods like
+<code>length</code> and <code>characterAtIndex:</code>, as well as existing JavaScript methods
+and operators such as <code>+</code>.</p>
+
+<h3>Scope</h3>
+
+<p>Most of the time, Objective-J has the same scoping rules as JavaScript.
+Variables not specifically declared with var become globals, while var’d
+variables have function/method level scope. The two changes to these
+rules are instance variables and file-scoped variables.</p>
+
+<p>Instances variables are declared in the <code>@implementation</code> block, as seen
+earlier in the tutorial. When you use those variables within your class,
+they have object level scope – they are not global, they belong to each
+instance object. If you forget to declare one of your instance
+variables, however, then it is treated as a global variable like any
+other JavaScript code.</p>
+
+<p>File-scoped variables are something introduced in Objective-J. When you
+declare a variable with the var keyword outside a function or method
+implementation, these variables (sometimes called statics) have file
+level scope. They can only be accessed by other code within the same
+file. This can be useful for implementing many shared object techniques
+without needing to resort to global variables. If a file contains a
+single class they can be thought of as “class variables”.</p>
+
+<p>The following is an example of the main scoping rules in Objective-J:</p>
+
+<div class="highlight"><pre><span class="n">globalScoped</span> <span class="o">=</span> <span class="s">"this becomes global"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="n">fileScoped</span> <span class="o">=</span> <span class="s">"this stays scoped in the file"</span><span class="p">;</span>
+
+<span class="k">@implementation</span> <span class="nc">Foo</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="n">CPString</span> <span class="n">objectScoped</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">baz</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="n">methodScoped</span><span class="p">;</span>
+
+    <span class="n">methodScoped</span> <span class="o">=</span> <span class="s">"function scope, declared with var"</span><span class="p">;</span>
+    <span class="n">anotherGlobal</span> <span class="o">=</span> <span class="s">"global scope, no var"</span><span class="p">;</span>
+    <span class="n">objectScoped</span> <span class="o">=</span> <span class="s">"still object scoped"</span><span class="p">;</span>
+    <span class="n">fileScoped</span> <span class="o">=</span> <span class="s">"still file scoped"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<h3>Accessors</h3>
+
+<p>Accessor synthesizing is a way of reducing the amount of boilerplate code
+you need to write for getting and setting instance variables. Take the following code block for example:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="n">CPString</span> <span class="n">firstName</span><span class="p">;</span>
+    <span class="n">CPString</span> <span class="n">lastName</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setFirstName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aString
+<span class="p">{</span>
+    <span class="n">firstName</span> <span class="o">=</span> <span class="n">aString</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">CPString</span><span class="p">)</span><span class="nf">firstName</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">firstName</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setLastName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aString
+<span class="p">{</span>
+    <span class="n">lastName</span> <span class="o">=</span> <span class="n">aString</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">CPString</span><span class="p">)</span><span class="nf">lastName</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">lastName</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>With accessors, this can be shortened significantly:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="n">CPString</span> <span class="n">firstName</span>    <span class="k">@accessors</span><span class="p">;</span>
+    <span class="n">CPString</span> <span class="n">lastName</span>     <span class="k">@accessors</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>Under the hood, variables declared with the <code>@accessors</code> keyword are automatically
+assigned getter and setter methods. These methods may be overwritten if you need to do
+some additional processing before returning the variable:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="n">CPString</span> <span class="n">firstName</span>    <span class="k">@accessors</span><span class="p">;</span>
+    <span class="n">CPString</span> <span class="n">lastName</span>     <span class="k">@accessors</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">CPString</span><span class="p">)</span><span class="nf">firstName</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">firstName</span> <span class="n">capitalizedString</span><span class="p">];</span>  <span class="c1">// a silly example.</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>Additionally, you may configure your accessors to provide more friendly names
+for your getters and setters than the underlying variable. The <code>property</code> argument
+hides the underlying variable name and gives you a way of configuring the getter and setter method names:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="n">CPString</span> <span class="n">_firstName</span>    <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">firstName</span><span class="p">);</span>
+    <span class="n">CPString</span> <span class="n">_lastName</span>     <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">lastName</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>This code would generate the methods <code>firstName</code>, <code>setFirstName</code>, <code>lastName</code> and <code>setLastName</code>.</p>
+
+<p>You can also completely change the generated method names (often useful for Boolean accessors) by using the <code>getter</code> and <code>setter</code> arguments:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="kt">BOOL</span> <span class="n">_cool</span>    <span class="k">@accessors</span><span class="p">(</span><span class="n">getter</span><span class="o">=</span><span class="n">isCool</span><span class="p">,</span> <span class="n">setter</span><span class="o">=</span><span class="n">setCool</span><span class="o">:</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>For more information about <code>@accessors</code> you should read the <a href="http://www.cappuccino-project.org/blog/2008/10/synthesizing-accessor-methods.html">annoucement blog post.</a></p>
+
+<h2>Objective-J 2.0</h2>
+
+<p>These language features are only available if you are running Cappuccino &gt; 0.9.6.</p>
+
+<h3>Dictionary Literals</h3>
+
+<p>The syntax is <code>@{ key: value, key2: value2, ... }</code>, which is equivalent to the <a href="http://clang.llvm.org/docs/ObjectiveCLiterals.html">same feature in Objective-C</a>. Here’s an example:</p>
+
+<h5>Before</h5>
+
+<div class="highlight"><pre><span class="k">return</span> <span class="p">[</span><span class="n">CPDictionary</span> <span class="n">dictionaryWithObjects</span><span class="o">:</span><span class="p">[[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="nf">CGSizeMakeZero</span><span class="p">(),</span> <span class="mf">6.0</span><span class="p">,</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="nf">CGSizeMakeZero</span><span class="p">()]</span>
+                                   <span class="n">forKeys</span><span class="o">:</span><span class="p">[</span>   <span class="s">@"background-color"</span><span class="p">,</span>
+                                               <span class="s">@"border-color"</span><span class="p">,</span>
+                                               <span class="s">@"border-width"</span><span class="p">,</span>
+                                               <span class="s">@"corner-radius"</span><span class="p">,</span>
+                                               <span class="s">@"inner-shadow-offset"</span><span class="p">,</span>
+                                               <span class="s">@"inner-shadow-size"</span><span class="p">,</span>
+                                               <span class="s">@"inner-shadow-color"</span><span class="p">,</span>
+                                               <span class="s">@"content-margin"</span><span class="p">]];</span>
+</pre></div>
+
+<h5>After</h5>
+
+<div class="highlight"><pre><span class="k">return</span> <span class="err">@</span><span class="p">{</span>
+        <span class="s">@"background-color"</span><span class="o">:</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span>
+        <span class="s">@"border-color"</span><span class="o">:</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span>
+        <span class="s">@"border-width"</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
+        <span class="s">@"corner-radius"</span><span class="o">:</span> <span class="mf">3.0</span><span class="p">,</span>
+        <span class="s">@"inner-shadow-offset"</span><span class="o">:</span> <span class="nf">CGSizeMakeZero</span><span class="p">(),</span>
+        <span class="s">@"inner-shadow-size"</span><span class="o">:</span> <span class="mf">6.0</span><span class="p">,</span>
+        <span class="s">@"inner-shadow-color"</span><span class="o">:</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span>
+        <span class="s">@"content-margin"</span><span class="o">:</span> <span class="nf">CGSizeMakeZero</span><span class="p">(),</span>
+    <span class="p">};</span>
+</pre></div>
+
+<p>The format should be familiar from languages such as Python and, of course, JavaScript itself.</p>
+
+<p>Regular JavaScript dictionaries will continue to work as normal.</p>
+
+<div class="highlight"><pre><span class="c1">// Objective-J Dictionary Literal</span>
+<span class="kd">var</span> <span class="n">a</span> <span class="o">=</span> <span class="err">@</span><span class="p">{</span> <span class="s">@"count"</span><span class="o">:</span> <span class="mi">2</span> <span class="p">};</span>
+
+<span class="c1">// JavaScript Object</span>
+<span class="kd">var</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span> <span class="s">@"count"</span><span class="o">:</span> <span class="mi">2</span> <span class="p">};</span>
+</pre></div>
+
+<h3>Reference and Dereference</h3>
+
+<p>If you have programmed Objective-C, C or C++ you might think of an <code>@ref</code> reference as a JavaScript analog to a pointer. In C you might write:</p>
+
+<div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">aPtr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+<span class="o">*</span><span class="n">aPtr</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="o">*</span><span class="n">aPtr</span><span class="p">);</span>  <span class="c1">// Prints 5.</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>      <span class="c1">// Also prints 5.</span>
+</pre></div>
+
+<p>Whereas in Objective-J you would use the <code>@ref</code> and <code>@deref</code> methods:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">a</span><span class="p">,</span>
+    <span class="n">aRef</span> <span class="o">=</span> <span class="err">@</span><span class="nf">ref</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+
+<span class="err">@</span><span class="nf">deref</span><span class="p">(</span><span class="n">aRef</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="err">@</span><span class="nf">deref</span><span class="p">(</span><span class="n">aRef</span><span class="p">));</span>  <span class="c1">// Logs 5.</span>
+<span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>             <span class="c1">// Also logs 5.</span>
+</pre></div>
+
+<p>Once you have a reference you can pass it around, save it, and dereference it as needed. It’s not an actual pointer though so pointer arithmetic is not possible. This is especially useful if you wish to have two return values. From <code>CPNumberFormatter.j</code>:</p>
+
+<div class="highlight"><pre><span class="o">-</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="n">getObjectValue</span><span class="o">:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">anObjectRef</span> <span class="n">forString</span><span class="o">:</span><span class="p">(</span><span class="n">CPString</span><span class="p">)</span><span class="n">aString</span> <span class="n">errorDescription</span><span class="o">:</span><span class="p">(</span><span class="n">CPStringRef</span><span class="p">)</span><span class="n">anErrorRef</span>
+</pre></div>
+
+<p>This method returns a BOOL to indicate whether the object value was a valid value. However, with this method you can also pass in a string for the <code>errorDescription</code> parameter which, in the case of an error, will be populated with a description of why the value was not valid:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">myError</span> <span class="o">=</span> <span class="s">@""</span><span class="p">,</span>
+    <span class="n">isValid</span> <span class="o">=</span> <span class="p">[</span><span class="n">numberFormatter</span> <span class="n">getObjectValue</span><span class="o">:</span><span class="n">someObject</span> <span class="n">forString</span><span class="o">:</span><span class="n">someString</span> <span class="n">errorDescription</span><span class="o">:</span><span class="err">@</span><span class="nf">ref</span><span class="p">(</span><span class="n">myError</span><span class="p">)];</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isValid</span><span class="p">)</span>
+    <span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s">"The value "</span> <span class="o">+</span> <span class="n">someString</span> <span class="o">+</span> <span class="s">" is not a valid! Error: "</span> <span class="o">+</span> <span class="err">@</span><span class="nf">deref</span><span class="p">(</span><span class="n">myError</span><span class="p">));</span>
+</pre></div>
+
+<h3>Forward Class Declaration and Global Variables</h3>
+
+<p>One thing you may run into with Objective-J 2 is a circular dependency: class A imports class B, and somewhere in the import chain class A is imported. When that happens, the compiler will complain that it doesn’t recognize class A, because in fact the <code>@implementation</code> has not yet been parsed.</p>
+
+<p>To solve a circular dependency, you have to use <code>@class SomeClass</code> to declare the class in one of the files.</p>
+
+<p>For example CPObject.j uses CPString and CPException, but these cannot be imported since they need CPObject (a circular dependency). To avoid this circular dependency, you would “forward declare” these classes in CPObject:</p>
+
+<div class="highlight"><pre><span class="k">@class</span> <span class="nc">CPString</span>
+<span class="k">@class</span> <span class="nc">CPException</span>
+</pre></div>
+
+<p>The <code>@global</code> declaration is needed to tell the compiler about a variable that is not yet declared. For example CPObject.j uses the global variable CPInvalidArgumentException which is actually declared in CPException.j but cannot be used for the same reason as above. To use it, declare it at the top of your file:</p>
+
+<div class="highlight"><pre><span class="err">@</span><span class="n">global</span> <span class="n">CPInvalidArgumentException</span>
+</pre></div>
+
+<h3>Wrapping Up</h3>
+
+<p>This concludes our basic overview of Objective-J. The language is a
+simple and straightforward addition to JavaScript, and most developers
+shouldn’t have any trouble becoming familiar with it.</p>
+
+<p>If you’d like to see the complete code listing from the tutorial, you
+can download it all in a single file: <a href="/learn/files/Person.j">Person.j</a>.</p>
+
+</div>
+</div>
+<div class="row">
+<div class="offset3 span9">
+<div class="learn-nav">
+<ul class="pager">
+<li class="previous">
+<a href="/learn/build-source.html">← Return to '
+Advanced: Install from Source
+'
+</a>
+</li>
+<li class="next">
+<a href="/learn/scrapbook-1.html">Continue to '
+Scrapbook #1 - Views and Layers
+' →
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

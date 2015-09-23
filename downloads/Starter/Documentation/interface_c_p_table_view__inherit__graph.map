@@ -1,0 +1,7 @@
+<map id="CPTableView" name="CPTableView">
+<area shape="rect" id="node6" href="$interface_c_p_outline_view.html" title="CPOutlineView" alt="" coords="5,393,115,421"/>
+<area shape="rect" id="node2" href="$interface_c_p_control.html" title="CPControl" alt="" coords="19,238,101,266"/>
+<area shape="rect" id="node3" href="$interface_c_p_view.html" title="CPView" alt="" coords="26,161,93,189"/>
+<area shape="rect" id="node4" href="$interface_c_p_responder.html" title="CPResponder" alt="" coords="7,83,112,111"/>
+<area shape="rect" id="node5" href="$class_c_p_object.html" title="CPObject" alt="" coords="21,6,99,34"/>
+</map>

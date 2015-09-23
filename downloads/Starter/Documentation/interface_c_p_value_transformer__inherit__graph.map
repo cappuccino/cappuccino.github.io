@@ -1,0 +1,7 @@
+<map id="CPValueTransformer" name="CPValueTransformer">
+<area shape="rect" id="node3" href="$interface_c_p_is_nil_transformer.html" title="CPIsNilTransformer" alt="" coords="375,5,513,33"/>
+<area shape="rect" id="node4" href="$interface_c_p_is_not_nil_transformer.html" title="CPIsNotNilTransformer" alt="" coords="365,57,523,85"/>
+<area shape="rect" id="node5" href="$interface_c_p_negate_boolean_transformer.html" title="CPNegateBooleanTransformer" alt="" coords="342,109,546,137"/>
+<area shape="rect" id="node6" href="$interface_c_p_unarchive_from_data_transformer.html" title="CPUnarchiveFromDataTransformer" alt="" coords="328,161,560,189"/>
+<area shape="rect" id="node2" href="$class_c_p_object.html" title="CPObject" alt="" coords="6,83,85,111"/>
+</map>

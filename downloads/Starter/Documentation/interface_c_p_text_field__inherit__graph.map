@@ -1,0 +1,10 @@
+<map id="CPTextField" name="CPTextField">
+<area shape="rect" id="node6" href="$interface_c_p_combo_box.html" title="CPComboBox" alt="" coords="4,393,109,421"/>
+<area shape="rect" id="node7" href="$interface_c_p_search_field.html" title="CPSearchField" alt="" coords="134,393,244,421"/>
+<area shape="rect" id="node8" href="$interface_c_p_secure_text_field.html" title="CPSecureTextField" alt="" coords="268,393,403,421"/>
+<area shape="rect" id="node9" href="$interface_c_p_token_field.html" title="CPTokenField" alt="" coords="428,393,532,421"/>
+<area shape="rect" id="node2" href="$interface_c_p_control.html" title="CPControl" alt="" coords="221,238,304,266"/>
+<area shape="rect" id="node3" href="$interface_c_p_view.html" title="CPView" alt="" coords="228,161,296,189"/>
+<area shape="rect" id="node4" href="$interface_c_p_responder.html" title="CPResponder" alt="" coords="210,83,315,111"/>
+<area shape="rect" id="node5" href="$class_c_p_object.html" title="CPObject" alt="" coords="223,6,301,34"/>
+</map>

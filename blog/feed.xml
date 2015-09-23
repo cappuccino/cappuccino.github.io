@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Cappuccino Project</title>
+  <subtitle>Modern app development on the web</subtitle>
+  <id>http://www.cappuccino-project.org/blog/</id>
+  <link href="http://www.cappuccino-project.org/blog/"/>
+  <link href="http://www.cappuccino-project.org/blog/feed.xml" rel="self"/>
+  <updated>2015-08-31T17:00:00-07:00</updated>
+  <author>
+    <name>Cappuccino Core Developers</name>
+  </author>
+  <entry>
+    <title>Cappuccino News 2015 September 1st</title>
+    <link rel="alternate" href="/blog/2015/09/cappuccino-news-2015-09-01.html"/>
+    <id>/blog/2015/09/cappuccino-news-2015-09-01.html</id>
+    <published>2015-08-31T17:00:00-07:00</published>
+    <updated>2015-08-31T17:00:00-07:00</updated>
+    <author>
+      <name>Alexandre Wilhelm</name>
+    </author>
+    <summary type="html">&lt;p&gt;Here’s a quick update on what’s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New: &lt;code&gt;XcodeCapp 4.0&lt;/code&gt;. In a nutshell it:
+
+&lt;ul&gt;
+&lt;li&gt;Allows management of multiple projects simultaneously.&lt;/li&gt;
+&lt;li&gt;Allows viewing and stopping of ongoing operations.&lt;/li&gt;
+&lt;li&gt;Per project...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    <content type="html">&lt;p&gt;Here&amp;rsquo;s a quick update on what&amp;rsquo;s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New: &lt;code&gt;XcodeCapp 4.0&lt;/code&gt;. In a nutshell it:
+
+&lt;ul&gt;
+&lt;li&gt;Allows management of multiple projects simultaneously.&lt;/li&gt;
+&lt;li&gt;Allows viewing and stopping of ongoing operations.&lt;/li&gt;
+&lt;li&gt;Per project error and warning reporting.&lt;/li&gt;
+&lt;li&gt;Supports &lt;code&gt;capp_env&lt;/code&gt;. You can define additional paths and set the &lt;code&gt;objj&lt;/code&gt; include path per project.&lt;/li&gt;
+&lt;li&gt;Many other updates.
+(&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt; &lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/47611b7615525137ad5d5c678570a8f20b7b4d22"&gt;47611b7&lt;/a&gt; &lt;a href="https://github.com/cappuccino/cappuccino/commit/d317744f053ea734378b158f01ab139aa6894c2c"&gt;d317744&lt;/a&gt; &lt;a href="https://github.com/cappuccino/cappuccino/commit/340d827377e383e2a0dcebc9e62b6e87ceb83887"&gt;340d827&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="/img/cpo-uploads/2015/09/XcodeCapp-settings-344eef02.png"&gt;&lt;img width="1023" height="738" src="/img/cpo-uploads/2015/09/XcodeCapp-settings-344eef02.png" /&gt;&lt;/a&gt;
+&lt;a href="/img/cpo-uploads/2015/09/XcodeCapp-operations-eb979d15.png"&gt;&lt;img width="1023" height="738" src="/img/cpo-uploads/2015/09/XcodeCapp-operations-eb979d15.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New: &lt;code&gt;CPVisualEffectView&lt;/code&gt; and &lt;code&gt;CPAppearance&lt;/code&gt;. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/ab61aef985dfcbefb2e32e8db4ab637fa7f2d4f1"&gt;ab61aef&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="/img/cpo-uploads/2015/09/CPVisualEffectView-CPAppearance-ed81071f.png"&gt;&lt;img width="880" height="607" src="/img/cpo-uploads/2015/09/CPVisualEffectView-CPAppearance-ed81071f.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: timeout and cache feature in &lt;code&gt;CPURLRequest&lt;/code&gt;. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/58afc92a26a610fc61ada7129afe932ba7459c57"&gt;58afc92&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: default system menu is now disabled for right clicks. Exception for a right click on &lt;code&gt;CPTextField&lt;/code&gt;.(&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/2f79b079fda0110bdafb84ef8b91e08de10a3c65"&gt;2f79b07&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Changes/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fixed: type of boolean values lost when parsing a &lt;code&gt;CPPredicate&lt;/code&gt; format. (&lt;a href="https://github.com/tancred"&gt;tancred&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/5cd25e24e4440225b43175d47132325c649860b5"&gt;5cd25e2&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: crash when a cell-based &lt;code&gt;CPTableView&lt;/code&gt; contained a data view that contained an editable &lt;code&gt;CPTextField&lt;/code&gt;. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/6420a51dd0986303b4c8a0f8247e6cd15be5553b"&gt;6420a51&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: Cappuccino installation as a whole failed if &lt;code&gt;XcodeCapp&lt;/code&gt; build failed. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/3d79799450f7c4522bdfff48c1ab2ac8f1703ab7"&gt;3d79799&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;CPPopover&lt;/code&gt;s were blinking on &lt;code&gt;Chrome&lt;/code&gt; and &lt;code&gt;Opera&lt;/code&gt;. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/655bc39d8576f133d96bab746a3189426d592d6c"&gt;655bc39&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Cappuccino News 2015 August 1st</title>
+    <link rel="alternate" href="/blog/2015/08/cappuccino-news-2015-08-01.html"/>
+    <id>/blog/2015/08/cappuccino-news-2015-08-01.html</id>
+    <published>2015-07-31T17:00:00-07:00</published>
+    <updated>2015-07-31T17:00:00-07:00</updated>
+    <author>
+      <name>Alexandre Wilhelm</name>
+    </author>
+    <summary type="html">&lt;p&gt;Here’s a quick update on what’s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;CPURLConnectionDelegate&lt;/code&gt; protocol. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/806be9551c68c722e66b54c13b7b323dd2d3da84"&gt;806be9&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: added the &lt;code&gt;Gitter&lt;/code&gt; link to the README. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/6b4a1b6758e40893dd40c279ecfe226fa7297c0d"&gt;6b4a1b&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;CPPlatform +closeAllPlatformWindows&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    <content type="html">&lt;p&gt;Here&amp;rsquo;s a quick update on what&amp;rsquo;s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;CPURLConnectionDelegate&lt;/code&gt; protocol. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/806be9551c68c722e66b54c13b7b323dd2d3da84"&gt;806be9&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: added the &lt;code&gt;Gitter&lt;/code&gt; link to the README. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/6b4a1b6758e40893dd40c279ecfe226fa7297c0d"&gt;6b4a1b&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;CPPlatform +closeAllPlatformWindows&lt;/code&gt;. This method is called when reloading or closing the Cappuccino application. The method closes every platform window opened in the application. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/3f9f926c8eecf7efd8e142180affb973e1192cb5"&gt;3f9f92&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: delegate methods &lt;code&gt;applicationShouldTerminate&lt;/code&gt; and &lt;code&gt;applicationShouldTerminateMessage&lt;/code&gt; for the &lt;code&gt;CPApplicationDelegateProtocol&lt;/code&gt;. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/058a73f8a074c67c8c7e5067619b704556f8f817"&gt;058a73&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Changes/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fixed: when selecting a label through a right click, its selectable state was not taken into consideration. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/d6b0fccbda3f85fc338fd2183fe34e2215392c6b"&gt;d6b0fc&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/d1e31da2e5aa1195c5530a07265ca1f040579c0e"&gt;d1e31d&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;AppKit&lt;/code&gt; unit-tests were not standalone. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/6fe9dae3d62af995f2481bfebdd706aeb0b21365"&gt;6fe9da&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/923d32ee6dbc8119a6d264937a8c3acd5e4c8fbf"&gt;923d32&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Cappuccino News 2015 July 1st</title>
+    <link rel="alternate" href="/blog/2015/07/cappuccino-news-2015-07-01.html"/>
+    <id>/blog/2015/07/cappuccino-news-2015-07-01.html</id>
+    <published>2015-06-30T17:00:00-07:00</published>
+    <updated>2015-06-30T17:00:00-07:00</updated>
+    <author>
+      <name>Alexandre Wilhelm</name>
+    </author>
+    <summary type="html">&lt;p&gt;Here’s a quick update on what’s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;capp_env&lt;/code&gt; has been added to Cappuccino. This tools allows you to create specific environments for Cappuccino. For more information &lt;a href="https://github.com/cappuccino/cappuccino/tree/master/Tools/capp_env"&gt;see here&lt;/a&gt;. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    <content type="html">&lt;p&gt;Here&amp;rsquo;s a quick update on what&amp;rsquo;s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;capp_env&lt;/code&gt; has been added to Cappuccino. This tools allows you to create specific environments for Cappuccino. For more information &lt;a href="https://github.com/cappuccino/cappuccino/tree/master/Tools/capp_env"&gt;see here&lt;/a&gt;. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/245da9b4220eece6b0df1ccfcfe51abce6dd2756"&gt;245da9b&lt;/a&gt;,
+&lt;a href="https://github.com/cappuccino/cappuccino/commit/0f629266235f03403e68f25e0f8e419ad192ff50"&gt;0f62926&lt;/a&gt;,
+&lt;a href="https://github.com/cappuccino/cappuccino/commit/c9f391dfc1d5808831c45514ac3a81fe2a28d139"&gt;c9f391d&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;CPUserNotification&lt;/code&gt; and &lt;code&gt;CPUserNotificationCenter&lt;/code&gt;. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/3a6a84917b69f6e182efc31f86237d5ebcc62c72"&gt;3a6a849&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;-n&lt;/code&gt; option added to &lt;code&gt;objj2objcskeleton&lt;/code&gt;. This option allows you to specify the name of the generated file. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/3f88e0258727f432f535ec2896af3280ea5da0d5"&gt;3f88e02&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Changes/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;objj2objcskeleton&lt;/code&gt; did not transform Objective-J categories. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/8cc075aff32f70417450d8f9575c1f18dd3e4199"&gt;8cc075&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the &lt;code&gt;--xml&lt;/code&gt; option for the &lt;code&gt;objj&lt;/code&gt; command did not output every error in XML. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/0e4136502037ed7307193857b0392c4ca4454903"&gt;0e4136&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: the XML output format of the command &lt;code&gt;objj&lt;/code&gt; now has the key &lt;code&gt;sourcePath&lt;/code&gt; instead of &lt;code&gt;path&lt;/code&gt;. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/d358f0d27bb26850a400158ac761775697b8f231"&gt;d358f0&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;CPButton -sizeToFit&lt;/code&gt; was broken when calling the method with a new title or a new image. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/9694c796e39c3d63e7d230628c28cc7f28cf9ae3"&gt;9694c7&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Cappuccino News 2015 June 1st</title>
+    <link rel="alternate" href="/blog/2015/06/cappuccino-news-2015-06-01.html"/>
+    <id>/blog/2015/06/cappuccino-news-2015-06-01.html</id>
+    <published>2015-05-31T17:00:00-07:00</published>
+    <updated>2015-05-31T17:00:00-07:00</updated>
+    <author>
+      <name>Alexandre Wilhelm</name>
+    </author>
+    <summary type="html">&lt;p&gt;Here’s a quick update on what’s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: indeterminate spinning &lt;code&gt;CPProgressBarIndicator&lt;/code&gt;. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt;, &lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt;  - &lt;a href="https://github.com/cappuccino/cappuccino/commit/57b68880db6665d9b6da8f7c1835bedd210c72af"&gt;57b6888&lt;/a&gt;, &lt;a href="https://github.com/cappuccino/cappuccino/commit/899bbc2dbc5802f44937b388442ebfdab927ed7e"&gt;899bbc2&lt;/a&gt;, &lt;a href="https://github.com/cappuccino/cappuccino/commit/0d1775772972d831acd94f520b5db98b720f6cee"&gt;0d17757&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: added the tool &lt;code&gt;objj2objcskeleton&lt;/code&gt;. This tool converts...&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    <content type="html">&lt;p&gt;Here&amp;rsquo;s a quick update on what&amp;rsquo;s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: indeterminate spinning &lt;code&gt;CPProgressBarIndicator&lt;/code&gt;. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt;, &lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt;  - &lt;a href="https://github.com/cappuccino/cappuccino/commit/57b68880db6665d9b6da8f7c1835bedd210c72af"&gt;57b6888&lt;/a&gt;, &lt;a href="https://github.com/cappuccino/cappuccino/commit/899bbc2dbc5802f44937b388442ebfdab927ed7e"&gt;899bbc2&lt;/a&gt;, &lt;a href="https://github.com/cappuccino/cappuccino/commit/0d1775772972d831acd94f520b5db98b720f6cee"&gt;0d17757&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: added the tool &lt;code&gt;objj2objcskeleton&lt;/code&gt;. This tool converts an Objective-J files to a basic Objective-C file containing an interface representing the original file. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2353"&gt;06c5976&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: added the option &lt;code&gt;-x&lt;/code&gt; (alternatively &lt;code&gt;--xml&lt;/code&gt;) to &lt;code&gt;objj&lt;/code&gt;. This option allows you to specify the output format of &lt;code&gt;objj&lt;/code&gt; to be XML. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2360"&gt;a0277ab&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: added the property &lt;code&gt;baseWritingDirection&lt;/code&gt; to &lt;code&gt;CPControl&lt;/code&gt;. This allows you to write from left to right or right to left. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2348"&gt;bdbf1fb&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Changes/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the textual &lt;code&gt;CPDatePicker&lt;/code&gt; did not respect the English format. (&lt;a href="https://github.com/herbatnik"&gt;herbatnik&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2359"&gt;65a379c&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &amp;ldquo;too many open files&amp;rdquo; error when compiling an app or Cappuccino itself using &lt;code&gt;jake&lt;/code&gt;. Jake now properly closes files when done with them. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2346"&gt;5bba109&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: memory leaks in &lt;code&gt;CPSplitView&lt;/code&gt; when using a delegate. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/f822268ae1c6928250234a38f226a05b2207f8ef"&gt;f822268&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;CPScrollView -documentVisibleRect&lt;/code&gt; did not return the expected result when the document view was scaled. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2358"&gt;a7b6010&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: private variables were shown in Cappuccino&amp;rsquo;s documentation. (&lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/a439688b3cc4e73d68d6e68475775e7670655f3a"&gt;a439688&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Cappuccino News 2015 May 1st</title>
+    <link rel="alternate" href="/blog/2015/05/cappuccino-news-2015-05-01.html"/>
+    <id>/blog/2015/05/cappuccino-news-2015-05-01.html</id>
+    <published>2015-04-30T17:00:00-07:00</published>
+    <updated>2015-04-30T17:00:00-07:00</updated>
+    <author>
+      <name>Alexandre Wilhelm</name>
+    </author>
+    <summary type="html">&lt;p&gt;Here’s a quick update on what’s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: added the delegate method &lt;code&gt;windowWillResize:toSize:&lt;/code&gt; for &lt;code&gt;CPWindow&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/7b4365bd8acb3bad6ca7dfc89ea34c3d3c287003"&gt;7b4365b&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: added the delegate methods &lt;code&gt;windowDidMiniaturize:&lt;/code&gt;, &lt;code&gt;windowWillMiniaturize...&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    <content type="html">&lt;p&gt;Here&amp;rsquo;s a quick update on what&amp;rsquo;s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: added the delegate method &lt;code&gt;windowWillResize:toSize:&lt;/code&gt; for &lt;code&gt;CPWindow&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/7b4365bd8acb3bad6ca7dfc89ea34c3d3c287003"&gt;7b4365b&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: added the delegate methods &lt;code&gt;windowDidMiniaturize:&lt;/code&gt;, &lt;code&gt;windowWillMiniaturize:&lt;/code&gt; and &lt;code&gt;windowDidDeminiaturize:&lt;/code&gt; for &lt;code&gt;CPWindow&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/737ef583eeab267c065e9226e3122a50c5689727"&gt;737ef58&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: send the &lt;code&gt;CPAppKitDefined&lt;/code&gt; event when the application is launched.  (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/0dad10d6ab9b0c4ee83b40b01c57f773432c7eb6"&gt;0dad10d&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Changes/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the method &lt;code&gt;CPView -scrollRectToVisible:&lt;/code&gt; did not behave like in Cocoa. (&lt;a href="https://github.com/mrcarlberg"&gt;mrcarlberg&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/44c686f49437985da404f886f2a54c78d576bb24"&gt;44c686f&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the height of a &lt;code&gt;CPSegmentedControl&lt;/code&gt; brought in via &lt;code&gt;nib2cib&lt;/code&gt; was incorrect. (&lt;a href="https://github.com/cacaodev"&gt;cacaodev&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/914a3d71c228080a7307d3d8682bec4d888dc56a"&gt;914a3d7&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the &lt;code&gt;keyWindow&lt;/code&gt; and &lt;code&gt;mainWindow&lt;/code&gt; of the application were not updated when switching from a platform window to another one. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/10792c0bc6adbee9b91d65690be32294d652edb2"&gt;10792c0&lt;/a&gt;, &lt;a href="https://github.com/cappuccino/cappuccino/commit/01ba6ddecd9d33e5ad84c6ecc7be59cd7d56097f"&gt;01ba6dd&lt;/a&gt;, &lt;a href="https://github.com/cappuccino/cappuccino/commit/fd068443aaf120ae0be4b9489ba74b0e409e617a"&gt;fd06844&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the overflow of a &lt;code&gt;CPPlatformWindow&lt;/code&gt; was not clipped; it was possible to scroll a platform window. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/9798b9fd5032ff4b537c11fb507bdce39ae88f45"&gt;9798b9f&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: a &lt;code&gt;CPPopover&lt;/code&gt; closed itself even on a click in another platform window. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/769b379a8b4d251f82aaab46808914ffce970058"&gt;769b379&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the private method &lt;code&gt;CPEvent -_initOtherEventWithType:location:modifierFlags:timestamp:windowNumber:context:&lt;/code&gt; did not save the  &lt;code&gt;windowNumber&lt;/code&gt; provided. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/6efe563a69c4d6e63a8f041e6110fe00ed79f81f"&gt;6efe563&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: notifications &lt;code&gt;willBecomeActive:&lt;/code&gt; and &lt;code&gt;didBecomeActive:&lt;/code&gt; were called even if the application was already active. These notifications are now also sent when the application just finished to launch. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/0dad10d6ab9b0c4ee83b40b01c57f773432c7eb6"&gt;0dad10d&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: notifications &lt;code&gt;willBecomeActive:&lt;/code&gt;, &lt;code&gt;didBecomeActive:&lt;/code&gt;, &lt;code&gt;willResignActive:&lt;/code&gt;, &lt;code&gt;didResignActive:&lt;/code&gt; were not sent when the application focus was lost or gained. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/5c2e0935c6f0b83a674c8548106152b6cf97a93a"&gt;5c2e093&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the &lt;code&gt;nextValidKeyView&lt;/code&gt; calculated by Cappuccino in a &lt;code&gt;CPScrollView&lt;/code&gt; did not behave as in Cocoa. It does now take in account the possibility of scrolling. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/da15cc4de789341823e45dcd324086d16553afaf"&gt;da15cc4&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: a &lt;code&gt;CPTextField&lt;/code&gt; could not become first responder when not visible. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/da15cc4de789341823e45dcd324086d16553afaf"&gt;da15cc4&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Changed &lt;code&gt;CPTextField&lt;/code&gt; first responder resignation behavior for a non key window &lt;code&gt;CPWindow&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/136138daabef85b2fc71655df75f3087999e8a30"&gt;136138d&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Cucapp&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: added the method &lt;code&gt;-simulateScrollWheelOnPoint:&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cucapp/commit/af4fbc758fee781cbc76b75ed25afb3f53d796db"&gt;af4fbc7&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;Cucapp&lt;/code&gt; now generates an error message for every &lt;code&gt;objj&lt;/code&gt; exceptions catched. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cucapp/commit/b432bd200b4d5f35734dc91b68f20d379acf3f8a"&gt;b432bd2&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Change/Fixe&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fixed: methods &lt;code&gt;textFor:&lt;/code&gt; and &lt;code&gt;objectValue&lt;/code&gt; did not return the string value of a &lt;code&gt;CPPopUpButton&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cucapp/commit/01b7ddcc2d6059ad9cdde1eee80c9d54dc341e3e"&gt;01b7ddc&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Cappuccino News 2015 April 1st</title>
+    <link rel="alternate" href="/blog/2015/04/cappuccino-news-2015-04-01.html"/>
+    <id>/blog/2015/04/cappuccino-news-2015-04-01.html</id>
+    <published>2015-03-31T17:00:00-07:00</published>
+    <updated>2015-03-31T17:00:00-07:00</updated>
+    <author>
+      <name>Alexandre Wilhelm</name>
+    </author>
+    <summary type="html">&lt;p&gt;Here’s a quick update on what’s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Community&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="http://www.cappuccino-project.org/blog/2015/03/cappuccino-0-9-8.html"&gt;Capuccino 0.9.8&lt;/a&gt; has been released this month. There are 745 changes between 0.9.7 and 0.9.8 so there’s something new for everyone here, not the least being an overall...&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    <content type="html">&lt;p&gt;Here&amp;rsquo;s a quick update on what&amp;rsquo;s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Community&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.cappuccino-project.org/blog/2015/03/cappuccino-0-9-8.html"&gt;Capuccino 0.9.8&lt;/a&gt; has been released this month. There are 745 changes between 0.9.7 and 0.9.8 so there’s something new for everyone here, not the least being an overall speed improvement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;CPCache&lt;/code&gt; has been added to &lt;code&gt;Foundation&lt;/code&gt;. (&lt;a href="https://github.com/william57m"&gt;william57m&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/630aa53d98af598080432b94ffaae2c657f690bc"&gt;630aa53&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;CPPlatformWindow -initWithWindow&lt;/code&gt;. This feature allows you to manipulate a &lt;code&gt;CPPlatformWindow&lt;/code&gt; through the given &lt;code&gt;CPWindow&lt;/code&gt;, which is easier than regular platform window manipulation. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/14349cb58350af6e4b03893479048edf52590193"&gt;14349cb&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: the theme attributes &lt;code&gt;image-search-inset&lt;/code&gt; and &lt;code&gt;image-cancel-inset&lt;/code&gt; have been added for &lt;code&gt;CPSearchField&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/4d7cb064815c9091a6c06cd19df01044906e47b5"&gt;4d7cb06&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: the protocol &lt;code&gt;CPScrollViewDelegate&lt;/code&gt; has been added in &lt;code&gt;CPScrollView.j&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/51bdfa44b115fe3fe60935469050d11cac97e819"&gt;51bdfa4&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;New: &lt;code&gt;CPSegmentedControl&lt;/code&gt; performance has been improved.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Changes/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;CPTableColumn&lt;/code&gt;&amp;rsquo;s binding documentation was not clear. (&lt;a href="https://github.com/daboe01"&gt;daboe01&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/eca959034ceddbb365766649de866e5d36e88f34"&gt;eca9590&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;CPSearchField&lt;/code&gt;s were not properly aligned when coming from a xib. (&lt;a href="https://github.com/t00f"&gt;t00f&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/b16b8388efbd2aad3e346f42622385c97578284a"&gt;b16b838&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;CPSegmentedControl -widthForSegment:&lt;/code&gt; and &lt;code&gt;CPSegmentedControl -frameForSegment:&lt;/code&gt; did not return the correct value when using &lt;code&gt;CPSegmentedControl -sizeToFit&lt;/code&gt;. The &lt;code&gt;selectedSegment&lt;/code&gt; variable is now correctly updated. (&lt;a href="https://github.com/cacaodev"&gt;cacaodev&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/7c095175ab107b67139fddeeab836dd6996ae783"&gt;7c09517&lt;/a&gt; &lt;a href="https://github.com/cappuccino/cappuccino/commit/2b853df75b84298ac0f544264fcbb359534ed3b9"&gt;2b853df&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: memory leaks with tooltTips in &lt;code&gt;CPView&lt;/code&gt;. This was due to handlers not being released. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/027a317291848217efb4539479f5b803e9bae110"&gt;027a317&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: closing a &lt;code&gt;CPPlatformWindow&lt;/code&gt; did not close its main &lt;code&gt;CPWindow&lt;/code&gt;. (&lt;a href="https://github.com/primalmotion"&gt;primalmotion&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/1dc060123d54da1376e1bcdddf5f2f2dc2356773"&gt;1dc0601&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;CPComboBox&lt;/code&gt;es were not properly aligned when coming from a xib. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/cf92fb921d89271b970e5c37870a56faf88e208b"&gt;cf92fb9&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;CPTableView -reloaData&lt;/code&gt; caused an extra run loop perform. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/f2c5515317baf87f71b67297d20042ec3122018f"&gt;f2c5515&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the default template generated by the command &lt;code&gt;capp gen -t ThemeDescriptor&lt;/code&gt; was slightly non-standard compared to that of Aristo 1 and Aristo 2. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/6aece1cf8cec2d197041e00968fa21b1d411a0aa"&gt;6aece1c&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: in &lt;code&gt;CPTableView&lt;/code&gt;, &lt;code&gt;clickedRow&lt;/code&gt; and &lt;code&gt;clickedColumn&lt;/code&gt; did not behave like in Cocoa outside of the scope of a mouse event. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/commit/98d0a397a3f144610ee88982f27f478c54405cc0"&gt;98d0a39&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Cucapp&lt;/h3&gt;
+
+&lt;h5&gt;New&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New: the nodes &lt;code&gt;backgroundColor&lt;/code&gt;, &lt;code&gt;textColor&lt;/code&gt; and &lt;code&gt;borderColor&lt;/code&gt; in the generated xml. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cucapp/commit/986db180fae1ee964416917ef26ae2eeec14812e"&gt;986db18&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Changes/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the command &lt;code&gt;simulateScrollWheel:&lt;/code&gt; did not work in a &lt;code&gt;CPScrollView&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cucapp/commit/a266833ce76002c7797d212de85279f8890b8f2a"&gt;a266833&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: the command &lt;code&gt;simulateScrollWheel:&lt;/code&gt; did not return a result. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cucapp/commit/e07bc846a21b8d52971ed90d0b70db45c325ced0"&gt;e07bc84&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;OJTest&lt;/h3&gt;
+
+&lt;h5&gt;New&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New: the method &lt;code&gt;verifyThatAllExpectationsHaveBeenMetInOrder:&lt;/code&gt; has been added to &lt;code&gt;OJMoq&lt;/code&gt;. This method allows you to check if certain registered methods are called in order. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/OJTest/commit/964fc8b19b68db79c27c878c69b9c68ce6a727e3"&gt;964fc8b&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Change/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Fixed: counting of a selector with &lt;code&gt;OBJMoq&lt;/code&gt; and &lt;code&gt;OJMockSpy&lt;/code&gt; worked incorrectly if set up multiple times with different arguments. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/OJTest/commit/09de5a27af4791466ba744062ef5ae2d8e2eccad"&gt;09de5a2&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Cappuccino 0.9.8</title>
+    <link rel="alternate" href="/blog/2015/03/cappuccino-0-9-8.html"/>
+    <id>/blog/2015/03/cappuccino-0-9-8.html</id>
+    <published>2015-03-28T17:00:00-07:00</published>
+    <updated>2015-03-28T17:00:00-07:00</updated>
+    <author>
+      <name>Antoine Mercadal</name>
+    </author>
+    <summary type="html">&lt;p&gt;Today we are very happy announce that Cappuccino 0.9.8 has just been released and it’s ready for you to use. This release if focused on stability and bug fixes (~200 bugs squashed) but also delivers some very cool new features.&lt;/p&gt;
+
+&lt;h4&gt;Notable Improvements&lt;/h4&gt;</summary>
+    <content type="html">&lt;p&gt;Today we are very happy announce that Cappuccino 0.9.8 has just been released and it&amp;rsquo;s ready for you to use. This release if focused on stability and bug fixes (~200 bugs squashed) but also delivers some very cool new features.&lt;/p&gt;
+
+&lt;h4&gt;Notable Improvements&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Added the keyword &lt;code&gt;@typdef&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:::objj
+@import &amp;lt;Foundation/Foundation.j&amp;gt;
+
+@typedef NUSuppaType
+
+@implementation NUMyClass: CPObject
+{
+     NUSuppaType mode;
+}
+@end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New: &lt;code&gt;CFError&lt;/code&gt;, &lt;code&gt;CPURLErrors&lt;/code&gt; and &lt;code&gt;CFError&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Added support for &lt;strong&gt;multiline CPTextFields&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="/img/cpo-uploads/2014/12/CPTextField-multiline-0a66856d.png"&gt;&lt;img width="560" height="175" src="/img/cpo-uploads/2014/12/CPTextField-multiline-0a66856d.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New: all &lt;code&gt;@protocols&lt;/code&gt; in Foundation and AppKit.&lt;/li&gt;
+&lt;li&gt;New: &lt;strong&gt;CPControl -setControlSize:&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="/img/cpo-uploads/2014/09/1st-CappuccinoNews-setControlSize-f6b4cdf6.png"&gt;&lt;img width="471" height="326" src="/img/cpo-uploads/2014/09/1st-CappuccinoNews-setControlSize-f6b4cdf6.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Redesign of &lt;strong&gt;CPPredicateEditor&lt;/strong&gt; and &lt;strong&gt;CPRuleEditor&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="/img/cpo-uploads/2015/02/cappuccino-9.0.8-Redesigned-CPPredicate-f1ada10d.png"&gt;&lt;img width="1224" height="328" src="/img/cpo-uploads/2015/02/cappuccino-9.0.8-Redesigned-CPPredicate-f1ada10d.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New: support for more than 32 theme states in the theming system.&lt;/li&gt;
+&lt;li&gt;Added support of &lt;strong&gt;capp_lint&lt;/strong&gt; and &lt;strong&gt;objj&lt;/strong&gt; to &lt;strong&gt;XcodeCapp&lt;/strong&gt;, which has been bumped to version 3.2.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="/img/cpo-uploads/2014/11/xCodeCapp-3.2-4d5bc789.png"&gt;&lt;img width="844" height="375" src="/img/cpo-uploads/2014/11/xCodeCapp-3.2-4d5bc789.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Added &lt;strong&gt;Cucapp&lt;/strong&gt; as part of the Cappuccino Project (&lt;a href="https://github.com/cappuccino/cucapp"&gt;https://github.com/cappuccino/cucapp&lt;/a&gt;, thanks &lt;a href="https://github.com/dparnell"&gt;dparnell&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fixed a huge number of memory leaks in &lt;strong&gt;Foundation&lt;/strong&gt; and in &lt;strong&gt;AppKit&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Optimization of the runtime function &lt;strong&gt;objj_msgSend&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The full Change Log is available &lt;a href="/cappuccino-release-notes.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Thank you&lt;/h3&gt;
+
+&lt;p&gt;Thank you to our reviewers &lt;a href="https://github.com/cappuccino/cappuccino/pulls/ahankinson"&gt;Ahankinson&lt;/a&gt; and &lt;a href="https://github.com/daboe01"&gt;daboe01&lt;/a&gt; for the tremendous work they did with sorting, cleaning up and reviewing all of our pull requests.&lt;/p&gt;
+
+&lt;p&gt;Of course, thank you to all the people who gave them a lot of work, you&amp;rsquo;re the best. :)&lt;/p&gt;
+
+&lt;h3&gt;The Team&lt;/h3&gt;
+
+&lt;p&gt;Last but not least, we are very thrilled to announce that &lt;a href="https://github.com/cacaodev"&gt;Cacaodev&lt;/a&gt;, &lt;a href="https://github.com/dogild"&gt;Dogild&lt;/a&gt; and &lt;a href="https://github.com/mrcarlberg"&gt;Mrcarlberg&lt;/a&gt; are now part of the Core Devs Team. I would like to personally thank them for all the hard work and great contributions they gave to the project over the years, and you should do the same! Thanks guys!&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s get back to work and cook you up an equally great next release.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;- Antoine and the Cappuccino Core Developer Team&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="/downloads.html"&gt;Download Cappuccino 0.9.8&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="/cappuccino-release-notes.html"&gt;Full Release Notes&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>How to create a new theme</title>
+    <link rel="alternate" href="/blog/2015/03/how-to-create-a-theme.html"/>
+    <id>/blog/2015/03/how-to-create-a-theme.html</id>
+    <published>2015-03-15T06:27:00-07:00</published>
+    <updated>2015-03-15T06:27:00-07:00</updated>
+    <author>
+      <name>Alexandre Wilhelm</name>
+    </author>
+    <summary type="html">&lt;p&gt;Cappuccino and Cocoa are quite simular in a lot of aspects, however Cappuccino proposes a theming engine which allows you to easily custom an application. Let’s now customize a new flat &lt;code&gt;CPButton&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;What you should know before theming ?&lt;/h3&gt;
+
+&lt;p&gt;Firstly, you...&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Cappuccino and Cocoa are quite simular in a lot of aspects, however Cappuccino proposes a theming engine which allows you to easily custom an application. Let&amp;rsquo;s now customize a new flat &lt;code&gt;CPButton&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;What you should know before theming ?&lt;/h3&gt;
+
+&lt;p&gt;Firstly, you will have to know few things about the theming engine. Every &lt;code&gt;CPView&lt;/code&gt; ans subclass of CPView implement the method &lt;code&gt;+(CPDictionary)themeAttributes&lt;/code&gt;. I won&amp;rsquo;t suprise you by saying that method returns a dictionary of &lt;code&gt;themeAttributes&lt;/code&gt; where the keys are the attribute names and their default value as values. These attributes are used to theme the application. We will see later how to change these default values.&lt;/p&gt;
+
+&lt;p&gt;Secondly, every &lt;code&gt;CPView&lt;/code&gt; has, at every moment, a &lt;code&gt;themeState&lt;/code&gt;. This themeState represents the current state of the control. For instance a disable CPButton will have the themeStates &lt;code&gt;[CPThemeStateBordered, CPThemeStateDisabled]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can change the themeState of a view by using the methods &lt;code&gt;-(BOOL)setThemeState:&lt;/code&gt;, &lt;code&gt;-(BOOL)unsetThemeState:&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;How to make a new one ?&lt;/h3&gt;
+
+&lt;p&gt;Surprise, there is a capp command for that : &lt;code&gt;capp gen -F BlendKit -t ThemeDescriptor -l MyFlatTheme&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Use the Theme with an Application&lt;/h3&gt;
+
+&lt;h3&gt;Demo&lt;/h3&gt;
+
+&lt;p&gt;You can find these pieces of code &lt;a href="https://github.com/Dogild/"&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Follow me on &lt;a href="https://twitter.com/WilhelmAlex"&gt;@WilhelmAlex&lt;/a&gt; or &lt;a href="https://github.com/Dogild"&gt;github&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Cappuccino News 2015 March 1st</title>
+    <link rel="alternate" href="/blog/2015/03/cappuccino-news-2015-03-01.html"/>
+    <id>/blog/2015/03/cappuccino-news-2015-03-01.html</id>
+    <published>2015-02-28T16:00:00-08:00</published>
+    <updated>2015-02-28T16:00:00-08:00</updated>
+    <author>
+      <name>Alexandre Wilhelm</name>
+    </author>
+    <summary type="html">&lt;p&gt;Here’s a quick update on what’s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The graphical &lt;code&gt;CPDatePicker&lt;/code&gt; now disallows dates outside of the specified &lt;code&gt;minDate&lt;/code&gt; and &lt;code&gt;maxDate&lt;/code&gt;. (&lt;a href="https://github.com/daboe01"&gt;daboe01&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2297"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;By default, Cappuccino now draws in high DPI when...&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    <content type="html">&lt;p&gt;Here&amp;rsquo;s a quick update on what&amp;rsquo;s new with Cappuccino in the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The graphical &lt;code&gt;CPDatePicker&lt;/code&gt; now disallows dates outside of the specified &lt;code&gt;minDate&lt;/code&gt; and &lt;code&gt;maxDate&lt;/code&gt;. (&lt;a href="https://github.com/daboe01"&gt;daboe01&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2297"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;By default, Cappuccino now draws in high DPI when using &lt;code&gt;canvas2D&lt;/code&gt;. You can disable this feature globally using the method &lt;code&gt;CPView +setAllowsHighDPIDrawing:&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2215"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;CPView -setNeedsLayout:&lt;/code&gt; and &lt;code&gt;CPView -needsLayout&lt;/code&gt; have been added. This makes it possible to choose not to lay out a view when needed, whereas previously once a layout had been scheduled it would always occur. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2316"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Cappuccino now supports the KVC operators &lt;code&gt;unionOfObjects&lt;/code&gt;, &lt;code&gt;distinctUnionOfObjects&lt;/code&gt;, &lt;code&gt;unionOfArrays&lt;/code&gt;, &lt;code&gt;distinctUnionOfArrays&lt;/code&gt; and &lt;code&gt;distinctUnionOfSets&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2313"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The method &lt;code&gt;CPTableView -viewAtColumn:row:makeIfNecessary&lt;/code&gt; has been added. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2315"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Changes/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fixed: &lt;code&gt;CPObjectController -setValue:forKey:&lt;/code&gt; incorrectly used the key as the value. (&lt;a href="https://github.com/krodelin"&gt;krodelin&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2301"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Changed the name of the method &lt;code&gt;CPDomDisplayServerSetStyleBackgroundSize&lt;/code&gt; to &lt;code&gt;CPDOMDisplayServerSetStyleBackgroundSize&lt;/code&gt;. (&lt;a href="https://github.com/ahankinson"&gt;ahankinson&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2296"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Removed unreachable code in &lt;code&gt;CPDOMDisplayServer.h&lt;/code&gt;. (&lt;a href="https://github.com/ahankinson"&gt;ahankinson&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2300"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The &lt;code&gt;CPStepper&lt;/code&gt; class initializer methods returns an object of type &lt;code&gt;id&lt;/code&gt; instead of &lt;code&gt;CPStepper&lt;/code&gt;. (&lt;a href="https://github.com/ahankinson"&gt;ahankinson&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2294"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The &lt;code&gt;CPTableView&lt;/code&gt; class has been refactored and optimized. The methods &lt;code&gt;CPTableView -preparedViewAtColumn:row:&lt;/code&gt; and &lt;code&gt;CPTableView -enumerateAvailableViewsUsingblock:&lt;/code&gt; have been added. (&lt;a href="https://github.com/cacaodev"&gt;cacaodev&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/1892"&gt;PR&lt;/a&gt; &lt;a href="https://github.com/cappuccino/cappuccino/pull/2303"&gt;PR&lt;/a&gt; &lt;a href="https://github.com/cappuccino/cappuccino/pull/2307"&gt;PR&lt;/a&gt; &lt;a href="https://github.com/cappuccino/cappuccino/pull/2306"&gt;PR&lt;/a&gt; &lt;a href="https://github.com/cappuccino/cappuccino/pull/2312"&gt;PR&lt;/a&gt; &lt;a href="https://github.com/cappuccino/cappuccino/pull/2318"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The theme showcase works again. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2295"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Duplicated unit tests have been removed or renamed. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2305"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;CPDatePicker&lt;/code&gt; will now raise &lt;code&gt;CPInvalidArgumentException&lt;/code&gt; if given an invalid date. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2308"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The divider color of a &lt;code&gt;CPSegmentedControl&lt;/code&gt; now has the expected color. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2309"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;CPPopover&lt;/code&gt; updates its position when the frame of one of its superviews has changed. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2311"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;When the auto-complete menu for a &lt;code&gt;CPTokenField&lt;/code&gt; is open, the Enter key is no longer forwarded to the application. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2319"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Cucapp&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Fixed: Cucapp imported &lt;code&gt;&amp;lt;AppKit/AppKit.j&amp;gt;&lt;/code&gt;. This could raise exceptions when testing a compiled application. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cucapp/pull/25"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The Cucapp&amp;rsquo;s CLI now logs informations when clicking on a &lt;code&gt;CPView&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cucapp/pull/24"&gt;PR&lt;/a&gt; &lt;a href="https://github.com/cappuccino/cucapp/pull/26"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;OJTest&lt;/h3&gt;
+
+&lt;h5&gt;New&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;New: OJTest raises a warning when a test method has already been declared in the same test class. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/OJTest/pull/29"&gt;PR&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Change/Fix&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The coverage option works again and checks which method has been called. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/OJTest/commit/1f6cc197071eef09f81924c72f05eb45ba184f42"&gt;PR&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Cappuccino News 2015 January 15th</title>
+    <link rel="alternate" href="/blog/2015/01/cappuccino-news-2015-01-15.html"/>
+    <id>/blog/2015/01/cappuccino-news-2015-01-15.html</id>
+    <published>2015-01-14T16:00:00-08:00</published>
+    <updated>2015-01-14T16:00:00-08:00</updated>
+    <author>
+      <name>Alexandre Wilhelm</name>
+    </author>
+    <summary type="html">&lt;p&gt;Here’s a quick update on what’s new with Cappuccino for the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;CFError&lt;/code&gt; has been added to the framework. &lt;code&gt;CPError&lt;/code&gt; is now toll-free bridged with &lt;code&gt;CFError&lt;/code&gt;, mirroring the implementation in &lt;code&gt;Cocoa&lt;/code&gt;. (&lt;a href="https://github.com/ahankinson"&gt;ahankinson&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2243"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;CPURLErrors&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    <content type="html">&lt;p&gt;Here&amp;rsquo;s a quick update on what&amp;rsquo;s new with Cappuccino for the last month.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;CFError&lt;/code&gt; has been added to the framework. &lt;code&gt;CPError&lt;/code&gt; is now toll-free bridged with &lt;code&gt;CFError&lt;/code&gt;, mirroring the implementation in &lt;code&gt;Cocoa&lt;/code&gt;. (&lt;a href="https://github.com/ahankinson"&gt;ahankinson&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2243"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;CPURLErrors&lt;/code&gt; and &lt;code&gt;CFNetworkErrors&lt;/code&gt; have been added to the framework. They respect the same error codes used in &lt;code&gt;Cocoa&lt;/code&gt;. (&lt;a href="https://github.com/ahankinson"&gt;ahankinson&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2243"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;xCodeCapp&lt;/code&gt; now has an option to define if xCodeCapp becomes active or not when opening the errors &amp;amp; warnings panel. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2292"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Changes/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The method &lt;code&gt;encodeValueOfObjCType&lt;/code&gt; has been renamed to &lt;code&gt;encodeValueOfObjJType&lt;/code&gt; in &lt;code&gt;CPCoder&lt;/code&gt;. (&lt;a href="https://github.com/ahankinson"&gt;ahankinson&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2243"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed a blank screen in some browser. The &lt;code&gt;z-index&lt;/code&gt; of the main &lt;code&gt;div&lt;/code&gt; of the Cappuccino is now set to 0 instead of -1000. (&lt;a href="https://github.com/ahankinson"&gt;ahankinson&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2267"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The configuration files of &lt;code&gt;doxygen&lt;/code&gt; has been redesigned. The command &lt;code&gt;jake docset&lt;/code&gt; has been added. (&lt;a href="https://github.com/ahankinson"&gt;ahankinson&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2252"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Refactoring of the classes &lt;code&gt;CPURLRequest&lt;/code&gt; and &lt;code&gt;CPURLConnection&lt;/code&gt;. The property &lt;code&gt;withCredentials&lt;/code&gt; has been moved from &lt;code&gt;CPURLConnection&lt;/code&gt; to &lt;code&gt;CPURLRequest&lt;/code&gt;. The accessors &lt;code&gt;originalRequest&lt;/code&gt; and &lt;code&gt;currentRequest&lt;/code&gt; have been added to &lt;code&gt;CPURLConnection&lt;/code&gt;. Added the possibility to make a deep copy of the &lt;code&gt;CPURLRequest&lt;/code&gt;. (&lt;a href="https://github.com/ahankinson"&gt;ahankinson&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2272"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The position of a &lt;code&gt;CPPopover&lt;/code&gt; is now correctly updated when the receiver&amp;rsquo;s frame changes. (&lt;a href="https://github.com/daboe01"&gt;daboe01&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2288"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It&amp;rsquo;s now possible to restart a &lt;code&gt;CPOperation&lt;/code&gt; marked as cancelled. (&lt;a href="https://github.com/cacaodev"&gt;cacaodev&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2287"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The keyword &lt;code&gt;@ref&lt;/code&gt; now generates &lt;code&gt;self.x&lt;/code&gt; for the &lt;code&gt;ivar x&lt;/code&gt;. (&lt;a href="https://github.com/mrcarlberg"&gt;mrcarlberg&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2269"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed a bunch of memory leaks in the classes &lt;code&gt;CPTableView&lt;/code&gt;, &lt;code&gt;CPScrollView&lt;/code&gt;, &lt;code&gt;CPClipeView&lt;/code&gt;, &lt;code&gt;CPComboBox&lt;/code&gt;, &lt;code&gt;CPTextField&lt;/code&gt; and &lt;code&gt;CPView&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2264"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed a bunch of issues in &lt;code&gt;CPComboBox&lt;/code&gt;. A null &lt;code&gt;intercellSpacing&lt;/code&gt; won&amp;rsquo;t raise a crash anymore. The delegate method &lt;code&gt;comboBoxWillDismiss:&lt;/code&gt; works again. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2264"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Constructors of a &lt;code&gt;CPDate&lt;/code&gt; now raise warnings when the arguments are not &lt;code&gt;floats&lt;/code&gt; or &lt;code&gt;ints&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2227"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed some warnings when compiling Cappuccino with &lt;code&gt;rhino&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2291"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The add and remove button of a &lt;code&gt;CPPredicateEditor&lt;/code&gt; are not blurred anymore. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2290"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The size of a &lt;code&gt;CPCheckBox&lt;/code&gt; is now correctly calculated when using the constructor &lt;code&gt;checkBoxWithTitle:&lt;/code&gt; again. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2289"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Cucapp&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Cucapp&lt;/code&gt; now prints what it is about to simulate when using &lt;code&gt;Cucumber&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cucapp/pull/23"&gt;PR&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Cappuccino News 2014 December 15th</title>
+    <link rel="alternate" href="/blog/2014/12/cappuccino-news-2014-12-15.html"/>
+    <id>/blog/2014/12/cappuccino-news-2014-12-15.html</id>
+    <published>2014-12-14T16:00:00-08:00</published>
+    <updated>2014-12-14T16:00:00-08:00</updated>
+    <author>
+      <name>Alexandre Wilhelm</name>
+    </author>
+    <summary type="html">&lt;p&gt;Here’s a quick update on what’s new with Cappuccino for the last two weeks.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The syntax highlighting for the text editor &lt;code&gt;VIM&lt;/code&gt; now supports the keyword &lt;code&gt;@typedef&lt;/code&gt;. (&lt;a href="https://github.com/kevin-xu"&gt;kevin-xu&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2274"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;CPDatePicker&lt;/code&gt; now has a focus ring when edited. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    <content type="html">&lt;p&gt;Here&amp;rsquo;s a quick update on what&amp;rsquo;s new with Cappuccino for the last two weeks.&lt;/p&gt;
+
+&lt;h3&gt;Cappuccino&lt;/h3&gt;
+
+&lt;h5&gt;News&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The syntax highlighting for the text editor &lt;code&gt;VIM&lt;/code&gt; now supports the keyword &lt;code&gt;@typedef&lt;/code&gt;. (&lt;a href="https://github.com/kevin-xu"&gt;kevin-xu&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2274"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;CPDatePicker&lt;/code&gt; now has a focus ring when edited. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2265"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Changes/Fixes&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The size of the controls in a &lt;code&gt;CPPredicateEditor&lt;/code&gt; or in a &lt;code&gt;CPRuleEditor&lt;/code&gt; are well defined again. (&lt;a href="https://github.com/t00f"&gt;t00f&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2277"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The &lt;code&gt;CPDatePicker&lt;/code&gt; no longer holds the character &lt;code&gt;CPCarriageReturnCharacter&lt;/code&gt;. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2279"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed a crash when dragging the first filter of a &lt;code&gt;CPRuleEditor&lt;/code&gt; above the first line of the rule editor. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2280"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The buttons of a &lt;code&gt;CPButtonBar&lt;/code&gt; are no longer removed and readded to the view each time the button bar is laid out. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2275"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Fixed: after recent changes, a &lt;code&gt;CPPopover&lt;/code&gt; would no longer move together with the control it was attached to. (&lt;a href="https://github.com/Dogild"&gt;Dogild&lt;/a&gt; - &lt;a href="https://github.com/cappuccino/cappuccino/pull/2276"&gt;PR&lt;/a&gt;)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+</feed>

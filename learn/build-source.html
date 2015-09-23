@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino - Advanced: Install from Source</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-build-source-html folder-learn">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container learn">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Learn</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="span3">
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/">What is Cappuccino?</a>
+</li>
+<li>
+<a href="/learn/environment.html">Your development environment</a>
+</li>
+<li>
+<a href="/learn/starter.html">Get Started</a>
+</li>
+<li class="active">
+<a href="/learn/build-source.html">Advanced: Install from Source</a>
+</li>
+<li>
+<a href="/learn/objective-j.html">Learning Objective-J</a>
+</li>
+<li>
+<a href="/learn/scrapbook-1.html">Scrapbook #1 - Views and Layers</a>
+</li>
+<li>
+<a href="/learn/scrapbook-2.html">Scrapbook #2 - Drag and Drop</a>
+</li>
+<li>
+<a href="/learn/automatic-layout.html">Tutorial: Automatic Layout</a>
+</li>
+<li>
+<a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
+</li>
+<li>
+<a href="/learn/debugging.html">Debugging</a>
+</li>
+</ul>
+<h5>Resources</h5>
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/demos.html">Demos</a>
+</li>
+<li>
+<a href="/learn/documentation/">API Documentation</a>
+</li>
+<li>
+<a href="/support/faq.html">FAQ</a>
+</li>
+</ul>
+</div>
+<div class="span9 text-body markdown">
+<h3>
+Advanced: Install from Source
+</h3>
+<p>This is an optional section. It is not necessary to build Cappuccino from source just to write a basic app - the starter package already contains a ready to go version of Cappuccino. You can read about how to get started with the starter package in ’<a href="/learn/starter.html">Get Started</a>’.</p>
+
+<p>You should install Cappuccino from source if you need:</p>
+
+<ul>
+<li>  To use XcodeCapp.</li>
+<li>  To get the latest version of Cappuccino.</li>
+<li>  To learn how things work.</li>
+</ul>
+
+<p>If you’re happy with the starter package you may skip ahead to <a href="/learn/objective-j.html">Learning Objective-J</a>.</p>
+
+<h5>Get Developers Tools (Mac OS X only)</h5>
+
+<p>In order to use Xcode’s Interface Builder, and to compile Cappuccino itself, you need the Mac developer tools installed. You can get the latest version from the <a href="http://itunes.apple.com/en/app/xcode/id448457090">AppStore for free</a>. Xcode 4 is the current version, but Xcode 3 is (probably) still usable.</p>
+
+<h5>Install Git</h5>
+
+<p>If you wish to install the Cappuccino sources you’ll need the source control management software Git.</p>
+
+<p>Git is included with Xcode 4. You can check you have it by entering the following command in your Terminal:</p>
+
+<div class="highlight"><pre><span class="c"># git --version</span>
+git version 1.7.4.4
+</pre></div>
+
+<p>On other platforms you can grab the latest version of Git from the following URL:
+<a href="http://git-scm.com/download">http://git-scm.com/download</a>.</p>
+
+<h5>Java</h5>
+
+<p>For the most part you don’t need Java to use Cappuccino. In particular you don’t need to know Java, and the users of your Cappuccino application won’t need it. But certain tools in the Cappuccino toolset depend on Java being installed.</p>
+
+<p>On Mac OS X Java is installed automatically when you need it. On other platforms, please install Oracle’s JDK.</p>
+
+<p><span class="label label-info">Info</span>  Java is needed to run the Rhino Engine, which is sometimes used to execute JavaScript outside of the browser.</p>
+
+<h5>Choose your folder</h5>
+
+<p>You must choose a place where to put the source code. It can be anywhere. We will assume you want to put the sources in <code>~/Documents/Sources/</code>.</p>
+
+<h5>Clone the repository</h5>
+
+<p>Clone the Cappuccino source code repository. Open a Terminal window and type:</p>
+
+<div class="highlight"><pre><span class="nb">cd</span> ~/Documents/Sources/
+git clone https://github.com/cappuccino/cappuccino.git Cappuccino
+</pre></div>
+
+<p>After a brief download you will see a new folder named “Cappuccino” containing all the source code.</p>
+
+<h5>Run bootstrap.sh</h5>
+
+<p>Before being able to build Cappuccino, you need to install all the
+underlying components such as Narwhal. The Cappuccino repository contains a script that does everything for
+you. In your Terminal window, type:</p>
+
+<div class="highlight"><pre><span class="nb">cd </span>Cappuccino
+./bootstrap.sh
+</pre></div>
+
+<p>If you already have an installation of Cappuccino the script will ask
+you several additional question about removing the old installation. You
+should say “yes”.</p>
+
+<p>The script will now start and will ask you several questions. Answer as follows:</p>
+
+<pre>                  / __/ _ `/ _ \/ _ \/ // / __/ __/ / _ \/ _ \
+                  \__/\_,_/ .__/ .__/\_,_/\__/\__/_/_//_/\___/
+                         /_/  /_/
+ 
+                             Welcome to Cappuccino!
+ 
+================================================================================
+ 
+                                 Version 0.9.6
+ 
+ 
+                         http://cappuccino-project.org
+                    http://github.com/cappuccino/cappuccino
+                       irc://irc.freenode.org#cappuccino
+ 
+This script will install the Cappuccino environment for you. Continue?
+Enter "yes" or "no":
+=&gt; yes [ENTER]
+</pre>
+
+<p>Leave the next question blank to install it in the standard path:</p>
+
+<pre>================================================================================
+Enter an installation path, or hit enter/return to use "/usr/local/narwhal":
+=&gt; [ENTER]
+</pre>
+
+<p>Then bootstrap will download several packages.</p>
+
+<p>If you are under Mac OS X, the script will ask you if you want to build
+the JavaScriptCore engine for Narwhal. Answer “yes”. (This is not
+displayed if you are under Linux).</p>
+
+<pre>================================================================================
+Would you like to build the JavaScriptCore engine? This is optional but will
+make building and running Cappuccino and Objective-J much faster.
+Enter "yes" or "no":
+=&gt; yes [ENTER]
+</pre>
+
+<p>Then it will ask if you want to append bin folder to your \$PATH. Answer
+“yes”:</p>
+
+<pre>You must add Cappuccino's "bin" directory to your PATH environment variable.
+Do this automatically now?
+    "export PATH="/usr/local/narwhal/bin:$PATH"" will be appended to "/root/.bashrc".
+Enter "yes" or "no":
+=&gt; yes [ENTER]
+</pre>
+
+<p>Now it will ask you for the value of <code>$CAPP_BUILD</code>. Answer “yes”:</p>
+
+<pre>================================================================================
+Before building Cappuccino we recommend you set the $CAPP_BUILD environment
+variable to a path where you wish to build Cappuccino. This can be automatically
+set to the default value of "/root/Build", or you can set $CAPP_BUILD yourself.
+    "export CAPP_BUILD="/root/Build"" will be appended to "/root/.bashrc".
+Enter "yes" or "no":
+=&gt; yes [ENTER]
+</pre>
+
+<p>Finally, you will get:</p>
+
+<pre>================================================================================
+Bootstrapping of Cappuccino and other required tools is complete.
+NOTE: any changes made to the shell configuration files won't take place until
+you restart the shell.
+</pre>
+
+<p>Forget about restarting the shell, we are adults, just re-source
+the <code>.bash_profile</code> or <code>.bashrc</code>:</p>
+
+<pre>source ~/.bash_profile
+</pre>
+
+<p>or</p>
+
+<pre>source ~/.bashrc
+</pre>
+
+<p>To be absolutely sure everything is ok, test if you have the <code>jake</code>
+command in your PATH:</p>
+
+<pre>jake --help
+Usage: jake [OPTIONS] targets...
+[...]
+</pre>
+
+<p>If you have this, you are done!</p>
+
+<p>If you get “command not found”, well, something bad happened. You can try
+to re-run bootstrap and make sure there are no errors. Bootstrap gets its
+packages from GitHub.com and sometimes these downloads fail. If you can’t succeed, then you can send an email to the <a href="http://groups.google.com/group/objectivej">mailing list</a>, or join us on
+our IRC channel at <a href="irc://irc.freenode.net/#cappuccino">irc://irc.freenode.net/#cappuccino</a> and ask for help. We will be happy to help you.</p>
+
+<p>Now, the Cappuccino environment is ready! We just need to build Cappuccino itself, and you will be able to start playing.</p>
+
+<h5>Build Cappuccino</h5>
+
+<p>No question here. From the Cappuccino repository, just run:</p>
+
+<pre>jake install
+</pre>
+
+<p>To be sure everything runs fine, verify that you have the <code>capp</code> command in your
+PATH:</p>
+
+<pre>capp --help
+capp [--version] COMMAND [OPTIONS] [ARGS]
+[...]
+</pre>
+
+<p>Again, if you get a “command not found” error, please use the <a href="http://groups.google.com/group/objectivej">mailing list</a>, or join us on our IRC channel at <a href="irc://irc.freenode.net/#cappuccino">irc://irc.freenode.net/#cappuccino</a> and ask for help.</p>
+
+<h5>Wait! Don’t forget the documentation!</h5>
+
+<p>This is optional in a sense. It’s not required to build Cappuccino applications, but chances are you’re going to want the documentation. You will need <a href="http://www.doxygen.org/">Doxygen</a>. Download the latest version, drag the Doxygen application into your Applications folder. Then, from the Cappuccino folder, run:</p>
+
+<pre>jake docs
+</pre>
+
+<p>This should also work with the HomeBrew version of Doxygen. But at the moment, the provided formula seems to have problems, so you may prefer the GUI Application. If you have no idea what we are talking about, no worries. You can view the documentation <a href="/learn/documentation">right here</a>.</p>
+
+<p>If you want the documentation to generate the images representing the class graphs, you need to install <code>graphviz</code>, a utility which provides <code>dot</code>. On the Mac you can use <a href="http://mxcl.github.com/homebrew/">HomeBrew</a>. Note this
+is optional.</p>
+
+<p>Once built, you can open the documentation using the following command:</p>
+
+<pre>open $CAPP_BUILD/Documentation/html/index.html
+</pre>
+
+</div>
+</div>
+<div class="row">
+<div class="offset3 span9">
+<div class="learn-nav">
+<ul class="pager">
+<li class="previous">
+<a href="/learn/starter.html">← Return to '
+Get Started
+'
+</a>
+</li>
+<li class="next">
+<a href="/learn/objective-j.html">Continue to '
+Learning Objective-J
+' →
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Issue Lifecycle</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-issue-lifecycle-html folder-contribute">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Issue Lifecycle</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="offset2 span8 markdown">
+<h2>The Exciting Life of an Issue</h2>
+
+<p>Issues are at the heart of the Cappuccino project. They tell us where we
+are in terms of what needs to be fixed, and where we want to go in terms
+of new features to be added. From the point when an issue is created to
+the point where it is closed, there is a well-defined path it follows.</p>
+
+<p>A picture is worth a thousand words, so here is a graphical
+representation of the issue lifecycle:</p>
+
+<p><a href="/img/issue-lifecycle-5f752f6a.png"><img title="issue-lifecycle" alt="Issue Lifecycle" width="587" height="755" src="/img/issue-lifecycle-5f752f6a.png"></a></p>
+
+<h2>Issue States, Phases, Tags and Categories</h2>
+
+<p>At the highest level, an issue is either <strong>Open</strong> or <strong>Closed</strong>. At the
+beginning of an issue’s lifecycle, a newly created issue is Open, and it
+remains Open until it enters one of the “Closed” states pictured above,
+which is the end of its lifecycle.</p>
+
+<p>Within the high level Open and Closed states, an issue is either in the
+<strong>Review</strong> phase or in the <strong>Resolution</strong> phase. Within a phase, an
+issue may have one or more tags that identify where it is within the
+lifecycle and what actions are necessary to advance to the next step.
+Issue lifecycle tags begin with “#”, such as “#new” and “#accepted”.
+Issues may also have labels that do not begin with “#”, which are
+<strong>category</strong> labels, such as “bug” and “feature”.</p>
+
+<h2>The Lifecycle in Detail</h2>
+
+<p>Since a picture is worth a thousand words, here is the thousand-word
+description of the issue lifecycle.</p>
+
+<h3>New issue</h3>
+
+<p>When you create a new issue, its state is Open and it is in the Review
+phase. An automated script gives it the <strong>#new</strong> tag, adds it to the
+“Someday” milestone, adds the <strong>#needs-patch</strong> tag if it is not a pull
+request, and the core team is notified.</p>
+
+<h3>Initial triage</h3>
+
+<p>A designated Reviewer or core team member reviews the issue and the
+following actions are taken:</p>
+
+<ul>
+<li>  Determine if the issue is a bug report or feature request. A label
+is added to the issue (<strong>bug</strong> or <strong>feature</strong>) to indicate which.</li>
+<li>  The component of Cappuccino affected by the issue is marked with the
+label <strong>AppKit</strong>, <strong>Foundation</strong>, <strong>Objective-J</strong>, <strong>documentation</strong>
+or <strong>tools</strong>. If bindings are involved, the <strong>bindings</strong> label is
+added.</li>
+<li>  If the issue affects certain browsers, the relevant labels
+(<strong>WebKit</strong>, <strong>IE</strong>, etc.) are added to the issue.</li>
+<li>  If the description of the problem/feature is not clear, the issue is
+tagged <strong>#needs-info</strong> and the necessary information is solicited
+through the issue comments.</li>
+<li>  If the issue is a bug report and there is no sample app or code that
+reduces the bug to a minimal set of circumstances, it is labeled
+<strong>#needs-reduction</strong>.</li>
+<li>  If the issue is a bug report and it is unclear if the bug still
+exists, it is labeled <strong>#needs-confirmation</strong>.</li>
+</ul>
+
+<p>At this point, there are a couple of paths the issue might take.</p>
+
+<ul>
+<li>  If the issue is clearly not something that will ever be fixed or
+implemented, the issue is labeled <strong>#wont-fix</strong> and is closed.</li>
+<li>  If a bug report cannot be reproduced, it is labeled
+<strong>#works-for-me</strong> and is closed.</li>
+<li>  If an issue is a duplicate of another issue, a link to the duplicate
+issue is put in the comments, it is labeled <strong>#duplicate</strong>, and is
+closed.</li>
+<li>  If the issue is a very low priority and might be dealt with in the
+distant future, it is added to the “Someday” milestone and is left
+open.</li>
+<li>  If none of the above apply and the issue is obviously something that
+needs fixing or implementing, it is labeled <strong>#accepted</strong> and
+enters the Resolution phase.</li>
+<li>  If it is not clear whether or how an issue might be resolved, the
+reviewer submits the issue to peer review by labeling it
+<strong>#needs-review</strong>.</li>
+</ul>
+
+<h3>Peer review</h3>
+
+<p>Sometimes accepting a bug report or feature request requires an
+architectural or implementation design decision. For architectural
+decisions, the question is whether the issue fits in with the overall
+design of the Cappuccino frameworks. For implementation decisions, the
+question is whether it is technically feasible to implement the fix, and
+if so how to do so.</p>
+
+<p>To make these decisions, we bring the design decisions up for a vote,
+perhaps with some preliminary discussion. For more information on the
+voting process, see <a href="#how-we-make-decisions">How We Make Decisions</a>.</p>
+
+<p>If the vote indicates an issue will be accepted, it is labeled
+<strong>#accepted</strong> and enters the Resolution phase. Otherwise it is labeled
+<strong>#wont-fix</strong> and closed, or it is added to the “Someday” milestone and
+left open.</p>
+
+<h3>Resolution phase</h3>
+
+<p>Once an issue has been accepted, now it has to be resolved by fixing the
+bug or implementing the feature. This is where we really rely on the
+community to help with the coding!</p>
+
+<p>Once a patch is submitted, either as a gist or as a pull request, then
+the code has to be reviewed by a designated Reviewer or core team
+member.</p>
+
+<ul>
+<li>  If the code needs better documentation, it is labeled
+<strong>#needs-docs</strong>.</li>
+<li>  If the code needs a unit test or test app, it is labeled
+<strong>#needs-test</strong>.</li>
+<li>  If the code has problems with formatting or fails a capp_lint
+check, has bugs, or has non-optimal logic or algorithms, it is
+labeled <strong>#needs-improvement</strong>.</li>
+</ul>
+
+<p>Once the code is free of any <strong>#needs-</strong> tags, it is labeled
+<strong>#ready-to-commit</strong>. As the final step, a core team member commits the
+code to the master branch, labels the issue <strong>#fixed</strong>, and closes the
+issue. Thus ends the lifecycle of an issue.</p>
+
+<h3>“Bumping” An Issue</h3>
+
+<p>If you see an issue that you especially want to have fixed or
+implemented, you can vote “bump” it by adding a comment that consists of
+nothing more than “+1”. This will get picked up automatically and the
+title of the issue will be updated to show the latest bump count. In
+addition, the core team will be notified so we have an idea which issues
+are a priority for the community.</p>
+
+<h2>How We Make Decisions <a name="#how-we-make-decisions"> </a>
+</h2>
+
+<p>We strive to be as transparent and democratic as possible, so when a new
+feature or design decision will have a significant impact on the
+community, we may ask for an informal vote on the objectivej or
+objectivej-dev mailing list. The subject of the vote will be prefixed by
+“[VOTE] ”.</p>
+
+<p>In these votes we follow the voting style commonly used by open source
+projects, where votes are given as +1, +0, -0, or -1. Roughly
+translated, these votes mean:</p>
+
+<ul>
+<li>  <strong>+1</strong>: I love the idea and I’m strongly committed to it.</li>
+<li>  <strong>+0</strong>: Sounds OK to me.</li>
+<li>  <strong>-0</strong>: I’m not thrilled, but I won’t stand in the way.</li>
+<li>  <strong>-1</strong>: I strongly disagree and would be very unhappy to see the
+idea turn into reality.</li>
+</ul>
+
+<p>Although these votes are informal, they will be taken very seriously.
+After a suitable voting period (usually a week or two), if an obvious
+consensus emerges we will follow the votes.</p>
+
+<p>However, consensus is not always possible. If consensus cannot be
+reached, or if the discussion fizzles out without arriving at a concrete
+decision, we use a more formal process.</p>
+
+<p>Any core developer may call for a formal vote using the same voting
+mechanism outlined above. The subject of these formal votes will be
+prefixed with “[CORE-VOTE] ”. These formal votes differ from informal
+votes in that although they are conducted in public, only votes by the
+core team count. A proposition will be considered carried by the core
+team if:</p>
+
+<ul>
+<li>  There are two +1 votes from members of the core team.</li>
+<li>  There are no -1 votes from members of the core team.</li>
+</ul>
+
+<p>When calling for a vote, the caller should specify a deadline by which
+votes must be received, with one week being the minimum amount of time.</p>
+
+<p>Since this process allows any core developer to veto a proposal, any -1
+votes must be accompanied by a thorough explanation of what it would
+take to convert the -1 into at least a +0.</p>
+
+<p>Whenever possible, these formal votes will be announced and held in
+public on the objectivej or objectivej-dev mailing list. However, very
+sensitive or contentious issues — including votes on new core developers
+— may be held in private, using the same rules.</p>
+
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

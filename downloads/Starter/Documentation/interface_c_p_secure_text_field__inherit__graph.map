@@ -1,0 +1,7 @@
+<map id="CPSecureTextField" name="CPSecureTextField">
+<area shape="rect" id="node2" href="$interface_c_p_text_field.html" title="CPTextField" alt="" coords="25,315,117,343"/>
+<area shape="rect" id="node3" href="$interface_c_p_control.html" title="CPControl" alt="" coords="31,238,113,266"/>
+<area shape="rect" id="node4" href="$interface_c_p_view.html" title="CPView" alt="" coords="38,161,105,189"/>
+<area shape="rect" id="node5" href="$interface_c_p_responder.html" title="CPResponder" alt="" coords="19,83,124,111"/>
+<area shape="rect" id="node6" href="$class_c_p_object.html" title="CPObject" alt="" coords="33,6,111,34"/>
+</map>

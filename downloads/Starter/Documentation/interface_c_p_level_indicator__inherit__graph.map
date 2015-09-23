@@ -1,0 +1,6 @@
+<map id="CPLevelIndicator" name="CPLevelIndicator">
+<area shape="rect" id="node2" href="$interface_c_p_control.html" title="CPControl" alt="" coords="25,238,108,266"/>
+<area shape="rect" id="node3" href="$interface_c_p_view.html" title="CPView" alt="" coords="32,161,100,189"/>
+<area shape="rect" id="node4" href="$interface_c_p_responder.html" title="CPResponder" alt="" coords="14,83,119,111"/>
+<area shape="rect" id="node5" href="$class_c_p_object.html" title="CPObject" alt="" coords="27,6,105,34"/>
+</map>

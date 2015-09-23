@@ -1,0 +1,27 @@
+var interface_c_p_image =
+[
+    [ "cachedImageWithContentsOfFile:", "interface_c_p_image.html#a4ce4b445d0fcfdb03641d30742d20240", null ],
+    [ "data", "interface_c_p_image.html#a2e7c6f07833d9cee66a625a39ddd0b67", null ],
+    [ "delegate", "interface_c_p_image.html#a4d4c21b07c7d97f53192cea5443df8ef", null ],
+    [ "description", "interface_c_p_image.html#a46fff33e7c4f1b62a55b3f0fbeb8dadc", null ],
+    [ "encodeWithCoder:", "interface_c_p_image.html#aff64a5f847be6aea15bd4ba86c5c97ef", null ],
+    [ "filename", "interface_c_p_image.html#ac80495913d5bfd9a2a0ac0f7104bc7bb", null ],
+    [ "image", "interface_c_p_image.html#a578a6136d61bf398daed2a671c5e3e53", null ],
+    [ "imageNamed:", "interface_c_p_image.html#a7c251b4940a452740663ade7090280af", null ],
+    [ "init", "interface_c_p_image.html#a2ae9c11021bda89ee0518b0abffdc73b", null ],
+    [ "initByReferencingFile:size:", "interface_c_p_image.html#a341a755c0640fd01ea75da311aaafaf7", null ],
+    [ "initWithCoder:", "interface_c_p_image.html#aed8816b921b2d71016622175136d0c26", null ],
+    [ "initWithContentsOfFile:", "interface_c_p_image.html#a5a7837974a1c2b25652d8e8ba6fb5c46", null ],
+    [ "initWithContentsOfFile:size:", "interface_c_p_image.html#ab4a0e81ccf9e4234c8c907fdfdae1329", null ],
+    [ "initWithData:", "interface_c_p_image.html#a67411aafa1e2d59e63c47ad3674b3d4b", null ],
+    [ "isNinePartImage", "interface_c_p_image.html#af37b2f1a532d489ff125a1a22aca7866", null ],
+    [ "isSingleImage", "interface_c_p_image.html#a52fe4e9cacd03d1776cf6ebfac7332c4", null ],
+    [ "isThreePartImage", "interface_c_p_image.html#a59133974ac1d6d3629ab637a921cd9f4", null ],
+    [ "load", "interface_c_p_image.html#a9ec47150fd20aa6875fb173821ae0193", null ],
+    [ "loadStatus", "interface_c_p_image.html#a019d77b24d10a36a759516fe7539a4d2", null ],
+    [ "name", "interface_c_p_image.html#a357838270996aadd234e9c47b0fd13be", null ],
+    [ "setDelegate:", "interface_c_p_image.html#af1e7d59bb872b74f66530d178b980443", null ],
+    [ "setName:", "interface_c_p_image.html#afc816080bb62eb773964668e1acf2670", null ],
+    [ "setSize:", "interface_c_p_image.html#ad7ecb55a6b0e6fa6d107f8630fb67bda", null ],
+    [ "size", "interface_c_p_image.html#ae159de459360523940841fd18bb73d66", null ]
+];

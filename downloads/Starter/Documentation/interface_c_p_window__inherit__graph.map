@@ -1,0 +1,8 @@
+<map id="CPWindow" name="CPWindow">
+<area shape="rect" id="node4" href="$interface_c_p_panel.html" title="CPPanel" alt="" coords="151,238,224,266"/>
+<area shape="rect" id="node2" href="$interface_c_p_responder.html" title="CPResponder" alt="" coords="135,83,240,111"/>
+<area shape="rect" id="node3" href="$class_c_p_object.html" title="CPObject" alt="" coords="149,6,227,34"/>
+<area shape="rect" id="node5" href="$interface_c_p_color_panel.html" title="CPColorPanel" alt="" coords="4,315,109,343"/>
+<area shape="rect" id="node6" href="$interface_c_p_open_panel.html" title="CPOpenPanel" alt="" coords="135,315,240,343"/>
+<area shape="rect" id="node7" href="$interface_c_p_save_panel.html" title="CPSavePanel" alt="" coords="265,315,369,343"/>
+</map>

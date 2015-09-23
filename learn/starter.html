@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino - Get Started</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-starter-html folder-learn">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container learn">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Learn</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="span3">
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/">What is Cappuccino?</a>
+</li>
+<li>
+<a href="/learn/environment.html">Your development environment</a>
+</li>
+<li class="active">
+<a href="/learn/starter.html">Get Started</a>
+</li>
+<li>
+<a href="/learn/build-source.html">Advanced: Install from Source</a>
+</li>
+<li>
+<a href="/learn/objective-j.html">Learning Objective-J</a>
+</li>
+<li>
+<a href="/learn/scrapbook-1.html">Scrapbook #1 - Views and Layers</a>
+</li>
+<li>
+<a href="/learn/scrapbook-2.html">Scrapbook #2 - Drag and Drop</a>
+</li>
+<li>
+<a href="/learn/automatic-layout.html">Tutorial: Automatic Layout</a>
+</li>
+<li>
+<a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
+</li>
+<li>
+<a href="/learn/debugging.html">Debugging</a>
+</li>
+</ul>
+<h5>Resources</h5>
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/demos.html">Demos</a>
+</li>
+<li>
+<a href="/learn/documentation/">API Documentation</a>
+</li>
+<li>
+<a href="/support/faq.html">FAQ</a>
+</li>
+</ul>
+</div>
+<div class="span9 text-body markdown">
+<h3>
+Get Started
+</h3>
+<h3>Supported platforms</h3>
+
+<p>Cappuccino is supported on the following platforms:</p>
+
+<table class="table span9">
+<tbody>
+<tr>
+<th>Platform</th>
+<th>Supported features</th>
+</tr>
+<tr>
+<td>Mac OS X</td>
+<td>Toolchain, Interface Builder</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>Toolchain</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>Toolchain with installation of <a href="http://cygwin.org">Cygwin</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>This tutorial will be written based on Mac OS X, with notes on any differences with other platforms included.</p>
+
+<h3>Downloading &amp; Running the Sample Application</h3>
+
+<p>If you haven’t already, download the <a href="/downloads.html">Cappuccino Starter package</a>. This zip file includes a sample application (<code>NewApplication</code>), licensing info, a script you can run later to download
+all the Cappuccino tools, and a README.</p>
+
+<p><img alt="open new application" width="456" height="366" src="/img/new-application-4cd43f45.png"></p>
+
+<h3>Running NewApplication</h3>
+
+<p>Once you’ve downloaded and unzipped the Cappuccino Starter package, open
+up the <code>NewApplication</code> folder, and locate the <code>index.html</code> file. Now,
+simply open that file in your favorite web browser by double-clicking
+it, or just by dragging it on top of your browser application. You
+should end up with something that looks like this (in Safari):</p>
+
+<p><img alt="New Application running in Safari" width="600" height="389" src="/img/new-app-running-safari-d83f870b.png"></p>
+
+<p><span class="label label-info">Info</span>  This will only work in some browsers. Normally you’ll need to start a web server too. We’ll update this section with more information soon.</p>
+
+<h3>The Code</h3>
+
+<p>The source behind this sample application is startingly simple.
+Although there are a few files, the only one we’re interested in right
+now is <code>AppController.j</code>. The others are necessary, but you don’t need
+to modify them to work on your application.</p>
+
+<p><img alt="AppController.j" width="600" height="422" src="/img/new-app-appcontroller-97c92c47.png"></p>
+
+<p>You can see in the image above that we have syntax highlighting in
+TextMate. You can get this by installing the appropriate mode, found on
+our <a href="/learn/environment.html">getting set up tutorial</a>.</p>
+
+<h3>Making a Simple Change</h3>
+
+<p>Now let’s see what it takes to make a simple addition to NewApplication.
+We’ll add a button that toggles the text on the screen between “Hello
+World!” and “Goodbye!”. After the line that contains <code>[contentView
+addSubview:label]</code> (line 31), add the following code snippet:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">button</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPButton</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span> <span class="nf">CGRectMake</span><span class="p">(</span>
+                <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span>
+                <span class="nf">CGRectGetMaxY</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">])</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span>
+                <span class="mi">80</span><span class="p">,</span> <span class="mi">24</span>
+             <span class="p">)];</span>
+
+<span class="p">[</span><span class="n">button</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewMinXMargin</span> <span class="o">|</span>
+                            <span class="n">CPViewMaxXMargin</span> <span class="o">|</span>
+                            <span class="n">CPViewMinYMargin</span> <span class="o">|</span>
+                            <span class="n">CPViewMaxYMargin</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">button</span> <span class="n">setTitle</span><span class="o">:</span><span class="s">"swap"</span><span class="p">];</span>
+
+<span class="p">[</span><span class="n">button</span> <span class="n">setTarget</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+<span class="p">[</span><span class="n">button</span> <span class="n">setAction</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">swap</span><span class="o">:</span><span class="p">)];</span>
+
+<span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">button</span><span class="p">];</span>
+</pre></div>
+
+<p>Now, refresh your browser, and you should see a button right below
+“Hello World!”. It won’t work just yet, because we haven’t told it what
+to do when the button is pressed. Before we do that, let’s quickly go
+over what each of the previous lines does:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">button</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPButton</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span> <span class="nf">CGRectMake</span><span class="p">(</span>
+                <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span>
+                <span class="nf">CGRectGetMaxY</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">])</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span>
+                <span class="mi">80</span><span class="p">,</span> <span class="mi">24</span>
+             <span class="p">)];</span>
+</pre></div>
+
+<p>This line instantiates a new <code>CPButton</code> object, and places it 40 pixels to
+the left of the center of its parent view, and 10 pixels below the
+bottom of the label above it. It’s 80 pixels wide, and 24 pixels tall.
+<code>CGRectMake</code> is the main way to create a <code>CGRect</code>, which is the object
+that describes the size and positioning of every view in Cappuccino.
+<code>[contentView bounds]</code> returns the <code>CGRect</code>of <code>view</code>, but without its
+positioning information. <code>[label frame]</code> return the <code>CGRect</code> of the label,
+including its position information.</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">button</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewMinXMargin</span> <span class="o">|</span>
+                            <span class="n">CPViewMaxXMargin</span> <span class="o">|</span>
+                            <span class="n">CPViewMinYMargin</span> <span class="o">|</span>
+                            <span class="n">CPViewMaxYMargin</span><span class="p">];</span>
+</pre></div>
+
+<p>Auto-resize flags define how a view resizes when its parent resizes
+(all the way up to the window). In this case, it’s saying that it would
+like to have flexible space above, below, to the right, and to the left.
+In other words, stay in the center, and don’t change size.</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">button</span> <span class="n">setTitle</span><span class="o">:</span><span class="s">"swap"</span><span class="p">];</span>
+</pre></div>
+
+<p>Set the title of the button to “swap”.</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">button</span> <span class="n">setTarget</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+<span class="p">[</span><span class="n">button</span> <span class="n">setAction</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">swap</span><span class="o">:</span><span class="p">)];</span>
+</pre></div>
+
+<p>In Cappuccino, as in OpenStep and Cocoa, controls like buttons use the
+target/action mechanism for defining their behavior. Think of this as
+the equivalent to DOM elements’ onclick, but much more powerful. In the
+code above, we’re setting <code>self</code> (the <code>AppController</code> instance) to be
+our target, and <code>swap:</code> to be our action. This means that when the
+button is pressed, we’ll send the <code>swap:</code> message to <code>self</code>, which
+would be equivalent to writing <code>[self swap:button]</code>. You’ll notice
+<code>swap:</code> takes one parameter. By default, actions usually have one
+parameter, called <code>sender</code>, so that you can know who is requesting
+this action take place (in this case it is the button). This can provide
+useful context when multiple buttons or views have the same target and
+action.</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">button</span><span class="p">];</span>
+</pre></div>
+
+<p>Finally, in this last line, we add our button as a subview of the
+window’s content view. The content view is the root view of a window,
+and so the first place you’d put any additional views.</p>
+
+<p>As it currently stands, <code>label</code> is scoped to just exist within
+<code>applicationDidFinishLaunching:</code>, which means it won’t be accessible in
+<code>swap:</code> or any other methods. So instead of making it a local variable,
+lets make it an <strong>instance variable</strong> of <code>AppController</code>. To do this we
+simply need to add it to our class declaration by replacing:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>with:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="n">CPTextField</span> <span class="n">label</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Now, let’s take out the var keyword in the original declaration of
+<code>label</code>.</p>
+
+<pre>var label = [[CPTextField alloc] initWithFrame:CGRectMakeZero()];
+</pre>
+
+<p>becomes:</p>
+
+<pre>label = [[CPTextField alloc] initWithFrame:CGRectMakeZero()];
+</pre>
+
+<p>Now we need to actually add the swap method. Add the following code
+after the closing bracket of the <code>applicationDidFinishLaunching:</code>
+method:</p>
+
+<pre>- (void)swap:(id)sender
+{
+    if ([label stringValue] == "Hello World!")
+        [label setStringValue:"Goodbye!"];
+    else
+        [label setStringValue:"Hello World!"];
+}
+</pre>
+
+<p>This code checks what the current value of <code>label</code> is and uses that to
+decide what to set the new value to.</p>
+
+<p>Now you should be able to run this new code by saving <code>AppController.j</code>
+and hitting refresh in your browser. Click the button, and you should
+see the string change back and forth between “Hello World!” and
+“Goodbye!”.</p>
+
+<p>For a finishing touch, add this line after you create the label in
+<code>applicationDidFinishLaunching:</code></p>
+
+<pre>[label setAlignment:CPCenterTextAlignment];
+</pre>
+
+<p>Now the text will be centered as it toggles back and forth. For the
+complete changes, you can download this copy of
+<a href="/learn/files/AppController.j">AppController.j</a>.</p>
+
+<p><img alt="finished version" width="600" height="396" src="/img/new-app-completed-c40c6235.png"></p>
+
+<h3>Wrapping Up</h3>
+
+<p>This concludes our quick introduction to the Cappuccino Starter package,
+and to modifying your first application. Now that you’ve got your feet
+wet, you can move on to a more advanced tutorial.</p>
+
+</div>
+</div>
+<div class="row">
+<div class="offset3 span9">
+<div class="learn-nav">
+<ul class="pager">
+<li class="previous">
+<a href="/learn/environment.html">← Return to '
+Your development environment
+'
+</a>
+</li>
+<li class="next">
+<a href="/learn/build-source.html">Continue to '
+Advanced: Install from Source
+' →
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

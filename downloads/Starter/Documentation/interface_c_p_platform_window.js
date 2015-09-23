@@ -1,0 +1,27 @@
+var interface_c_p_platform_window =
+[
+    [ "contentBounds", "interface_c_p_platform_window.html#a8a9d11800bee1bbc907d14b138855db1", null ],
+    [ "contentRect", "interface_c_p_platform_window.html#a54a1df574df2e689ba9629b691886b14", null ],
+    [ "convertBaseToScreen:", "interface_c_p_platform_window.html#a7920250c11712198d99004ad7f718924", null ],
+    [ "convertScreenToBase:", "interface_c_p_platform_window.html#a91363161810fe35d59bc40a4067969d8", null ],
+    [ "deminiaturize:", "interface_c_p_platform_window.html#ad0619409513f515a8aba8703bc281064", null ],
+    [ "init", "interface_c_p_platform_window.html#a46f36600987fa66f0a0b7f8c830c0522", null ],
+    [ "initWithContentRect:", "interface_c_p_platform_window.html#a6f4aa275aac46337677dedebf12e2885", null ],
+    [ "initWithWindow:", "interface_c_p_platform_window.html#a648f4af4ed50b230e800c54bc120f356", null ],
+    [ "isVisible", "interface_c_p_platform_window.html#a756d72c227aeb4caa68c78efe8c80f30", null ],
+    [ "miniaturize:", "interface_c_p_platform_window.html#adb41d8972e36b0d18a8a8936648f4157", null ],
+    [ "moveWindow:fromLevel:toLevel:", "interface_c_p_platform_window.html#a3f3e8f697d7563b29f297804001a01de", null ],
+    [ "primaryPlatformWindow", "interface_c_p_platform_window.html#a5b0f6e7fb5ccfe5a7a4b4423ba65691a", null ],
+    [ "setContentRect:", "interface_c_p_platform_window.html#ac0dae068310c2609323f2c73df5748a2", null ],
+    [ "setHasShadow:", "interface_c_p_platform_window.html#a0769864bc2a1d753fdb8780293987af0", null ],
+    [ "setLevel:", "interface_c_p_platform_window.html#a299b32b1135de337c10540a9a75a94d0", null ],
+    [ "setPrimaryPlatformWindow:", "interface_c_p_platform_window.html#a642e11c999d55b1e66ed402fc8253623", null ],
+    [ "setShadowStyle:", "interface_c_p_platform_window.html#ab281d7a4c1dc8b6312020e0afb28c211", null ],
+    [ "supportsFullPlatformWindows", "interface_c_p_platform_window.html#a54cdf64b8d630755393419ee869ec877", null ],
+    [ "supportsMultipleInstances", "interface_c_p_platform_window.html#a767a69eb541531cfa56f55217c8fd16c", null ],
+    [ "title", "interface_c_p_platform_window.html#a2f6bb9cce1be7a878a8a9652cedf7f54", null ],
+    [ "updateFromNativeContentRect", "interface_c_p_platform_window.html#a11552efce0f2e5962034a1e426caf06f", null ],
+    [ "usableContentFrame", "interface_c_p_platform_window.html#a0543f42cc4ab43b416ac5efd8a4dff52", null ],
+    [ "visibleFrame", "interface_c_p_platform_window.html#a29e1c5e54d8454ab90f1cfc79ad38b66", null ],
+    [ "visiblePlatformWindows", "interface_c_p_platform_window.html#a79df3b107d63d994576fdf3f77bbbdaf", null ]
+];

@@ -1,0 +1,27 @@
+var protocol_c_p_table_view_delegate_p =
+[
+    [ "selectionShouldChangeInTableView:", "protocol_c_p_table_view_delegate-p.html#a227f99517add3df1958004f989c498f0", null ],
+    [ "tableView:dataViewForTableColumn:row:", "protocol_c_p_table_view_delegate-p.html#a00377aba8aa4b9894de4a94b746e7f68", null ],
+    [ "tableView:didClickTableColumn:", "protocol_c_p_table_view_delegate-p.html#ad11edcb10fd669221c9578fe0b9f80c7", null ],
+    [ "tableView:didDragTableColumn:", "protocol_c_p_table_view_delegate-p.html#a0e57e7d71024ab07c416a6fe8a2ffd30", null ],
+    [ "tableView:heightOfRow:", "protocol_c_p_table_view_delegate-p.html#ae4db1eb84a59dcd0f20d78a269b1fba2", null ],
+    [ "tableView:isGroupRow:", "protocol_c_p_table_view_delegate-p.html#a3eb1451dacf41a982e4fb453074df742", null ],
+    [ "tableView:mouseDownInHeaderOfTableColumn:", "protocol_c_p_table_view_delegate-p.html#ad607a87ff87a3fe5b479f7f7228245d0", null ],
+    [ "tableView:nextTypeSelectMatchFromRow:toRow:forString:", "protocol_c_p_table_view_delegate-p.html#a57b94c797ff778cd0f69611b7cc84392", null ],
+    [ "tableView:selectionIndexesForProposedSelection:", "protocol_c_p_table_view_delegate-p.html#aa8cbce1879529c65b28ef86d2eeedc78", null ],
+    [ "tableView:shouldEditTableColumn:row:", "protocol_c_p_table_view_delegate-p.html#a0c204c281135bf2bee72d3692d82a39e", null ],
+    [ "tableView:shouldReorderColumn:toColumn:", "protocol_c_p_table_view_delegate-p.html#ab0b2a04ce970426b20a4526581668d24", null ],
+    [ "tableView:shouldSelectRow:", "protocol_c_p_table_view_delegate-p.html#a9df7d3b22bfe068fa2677e91e511ab50", null ],
+    [ "tableView:shouldSelectTableColumn:", "protocol_c_p_table_view_delegate-p.html#a0aa1969d644a94c0f0710e86611c3596", null ],
+    [ "tableView:shouldShowViewExpansionForTableColumn:row:", "protocol_c_p_table_view_delegate-p.html#a3926d2d309ce525e034418cafb1da27d", null ],
+    [ "tableView:shouldTrackView:forTableColumn:row:", "protocol_c_p_table_view_delegate-p.html#a964cec33a0ebfe87cc205c830ef648b5", null ],
+    [ "tableView:shouldTypeSelectForEvent:withCurrentSearchString:", "protocol_c_p_table_view_delegate-p.html#a84294681e286f77091cc7db16f118d83", null ],
+    [ "tableView:toolTipForView:rect:tableColumn:row:mouseLocation:", "protocol_c_p_table_view_delegate-p.html#ad1ddb358782a524882669c489d43c532", null ],
+    [ "tableView:typeSelectStringForTableColumn:row:", "protocol_c_p_table_view_delegate-p.html#a5c500f67bb2f207c2a7dd361340b1a76", null ],
+    [ "tableView:viewForTableColumn:row:", "protocol_c_p_table_view_delegate-p.html#a4581e512175ed7b7067cf0f7759b82c8", null ],
+    [ "tableView:willDisplayView:forTableColumn:row:", "protocol_c_p_table_view_delegate-p.html#aa2435cf34bb04c0cf578c2e590a4db79", null ],
+    [ "tableView:willRemoveView:forTableColumn:row:", "protocol_c_p_table_view_delegate-p.html#a280b7ae0df3c1c4861e9cdc6dcb43300", null ],
+    [ "tableViewMenuForTableColumn:row:", "protocol_c_p_table_view_delegate-p.html#aaafd80097be710b9eabce716d009f741", null ],
+    [ "tableViewSelectionDidChange:", "protocol_c_p_table_view_delegate-p.html#a32ecc9f3fffc94418880d3ff93bc315e", null ],
+    [ "tableViewSelectionIsChanging:", "protocol_c_p_table_view_delegate-p.html#a48e96bace5e65d9661ee48737b4be46e", null ]
+];

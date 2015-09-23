@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$interface_c_p_comparison_predicate.html" title="CPComparisonPredicate is a subclass of CPPredicate used to compare expressions. " alt="" coords="149,5,317,33"/>
+<area shape="rect" id="node3" href="$interface_c_p_compound_predicate.html" title="CPCompoundPredicate is a subclass of CPPredicate used to represent logical “gate” operations (AND/OR/..." alt="" coords="153,57,314,85"/>
+</map>

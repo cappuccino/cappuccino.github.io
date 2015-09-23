@@ -1,0 +1,8 @@
+<map id="CPBinder" name="CPBinder">
+<area shape="rect" id="node3" href="$class_c_p_color_well_value_binder.html" title="CPColorWellValueBinder" alt="" coords="278,5,447,33"/>
+<area shape="rect" id="node4" href="$class_c_p_image_view_value_binder.html" title="CPImageViewValueBinder" alt="" coords="274,57,451,85"/>
+<area shape="rect" id="node5" href="$interface_c_p_predicate_editor_value_binder.html" title="CPPredicateEditorValueBinder" alt="" coords="261,109,464,137"/>
+<area shape="rect" id="node6" href="$class_c_p_table_column_value_binder.html" title="CPTableColumnValueBinder" alt="" coords="268,161,457,189"/>
+<area shape="rect" id="node7" href="$interface_c_p_table_content_binder.html" title="CPTableContentBinder" alt="" coords="284,213,441,241"/>
+<area shape="rect" id="node2" href="$class_c_p_object.html" title="CPObject" alt="" coords="6,109,85,137"/>
+</map>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Multi-Nib Applications with Interface Builder</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-multi-nib-applications-with-interface-builder-html folder-blog-2014-10 folder-blog-2014 folder-blog">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="blog_post" id="blog_wrapper">
+<div class="container">
+<div class="row">
+<div class="span8">
+<h1 class="header">
+Multi-Nib Applications with Interface Builder
+</h1>
+<div class="post_content">
+<p>This post will take you through how to set up a very basic application using objects contained in multiple NIB files. After scouring the web I could find very few clear instructions on how to set this up and, while it turns out that it is quite simple, a step-by-step guide may prove to be helpful.</p>
+
+<p>This tutorial assumes an intermediate knowledge of Cappuccino, include some familiarity with Interface Builder. You should have the Cappuccino framework and tools installed, as well as Xcode. This tutorial will be illustrated with screen captures from Xcode 6.1 and Mac OS X Yosemite.</p>
+
+<p>Also a note on terminology: Cappuccino has CIBs (Cappuccino Interface Builder), Xcode has XIBs (XML Interface Builder), and many people refer to them as NIBs (NeXT Interface Builder) for historical reasons. In this article I will refer to them as NIB files, but this should be recognized as meaning a <code>.xib</code> file.</p>
+
+<h2>Getting Started</h2>
+
+<p>The first step is to start XcodeCapp and use it to create your application. Choose “Create Project…” and save your project. I called mine “MultiNibApp”. XcodeCapp will create a new NIB Application and then load up Xcode and display your project files. Click the disclosure arrow on the “Resources” folder and select the <code>MainMenu.xib</code> file. Your interface will become visible in the Xcode Interface Builder.</p>
+
+<p><a href="/img/cpo-uploads/2014/10/multinib-figure2-579f687e.png"><img width="1000" height="216" src="/img/cpo-uploads/2014/10/multinib-figure2-579f687e.png"></a></p>
+
+<h2>Adding NIBs</h2>
+
+<p>Next, let’s add a second NIB to the project. Right-click on the Resources folder, select “New file…”. In the template choice sheet, choose the “User Interface” section, and select a “Window” template. For the purposes of this tutorial, let’s simply call this “ExternalWindow”. Be sure to save it in your application’s “Resources” folder.</p>
+
+<p>If you have XcodeCapp running, you will immediately see it picking up on the added file and converting it to a CIB file in the background for you.</p>
+
+<h2>Creating the Window Controller</h2>
+
+<p>The next step is perhaps the most confusing, and crucial, part of this process. We first need to create a Window Controller class that will manage this XIB, and then we need to wire it up in Xcode.</p>
+
+<p>Open up your project in your favourite text editor and create a new file in your root directory called <code>ExternalWindowController.j</code>. Create a very simple stub class, extending <code>CPWindowController</code>:</p>
+
+<div class="highlight"><pre><span class="cp">@import</span> <span class="s2">&lt;AppKit/CPWindowController.j&gt;</span>
+
+<span class="k">@implementation</span> <span class="nc">ExternalWindowController</span> <span class="o">:</span> <span class="nc">CPWindowController</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">init</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">initWithWindowCibName</span><span class="o">:</span><span class="s">@"ExternalWindow"</span> <span class="n">owner</span><span class="o">:</span><span class="kc">nil</span><span class="p">])</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>Notice that we gave the init method the name of our <code>ExternalWindow.xib</code>name, without the file extension.</p>
+
+<p>Next, open up your <code>AppController.j</code> file and add an import line for your new file:</p>
+
+<div class="highlight"><pre><span class="cp">@import</span> <span class="s2">"ExternalWindowController.j"</span>
+</pre></div>
+
+<p>Now we need to add the corresponding object in Interface Builder. Open up your <code>MainMenu.xib</code> file. Find the “NSObject” component in the component library and drag it to your project. Select the new object, then choose the “Identity Inspector” in the right-hand column. If everything is wired up OK, you should be able to simply start typing “External” into the “Custom Class” box and it will auto-complete it for you. (If it doesn’t autocomplete, it’s a good indicator that something’s gone wrong. Check to make sure XcodeCapp is still running, that you’ve imported your class into your AppController, and that there are no syntax errors in your custom class.)</p>
+
+<p><a href="/img/cpo-uploads/2014/10/multinib-figure4-218020d2.png"><img width="999" height="219" src="/img/cpo-uploads/2014/10/multinib-figure4-218020d2.png"></a></p>
+
+<p>Now the crucial step. Choose your <code>ExternalNib.xib</code> file in your project. Select the “File’s Owner” object, and do the same thing: Change the “Custom Class” property to <code>ExternalWindowController</code>.</p>
+
+<p>Doing this changes the “Connections” options for our “File’s Owner” object. With the “File’s Owner” object still selected, choose the “Connections” inspector pane and drag a connection line from the <code>window</code> item to the <code>Window</code> object.</p>
+
+<p><a href="/img/cpo-uploads/2014/10/multinib-figure5-b86b0d76.png"><img width="735" height="181" src="/img/cpo-uploads/2014/10/multinib-figure5-b86b0d76.png"></a></p>
+
+<p>So, let’s take a step back and look at what’s happened. We created an <code>ExternalWindowController</code> object that extends <code>CPWindowController</code>. One of the properties of a <code>CPWindowController</code> is, unsurprisingly, a reference to the window that it will be controlling. We’ve just set that property using Interface Builder.</p>
+
+<h2>Cross-NIB Communication</h2>
+
+<p>The next step is to trigger the <code>ExternalWindow</code> NIB from within our <code>MainMenu</code> NIB. Fortunately this is very easy to do now that everything is connected.</p>
+
+<p>We need a control to activate the external window. Back in your <code>MainMenu.xib</code> file, choose the default Window object, delete the text field and slider, and add a button. I called mine “Show External Window.”</p>
+
+<p><a href="/img/cpo-uploads/2014/10/multinib-figure3-138feeb2.png"><img width="548" height="445" src="/img/cpo-uploads/2014/10/multinib-figure3-138feeb2.png"></a></p>
+
+<p>Then select the button we added to our Window in this view. Open the Connections inspector and drag a line from the <code>selector</code> property (under “Sent Actions”) to our External Window Controller object. When you release it, an option will appear: <code>dismissController:</code> or <code>showWindow:</code>. Choose <code>showWindow:</code>.</p>
+
+<p><a href="/img/cpo-uploads/2014/10/multinib-figure6-52297b65.png"><img width="1008" height="352" src="/img/cpo-uploads/2014/10/multinib-figure6-52297b65.png"></a></p>
+
+<p>Now it’s time to test it out. Open your <code>index.html</code> file (I find it best to run <code>$&gt; python -m SimpleHTTPServer</code> within the project directory, which will start a simple webserver on port 8000). Load your project, and click on the “Show External Window” button. Behold! The window appears!</p>
+
+<p><a href="/img/cpo-uploads/2014/10/multinib-figure7-0110ce9c.png"><img width="648" height="589" src="/img/cpo-uploads/2014/10/multinib-figure7-0110ce9c.png"></a></p>
+
+<h2>Next Steps</h2>
+
+<p>Hopefully this gives you enough to get started writing your own multi-Nib applications with Interface Builder. Although this tutorial has focused on using a window controller, the process of using, for example, a view controller is very similar. The crucial part is customizing the “File’s Owner” object to point to a controller class.</p>
+
+<a class="pull-right action" href="/blog/feed.xml" id="rss_link">
+<img alt="RSS" width="28" height="28" src="/img/feed-icon-28x28-0489f1cd.png">
+</a>
+<div class="author">
+Posted by
+Andrew Hankinson
+</div>
+<div class="date">
+on
+Oct 29, 2014.
+</div>
+<div class="tags">
+Tagged
+<a href="/blog/tags/interface-builder.html">interface builder</a>, <a href="/blog/tags/xcode.html">xcode</a>, <a href="/blog/tags/xcodecapp.html">xcodecapp</a>, <a href="/blog/tags/tutorial.html">tutorial</a>.
+</div>
+</div>
+<ul class="pager">
+<li class="previous">
+<a href="/blog/2014/10/cappuccino-news-2014-10-15.html" rel="prev">← Previous Article</a>
+</li>
+<li class="next">
+<a href="/blog/2014/11/cappuccino-news-2014-11-01.html" rel="next">Next Article →</a>
+</li>
+</ul>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_container_id = 'disqus_thread',
+      disqus_domain = 'disqus.com',
+      disqus_shortname = 'cappuccino',
+      disqus_url = 'http://www.cappuccino-project.org/blog/2014/10/multi-nib-applications-with-interface-builder.html',
+      disqus_developer = 0;
+</script>
+<script>
+  var disqus_identifier = '2014-10-29-multi-nib-applications-with-interface-builder-html-markdown';
+</script>
+<script>
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">
+comments powered by Disqus.
+</a>
+</noscript>
+<a class="dsq-brlink" href="http://disqus.com">
+comments powered by
+<span class="logo-disqus">Disqus</span>
+</a>
+</div>
+<div class="span3 sidebar offset1">
+<form action="http://google.com/cse" id="cse-search-box">
+<input name="cx" type="hidden" value="003886841673136914364:g4k5gxiukag">
+<input name="ie" type="hidden" value="UTF-8">
+<input class="input-large search-query" name="q" placeholder="Search" size="31" type="text">
+<!-- %input.btn{:name => "sa", :type => "submit", :value => "Search"}/ -->
+</form>
+<h4 class="sidebar_header">
+Recent posts
+</h4>
+<ul class="recent_posts">
+<li>
+<a href="/blog/2015/09/cappuccino-news-2015-09-01.html">Cappuccino News 2015 September 1st</a>
+</li>
+<li>
+<a href="/blog/2015/08/cappuccino-news-2015-08-01.html">Cappuccino News 2015 August 1st</a>
+</li>
+<li>
+<a href="/blog/2015/07/cappuccino-news-2015-07-01.html">Cappuccino News 2015 July 1st</a>
+</li>
+<li>
+<a href="/blog/2015/06/cappuccino-news-2015-06-01.html">Cappuccino News 2015 June 1st</a>
+</li>
+<li>
+<a href="/blog/2015/05/cappuccino-news-2015-05-01.html">Cappuccino News 2015 May 1st</a>
+</li>
+</ul>
+<h4 class="sidebar_header">
+Tags
+</h4>
+<ul class="tags">
+<li>
+<a href="/blog/tags/events.html">Events</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">Conferences</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino.html">cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/cocoa.html">cocoa</a>
+</li>
+<li>
+<a href="/blog/tags/iphone.html">iphone</a>
+</li>
+<li>
+<a href="/blog/tags/porting.html">porting</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino.html">Cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/xcode.html">xcode</a>
+</li>
+<li>
+<a href="/blog/tags/ide.html">ide</a>
+</li>
+<li>
+<a href="/blog/tags/build-tool.html">build tool</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">Objective-J</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">Update</a>
+</li>
+<li>
+<a href="/blog/tags/cpurlconnection.html">CPURLConnection</a>
+</li>
+<li>
+<a href="/blog/tags/ajax.html">AJAX</a>
+</li>
+<li>
+<a href="/blog/tags/xmlhttprequest.html">XMLHTTPRequest</a>
+</li>
+<li>
+<a href="/blog/tags/tutorial.html">tutorial</a>
+</li>
+<li>
+<a href="/blog/tags/events.html">events</a>
+</li>
+<li>
+<a href="/blog/tags/fowa.html">fowa</a>
+</li>
+<li>
+<a href="/blog/tags/london.html">london</a>
+</li>
+<li>
+<a href="/blog/tags/tutorials.html">tutorials</a>
+</li>
+<li>
+<a href="/blog/tags/tools.html">tools</a>
+</li>
+<li>
+<a href="/blog/tags/scrapbook.html">scrapbook</a>
+</li>
+<li>
+<a href="/blog/tags/draganddrop.html">draganddrop</a>
+</li>
+<li>
+<a href="/blog/tags/accessor-synthesizing.html">Accessor Synthesizing</a>
+</li>
+<li>
+<a href="/blog/tags/accessors.html">@accessors</a>
+</li>
+<li>
+<a href="/blog/tags/layout.html">layout</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">objective-j</a>
+</li>
+<li>
+<a href="/blog/tags/screencasts.html">Screencasts</a>
+</li>
+<li>
+<a href="/blog/tags/slicehost.html">slicehost</a>
+</li>
+<li>
+<a href="/blog/tags/280north.html">280north</a>
+</li>
+<li>
+<a href="/blog/tags/atlas.html">atlas</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">Rake</a>
+</li>
+<li>
+<a href="/blog/tags/nib2cib.html">nib2cib</a>
+</li>
+<li>
+<a href="/blog/tags/aristo.html">Aristo</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">Sofa</a>
+</li>
+<li>
+<a href="/blog/tags/open-source.html">open source</a>
+</li>
+<li>
+<a href="/blog/tags/narwhal.html">Narwhal</a>
+</li>
+<li>
+<a href="/blog/tags/community-highlights.html">community highlights</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">sofa</a>
+</li>
+<li>
+<a href="/blog/tags/code.html">code</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">update</a>
+</li>
+<li>
+<a href="/blog/tags/releases.html">releases</a>
+</li>
+<li>
+<a href="/blog/tags/tool.html">tool</a>
+</li>
+<li>
+<a href="/blog/tags/jake.html">jake</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">rake</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">conferences</a>
+</li>
+<li>
+<a href="/blog/tags/280-north.html">280 north</a>
+</li>
+<li>
+<a href="/blog/tags/github.html">github</a>
+</li>
+<li>
+<a href="/blog/tags/issues.html">issues</a>
+</li>
+<li>
+<a href="/blog/tags/website.html">website</a>
+</li>
+<li>
+<a href="/blog/tags/projects.html">projects</a>
+</li>
+<li>
+<a href="/blog/tags/compiler.html">compiler</a>
+</li>
+<li>
+<a href="/blog/tags/frameworks.html">frameworks</a>
+</li>
+<li>
+<a href="/blog/tags/documentation.html">documentation</a>
+</li>
+<li>
+<a href="/blog/tags/doxygen.html">doxygen</a>
+</li>
+<li>
+<a href="/blog/tags/docsets.html">docsets</a>
+</li>
+<li>
+<a href="/blog/tags/nuagenetworks.html">nuagenetworks</a>
+</li>
+<li>
+<a href="/blog/tags/sdn.html">sdn</a>
+</li>
+<li>
+<a href="/blog/tags/showcase.html">showcase</a>
+</li>
+<li>
+<a href="/blog/tags/cucumber.html">Cucumber</a>
+</li>
+<li>
+<a href="/blog/tags/cucapp.html">Cucapp</a>
+</li>
+<li>
+<a href="/blog/tags/test.html">test</a>
+</li>
+<li>
+<a href="/blog/tags/automation-test.html">Automation test</a>
+</li>
+<li>
+<a href="/blog/tags/functional-test.html">Functional test</a>
+</li>
+<li>
+<a href="/blog/tags/nuage-networks.html">Nuage Networks</a>
+</li>
+<li>
+<a href="/blog/tags/interface-builder.html">interface builder</a>
+</li>
+<li>
+<a href="/blog/tags/xcodecapp.html">xcodecapp</a>
+</li>
+<li>
+<a href="/blog/tags/node.html">Node</a>
+</li>
+<li>
+<a href="/blog/tags/ojtest.html">OJTest</a>
+</li>
+<li>
+<a href="/blog/tags/theme.html">theme</a>
+</li>
+<li>
+<a href="/blog/tags/appkit.html">appkit</a>
+</li>
+<li>
+<a href="/blog/tags/release.html">Release</a>
+</li>
+<li>
+<a href="/blog/tags/objj.html">objj</a>
+</li>
+<li>
+<a href="/blog/tags/objj2objcskeleton.html">objj2objcskeleton</a>
+</li>
+<li>
+<a href="/blog/tags/capp_env.html">capp_env</a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino - Tutorial: Xcode Interface Builder</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-xcode-basics-html folder-learn">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container learn">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Learn</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="span3">
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/">What is Cappuccino?</a>
+</li>
+<li>
+<a href="/learn/environment.html">Your development environment</a>
+</li>
+<li>
+<a href="/learn/starter.html">Get Started</a>
+</li>
+<li>
+<a href="/learn/build-source.html">Advanced: Install from Source</a>
+</li>
+<li>
+<a href="/learn/objective-j.html">Learning Objective-J</a>
+</li>
+<li>
+<a href="/learn/scrapbook-1.html">Scrapbook #1 - Views and Layers</a>
+</li>
+<li>
+<a href="/learn/scrapbook-2.html">Scrapbook #2 - Drag and Drop</a>
+</li>
+<li>
+<a href="/learn/automatic-layout.html">Tutorial: Automatic Layout</a>
+</li>
+<li class="active">
+<a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
+</li>
+<li>
+<a href="/learn/debugging.html">Debugging</a>
+</li>
+</ul>
+<h5>Resources</h5>
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/demos.html">Demos</a>
+</li>
+<li>
+<a href="/learn/documentation/">API Documentation</a>
+</li>
+<li>
+<a href="/support/faq.html">FAQ</a>
+</li>
+</ul>
+</div>
+<div class="span9 text-body markdown">
+<h3>
+Tutorial: Xcode Interface Builder
+</h3>
+<p>In this tutorial, we will create a simple “Hellow World” app using Xcode to edit the user interface. You will see that even for a small project there are big time saving benefits in graphical UI editing.</p>
+
+<p>This tutorial assumes you have a Mac with Xcode 4 installed and that you have installed the Cappuccino toolchain using <a href="/learn/">bootstrap.sh</a> or by <a href="/learn/build-source.html">installing from source</a>.</p>
+
+<h3>Create the project</h3>
+
+<p>First, go to the folder in which you want create the project. Run
+the <code>capp</code> command:</p>
+
+<div class="highlight"><pre>capp gen -l -t NibApplication AdvancedHelloWorld2
+</pre></div>
+
+<p>This will generate the startup project using the Nib template. If you
+try to load the application you will see an error about a <code>cib</code> file.
+This is because the template contains only a <code>xib</code> file for Xcode. You could run</p>
+
+<div class="highlight"><pre>nib2cib Resources/MainMenu.xib
+</pre></div>
+
+<p>to get it to work, but there’s an easier way.</p>
+
+<h3>XcodeCapp</h3>
+
+<p>XcodeCapp is a great tool that allows you to manage all necessary conversion
+from Xcode to Cappuccino. It is basically a bridge between
+these two worlds. It works completely transparently. XcodeCapp is
+shipped with Cappuccino. In the default installation, you’ll find it here:</p>
+
+<pre>/usr/local/narwhal/packages/cappuccino/support/XcodeCapp.app
+</pre>
+
+<p>For convenience, you can move it or copy it to your <code>/Applications</code> folder.</p>
+
+<p>Once launched, you will see a small coffee machine icon in your Mac OS X
+menu bar that should be grayed out. Click on this icon, and select “Listen to Project…”.</p>
+
+<p><a href="xcode/menu1.png"><img width="211" height="172" src="/img/xcode/menu1-3c7f2b09.png"></a></p>
+
+<p>A standard folder chooser dialog will appear. Choose the folder of the
+Cappuccino project you just created. The icon will become darker, and
+you may notice some Growl notifications indicating XcodeCapp is
+currently loading the project. The initial time to load a project
+depends on the size of the project. For a new template it should be very
+quick.</p>
+
+<h3>Xcode</h3>
+
+<p>XcodeCapp will have generated a hidden folder located in your root
+project folder, named <code>.XcodeSupport</code> and an XcodeProject named <code>Your-Application-Name.xcodeproj</code>. You should never need to edit
+anything in it. To launch the Xcode project of your Cappuccino project,
+click on the XcodeCapp icon, and choose <code>Open Project in Xcode</code>. Xcode
+will start.</p>
+
+<p><img width="1176" height="851" src="/img/xcode/xcode1-6abb8631.png"></p>
+
+<h3>Creating the interface</h3>
+
+<p>With Xcode we can place controls without writing any code. Let’s see how. First, in Xcode, go to the
+Resources folder from the tree view on the left and select <code>MainMenu.xib</code>. It will open in the main view.</p>
+
+<p><img width="1176" height="851" src="/img/xcode/xcode2-d02b803c.png"></p>
+
+<p>This is where you are going to build you UI.</p>
+
+<h3>Flush the template</h3>
+
+<p>Let’s start. First, we will add a label. To do so, open the main window, by double clicking <code>Window - Window</code>
+in the Object navigator.</p>
+
+<p><img width="1176" height="851" src="/img/xcode/xcode3-ca0c2b1a.png"></p>
+
+<p>By default, there is a text field and a slider. Select them and remove them
+(using the <code>Delete</code> key).</p>
+
+<h3>Add some controls</h3>
+
+<p>On the bottom right part of Xcode, you’ll see a library of controls.
+Search for <code>label</code>:</p>
+
+<p><img width="280" height="285" src="/img/xcode/xcode4-f952a40f.png"></p>
+
+<p>Just drag and drop the <code>label</code> into the window, and position it where you
+want to. You will see Xcode has a system of automatic rulers that will
+really help you to build a nice, aligned UI.</p>
+
+<p>Also add a button (search for “push button”) and a text field (search for “text field”).</p>
+
+<h3>Edit the content</h3>
+
+<p>Change the content of the label and the button, by double clicking on them:</p>
+
+<p><img width="339" height="161" src="/img/xcode/xcode5-ba87b0a7.png"></p>
+
+<p>Align all the controls to your pleasing. At the end you should get something
+like this:</p>
+
+<p><img width="1176" height="851" src="/img/xcode/xcode6-b8a48389.png"></p>
+
+<h3>Conversion</h3>
+
+<p>When your UI is ready, we need to convert the Xib file into a Cib file.
+XcodeCapp will do it automatically for us. Every time you save a change to the Xib file, XcodeCapp will convert it automatically. So when you save the file in Xcode, you will see a notification telling you the conversion
+has been a success:</p>
+
+<p><img width="285" height="101" src="/img/xcode/xcode7-e8e3101b.png"></p>
+
+<h3>Run the application</h3>
+
+<p>Now, the UI is ready, you can load your application and you should see your UI:</p>
+
+<p><img width="638" height="405" src="/img/xcode/xcode8-2b9e8b6c.png"></p>
+
+<p>Note that you have not written a single line of code!</p>
+
+<h3>Code the outlets and actions</h3>
+
+<p>Now that we have a UI, we need to code the actions we want to use with our
+controls. To do so, open <code>AppController.j</code> in your favorite editor. I will
+use TextMate in in this tutorial.</p>
+
+<h3>Outlets</h3>
+
+<p>Outlets are entry points between Xib/Cib files and you code. If you
+want to be able to access a control added using Xcode from your code, you
+need to create an outlet. This is not mandatory for every control. For
+example, our application may not interact with all the labels. So it is
+not necessary to create an outlet for every control.</p>
+
+<p>We only need an outlet for the text field, as we want to read the text
+from the code and the label as we want to change its value. We don’t
+need an outlet for the button because, the code will not interact with
+it, it will be the button that will interact with the code. Let’s see:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="cm">/* this "outlet" is connected automatically by the Cib */</span>
+    <span class="n">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
+
+    <span class="cm">/* We create the outlets of the textfields here */</span>
+    <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myTextField</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myLabel</span> <span class="p">;</span>
+
+    <span class="cm">/* As you can see, the label is also a CPTextField, it's just not editable and not bordered.</span>
+<span class="cm">       It is important you declare correct classes for the outlets or Xcode won't see them.</span>
+<span class="cm">    */</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">awakeFromCib</span>
+<span class="p">{</span>
+    <span class="cm">/* This is called when the cib is done loading.</span>
+<span class="cm">       You can implement this method on any object instantiated from a Cib.</span>
+<span class="cm">       It's a useful hook for setting up current UI values, and other things.</span>
+<span class="cm">       In this case, we want the window from Cib to become our full browser window</span>
+<span class="cm">    */</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">setFullPlatformWindow</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>No more stuff to do for this.</p>
+
+<h3>Actions</h3>
+
+<p>We now need to create the action the button will send. So let’s add an
+action like we’ve seen in previous tutorials:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="n">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
+
+    <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myTextField</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myLabel</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">awakeFromCib</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">setFullPlatformWindow</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nf">sayHello:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>aSender
+<span class="p">{</span>
+   <span class="c1">// We get the content of the textfield and we set it as the value of the label.</span>
+   <span class="p">[</span><span class="n">myLabel</span> <span class="n">setStringValue</span><span class="o">:</span><span class="p">[</span><span class="n">myTextField</span> <span class="n">stringValue</span><span class="p">]];</span>
+<span class="p">}</span>
+<span class="k">@end</span>
+</pre></div>
+
+<h3>Conversion</h3>
+
+<p>In order to make Xcode able to read the outlets/actions, we need
+to convert the Objective-J source file into a standard Objective-C header file.
+Again XcodeCapp will do the work for you! When you save the
+<code>AppController.j</code> file, you may see a notification telling you the
+conversion has been a success (or an error in of case syntax problems).
+We now just have to bind the code with the UI.</p>
+
+<p><img width="280" height="94" src="/img/xcode/xcode9-d6a3c42f.png"></p>
+
+<h3>Defining outlets and actions from Xcode</h3>
+
+<p>This is the final step. Return to Xcode in order to indicate the outlets
+and the actions.</p>
+
+<h4>Connecting the label to its outlet</h4>
+
+<p>Draw a line between the <code>AppController</code> object to the label, using right click (or cmd + click):</p>
+
+<p><img width="1073" height="755" src="/img/xcode/xcode10-209a356b.png"></p>
+
+<p>When you release the mouse button, a small dark dialog will ask you what outlet it should be:</p>
+
+<p><img width="156" height="76" src="/img/xcode/xcode11-458769a5.png"></p>
+
+<p>Set it to <code>myLabel</code>, which is what you have declared in your code.</p>
+
+<h4>Connecting the text field to its outlet</h4>
+
+<p>Same process: draw a line between the <code>AppController</code> and the text field, then choose <code>myTextField</code>.</p>
+
+<h3>Connecting the actions</h3>
+
+<p>Connecting the action is the reverse process. Start the line from the sender
+of the action (so in that case, the button), and go to <code>AppController</code>:</p>
+
+<p><img width="1077" height="750" src="/img/xcode/xcode12-2fe20f0a.png"></p>
+
+<p>This time, the dark dialog will show all available actions exposed by the
+class. Choose <code>sayHello:</code>.</p>
+
+<p><img width="156" height="60" src="/img/xcode/xcode13-1d9485ae.png"></p>
+
+<p>If you want to be able to change the label when you press enter from the
+text field, draw a line from the textfield to <code>AppController</code>, and choose
+<code>sayHello:</code> too.</p>
+
+<h3>Voilà!</h3>
+
+<p>Finally, save the Xib file, wait for the XcodeCapp icon to flicker green and then become a solid black, then open index.html. You will have a fully functional application, with almost no code!</p>
+
+<p><img width="638" height="405" src="/img/xcode/xcode14-7eaf6f43.png"></p>
+
+<p>You can download the archive of this project <a href="/learn/files/AdvancedHelloWorld.zip">here</a>.</p>
+
+</div>
+</div>
+<div class="row">
+<div class="offset3 span9">
+<div class="learn-nav">
+<ul class="pager">
+<li class="previous">
+<a href="/learn/automatic-layout.html">← Return to '
+Tutorial: Automatic Layout
+'
+</a>
+</li>
+<li class="next">
+<a href="/learn/debugging.html">Continue to '
+Debugging
+' →
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

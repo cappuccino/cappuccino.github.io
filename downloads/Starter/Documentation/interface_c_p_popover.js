@@ -1,0 +1,25 @@
+var interface_c_p_popover =
+[
+    [ "accessors", "interface_c_p_popover.html#a4c9f6f27195d1f54cfa650dcc8aa7bd1", null ],
+    [ "animates", "interface_c_p_popover.html#aefa235f47b98986796dbc548e662bb15", null ],
+    [ "appearance", "interface_c_p_popover.html#aceebf911a0c1cea01bd4c644754a65ef", null ],
+    [ "behavior", "interface_c_p_popover.html#a06a71b281b7450e146ec3184a7248153", null ],
+    [ "close", "interface_c_p_popover.html#a74479ac79e7004adbca4e05a06f861c7", null ],
+    [ "contentSize", "interface_c_p_popover.html#a14b37593c145a4a3062b3c51699acc98", null ],
+    [ "contentViewController", "interface_c_p_popover.html#af7a59b07e14754b63c316b31b4b2e414", null ],
+    [ "encodeWithCoder:", "interface_c_p_popover.html#a05d894e2e624ef54d9e3259761e39f2e", null ],
+    [ "init", "interface_c_p_popover.html#ae99eed03e19aeb98265337796c210bb4", null ],
+    [ "initWithCoder:", "interface_c_p_popover.html#aa1d3c2217fc4fc4072bba2a579517723", null ],
+    [ "isShown", "interface_c_p_popover.html#af77fd444a6ef6987b5ecbc6caab79234", null ],
+    [ "performClose:", "interface_c_p_popover.html#a6a374d7ff0ec7cd58bf5049495a9c195", null ],
+    [ "positioningRect", "interface_c_p_popover.html#a2383a025b342241e30989f32e62bfac1", null ],
+    [ "setAnimates:", "interface_c_p_popover.html#ae8fc4317734ad848d19d91b0d9e17c4f", null ],
+    [ "setAppearance:", "interface_c_p_popover.html#a04dfd0513ac01107142b44f8278ddb13", null ],
+    [ "setBehavior:", "interface_c_p_popover.html#aa25f577cd8712fa7cac913250e28349c", null ],
+    [ "setBehaviour:", "interface_c_p_popover.html#a2fdb1af438bf6069a328781aac5aebfa", null ],
+    [ "setContentSize:", "interface_c_p_popover.html#ab35fc5e054bc6e4735e9d4233843b24e", null ],
+    [ "setContentViewController:", "interface_c_p_popover.html#a91eb25e89222e1605d0e68ab6b45ad40", null ],
+    [ "setDelegate:", "interface_c_p_popover.html#a487297b6a6f48095bc2c369b6d769ebf", null ],
+    [ "setPositioningRect:", "interface_c_p_popover.html#a1b62fedf0b010e7520b132b0f60e0048", null ],
+    [ "showRelativeToRect:ofView:preferredEdge:", "interface_c_p_popover.html#a5b48d2394391b2235c54605a8a873a2c", null ]
+];

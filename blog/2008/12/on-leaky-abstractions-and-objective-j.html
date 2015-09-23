@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>On Leaky Abstractions and Objective-J</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-on-leaky-abstractions-and-objective-j-html folder-blog-2008-12 folder-blog-2008 folder-blog">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="blog_post" id="blog_wrapper">
+<div class="container">
+<div class="row">
+<div class="span8">
+<h1 class="header">
+On Leaky Abstractions and Objective-J
+</h1>
+<div class="post_content">
+<p>In a <a href="http://ejohn.org/blog/javascript-language-abstractions/">recent post</a> by John Resig, and in many of the comments, there seems to be the mistaken belief that Objective-J was designed to allow existing Objective-C programmers to write code that runs on the web. It’s been compared to GWT, where developers program almost exclusively in Java and are allowed to “circumvent” JavaScript. This however is not the case with Objective-J at all. For starters, Objective-J is simply a language addition to JavaScript, and exists separately from the actual Cappuccino framework (which I’ll discuss a little later). It does not directly have anything to do with the DOM or AJAX, etc. The purpose behind Objective-J was to facilitate the development of Cappuccino, and when we originally set out to do that we simply wanted to add a few key missing features to the existing JavaScript “standard”. In other words, Objective-J is our take on JavaScript 2.0.</p>
+
+<p>Now, this is usually the point at which someone chimes in that JavaScript is <strong>perfect</strong>, and that I just don’t understand it (you know, despite the fact that I’ve been using it for upwards of 10 years and have worked on its implementation in a major shipping browser). However, I think most people in the community can agree that there are some pretty big holes remaining in JavaScript. JavaScript is being used in increasingly larger projects, and in these projects some of its weaknesses are beginning to show. This is precisely why we have things like the (now dead) ECMAScript 4 proposal, Harmony, and Adobe’s ActionScript. And the truth is, had JavaScript 2.0 come around and been widely implemented and supported, we would have built Cappuccino without Objective-J. But the problem is that JavaScript 2.0 didn’t come around. I started working on what would eventually become Objective-J and Cappuccino <strong>three years ago</strong>, and in that time there have been no significant improvements or changes to the JavaScript language. Yes, certain browsers have taken it upon themselves to add a few nice features here and there, but for people writing real applications that need to run on most browsers, its simply not practical to rely on them. For the most part, we’re writing the same JavaScript today (language-wise at least) that we were 5 years ago. And that doesn’t seem like its going to change anytime soon.</p>
+
+<h3>Everybody is writing “abstractions” around JavaScript</h3>
+
+<p>And I don’t just mean projects like Pyjamas and GWT. I mean <strong>EVERYBODY</strong>, including Prototype, Dojo, and jQuery. Yes, you read correctly, all the major JavaScript frameworks are essentially doing the same thing we are to some degree or another – we’re really not that original. The sole difference between their approach and ours is that when they add new language features to JavaScript, they’re not taking the extra step of introducing <em>new syntax</em>. Don’t believe me? Take a quick look at an example right out of the Prototype tutorials:</p>
+
+<div class="highlight"><pre><span class="c1">// when subclassing, specify the class you want to inherit from</span>
+<span class="kd">var</span> <span class="nx">Pirate</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Person</span><span class="p">,</span>
+<span class="p">{</span>
+     <span class="c1">// redefine the speak method</span>
+    <span class="nx">say</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$super</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span>
+    <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">$super</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="o">+</span> <span class="s1">', yarr!'</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>What we’re seeing here is the introduction of classical inheritance to the JavaScript language. This has always traditionally been a language feature, but due to its absence in JavaScript, the folks at Prototype have chosen to make it a library feature. The important thing to realize here is that it requires as much work to learn about the Class function as it would to learn about a new class keyword. And the same is true of Dojo:</p>
+
+<div class="highlight"><pre><span class="nx">dojo</span><span class="p">.</span><span class="nx">declare</span><span class="p">(</span><span class="s2">"Employee"</span><span class="p">,</span> <span class="nx">Person</span><span class="p">,</span>
+<span class="p">{</span>
+    <span class="nx">constructor</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">currentResidence</span><span class="p">,</span> <span class="nx">position</span><span class="p">)</span>
+    <span class="p">{</span>
+          <span class="c1">// remember, Person constructor is called automatically</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">password</span><span class="o">=</span><span class="s2">""</span><span class="p">;</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">position</span><span class="o">=</span><span class="nx">position</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="nx">login</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span>
+    <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">password</span><span class="p">)</span>
+               <span class="nx">alert</span><span class="p">(</span><span class="s1">'you have successfully logged in'</span><span class="p">);</span>
+          <span class="k">else</span>
+               <span class="nx">alert</span><span class="p">(</span><span class="s1">'please ask the administrator for your password'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>Once again, <code>dojo.declare</code> might as well be a new keyword since its shoehorning classical inheritance right into JavaScript. The jQuery UI widgets do something very similar to this with the “widget” factory method:</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s2">"ui.sortable"</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span> <span class="nx">$</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">mouse</span><span class="p">,</span>
+<span class="p">{</span>
+    <span class="nx">_init</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span>
+    <span class="p">{</span>
+           <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">;</span>
+           <span class="k">this</span><span class="p">.</span><span class="nx">containerCache</span> <span class="o">=</span> <span class="p">{};</span>
+           <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">"ui-sortable"</span><span class="p">);</span>
+<span class="c1">//...</span>
+</pre></div>
+
+<p>At the end of the day, it doesn’t really matter if you’re a JavaScript expert, all these libraries have quite the learning curve and if its your first time with any of them, you’re going to have be referring to documentation a lot. And that’s <strong>not a bad thing</strong>. My point is simply that in JavaScript, more so than anywhere else, libraries need to first define what is essentially a new mini-language before they can begin to do anything useful. This is a bit unfortunate, because it ends up tying language additions to library features, despite there being no necessary connection between the two. This makes it particularly hard to use the different libraries together in an efficient way. Sure, you can use all three in the same project, but there are some clear walls between them since each one decides to do classes a little bit differently. Not to mention the fact that you now have pretty redundant code your site. This is what happens when a language is clearly missing features. Individual frameworks in the .NET, Objective-C, Java, and so forth world don’t suffer from core incompatibility in the way they choose to do something as fundamental as defining class hierarchies. This is part of the reason we built Objective-J as its own standalone entity.  If all you want is some of the cool language features that Objective-J adds (without any of the design patterns in Cappuccino) then you can <em>just</em> use Objective-J, there is no “all or nothing” contract.</p>
+
+<h3>OK, so how is Objective-J different?</h3>
+
+<p>As we’ve now seen, there is a general tendency to add language features to JavaScript. Now, in <em>my personal opinion</em>, I prefer language features as fundamental as these to be part of the syntax, not part of a library. Let’s look at what Objective-J inheritance looks like:</p>
+
+<div class="highlight"><pre><span class="cp">@import</span> <span class="s2">"Animal.j"</span>
+
+<span class="k">@implementation</span> <span class="nc">Snake</span> <span class="o">:</span> <span class="nc">Animal</span>
+<span class="p">{</span>
+    <span class="nb">Number</span> <span class="n">miceEaten</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="nf">speak</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="s">"hisss!"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>To me this code reads a little more naturally, and at the very least it’s no harder to pick up than the numerous library functions required in the other libraries. This approach also has the added benefit of making it absolutely trivial to write new syntax modules so that my text editor of choice can actually know what is going on in my code. You’ll also notice that creating a new syntax gives us great flexibility and allows us to add a few nifty features that wouldn’t otherwise be possible, such as optional static typing and code importing. But again, this isn’t as “out there” as some people would have you believe. It has even more benefits as we’ll soon find out, but before we do, let me answer the question that I’m sure many of you are asking right now:</p>
+
+<h3>Why Objective-C style syntax?</h3>
+
+<p>Again, we didn’t start off saying “let’s port Objective-C”!  In fact, our first versions of Objective-J looked very similar to Java or C++:</p>
+
+<pre>class Snake extends Animal
+{
+    Instance.speak = function()
+    {
+          return "hisss!";
+    }
+}
+</pre>
+
+<p>However, this approach had some serious issues. To better understand them, we have to take a look at what the principal design goals of Objective-J actually were:</p>
+
+<ol>
+<li>First off, it <strong>had</strong> to be a strict superset of JavaScript - meaning all existing JavaScript had to work. Believe it or not, we <em>do like</em> JavaScript, and we didn’t want to break it or create a trade-off of features.  Not to mention we wanted the existing plethora of libraries to still work.</li>
+<li>Secondly of course, we wanted to add a number of “key” features.  Some things as crucial as being able to <strong>import code</strong> and built in support for classical inheritance.  We also wanted some features inspired by languages like Ruby, such as method_missing.</li>
+<li>And lastly, we wanted to keep the ease of use of JavaScript, which meant not adding an extra “compilation” step, but instead allowing developers to still pound out some code and hit refresh and see it run.</li>
+</ol>
+
+<p>The problem with adding language features in a way that would be more “familiar” to most developers, like the Java approach above, is that it would break backwards compatibility with existing JavaScript. This is because a lot of the keywords we wanted to use are actually reserved words in JavaScript, despite not being currently used. There is good reason for this though, because at some point they may actually <em>mean</em> something, and we wanted to make sure Objective-J kept working when JavaScript (finally) got a real update. Of course, we could have just chosen different keywords, like “Class” instead of “class” for instance. This however also breaks backwards compatibility because someone may have used the Class identifier in their code already.</p>
+
+<p>The other problem with this approach is that it made it next to impossible to add harder features like optional static typing or dynamic dispatch of methods (thus allowing for method_missing) without having a full blown compiler. There’s no way to “intercept” a method call in JavaScript.  So once again, we were stuck.</p>
+
+<p>Luckily for us however, a group of people ran into these same issues about 25 years ago when trying to improve the C language. These were the folks at Stepstone who developed Objective-C. Just like in our case, Objective-C had to be a strict superset of C (unlike C++ which does NOT always play nice with C). Also lucky for us is that JavaScript syntax is very close to C syntax, so their language additions translated very naturally to JavaScript. And perhaps now it is obvious why our keywords start with the <code>@</code> symbol, because in this manner there is no possibility of ever clashing with future JavaScript keywords or predefined user variables and functions. In other words, we can now add to the language as much as we want without the fear of breaking compatibility with existing JavaScript.</p>
+
+<p>Similarly, the new method passing syntax allows us to have firmer control of how messages are sent:</p>
+
+<div class="highlight"><pre><span class="n">object</span><span class="p">.</span><span class="nf">jsMethod</span><span class="p">();</span>
+<span class="p">[</span><span class="n">object</span> <span class="n">objjMessage</span><span class="p">];</span>
+</pre></div>
+
+<p>This is the famous bracket syntax. What you may not realize is that this makes it perfectly clear when you are using Objective-J style message dispath, allowing us to “hook in” and add things like <code>method_missing</code>, etc. There are a whole bunch of other cool things that this enables which are outside the scope of this post, but I encourage you to check out the other <a href="http://www.cappuccino-project.org/learn/">tutorials</a> on our site to learn about them. All this, <strong>without</strong> breaking any existing libraries and without requiring the user to compile before every run. Pretty impressive for a langauge that is supposedly “completely different” from JavaScript.</p>
+
+<h3>The Part About Leaky Abstractions</h3>
+
+<p>On top of Objective-J, we’ve built the Cappuccino framework, which is designed to help developers write desktop class applications on the web. One of the many things Cappuccino does is “abstract away” the DOM, and I’ll get into why we do this in a moment.  But before I do, I think I should take a second to address this whole “leaky abstractions” business, because there seems to be a fair bit of confusion regarding this as well. If you haven’t already read it, or even if you have, I recommend you take a look at <a href="http://www.joelonsoftware.com/articles/LeakyAbstractions.html">Joel Spolsky’s original article on the subject</a>.</p>
+
+<p>When people refer to this article, it is usually to criticize some “abstraction” because it will “inevitably” be leaky, and then oh boy you better watch out! But this was not Spolsky’s thesis. He didn’t end the article with “and thus avoid abstractions at all costs”. He was not somehow suggesting that we stop abstracting altogether. Quite the contrary, its clear that although these “leaks” are an unfortunate and unavoidable consequence, abstractions are still incredibly worthwhile: hence the conundrum. In every single example given in the article, it was never implied that the abstraction was somehow bad or invalid because of its leak: just because certain SQL queries are slow doesn’t mean you should manually read in tab delimmeted files and scan them yourself. Just because TCP can fail if you unplug your computer doesn’t mean you should do IP transfers yourself. It just turns out that, big surprise, nothing is perfect. Joel put it best himself:</p>
+
+<blockquote>
+<p>Indeed, the abstractions we’ve created over the years <strong>do</strong> allow us to deal with new orders of complexity in software development that we didn’t have to deal with ten or fifteen years ago, like GUI programming and network programming.</p>
+</blockquote>
+
+<p>And the truth of the matter is that the problem of leaks is overstated. I find it particularly hilarious when JavaScript programmers bring this up, since JavaScript, being a garbage collected <em>dynamic</em> <em><strong>interpreted</strong></em> language, is quite possibly one of the biggest abstractions of all. And yet, most of us can see that the benefits of JavaScript far outweigh the “leaks”. I think few JavaScript programmers have had to learn “the whole stack” once they’ve encountered one of JavaScript’s many leaks, whether it be performance issues (from being interpreted) or perhaps large memory consumption (from being improperly garbage collected in some browsers). No one has had to go and open up WebKit’s source code to figure out these problems. Most of the time you simply Google your concern and learn the workaround. Not that big a deal.</p>
+
+<p>Leaks are just something we all have to learn to deal with in every facet of programming, because programming <strong>is</strong> abstraction. Abstraction is basically all programmers ever do, from pushing electrons across a wire, to turning C into assembly, to interpreting JavaScript in your browser, every step in computer science has been an exercise in abstraction. There is nothing inherently wrong with abstraction. I can understand if someone disagrees with a particular abstraction for well defined reasons, but simply waving your hands and referring me to the law of leaky abstractions is not a valid argument.</p>
+
+<p>To suggest that we shouldn’t abstract because of Joel Spolsky’s Law that all abstractions are inherently leaky is to suggest that we shouldn’t debug because of Murphy’s Law that all code will remain inhrerently buggy.</p>
+
+<h3>Back to Cappuccino and the DOM</h3>
+
+<p>Cappuccino doesn’t just abstract away the DOM, it abstracts away HTML, CSS, VML, the JavaScript DOM API, etc. Why? Because as you can see there are just too many technologies with overlapping responsibilities. It’s never really clear whether you should create a button in HTML or in JavaScript code, and whether you should style it in a CSS files or apply styles manually in JavaScript, or whether you should just use Canvas to draw everything. Not to mention that on top of having to sort through all these technologies, you have the additional challenge of having to accomodate for every slightly different flavor that exists in every browser. Sometimes its relatively simple, but othertimes it can be quite complex, as is the case with Canvas and VML. The other problem is that these technologies were simply not originally designed to handle the tasks they are now performing.  HTML was designed for laying out documents, not creating applications.</p>
+
+<p>We look at these technologies completely differently. To us, HTML, CSS, Canvas, the DOM, etc all represent the “rendering engine” of the web, in the same way that graphics cards are the rendering engines for your computer. It’s too difficult to learn the intricacies of every graphics card on the market, so developers instead use technologies that hide these details like OpenGL. In the same way, Cappuccino defines a common way to “draw” for the web. Internally, it figures out whether its more efficient to make a div, or draw to a canvas, or use VML. This is a fantastic time saver today, because it allows Cappuccino to worry about things like performance and allows you to just get a button on the screen. But its going to be even better as time goes on. This is not only because the underlying code will get better, but because web applications today look like this:</p>
+
+<blockquote>
+<p><img width="400" height="137" src="/img/cpo-uploads/2008/12/webapps1-ddca50c2.png"></p>
+</blockquote>
+
+<p>But tomorrow, when enough browsers finally support SVG, they may look like this:</p>
+
+<blockquote>
+<p><img width="400" height="137" src="/img/cpo-uploads/2008/12/webapps2-56703d03.png"></p>
+</blockquote>
+
+<p>Or, for all we know, like this:</p>
+
+<blockquote>
+<p><img width="400" height="137" src="/img/cpo-uploads/2008/12/webapps4-93ca130b.png"></p>
+</blockquote>
+
+<p>The important thing is that when this happens, and it <em>will</em> eventually happen, people who invested heavily in todays technologies will have to spend a great deal of effort updating, but we will just swap out the guts of Cappuccino and your code will inherit the benefits of SVG or whatever new technology is out there.</p>
+
+<h3>Conclusion</h3>
+
+<p>To me what we’ve done with Objective-J and Cappuccino seems inevitable. Even the most conservative major JavaScript libraries can’t get away without adding features to the language, and we’ve simply taken the next logical step with Objective-J. Similarly, Cappuccino is a tool that allows you to stop thinking about web pages and browser incompatibilities, and instead focus on the complex problems presented by the challenge of creating full-on applications on the web. As we’ve said <a href="http://www.cappuccino-project.org/discuss/2008/10/21/web-pages/">countless</a> <a href="http://www.cappuccino-project.org/learn/">times</a>, Cappuccino isn’t for everything. All of this abstraction isn’t necessary if you’re simply trying to add dynamic elements to a site like bankofamerica or digg. Cappuccino is for building rich applications in the browser, a small minority in the web world today. We believe that this is where things are headed, and we designed Cappuccino specifically to get <em>us</em> there.</p>
+
+<a class="pull-right action" href="/blog/feed.xml" id="rss_link">
+<img alt="RSS" width="28" height="28" src="/img/feed-icon-28x28-0489f1cd.png">
+</a>
+<div class="author">
+Posted by
+Francisco Tolmasky
+</div>
+<div class="date">
+on
+Dec 08, 2008.
+</div>
+<div class="tags">
+Tagged
+<a href="/blog/tags/cappuccino.html">cappuccino</a>, <a href="/blog/tags/objective-j.html">objective-j</a>.
+</div>
+</div>
+<ul class="pager">
+<li class="previous">
+<a href="/blog/2008/11/thinkvitamin.html" rel="prev">← Previous Article</a>
+</li>
+<li class="next">
+<a href="/blog/2008/12/cappuccino-06-available-today.html" rel="next">Next Article →</a>
+</li>
+</ul>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_container_id = 'disqus_thread',
+      disqus_domain = 'disqus.com',
+      disqus_shortname = 'cappuccino',
+      disqus_url = 'http://www.cappuccino-project.org/blog/2008/12/on-leaky-abstractions-and-objective-j.html',
+      disqus_developer = 0;
+</script>
+<script>
+  var disqus_identifier = '159 http://cappuccino.org/discuss/?p=159';
+</script>
+<script>
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">
+comments powered by Disqus.
+</a>
+</noscript>
+<a class="dsq-brlink" href="http://disqus.com">
+comments powered by
+<span class="logo-disqus">Disqus</span>
+</a>
+</div>
+<div class="span3 sidebar offset1">
+<form action="http://google.com/cse" id="cse-search-box">
+<input name="cx" type="hidden" value="003886841673136914364:g4k5gxiukag">
+<input name="ie" type="hidden" value="UTF-8">
+<input class="input-large search-query" name="q" placeholder="Search" size="31" type="text">
+<!-- %input.btn{:name => "sa", :type => "submit", :value => "Search"}/ -->
+</form>
+<h4 class="sidebar_header">
+Recent posts
+</h4>
+<ul class="recent_posts">
+<li>
+<a href="/blog/2015/09/cappuccino-news-2015-09-01.html">Cappuccino News 2015 September 1st</a>
+</li>
+<li>
+<a href="/blog/2015/08/cappuccino-news-2015-08-01.html">Cappuccino News 2015 August 1st</a>
+</li>
+<li>
+<a href="/blog/2015/07/cappuccino-news-2015-07-01.html">Cappuccino News 2015 July 1st</a>
+</li>
+<li>
+<a href="/blog/2015/06/cappuccino-news-2015-06-01.html">Cappuccino News 2015 June 1st</a>
+</li>
+<li>
+<a href="/blog/2015/05/cappuccino-news-2015-05-01.html">Cappuccino News 2015 May 1st</a>
+</li>
+</ul>
+<h4 class="sidebar_header">
+Tags
+</h4>
+<ul class="tags">
+<li>
+<a href="/blog/tags/events.html">Events</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">Conferences</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino.html">cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/cocoa.html">cocoa</a>
+</li>
+<li>
+<a href="/blog/tags/iphone.html">iphone</a>
+</li>
+<li>
+<a href="/blog/tags/porting.html">porting</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino.html">Cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/xcode.html">xcode</a>
+</li>
+<li>
+<a href="/blog/tags/ide.html">ide</a>
+</li>
+<li>
+<a href="/blog/tags/build-tool.html">build tool</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">Objective-J</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">Update</a>
+</li>
+<li>
+<a href="/blog/tags/cpurlconnection.html">CPURLConnection</a>
+</li>
+<li>
+<a href="/blog/tags/ajax.html">AJAX</a>
+</li>
+<li>
+<a href="/blog/tags/xmlhttprequest.html">XMLHTTPRequest</a>
+</li>
+<li>
+<a href="/blog/tags/tutorial.html">tutorial</a>
+</li>
+<li>
+<a href="/blog/tags/events.html">events</a>
+</li>
+<li>
+<a href="/blog/tags/fowa.html">fowa</a>
+</li>
+<li>
+<a href="/blog/tags/london.html">london</a>
+</li>
+<li>
+<a href="/blog/tags/tutorials.html">tutorials</a>
+</li>
+<li>
+<a href="/blog/tags/tools.html">tools</a>
+</li>
+<li>
+<a href="/blog/tags/scrapbook.html">scrapbook</a>
+</li>
+<li>
+<a href="/blog/tags/draganddrop.html">draganddrop</a>
+</li>
+<li>
+<a href="/blog/tags/accessor-synthesizing.html">Accessor Synthesizing</a>
+</li>
+<li>
+<a href="/blog/tags/accessors.html">@accessors</a>
+</li>
+<li>
+<a href="/blog/tags/layout.html">layout</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">objective-j</a>
+</li>
+<li>
+<a href="/blog/tags/screencasts.html">Screencasts</a>
+</li>
+<li>
+<a href="/blog/tags/slicehost.html">slicehost</a>
+</li>
+<li>
+<a href="/blog/tags/280north.html">280north</a>
+</li>
+<li>
+<a href="/blog/tags/atlas.html">atlas</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">Rake</a>
+</li>
+<li>
+<a href="/blog/tags/nib2cib.html">nib2cib</a>
+</li>
+<li>
+<a href="/blog/tags/aristo.html">Aristo</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">Sofa</a>
+</li>
+<li>
+<a href="/blog/tags/open-source.html">open source</a>
+</li>
+<li>
+<a href="/blog/tags/narwhal.html">Narwhal</a>
+</li>
+<li>
+<a href="/blog/tags/community-highlights.html">community highlights</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">sofa</a>
+</li>
+<li>
+<a href="/blog/tags/code.html">code</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">update</a>
+</li>
+<li>
+<a href="/blog/tags/releases.html">releases</a>
+</li>
+<li>
+<a href="/blog/tags/tool.html">tool</a>
+</li>
+<li>
+<a href="/blog/tags/jake.html">jake</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">rake</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">conferences</a>
+</li>
+<li>
+<a href="/blog/tags/280-north.html">280 north</a>
+</li>
+<li>
+<a href="/blog/tags/github.html">github</a>
+</li>
+<li>
+<a href="/blog/tags/issues.html">issues</a>
+</li>
+<li>
+<a href="/blog/tags/website.html">website</a>
+</li>
+<li>
+<a href="/blog/tags/projects.html">projects</a>
+</li>
+<li>
+<a href="/blog/tags/compiler.html">compiler</a>
+</li>
+<li>
+<a href="/blog/tags/frameworks.html">frameworks</a>
+</li>
+<li>
+<a href="/blog/tags/documentation.html">documentation</a>
+</li>
+<li>
+<a href="/blog/tags/doxygen.html">doxygen</a>
+</li>
+<li>
+<a href="/blog/tags/docsets.html">docsets</a>
+</li>
+<li>
+<a href="/blog/tags/nuagenetworks.html">nuagenetworks</a>
+</li>
+<li>
+<a href="/blog/tags/sdn.html">sdn</a>
+</li>
+<li>
+<a href="/blog/tags/showcase.html">showcase</a>
+</li>
+<li>
+<a href="/blog/tags/cucumber.html">Cucumber</a>
+</li>
+<li>
+<a href="/blog/tags/cucapp.html">Cucapp</a>
+</li>
+<li>
+<a href="/blog/tags/test.html">test</a>
+</li>
+<li>
+<a href="/blog/tags/automation-test.html">Automation test</a>
+</li>
+<li>
+<a href="/blog/tags/functional-test.html">Functional test</a>
+</li>
+<li>
+<a href="/blog/tags/nuage-networks.html">Nuage Networks</a>
+</li>
+<li>
+<a href="/blog/tags/interface-builder.html">interface builder</a>
+</li>
+<li>
+<a href="/blog/tags/xcodecapp.html">xcodecapp</a>
+</li>
+<li>
+<a href="/blog/tags/node.html">Node</a>
+</li>
+<li>
+<a href="/blog/tags/ojtest.html">OJTest</a>
+</li>
+<li>
+<a href="/blog/tags/theme.html">theme</a>
+</li>
+<li>
+<a href="/blog/tags/appkit.html">appkit</a>
+</li>
+<li>
+<a href="/blog/tags/release.html">Release</a>
+</li>
+<li>
+<a href="/blog/tags/objj.html">objj</a>
+</li>
+<li>
+<a href="/blog/tags/objj2objcskeleton.html">objj2objcskeleton</a>
+</li>
+<li>
+<a href="/blog/tags/capp_env.html">capp_env</a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

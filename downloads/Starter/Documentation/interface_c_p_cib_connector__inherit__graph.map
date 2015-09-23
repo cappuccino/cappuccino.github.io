@@ -1,0 +1,8 @@
+<map id="CPCibConnector" name="CPCibConnector">
+<area shape="rect" id="node3" href="$interface_c_p_cib_binding_connector.html" title="CPCibBindingConnector" alt="" coords="336,5,502,33"/>
+<area shape="rect" id="node4" href="$interface_c_p_cib_control_connector.html" title="CPCibControlConnector" alt="" coords="336,57,501,85"/>
+<area shape="rect" id="node5" href="$interface_c_p_cib_help_connector.html" title="CPCibHelpConnector" alt="" coords="344,109,493,137"/>
+<area shape="rect" id="node6" href="$interface_c_p_cib_outlet_connector.html" title="CPCibOutletConnector" alt="" coords="340,161,497,189"/>
+<area shape="rect" id="node7" href="$interface_c_p_cib_runtime_attributes_connector.html" title="CPCibRuntimeAttributesConnector" alt="" coords="305,213,532,241"/>
+<area shape="rect" id="node2" href="$class_c_p_object.html" title="CPObject" alt="" coords="6,109,85,137"/>
+</map>

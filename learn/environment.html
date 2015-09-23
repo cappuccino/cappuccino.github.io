@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino - Your development environment</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-environment-html folder-learn">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container learn">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Learn</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="span3">
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/">What is Cappuccino?</a>
+</li>
+<li class="active">
+<a href="/learn/environment.html">Your development environment</a>
+</li>
+<li>
+<a href="/learn/starter.html">Get Started</a>
+</li>
+<li>
+<a href="/learn/build-source.html">Advanced: Install from Source</a>
+</li>
+<li>
+<a href="/learn/objective-j.html">Learning Objective-J</a>
+</li>
+<li>
+<a href="/learn/scrapbook-1.html">Scrapbook #1 - Views and Layers</a>
+</li>
+<li>
+<a href="/learn/scrapbook-2.html">Scrapbook #2 - Drag and Drop</a>
+</li>
+<li>
+<a href="/learn/automatic-layout.html">Tutorial: Automatic Layout</a>
+</li>
+<li>
+<a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
+</li>
+<li>
+<a href="/learn/debugging.html">Debugging</a>
+</li>
+</ul>
+<h5>Resources</h5>
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/demos.html">Demos</a>
+</li>
+<li>
+<a href="/learn/documentation/">API Documentation</a>
+</li>
+<li>
+<a href="/support/faq.html">FAQ</a>
+</li>
+</ul>
+</div>
+<div class="span9 text-body markdown">
+<h3>
+Your development environment
+</h3>
+<p>Programming for the browser is significantly different from other programming environments like a desktop OS, or even server side code. Cappuccino is largely aimed at minimizing these differences, but to be most productive you’ll need to be familiar with the right set of tools. This tutorial is aimed at identifying the most useful tools for developing Cappuccino applications. If you’re already ready to start programming your first Cappuccino application, <a href="/tutorial-scrapbook-1.html">skip ahead</a>.</p>
+
+<h3>Browsers</h3>
+
+<p>The browser is the most important part of the development cycle.
+Cappuccino apps target the browser just like Cocoa apps target Mac OS X.
+Choosing the right browser for your development cycle is a crucial step
+in the process.</p>
+
+<p>There’s no one right answer to the question of which browser you should
+be using. There are four obvious contenders: Safari, Chrome, Firefox and
+Internet Explorer.</p>
+
+<h4>Chrome  </h4>
+
+<p>Google’s <a href="http://www.google.com/chrome">Chrome</a> is the most popular choice,
+especially because the shipping version has a great set of
+developer tools. There is a full featured debugger, profiler, and HTTP
+monitor.</p>
+
+<p>Chrome is based on Safari’s rendering technology and is generally very similar to Safari in terms of speed and rendering fidellity. The JavaScript engine is however different with different performance characteristics.</p>
+
+<p><img alt="Chrome Developer Tools" width="790" height="581" src="/img/chrome-dev-tools-72c12019.jpg"></p>
+
+<h4>Safari</h4>
+
+<p><a href="http://www.apple.com/safari/">Safari</a> is a fast, modern browser for the Mac.</p>
+
+<p>While its developer tools have recently been falling behind Chrome’s and can be frustrating to use due to slowness, they are still fairly complete. To access the inspector, you’ll need to check the “Show Develop menu in the menu bar” checkbox in the Advanced section of the preferences.</p>
+
+<p><img alt="Show Develop menu option" width="678" height="353" src="/img/safari-develop-menu-296d48a0.jpg"></p>
+
+<h4>Firefox</h4>
+
+<p>Some web developers choose to go with the latest version of
+<a href="http://getfirefox.com">Firefox</a>. Its Firebug extension was one of the
+first Javascript debugging toolkits. <a href="http://getfirebug.com">Firebug</a>
+gives you features for debugging your applications like stack traces on
+exceptions, a JavaScript profiler for finding performance hot spots, and
+a monitor for all your http traffic, including XMLHTTPRequests. If
+you’re going to use Firefox, Firebug is really an essential add-on to
+have.</p>
+
+<p>If you’re choosing between Chrome, Safari and Firefox, both Chrome and Safari are faster browsers than
+Firefox, especially at JavaScript. Although all three browsers are fast, when
+you’re in the rapid development cycle of programming, refreshing, and
+testing your changes, the extra speed boost can be useful.</p>
+
+<h4>Internet Explorer</h4>
+
+<p>Cappuccino works great in IE, and you should test your application in IE
+as often as possible. It is not recommended as a development environment
+though. IE’s JavaScript interpreter is the slowest of the modern
+browsers, and it has some of the worst debugging tools.</p>
+
+<p>That being said, since you should and will need to use IE from time to
+time, it’s useful to know that there are tools out there to make your
+experience better. One is
+<a href="http://www.my-debugbar.com/wiki/CompanionJS/HomePage">Companion.js</a>, a
+tool that provides an interactive DOM inspector and JS console. Another
+is the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=2f465be0-94fd-4569-b3c4-dffdf19ccd99&amp;displaylang=en">MS Script
+Debugger</a>,
+which is required for parts of Companion.js to function properly, but is
+useful in its own right.</p>
+
+<p><img alt="companion.js" width="500" height="170" src="/img/companion-9093fee7.gif"></p>
+
+<h3>Editors</h3>
+
+<p>You can use whatever code editor you’re familiar and comfortable with.
+Preferably you’ll want one that at least supports JavaScript as a native
+language. Since Objective-J is very close to JavaScript, it makes the
+best choice for an editing mode if native Objective-J support is
+unavailable.</p>
+
+<p>The following table shows some popular editor choices:</p>
+
+<table class="table span9">
+<tbody>
+<tr>
+<th>Editor</th>
+<th>Platform</th>
+<th>Syntax coloring</th>
+<th>Linting</th>
+</tr>
+<tr>
+<td>Emacs</td>
+<td>All</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>SubEthaEdit</td>
+<td>Mac OS X</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>SublimeText</td>
+<td>All</td>
+<td>Yes</td>
+<td>Yes (live)</td>
+</tr>
+<tr>
+<td>TextMate</td>
+<td>Mac OS X</td>
+<td>Yes</td>
+<td>Yes (not live)</td>
+</tr>
+<tr>
+<td>vi</td>
+<td>All</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+
+<p>If you use another text editor, and have written or would like to write
+an add-on for it to support Objective-J, we strongly encourage it and
+will list it here. Get in touch with us on the <a href="http://groups.google.com/group/objectivej">mailing
+list</a>.</p>
+
+<h4>Xcode</h4>
+
+<p>Xcode is the Apple’s IDE to build Cocoa application. Thanks to Cappuccino’s affinity with Cocoa, you can build your user interfaces in Xcode and convert the output files to Cappuccino ready UI archives. For that you’ll require these tools:</p>
+
+<ul>
+<li>
+<strong>XcodeCapp</strong>: The corner stone of the toolchain if you use Xcode which enables Cappuccino projects to be viewed in Xcode.</li>
+<li>
+<strong>nib2cib</strong>: Command line utility to convert <code>XIB</code> (native Cocoa UI file) to <code>CIB</code> (native Cappuccino UI file)</li>
+</ul>
+
+<p>Xcode is <strong>not</strong> required to build great Cappuccino apps. It is however a very valuable tool that could save you hundreds of hours of work and drastically reduce the total amount of code for you to write, debug and manage.</p>
+
+<h3>Logging</h3>
+
+<p>Logging is an important part of the development process, especially when
+a debugger isn’t available. Over the years, people have adapted various
+methods of logging in web applications. All of those methods will still
+work, and you should use them if you have a favorite.</p>
+
+<p>Cappuccino does come with its own built in logger. <code>CPLog</code> is modeled
+after Apache’s log4j, and is easy to use. Anywhere in your code, you can
+simply call <code>CPLog("a message")</code> to print that log. You can also use
+<code>CPLog.error("an error")</code>, <code>CPLog.debug("a debug message")</code>, and others.
+Logs are displayed in a popup log window, but they’re turned off by
+default. To enable them, load <code>index-debug.html</code> instead of <code>index.html</code>.
+So, if I’m developing at:</p>
+
+<pre>http://localhost:8000/MyApp/
+</pre>
+
+<p>I would instead go to:</p>
+
+<pre>http://localhost:8000/MyApp/index-debug.html
+</pre>
+
+<p>to enable the debug console. This debug version of <code>index.html</code> uses
+un-minified versions of the frameworks, which can make debugging easier.
+The console can also be enabled by calling <code>CPLogRegister(CPLogPopup)</code> in
+your code.</p>
+
+<h3>Compiler</h3>
+
+<p>For those developers used to languages like Java, C++, or Objective-C,
+where the compiler is readily available to show you syntax and type
+errors, changing to Objective-J and JavaScript can be confusing at
+first. You will not be able to rely on a compiler to find these kinds of
+problems for you. Most of them will be found by the browser when you
+first load your application, and you’ll find those errors buried in the
+JavaScript console of your respective browser. It’s in the Debug menu in
+Safari, and in the Tools menu of Firefox (if you have Firebug installed,
+errors will appear in Firebug instead).</p>
+
+<p>It’s important to run your code often to make sure it still works. You
+don’t want to end up with 300 new lines of code and no clue where the
+error has occurred. This is somewhat exacerbated by the fact that
+Objective-J has difficulty reporting the actual line number of errors.
+So remember to run your code often, and make use of the error console
+and the other tools you have available when you encounter trouble.</p>
+
+<h3>Additional Info</h3>
+
+<p>If you have suggestions for improvements to this guide, or if you have
+questions that haven’t been answered here, please let us know in the
+<a href="/discuss/list.php">mailing list or IRC channel</a>.</p>
+
+</div>
+</div>
+<div class="row">
+<div class="offset3 span9">
+<div class="learn-nav">
+<ul class="pager">
+<li class="previous">
+<a href="/learn/">← Return to '
+What is Cappuccino?
+'
+</a>
+</li>
+<li class="next">
+<a href="/learn/starter.html">Continue to '
+Get Started
+' →
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

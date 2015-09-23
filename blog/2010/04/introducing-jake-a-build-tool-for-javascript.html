@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introducing Jake: A Build Tool for JavaScript</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-introducing-jake-a-build-tool-for-javascript-html folder-blog-2010-04 folder-blog-2010 folder-blog">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="blog_post" id="blog_wrapper">
+<div class="container">
+<div class="row">
+<div class="span8">
+<h1 class="header">
+Introducing Jake: A Build Tool for JavaScript
+</h1>
+<div class="post_content">
+<p>Now that we’ve <a href="http://www.cappuccino-project.org/discuss/2010/04/07/cappuccino-0-8/">shipped Cappuccino 0.8</a>, I wanted to take some time to describe in more detail what might be one of the most exciting new features our users may not even notice: <a href="http://github.com/280north/jake">Jake</a>. Jake is a new build tool built entirely in JavaScript that runs on top of the CommonJS standard. As its name suggests, it is based on the existing and already popular Rake tool and benefits from the same simplicity.</p>
+
+<h3>Since when does JavaScript need to be built?</h3>
+
+<p>Well, JavaScript doesn’t <em>need</em> to be built, but if you look at almost every major library, you’ll notice all of them ship in some sort of built or “compiled” state. That’s because despite being an interpreted language, there is still plenty JavaScript can gain in the form of optimizations from a build phase. You can concatenate all your code into one file, minimize it, remove dead code, sprite the images associated with the code, and do all sorts of other interesting things that at the end of the day result in a faster web site for your users.</p>
+
+<p>So the concept of building JavaScript is not new in any way. Jake is just a new tool that can help you do all this in a language that’s probably already familiar to you. But before I get into how to use Jake, I’d like to explain the need for such a tool when clearly people are already doing this with non-JavaScript alternatives.</p>
+
+<h3>A brief history of build tools used by Cappuccino</h3>
+
+<p>Jake is actually the third build tool we’ve used for Cappuccino since we started the project. Like many current JavaScript projects, Cappuccino used to use tools borrowed from other environments.</p>
+
+<p>When we originally shipped Cappuccino, we used a combination of <a href="http://ant.apache.org/">Apache Ant</a> and some custom built JavaScript tools. Our goal has always been to minimize the friction a user experienced when trying to build Cappuccino from scratch, and thus at the time Ant seemed like a good solution since it is cross platform and many people already have it installed with their Java distributions. Ant also let us call into JavaScript with a little bit of legwork. However, the problems with using Ant soon outweighed the benefits. Ant may be a great fit for Java projects since it was designed for that purpose and many of the build commands are tailored specifically for Java, but using it to build non-Java projects can sometimes be an incredibly frustrating ordeal. For starters, Ant uses XML configuration files, which means that performing simple logic can sometimes be quite a daunting task. Java programmers probably don’t notice this because Ant is smart enough to “understand” Java dependencies out of the box, but it had no idea how to deal with our JS files in anything but the most rudimentary way. The solutions usually involved using custom-built extensions which somewhat defeated the purpose of using Ant for its existing install base and portability.</p>
+
+<p>As we tried to do increasingly complex operations during our build process, it became evident that Ant was no longer going to cut it, and so I set out to search for a new tool to replace it. I looked at a number of different options (even briefly trying make – bad idea), but one tool really stood out for me: Rake.</p>
+
+<p>I think <a href="http://rake.rubyforge.org/">Rake</a> is quite possibly the first build tool that I haven’t ended up hating. In fact, I really like Rake. One of the best parts about Rake is its simplicity: it chose to use Ruby itself instead of defining a configuration file format. That means that there’s really no “build” mindset you have to get into, and at the end of the day you’re just writing a really simple program. If at any point you need to do something out of the ordinary in your build process, you can always just code it. There’s no need to invent a new configuration property or hassle with trying to find some obscure “right” way to do things: you can just code it. Strangely enough, Rake also has the most intuitive built-in commands I have ever used. Creating dependencies is a breeze, and it is smart enough to handle things like cleaning a project very elegantly for you. If you’ve never tried Rake, you really should.</p>
+
+<h3>So why not stick with Rake?</h3>
+
+<p>Moving to Rake was a really great decision at the time, but Rake unfortunately had one problem that eventually got to us: it had to be written in Ruby. This is not a problem per se of course, and the truth is that Ruby is one of the reasons Rake shines. The DSL Ruby allows in Rake makes it truly a joy to use, but the unfortunate fact is that many our users simply don’t know Ruby, so interacting with the build system could prove difficult to them. This resulted in a number of problems:</p>
+
+<ol>
+<li>Users didn’t like having to install Ruby gems to build Cappuccino from scratch.</li>
+<li>On top of the occasional Rhino bug, we now had to deal with Ruby incompatibilities across distributions and versions which were very difficult for us to deal with effectively as this was not our native environment.</li>
+<li>Users were afraid to submit patches to the build scripts because they weren’t as knowledgable in Ruby.</li>
+<li>Users were afraid to innovate in the build space for the same reason.</li>
+<li>Users were less likely to use our optimization tools, because again, it required using the Ruby build process, installing gems, etc.</li>
+<li>Since our product and our build tools were written in different languages, we were incapable of easily sharing code between the two. We had to jump through a lot of hoops to call JavaScript from Ruby (usually through Rhino), which resulted in pretty slow builds.</li>
+</ol>
+
+<p>So all in all, while Rake provided a pretty good “out of the box” experience for our users and contributors, it meant they were really stuck when something went wrong, and that they were not as capable of fixing or improving it. This is a pretty general problem in the JavaScript space I feel. You’ll notice that a lot of the work of “optimizing” and deploying JavaScript usually takes place in a different language. For example, most JavaScript compressors are written in Java. This is really unfortunate, because it creates an artificial rift between JavaScript programmers and the people trying to make their JavaScript really fast. One of our goals for Cappuccino 0.8 was to remedy this because we felt that there was still a tremendous amount left to be done in the JavaScript and web application optimizations, and we wanted all the help we could get.</p>
+
+<h3>Jake</h3>
+
+<p>Luckily for us, things had really changed since we originally shipped Cappuccino. Most importantly, there is now a real standard for running JavaScript on the command line: CommonJS. Recall for a moment that when we originally shipped Cappuccino, doing something a simple as reading a file in JavaScript was still an open question! At the time the best solution was to use Rhino and drop down to Java APIs. Not only was this slow, it was completely unportable to the other JavaScript engines that would come along like JavaScriptCore and V8. But with CommonJS around, it was now finally viable to write command line scripts in JavaScript.</p>
+
+<p>So with these tools in hand we set out to write <a href="http://github.com/280north/jake">Jake</a>: a JavaScript port of Rake. Again, we really liked Rake, so the goal was simply to expose the functionality of this tool to JavaScript. This ended up turning out quite well for us, because we didn’t have to worry about inventing a new build tool. The result is that most Rakefiles can be trivially “ported” to Jake, so a lot of the existing JavaScript projects that currently use Rake can quickly transition over.</p>
+
+<p>Let’s quickly take a look at how to create build tasks with Jake:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">task</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"jake"</span><span class="p">).</span><span class="nx">task</span><span class="p">;</span>
+
+<span class="nx">task</span> <span class="p">(</span><span class="s2">"log"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"hey there!"</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>That’s all there is to it. You simply call the task function, give it a name, and a closure that contains task’s instructions. If you want to set up a dependency, say on two other tasks, you can do so as well:</p>
+
+<div class="highlight"><pre><span class="nx">task</span> <span class="p">(</span><span class="s2">"log"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"task-one"</span><span class="p">,</span> <span class="s2">"task-two"</span><span class="p">],</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"hey there!"</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>Now, log will first make sure to execute task-one and task-two before executing. If you’ve used Rake, this should look really familiar. Here is the same task in Rake for comparison:</p>
+
+<div class="highlight"><pre><span class="nx">task</span> <span class="o">:</span><span class="nx">log</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="o">:</span><span class="nx">task</span><span class="o">-</span><span class="nx">one</span><span class="p">,</span> <span class="o">:</span><span class="nx">task</span><span class="o">-</span><span class="nx">two</span><span class="p">]</span> <span class="k">do</span>
+    <span class="nx">echo</span> <span class="s2">"hey there!"</span>
+<span class="nx">end</span>
+</pre></div>
+
+<p>Jake also includes a host of tools to make dealing with files super easy. This is how you would make sure to generate a new concatenated and compressed file every time you edit one of your original source files:</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">shrinksafe</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"minify/shrinksafe"</span><span class="p">),</span>
+    <span class="nx">read</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"file"</span><span class="p">).</span><span class="nx">read</span><span class="p">,</span>
+    <span class="nx">write</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"file"</span><span class="p">).</span><span class="nx">write</span><span class="p">,</span>
+    <span class="nx">filedir</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"jake"</span><span class="p">).</span><span class="nx">filedir</span><span class="p">,</span>
+    <span class="nx">FileList</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"jake"</span><span class="p">).</span><span class="nx">FileList</span><span class="p">;</span>
+
+<span class="nx">filedir</span> <span class="p">(</span><span class="s2">"build/compressed.js"</span><span class="p">,</span> <span class="k">new</span> <span class="nx">FileList</span><span class="p">(</span><span class="s2">"*.js"</span><span class="p">),</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+
+    <span class="p">(</span><span class="k">new</span> <span class="nx">FileList</span><span class="p">(</span><span class="s2">"*.js"</span><span class="p">)).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">filename</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">result</span> <span class="o">+=</span> <span class="nx">shrinksafe</span><span class="p">.</span><span class="nx">compress</span><span class="p">(</span><span class="nx">read</span><span class="p">(</span><span class="nx">filename</span><span class="p">));</span>
+    <span class="p">});</span>
+
+    <span class="nx">write</span><span class="p">(</span><span class="s2">"build/compressed.js"</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>So what we’re doing here is creating a task for our “build/compressed.js” file. The filedir task is nice enough to create the intermediate “build” directory for us (if you don’t want this behavior, you can use the file task instead). This task will only run any time one of the files in our project with the “.js” extension changes. So, if you don’t change any code, this task is skipped. The FileList object takes globs and is iterable, so when this task is called, it simply iterates over each of these files, reads them, compresses them, and writes out the concatenated result. Pretty easy. The best part is that since CommonJS supports a bunch of compressors, its really easy to write a task that uses whichever one generates the smallest file size:</p>
+
+<div class="highlight"><pre><span class="nx">filedir</span> <span class="p">(</span><span class="s2">"build/compressed.js"</span><span class="p">,</span> <span class="k">new</span> <span class="nx">FileList</span><span class="p">(</span><span class="s2">"*.js"</span><span class="p">),</span> <span class="kd">function</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">smallest</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">compressors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"minify/shrinksafe"</span><span class="p">,</span> <span class="s2">"minify/closure-compiler"</span><span class="p">];</span>
+
+    <span class="nx">compressors</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">compressor</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+
+        <span class="p">(</span><span class="k">new</span> <span class="nx">FileList</span><span class="p">(</span><span class="s2">"*.js"</span><span class="p">)).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">filename</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nx">result</span> <span class="o">+=</span> <span class="nx">require</span><span class="p">(</span><span class="nx">compressor</span><span class="p">).</span><span class="nx">compress</span><span class="p">(</span><span class="nx">read</span><span class="p">(</span><span class="nx">filename</span><span class="p">));</span>
+        <span class="p">});</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">smallest</span> <span class="o">||</span> <span class="nx">result</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="nx">smallest</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+            <span class="nx">smallest</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="nx">write</span><span class="p">(</span><span class="s2">"build/compressed.js"</span><span class="p">,</span> <span class="nx">smallest</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3>Already in use</h3>
+
+<p>This isn’t a toy, we are actively using this as our only build system in Cappuccino. That means you can check out some pretty sophisticated examples by taking a look at the <a href="http://github.com/280north/cappuccino/">Cappuccino source code</a>, or by talking to anyone who has shipped a Cappuccino project. Just ask to see their Jakefiles. If you already have a CommonJS platform installed, you can get jake by just using the tusk package manager:</p>
+
+<pre>tusk install jake
+</pre>
+
+<p>If not, you can head on over to <a href="http://narwhaljs.org">narwhaljs.org</a> and download narwhal to get started writing JavaScript on the server and command line. Alternatively, you can download the Cappuccino source code and run our bootstrap script, which not only installs narwhal for you, but also custom tailors your installation to use the fastest JavaScript engine available for your machine that narwhal supports (this means that if you’re on a Mac you’ll get the super fast JavaScriptCore engine instead of the quite slow default Rhino one):</p>
+
+<pre>$ git clone git://github.com/280north/cappuccino.git cappuccino
+$ cd cappuccino
+$ ./bootstrap.sh
+</pre>
+
+<p>If you do this you’ll also be able to checkout out some of the cool extensions to Jake specifically for Cappuccino projects. We’ve created the bundle, framework, and app tasks that completely put together your project for you (similar to the gem tasks in Rake). These tasks implement some pretty cool optimizations, like our <a href="http://www.cappuccino-project.org/discuss/2009/11/11/just-one-file-with-cappuccino-0-8/">automagic image spriting</a>. If you’re having any trouble, feel free to jump in our <a href="irc://irc.freenode.net#cappuccino">IRC room</a> so we can answer your questions or comments on how to get set up building your projects with jake.</p>
+
+<p>You can of course also <a href="http://github.com/280north/jake">get the source code</a> as well and submit patches or <a href="http://github.com/280north/jake/issues">file bugs</a>:</p>
+
+<pre>$ git clone git://github.com/280north/jake.git
+</pre>
+
+<p>Perhaps one of the coolest results of this is that Cappuccino is really now self-hosting: <strong>the entire stack is finally JavaScript</strong> and easily accessible for hacking.</p>
+
+<a class="pull-right action" href="/blog/feed.xml" id="rss_link">
+<img alt="RSS" width="28" height="28" src="/img/feed-icon-28x28-0489f1cd.png">
+</a>
+<div class="author">
+Posted by
+Francisco Tolmasky
+</div>
+<div class="date">
+on
+Apr 28, 2010.
+</div>
+<div class="tags">
+Tagged
+<a href="/blog/tags/tools.html">tools</a>, <a href="/blog/tags/jake.html">jake</a>, <a href="/blog/tags/rake.html">rake</a>.
+</div>
+</div>
+<ul class="pager">
+<li class="previous">
+<a href="/blog/2010/04/cappuccino-0-8-tools.html" rel="prev">← Previous Article</a>
+</li>
+<li class="next">
+<a href="/blog/2010/05/introducing-the-atlas-plugin-api-and-mapkit.html" rel="next">Next Article →</a>
+</li>
+</ul>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_container_id = 'disqus_thread',
+      disqus_domain = 'disqus.com',
+      disqus_shortname = 'cappuccino',
+      disqus_url = 'http://www.cappuccino-project.org/blog/2010/04/introducing-jake-a-build-tool-for-javascript.html',
+      disqus_developer = 0;
+</script>
+<script>
+  var disqus_identifier = '660 http://cappuccino.org/discuss/?p=660';
+</script>
+<script>
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">
+comments powered by Disqus.
+</a>
+</noscript>
+<a class="dsq-brlink" href="http://disqus.com">
+comments powered by
+<span class="logo-disqus">Disqus</span>
+</a>
+</div>
+<div class="span3 sidebar offset1">
+<form action="http://google.com/cse" id="cse-search-box">
+<input name="cx" type="hidden" value="003886841673136914364:g4k5gxiukag">
+<input name="ie" type="hidden" value="UTF-8">
+<input class="input-large search-query" name="q" placeholder="Search" size="31" type="text">
+<!-- %input.btn{:name => "sa", :type => "submit", :value => "Search"}/ -->
+</form>
+<h4 class="sidebar_header">
+Recent posts
+</h4>
+<ul class="recent_posts">
+<li>
+<a href="/blog/2015/09/cappuccino-news-2015-09-01.html">Cappuccino News 2015 September 1st</a>
+</li>
+<li>
+<a href="/blog/2015/08/cappuccino-news-2015-08-01.html">Cappuccino News 2015 August 1st</a>
+</li>
+<li>
+<a href="/blog/2015/07/cappuccino-news-2015-07-01.html">Cappuccino News 2015 July 1st</a>
+</li>
+<li>
+<a href="/blog/2015/06/cappuccino-news-2015-06-01.html">Cappuccino News 2015 June 1st</a>
+</li>
+<li>
+<a href="/blog/2015/05/cappuccino-news-2015-05-01.html">Cappuccino News 2015 May 1st</a>
+</li>
+</ul>
+<h4 class="sidebar_header">
+Tags
+</h4>
+<ul class="tags">
+<li>
+<a href="/blog/tags/events.html">Events</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">Conferences</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino.html">cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/cocoa.html">cocoa</a>
+</li>
+<li>
+<a href="/blog/tags/iphone.html">iphone</a>
+</li>
+<li>
+<a href="/blog/tags/porting.html">porting</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino.html">Cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/xcode.html">xcode</a>
+</li>
+<li>
+<a href="/blog/tags/ide.html">ide</a>
+</li>
+<li>
+<a href="/blog/tags/build-tool.html">build tool</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">Objective-J</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">Update</a>
+</li>
+<li>
+<a href="/blog/tags/cpurlconnection.html">CPURLConnection</a>
+</li>
+<li>
+<a href="/blog/tags/ajax.html">AJAX</a>
+</li>
+<li>
+<a href="/blog/tags/xmlhttprequest.html">XMLHTTPRequest</a>
+</li>
+<li>
+<a href="/blog/tags/tutorial.html">tutorial</a>
+</li>
+<li>
+<a href="/blog/tags/events.html">events</a>
+</li>
+<li>
+<a href="/blog/tags/fowa.html">fowa</a>
+</li>
+<li>
+<a href="/blog/tags/london.html">london</a>
+</li>
+<li>
+<a href="/blog/tags/tutorials.html">tutorials</a>
+</li>
+<li>
+<a href="/blog/tags/tools.html">tools</a>
+</li>
+<li>
+<a href="/blog/tags/scrapbook.html">scrapbook</a>
+</li>
+<li>
+<a href="/blog/tags/draganddrop.html">draganddrop</a>
+</li>
+<li>
+<a href="/blog/tags/accessor-synthesizing.html">Accessor Synthesizing</a>
+</li>
+<li>
+<a href="/blog/tags/accessors.html">@accessors</a>
+</li>
+<li>
+<a href="/blog/tags/layout.html">layout</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">objective-j</a>
+</li>
+<li>
+<a href="/blog/tags/screencasts.html">Screencasts</a>
+</li>
+<li>
+<a href="/blog/tags/slicehost.html">slicehost</a>
+</li>
+<li>
+<a href="/blog/tags/280north.html">280north</a>
+</li>
+<li>
+<a href="/blog/tags/atlas.html">atlas</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">Rake</a>
+</li>
+<li>
+<a href="/blog/tags/nib2cib.html">nib2cib</a>
+</li>
+<li>
+<a href="/blog/tags/aristo.html">Aristo</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">Sofa</a>
+</li>
+<li>
+<a href="/blog/tags/open-source.html">open source</a>
+</li>
+<li>
+<a href="/blog/tags/narwhal.html">Narwhal</a>
+</li>
+<li>
+<a href="/blog/tags/community-highlights.html">community highlights</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">sofa</a>
+</li>
+<li>
+<a href="/blog/tags/code.html">code</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">update</a>
+</li>
+<li>
+<a href="/blog/tags/releases.html">releases</a>
+</li>
+<li>
+<a href="/blog/tags/tool.html">tool</a>
+</li>
+<li>
+<a href="/blog/tags/jake.html">jake</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">rake</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">conferences</a>
+</li>
+<li>
+<a href="/blog/tags/280-north.html">280 north</a>
+</li>
+<li>
+<a href="/blog/tags/github.html">github</a>
+</li>
+<li>
+<a href="/blog/tags/issues.html">issues</a>
+</li>
+<li>
+<a href="/blog/tags/website.html">website</a>
+</li>
+<li>
+<a href="/blog/tags/projects.html">projects</a>
+</li>
+<li>
+<a href="/blog/tags/compiler.html">compiler</a>
+</li>
+<li>
+<a href="/blog/tags/frameworks.html">frameworks</a>
+</li>
+<li>
+<a href="/blog/tags/documentation.html">documentation</a>
+</li>
+<li>
+<a href="/blog/tags/doxygen.html">doxygen</a>
+</li>
+<li>
+<a href="/blog/tags/docsets.html">docsets</a>
+</li>
+<li>
+<a href="/blog/tags/nuagenetworks.html">nuagenetworks</a>
+</li>
+<li>
+<a href="/blog/tags/sdn.html">sdn</a>
+</li>
+<li>
+<a href="/blog/tags/showcase.html">showcase</a>
+</li>
+<li>
+<a href="/blog/tags/cucumber.html">Cucumber</a>
+</li>
+<li>
+<a href="/blog/tags/cucapp.html">Cucapp</a>
+</li>
+<li>
+<a href="/blog/tags/test.html">test</a>
+</li>
+<li>
+<a href="/blog/tags/automation-test.html">Automation test</a>
+</li>
+<li>
+<a href="/blog/tags/functional-test.html">Functional test</a>
+</li>
+<li>
+<a href="/blog/tags/nuage-networks.html">Nuage Networks</a>
+</li>
+<li>
+<a href="/blog/tags/interface-builder.html">interface builder</a>
+</li>
+<li>
+<a href="/blog/tags/xcodecapp.html">xcodecapp</a>
+</li>
+<li>
+<a href="/blog/tags/node.html">Node</a>
+</li>
+<li>
+<a href="/blog/tags/ojtest.html">OJTest</a>
+</li>
+<li>
+<a href="/blog/tags/theme.html">theme</a>
+</li>
+<li>
+<a href="/blog/tags/appkit.html">appkit</a>
+</li>
+<li>
+<a href="/blog/tags/release.html">Release</a>
+</li>
+<li>
+<a href="/blog/tags/objj.html">objj</a>
+</li>
+<li>
+<a href="/blog/tags/objj2objcskeleton.html">objj2objcskeleton</a>
+</li>
+<li>
+<a href="/blog/tags/capp_env.html">capp_env</a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

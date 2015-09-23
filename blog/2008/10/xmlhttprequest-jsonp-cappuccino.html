@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>XMLHTTPRequest, JSONP &amp; Cappuccino</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-xmlhttprequest-jsonp-cappuccino-html folder-blog-2008-10 folder-blog-2008 folder-blog">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="blog_post" id="blog_wrapper">
+<div class="container">
+<div class="row">
+<div class="span8">
+<h1 class="header">
+XMLHTTPRequest, JSONP &amp; Cappuccino
+</h1>
+<div class="post_content">
+<p>If you’re a veteran web developer, you’re probably familiar with the XMLHTTPRequest (XHR for short), the bread and butter of “AJAX”. XHRs are what make dynamic applications that don’t reload the page possible. For an application framework like Cappuccino this is critical, since Cappuccino applications are designed to never reload the page – so it’s important to understand exactly how Cappuccino deals with these requests.</p>
+
+<p>Before we get in too deep, a quick primer on exactly what I’m talking about. If you’re comfortable with XMLHTTPRequests already, feel free to skip this paragraph. <a href="http://en.wikipedia.org/wiki/XMLHttpRequest">XMLHTTPRequest</a> was introduced by Microsoft in Internet Exporer 5 as a way for scripts within a web page to send a remote request to another server without reloading the entire page. Although it started as a propriety Microsoft technology, it was later adopted by Mozilla, and eventually all the other major browsers. The term AJAX, which stands for Asynchronous JavaScript and XML, is essentially synonymous with the use of XMLHTTPRequests on a website. A website creates an XHR object with a specific URL, gives it a function to execute when the status of the request changes, and then executes the request. With this mechanism, your script can use most of the HTTP verbs, and can respond to specific HTTP response codes, which makes it a flexible and powerful API. If you’re coming from Cocoa, or another desktop programming environment, you may be used to classes that perform similar functions like NSURLConnection or maybe even (approximately) curl and wget. There are, however, important limitations introduced by the browser security model that we’ll discuss shortly.</p>
+
+<h3>XMLHTTPRequest</h3>
+
+<p>In Objective-J and Cappuccino, asynchronous http requests are instrumental for creating a working app, beginning with the import statement. As you’ve probably noticed by now, Objective-J introduces the <strong>import</strong> keyword to JavaScript. Import statements pull in and execute Objective-J code at runtime, which lets us maintain dependency relationships across classes in Cappuccino, much like code in C or Java. These statements are actually asynchronous, and are implemented using XHRs. This means we only have to include one script tag in our <em>index.html</em> file for Objective-J only, while the rest of Cappuccino is bootstrapped with these asynchronous requests. This is a fairly low level detail, but it illustrates the importance of the XHR when writing complex javascript based applications.</p>
+
+<p>When writing a Cappuccino applications, XHRs are the primary way to communicate with your backend server. While most of your application logic may be running in the client, certain tasks will still need to run on a webserver. For example, consider an authentication system; in order for authentication to be meaningful, it will need to present credentials to a server for verification. Similarly, features like persistent data storage require server communication to actually store the data, otherwise it would dissappear when the user navigated away from the page. To put it another way, if your app doesn’t talk to an outside server, it may be of limited utility.</p>
+
+<h3>CPURLConnection</h3>
+
+<p>Like most things in Cappuccino, XMLHTTPRequests are abstracted at a higher level. In this case, the CPURLConnection class manages the communication. If we look at the <a href="http://www.cappuccino-project.org/learn/documentation/class_c_p_u_r_l_connection.html">API Reference</a>, we’ll find a few different ways to create an instance. The easiest way is the class method <strong>connectionWithRequest:delegate:</strong>, which takes a CPURLRequest object and a delegate. CPURLRequest objects wrap a single request, including the URL, HTTP method, request body, and request headers. Like everywhere in Cappuccino, the delegate provides for the ability to customize the request’s behavior. Let’s look at the process of creating a CPURLConnection.</p>
+
+<pre>var request = [CPURLRequest requestWithURL:"list.txt"];
+var connection = [CPURLConnection connectionWithRequest:request delegate:self];
+</pre>
+
+<p>As you can see, it’s a simple process. Connections created with this class method fire immediately, without needing to explicitly call any additional methods. By default, the request object will be a GET request, with no additional data. Like any URL on a webpage, the URL will be treated as relative to your <em>index.html</em> file unless you specify an absolute path or URL (e.g. preceding the URL with http://). To handle the response, we can implement these two optional delegate methods:</p>
+
+<pre> - (void)connection:(CPURLConnection) connection didReceiveData:(CPString)data
+{
+ //This method is called when a connection receives a response. in a
+ //multi-part request, this method will (eventually) be called multiple times,
+ //once for each part in the response.
+}
+
+
+
+- (void)connection:(CPURLConnection)connection didFailWithError:(CPString)error
+{
+ //This method is called if the request fails for any reason.
+}
+</pre>
+
+<p>After your request is created it will be fired, and later CPURLConnection will call the methods above on the connection’s delegate. These methods are both optional, but are the minimum that you should implement in order to interact with your AJAX requests. The first is essential in processing any response, and the second is necessary for correctly dealing with errors, which is an important part of a well written application. Let’s look at a real world implementation of these two methods, as well as the creation of a request, to get a sense for how all this works.</p>
+
+<p>The following code is taken from 280 Slides. It deletes a photo from your library. In this first chunk, we’ll construct and start our connection:</p>
+
+<pre> //BASE_URL is a 280 Slides global, which points to the base directory of our server structure
+var request = [CPURLRequest requestWithURL: BASE_URL+"Media/photo.php?id="+itemID];
+
+
+
+//we're using HTTP verbs to keep our backend as RESTful as possible
+[request setHTTPMethod: "DELETE"];
+
+//create the CPURLConnection and store it. the connection fires immediately
+_deletePhotoConnection = [CPURLConnection connectionWithRequest: request delegate: self];
+</pre>
+
+<p>Notice that we store a reference to the connection in the ivar _<em>deletePhotoConnection</em>. This is so, if we have multiple connections, we can check to ensure we’re responding to the right one. Now let’s look at the delegate method implementations:</p>
+
+<pre> - (void)connection:(CPURLConnection)aConnection didReceiveData:(CPString)data
+{
+ //get a javascript object from the json response
+ var result = CPJSObjectCreateWithJSON(data);
+
+ //check if we're talking about the delete connection
+ if (aConnection == _deletePhotoConnection)
+ [self deletePhoto:result.id]; //deletes the specified photo
+
+ //clear out this connection's reference
+ [self clearConnection:aConnection];
+}
+
+
+
+- (void)connection:(CPURLConnection)aConnection didFailWithError:(CPError)anError
+{
+ if (aConnection == _deletePhotoConnection)
+ alert("There was an error deleting this photo. Please try again in a moment.");
+
+
+
+
+
+ [self clearConnection:aConnection];
+}
+
+
+
+
+
+- (void)clearConnection:(CPURLConnection)aConnection
+{
+ //we no longer need to hold on to a reference to this connection
+ if (aConnection == _deletePhotoConnection)
+ _deletePhotoConnection = nil;
+}
+</pre>
+
+<p>Again, the code is very simple. Since we send and receive data using JSON, the first call in our <strong>connection:didReceiveData:</strong> implementation turns that text response (<em>data</em>) into a javascript object using the JSON helper function <strong>CPJSObjectCreateWithJSON()</strong>. For the reverse operation, you can use the reverse function, <strong>CPJSObjectCreateJSON()</strong>. With the resulting object in hand, we check if the resulting connection is in fact our _deletePhotoConnection, and if it is, we proceed to delete the photo referenced in the object. In the alternate case, where our request is unsuccessful, we prompt the user to inform them that the request failed and do not delete the photo.</p>
+
+<p>You’ll notice that both methods call <strong>clearConnection:</strong>. This is a convenience method we’ve written to nil out our reference to the connection object once we’ve finished using it. Although not strictly necessary, keeping a pointer to the object means it won’t be collected by the garbage collector. Removing the reference from our instance variable is the best practice since we know we will not be using it again.</p>
+
+<p>Although it’s not shown here, the reason we store a reference to the specific connection is that we use other connections in the same class, so we need a simple way to tell them apart. If you’re only using one connection with your delegate, you may not need to use this technique or store a reference to the connection at all.</p>
+
+<p>Finally, there are two additional CPURLConnection delegate methods we chose not to implement, but which you may be interested in for your own application. There’s also a class delegate for handling request authentication at the application level. You can read more about these methods in the <a href="http://www.cappuccino-project.org/learn/documentation/class_c_p_u_r_l_connection.html">API documentation</a>.</p>
+
+<h3>CPJSONPConnection</h3>
+
+<p>One of the limitations of the XHR is that it must follow what is known in the web security world as the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">same origin policy</a>. The model requires that requests can only be sent to URLs with the same protocol, domain, and port number as the web page. This policy makes it difficult to interact with third party web services without having to proxy requests first through your own webserver. Several people developed their own workarounds to the limitation, but eventually <a href="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">JSONP</a> emerged as the standard mechanism.</p>
+
+<p>JSONP stands for JSON with Padding, and it comprises two components. The first part deals with getting around the same origin policy itself. XMLHTTPRequests may not work across multiple domains, but <script> tags have no such limitation. JSONP takes advantage of this by dynamically generating a <script> tag and appending it to the page. The script&#39;s src property is set to the URL of the remote API, including all request parameters in the query string. The second component of JSONP deals with what to do once the API returns a response.</p>
+
+<p>As the name suggests, JSONP APIs return their data in the JSON format, but instead of returning a plain JSON string, they wrap the JSON response in a function call. This extra function call is the &quot;padding&quot; in JSONP, and it effectively works around the browser&#39;s security policy. Typically, function name is a parameter of the request, which you can see demonstrated in the Flickr API. This API allows you to specify <em>format=json</em> to get a JSON response, and <em>jsoncallback=myfunctionname</em> to specify your custom function wrapper for the response. An example request might look something like this:</p>
+
+<pre><code> var url = &quot;http://www.flickr.com/services/rest/&quot;+
+ &quot;?method=flickr.interestingness.getList&quot;+
+ &quot;&amp;format=json&amp;jsoncallback=flickResponse&amp;api_key=YOUR_KEY&quot;;
+</code></pre>
+
+<p>As you can imagine, generating your own dynamic script tags and managing global callback methods would be a serious hassle, which is why Cappuccino has built in support in the form of <a href="http://www.cappuccino-project.org/learn/documentation/class_c_p_j_s_o_n_p_connection.html">CPJSONPConnection</a>. You may have encountered this class in the source of our <a href="http://www.cappuccino-project.org/learn/demos/FlickrPhotoDemo/">Flickr Demo</a>. Creating an instance should look familiar:</p>
+
+<pre><code> var connection = [CPJSONPConnection sendRequest:aRequest callback:aCallbackParameter delegate:self];
+</code></pre>
+
+<p>The additional parameter, <strong>callback:</strong>, is a string that specifies the name of the parameter that allows us to specify the callback function&#39;s name in the JSONP API we&#39;re talking to. Similar to CPURLConnection, these two delegate methods are defined:</p>
+
+<pre><code> - (void)connection:(CPJSONPConnection)aConnection didReceiveData:(Object)data
+{
+ //called by the &quot;padding&quot; function when the request is complete
+
+ //depending on the third part API, data may be the native javascript object,
+ //or it may be a string. usually a js object is used, but if a string
+ //is passed, you can create a js object with CPJSObjectCreateWithJSON()
+}
+
+
+
+- (void)connection:(CPJSONPConnection)aConnection didFailWithError:(CPString)error
+{
+ //will be called if the connection fails
+ //will see improvements in an upcoming release
+}
+</code></pre>
+
+<p>Let&#39;s take a look at the actual implementation in our Flickr Demo:</p>
+
+<pre><code> - (void)applicationDidFinishLaunching
+{
+ ...
+
+ //Create the request, which contains all of our query parameters,
+ //except the jsoncallback parameter
+
+ var req = [CPURLRequest requestWithURL:
+ &quot;http://www.flickr.com/services/rest/&quot;+
+ &quot;?method=flickr.interestingness.getList&quot;+
+ &quot;&amp;per_page=20&amp;format=json&amp;api_key=&quot;+API_KEY];
+
+ //Create the connection, set the callback, and make ourselves the delegate.
+ //the connection fires immediately
+
+ var connection = [CPJSONPConnection sendRequest:req callback:&quot;jsoncallback&quot; delegate:self];
+}
+
+
+
+- (void)connection:(CPJSONPConnection)aConnection didReceiveData:(Object)data
+{
+ //the response from Flickr is the actual JS Object, which has an
+ //array of photos that we pass to our collection view
+ [self addImageList:data.photos.photo withIdentifier: lastIdentifier];
+}
+
+
+
+
+
+- (void)connection:(CPJSONPConnection)aConnection didFailWithError:(CPString)error
+{
+ //Ideally, we would do something smarter here.
+ alert(error);
+}
+</code></pre>
+
+<p>Due to the use of the script tag injection, as opposed to a traditional XHR object, we don&#39;t have any fine grained information about the response. We cannot detect status codes, and cannot natively access the response. Thankfully, CPJSONPConnection does a good job of managing the additional complexity, and massaging it into a familiar API. There is still some work to be done on generating more reliable errors, but it should be completed in the near future.</p>
+
+<p>JSONP does have it&#39;s own security implications. Because you&#39;re essentially allowing arbitrary third party code to execute within the context of your own application, you should only use JSONP with providers you trust. It&#39;s also important to note that because these requests are sent to different domains, cookies from your own site will not be sent along with the request. This prevents third parties from stealing your sessions, but it also means that authenticating requests is significantly more complex.</p>
+
+<h3>Conclusion</h3>
+
+<p>There&#39;s been some confusion about when to use CPURLConnection versus CPJSONPConnection, due largely in part to the lack of documentation or discussion on the issue. In general, you should only use JSONP with third-party services that you trust, and only when doing so doesn&#39;t involve sensitive information. For example, getting public Flickr photos, or performing a Google search using Google&#39;s AJAX search API. If you&#39;re communicating with your own service, even if you use JSON as the transmission format, you should use CPURLConnection. Their are numerous advantages to this approach, especially the additional security.</p>
+
+<p>I hope this has illustrated both when and how to use CPURLConnection and CPJSONPConnection. As we continue to develop Cappuccino, we&#39;ll be improving both of these classes, and introducing new communication methods as well. If you have questions, sound off in the comments, or try the <a href="http://www.cappuccino-project.org/discuss/list.php">mailing list or irc channel</a>.</p>
+ 
+<a class='pull-right action' href='/blog/feed.xml' id='rss_link'>
+<img alt="RSS" width="28" height="28" src="/img/feed-icon-28x28-0489f1cd.png" />
+</a>
+<div class='author'>
+Posted by
+Ross Boucher
+</div>
+<div class='date'>
+on
+Oct 08, 2008.
+</div>
+<div class='tags'>
+Tagged
+<a href="/blog/tags/cpurlconnection.html">CPURLConnection</a>, <a href="/blog/tags/ajax.html">AJAX</a>, <a href="/blog/tags/xmlhttprequest.html">XMLHTTPRequest</a>, <a href="/blog/tags/tutorial.html">tutorial</a>.
+</div>
+</div>
+<ul class='pager'>
+<li class='previous'>
+<a href='/blog/2008/10/the-cappuccino-build-tools.html' rel='prev'>&larr; Previous Article</a>
+</li>
+<li class='next'>
+<a href='/blog/2008/10/franciscos-talk-at-fowa-london.html' rel='next'>Next Article &rarr;</a>
+</li>
+</ul>
+<div id='disqus_thread'></div>
+<script>
+  var disqus_container_id = 'disqus_thread',
+      disqus_domain = 'disqus.com',
+      disqus_shortname = 'cappuccino',
+      disqus_url = 'http://www.cappuccino-project.org/blog/2008/10/xmlhttprequest-jsonp-cappuccino.html',
+      disqus_developer = 0;
+</script>
+<script>
+  var disqus_identifier = '56 http://cappuccino.org/discuss/?p=56';
+</script>
+<script>
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+</p>
+<noscript>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">
+comments powered by Disqus.
+</a>
+</noscript>
+<a class="dsq-brlink" href="http://disqus.com">
+comments powered by
+<span class="logo-disqus">Disqus</span>
+</a>
+</div>
+<div class="span3 sidebar offset1">
+<form action="http://google.com/cse" id="cse-search-box">
+<input name="cx" type="hidden" value="003886841673136914364:g4k5gxiukag">
+<input name="ie" type="hidden" value="UTF-8">
+<input class="input-large search-query" name="q" placeholder="Search" size="31" type="text">
+<!-- %input.btn{:name => "sa", :type => "submit", :value => "Search"}/ -->
+</form>
+<h4 class="sidebar_header">
+Recent posts
+</h4>
+<ul class="recent_posts">
+<li>
+<a href="/blog/2015/09/cappuccino-news-2015-09-01.html">Cappuccino News 2015 September 1st</a>
+</li>
+<li>
+<a href="/blog/2015/08/cappuccino-news-2015-08-01.html">Cappuccino News 2015 August 1st</a>
+</li>
+<li>
+<a href="/blog/2015/07/cappuccino-news-2015-07-01.html">Cappuccino News 2015 July 1st</a>
+</li>
+<li>
+<a href="/blog/2015/06/cappuccino-news-2015-06-01.html">Cappuccino News 2015 June 1st</a>
+</li>
+<li>
+<a href="/blog/2015/05/cappuccino-news-2015-05-01.html">Cappuccino News 2015 May 1st</a>
+</li>
+</ul>
+<h4 class="sidebar_header">
+Tags
+</h4>
+<ul class="tags">
+<li>
+<a href="/blog/tags/events.html">Events</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">Conferences</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino.html">cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/cocoa.html">cocoa</a>
+</li>
+<li>
+<a href="/blog/tags/iphone.html">iphone</a>
+</li>
+<li>
+<a href="/blog/tags/porting.html">porting</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino.html">Cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/xcode.html">xcode</a>
+</li>
+<li>
+<a href="/blog/tags/ide.html">ide</a>
+</li>
+<li>
+<a href="/blog/tags/build-tool.html">build tool</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">Objective-J</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">Update</a>
+</li>
+<li>
+<a href="/blog/tags/cpurlconnection.html">CPURLConnection</a>
+</li>
+<li>
+<a href="/blog/tags/ajax.html">AJAX</a>
+</li>
+<li>
+<a href="/blog/tags/xmlhttprequest.html">XMLHTTPRequest</a>
+</li>
+<li>
+<a href="/blog/tags/tutorial.html">tutorial</a>
+</li>
+<li>
+<a href="/blog/tags/events.html">events</a>
+</li>
+<li>
+<a href="/blog/tags/fowa.html">fowa</a>
+</li>
+<li>
+<a href="/blog/tags/london.html">london</a>
+</li>
+<li>
+<a href="/blog/tags/tutorials.html">tutorials</a>
+</li>
+<li>
+<a href="/blog/tags/tools.html">tools</a>
+</li>
+<li>
+<a href="/blog/tags/scrapbook.html">scrapbook</a>
+</li>
+<li>
+<a href="/blog/tags/draganddrop.html">draganddrop</a>
+</li>
+<li>
+<a href="/blog/tags/accessor-synthesizing.html">Accessor Synthesizing</a>
+</li>
+<li>
+<a href="/blog/tags/accessors.html">@accessors</a>
+</li>
+<li>
+<a href="/blog/tags/layout.html">layout</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">objective-j</a>
+</li>
+<li>
+<a href="/blog/tags/screencasts.html">Screencasts</a>
+</li>
+<li>
+<a href="/blog/tags/slicehost.html">slicehost</a>
+</li>
+<li>
+<a href="/blog/tags/280north.html">280north</a>
+</li>
+<li>
+<a href="/blog/tags/atlas.html">atlas</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">Rake</a>
+</li>
+<li>
+<a href="/blog/tags/nib2cib.html">nib2cib</a>
+</li>
+<li>
+<a href="/blog/tags/aristo.html">Aristo</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">Sofa</a>
+</li>
+<li>
+<a href="/blog/tags/open-source.html">open source</a>
+</li>
+<li>
+<a href="/blog/tags/narwhal.html">Narwhal</a>
+</li>
+<li>
+<a href="/blog/tags/community-highlights.html">community highlights</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">sofa</a>
+</li>
+<li>
+<a href="/blog/tags/code.html">code</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">update</a>
+</li>
+<li>
+<a href="/blog/tags/releases.html">releases</a>
+</li>
+<li>
+<a href="/blog/tags/tool.html">tool</a>
+</li>
+<li>
+<a href="/blog/tags/jake.html">jake</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">rake</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">conferences</a>
+</li>
+<li>
+<a href="/blog/tags/280-north.html">280 north</a>
+</li>
+<li>
+<a href="/blog/tags/github.html">github</a>
+</li>
+<li>
+<a href="/blog/tags/issues.html">issues</a>
+</li>
+<li>
+<a href="/blog/tags/website.html">website</a>
+</li>
+<li>
+<a href="/blog/tags/projects.html">projects</a>
+</li>
+<li>
+<a href="/blog/tags/compiler.html">compiler</a>
+</li>
+<li>
+<a href="/blog/tags/frameworks.html">frameworks</a>
+</li>
+<li>
+<a href="/blog/tags/documentation.html">documentation</a>
+</li>
+<li>
+<a href="/blog/tags/doxygen.html">doxygen</a>
+</li>
+<li>
+<a href="/blog/tags/docsets.html">docsets</a>
+</li>
+<li>
+<a href="/blog/tags/nuagenetworks.html">nuagenetworks</a>
+</li>
+<li>
+<a href="/blog/tags/sdn.html">sdn</a>
+</li>
+<li>
+<a href="/blog/tags/showcase.html">showcase</a>
+</li>
+<li>
+<a href="/blog/tags/cucumber.html">Cucumber</a>
+</li>
+<li>
+<a href="/blog/tags/cucapp.html">Cucapp</a>
+</li>
+<li>
+<a href="/blog/tags/test.html">test</a>
+</li>
+<li>
+<a href="/blog/tags/automation-test.html">Automation test</a>
+</li>
+<li>
+<a href="/blog/tags/functional-test.html">Functional test</a>
+</li>
+<li>
+<a href="/blog/tags/nuage-networks.html">Nuage Networks</a>
+</li>
+<li>
+<a href="/blog/tags/interface-builder.html">interface builder</a>
+</li>
+<li>
+<a href="/blog/tags/xcodecapp.html">xcodecapp</a>
+</li>
+<li>
+<a href="/blog/tags/node.html">Node</a>
+</li>
+<li>
+<a href="/blog/tags/ojtest.html">OJTest</a>
+</li>
+<li>
+<a href="/blog/tags/theme.html">theme</a>
+</li>
+<li>
+<a href="/blog/tags/appkit.html">appkit</a>
+</li>
+<li>
+<a href="/blog/tags/release.html">Release</a>
+</li>
+<li>
+<a href="/blog/tags/objj.html">objj</a>
+</li>
+<li>
+<a href="/blog/tags/objj2objcskeleton.html">objj2objcskeleton</a>
+</li>
+<li>
+<a href="/blog/tags/capp_env.html">capp_env</a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<map id="CPFormatter" name="CPFormatter">
+<area shape="rect" id="node3" href="$interface_c_p_byte_count_formatter.html" title="CPByteCountFormatter" alt="" coords="4,161,163,189"/>
+<area shape="rect" id="node4" href="$interface_c_p_date_formatter.html" title="CPDateFormatter" alt="" coords="188,161,313,189"/>
+<area shape="rect" id="node5" href="$interface_c_p_number_formatter.html" title="CPNumberFormatter" alt="" coords="338,161,483,189"/>
+<area shape="rect" id="node2" href="$class_c_p_object.html" title="CPObject" alt="" coords="211,6,289,34"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="CPColorPicker" name="CPColorPicker">
+<area shape="rect" id="node3" href="$class_c_p_color_wheel_color_picker.html" title="CPColorWheelColorPicker" alt="" coords="4,161,181,189"/>
+<area shape="rect" id="node4" href="$interface_c_p_slider_color_picker.html" title="CPSliderColorPicker" alt="" coords="206,161,348,189"/>
+<area shape="rect" id="node2" href="$class_c_p_object.html" title="CPObject" alt="" coords="146,6,224,34"/>
+</map>

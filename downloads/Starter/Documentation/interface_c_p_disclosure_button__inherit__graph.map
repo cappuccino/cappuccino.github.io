@@ -1,0 +1,7 @@
+<map id="CPDisclosureButton" name="CPDisclosureButton">
+<area shape="rect" id="node2" href="$interface_c_p_button.html" title="CPButton" alt="" coords="35,315,113,343"/>
+<area shape="rect" id="node3" href="$interface_c_p_control.html" title="CPControl" alt="" coords="33,238,116,266"/>
+<area shape="rect" id="node4" href="$interface_c_p_view.html" title="CPView" alt="" coords="40,161,108,189"/>
+<area shape="rect" id="node5" href="$interface_c_p_responder.html" title="CPResponder" alt="" coords="22,83,127,111"/>
+<area shape="rect" id="node6" href="$class_c_p_object.html" title="CPObject" alt="" coords="35,6,113,34"/>
+</map>

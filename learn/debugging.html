@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino - Debugging</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-debugging-html folder-learn">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container learn">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Learn</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="span3">
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/">What is Cappuccino?</a>
+</li>
+<li>
+<a href="/learn/environment.html">Your development environment</a>
+</li>
+<li>
+<a href="/learn/starter.html">Get Started</a>
+</li>
+<li>
+<a href="/learn/build-source.html">Advanced: Install from Source</a>
+</li>
+<li>
+<a href="/learn/objective-j.html">Learning Objective-J</a>
+</li>
+<li>
+<a href="/learn/scrapbook-1.html">Scrapbook #1 - Views and Layers</a>
+</li>
+<li>
+<a href="/learn/scrapbook-2.html">Scrapbook #2 - Drag and Drop</a>
+</li>
+<li>
+<a href="/learn/automatic-layout.html">Tutorial: Automatic Layout</a>
+</li>
+<li>
+<a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
+</li>
+<li class="active">
+<a href="/learn/debugging.html">Debugging</a>
+</li>
+</ul>
+<h5>Resources</h5>
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/demos.html">Demos</a>
+</li>
+<li>
+<a href="/learn/documentation/">API Documentation</a>
+</li>
+<li>
+<a href="/support/faq.html">FAQ</a>
+</li>
+</ul>
+</div>
+<div class="span9 text-body markdown">
+<h3>
+Debugging
+</h3>
+<p>More often than not, software doesn’t work on the first try. This tutorial will explain the basics of Cappuccino
+debugging.</p>
+
+<h3>The debugger</h3>
+
+<p>As mentioned in chapter on <a href="/learn/environment.html">development environment</a>, modern browsers provide tools to debug JavaScript. There is <a href="http://getfirebug.com/">Firebug</a> for Firefox, <a href="http://www.debugbar.com/">Debug
+Bar</a> for Internet Explorer and the embeded
+Developer tools in all WebKit browsers (Safari, Chrome, Chromium etc).
+In this tutorial, we are going to use the WebKit debugger, which is one
+of the most powerful tool for web application development.</p>
+
+<h3>Access the debugger</h3>
+
+<p>Open <code>index.html</code> of the starter app in the browser. You will see the “Hello world”
+label displayed.</p>
+
+<p>Open the debugger. In Safari, it’s located under Development &gt; Display Error Console. In Chrome
+it’s found under Presentation &gt; Developers Options &gt; JavaScript console.</p>
+
+<p>This is what the inspector looks like in Safari:</p>
+
+<p><img alt="Main Window" width="674" height="514" src="/img/tuto-debugger-0-86c68c3c.png"></p>
+
+<p>As you can see it’s empty. You have several tools you access from the
+toolbar:</p>
+
+<ul>
+<li>  <strong>Elements</strong> allows you to get informations about any DOM element on
+the page, access and edit CSS rules etc. It’s very useful in
+general, but most of the time you don’t need it in Cappuccino.</li>
+<li>  <strong>Resources</strong> displays information about the webpage
+resources: images, scripts, frames and so on that
+are loaded as part of the page or available to the page.</li>
+<li>  <strong>Network</strong> allows you to monitor network access. It can be very useful
+to optimise your application. It also displays all the XHR requests.</li>
+<li>  <strong>Script</strong> is the JavaScript debugger. We’ll talk about it later
+in this tutorial</li>
+<li>  <strong>Timeline</strong> displays live information about the rendering of your page memory usage over the time.</li>
+<li>  <strong>Profile</strong> allows you to take memory heap snapshots, compare
+several snapshot, and list all the objects used in the page.</li>
+<li>  <strong>Audit</strong> mostly never works with Cappuccino apps.</li>
+<li>  <strong>Console</strong> displays log messages from your Cappuccino
+application.</li>
+</ul>
+
+<p>We are going to mainly use Script and Console in this tutorial.</p>
+
+<h3>Make your application verbose</h3>
+
+<p>The most basic tool in the developer’s toolbox is logging.</p>
+
+<p>Open the <code>AppController.j</code> of the starter app, and add the following code:</p>
+
+<div class="highlight"><pre><span class="c1">// [...]</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidFinishLaunching:</span><span class="p">(</span><span class="kt">CPNotification</span><span class="p">)</span>aNotification
+<span class="p">{</span>
+    <span class="c1">// [...]</span>
+    <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">label</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+<span class="err"> </span>
+    <span class="c1">// log the content of the label</span>
+    <span class="n">CPLog</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"The content of the label is: "</span> <span class="o">+</span> <span class="p">[</span><span class="n">label</span> <span class="n">stringValue</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Reload the app, open the Debugger and select the <code>Console</code> tool. You
+will see nothing!</p>
+
+<p>his is normal, because you have opened <code>index.html</code> which logs nothing by default. Now open
+<code>index-debug.html</code>, and select the <code>Console</code> tool:</p>
+
+<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-2-47e0b806.png"></p>
+
+<p><span class="label label-info">Info</span>  You can enable logging in <code>index.html</code> as well by registering a logger using <code>CPLogRegister</code>.</p>
+
+<p>There are 6 logging levels: <code>fatal</code>, <code>error</code>, <code>warn</code>, <code>info</code>, <code>debug</code> and <code>trace</code>. You use them with <code>CPLog.fatal()</code>, <code>CPLog.warn()</code>, <code>CPLog.info()</code> etc.</p>
+
+<p>It is generally a good idea to log verbosely when you develop and then to eliminate logging statements, or to switch them to a lower level so as to suppress them when the app becomes more mature.</p>
+
+<h3>The JavaScript debugger</h3>
+
+<p>Sometimes a problem is too complex to be cracked by logging alone, and a more powerful tool is called for: the Debugger.</p>
+
+<p>Let’s add bad code in our <code>AppController.j</code>:</p>
+
+<div class="highlight"><pre><span class="c1">// [...]</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidFinishLaunching:</span><span class="p">(</span><span class="kt">CPNotification</span><span class="p">)</span>aNotification
+<span class="p">{</span>
+    <span class="c1">// [...]</span>
+    <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">label</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+
+    <span class="c1">// log the content of the label</span>
+    <span class="n">CPLog</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"The content of the label is: "</span> <span class="o">+</span> <span class="p">[</span><span class="n">label</span> <span class="n">stringValue</span><span class="p">]);</span>
+
+    <span class="c1">// I'm gonna crash!</span>
+    <span class="p">[</span><span class="n">notDefinedVariable</span> <span class="n">doSomethingNotDefined</span><span class="o">:</span><span class="n">withAnotherNotDefinedVariable</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Reload <code>index-debug.html</code> and look at the Console:</p>
+
+<p><img alt="Oops, an error" width="672" height="514" src="/img/tuto-debugger-3-2d9463bc.png"></p>
+
+<p>The Console shows an error: <code>ReferenceError: Can't find variable: notDefinedVariable</code>. In this example the cause is obvious, but sometimes it’s not. Let’s imagine you can’t find the cause.</p>
+
+<p>When an unmatched exception is logged, it’s too late to go back and
+see the cause. The debugger has to be enabled <strong>before</strong> the error.</p>
+
+<p>Go to the Script tab (Safari) or the Sources (Chrome), and click on the “Enable Debugging”
+button:</p>
+
+<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-4-0e261062.png"></p>
+
+<p>The Debugger will become activated. Make sure the icon with a stop sign and two parallel lines is blue or purple. This activates the “Pause on [uncaught] exceptions” feature.</p>
+
+<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-5-83871cd0.png"></p>
+
+<p>Reload the application. When the error occurs, the debugger will stop JavaScript execution when it encounters an exception:</p>
+
+<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-6-552ab3f2.png"></p>
+
+<p>On the left side you can see the line of code in the code that caused the exception. On the right side you have the execution stack.</p>
+
+<p>Note that the code has been compiled from Objective-J to JavaScript by Cappuccino at this point, so the code does not look exactly like your original code. For example:</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">myObject</span> <span class="n">saySomething</span><span class="o">:</span><span class="s">@"hello"</span><span class="p">];</span>
+</pre></div>
+
+<p>Is compiled into:</p>
+
+<div class="highlight"><pre><span class="nf">objj_msgSend</span><span class="p">(</span><span class="n">myObject</span><span class="p">,</span> <span class="s">"saySomething:"</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
+</pre></div>
+
+<p>If you want to delve into the depths of the Objective-J runtime, take a look at the equivalent documentation for Objective-C: <a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html">Apple’s developer documentation</a>. For the most part you don’t need to understand it perfectly to find out what’s wrong with your original code though.</p>
+
+<p>The Call Stack shown on the right hand side of the Debugger allows you to click on earlier calls in the execution stack to inspect what was going on at that point. You can also display the content of your objects by
+putting the mouse over a declaration:</p>
+
+<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-7-c0f615d2.png"></p>
+
+<h3>Setting breakpoints</h3>
+
+<p>Breakpoints allow you to specify points where code execution should automatically pause. You can place breakpoints by clicking line numbers of code in the Scripts (Safari) or Source (Chrome) tab. Sometimes these don’t stick around when you reload the app though so an easier way is to use the <code>debugger</code> statement in code.</p>
+
+<pre>:::objj 
+- (void)applicationDidFinishLaunching:(CPNotification)aNotification
+{
+    var theWindow = [[CPWindow alloc] initWithContentRect:CGRectMakeZero() styleMask:CPBorderlessBridgeWindowMask],
+        contentView = [theWindow contentView],
+        label = [[CPTextField alloc] initWithFrame:CGRectMakeZero()];
+ 
+    [label setStringValue:@"Hello World!"];
+    [label setFont:[CPFont boldSystemFontOfSize:24.0]];
+ 
+    debugger; // the breakpoint!
+ 
+    [label sizeToFit];
+ 
+    [label setAutoresizingMask:CPViewMinXMargin | CPViewMaxXMargin | CPViewMinYMargin | CPViewMaxYMargin];
+    [label setCenter:[contentView center]];
+    [contentView addSubview:label];
+    [theWindow orderFront:self];
+}
+</pre>
+
+<p>If the JavaScript debugger is active when you reload the app you will see it stop execution when the <code>debugger</code> statement is executed;</p>
+
+<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-8-cb792a83.png"></p>
+
+<p>From here you can inspect the code, or single step forward using the debugger buttons.</p>
+
+<h3>Wrapping Up</h3>
+
+<p>The WebKit’s developer tools (and JS debuggers in general) have became
+extremely powerful tools. This tutorial only covers the basics. There is additional documentation available for Safari from Apple: <a href="http://developer.apple.com/library/safari/#documentation/AppleApplications/Conceptual/Safari_Developer_Guide/1Introduction/Introduction.html">Apple’s
+documentation</a>.</p>
+
+</div>
+</div>
+<div class="row">
+<div class="offset3 span9">
+<div class="learn-nav">
+<ul class="pager">
+<li class="previous">
+<a href="/learn/xcode-basics.html">← Return to '
+Tutorial: Xcode Interface Builder
+'
+</a>
+</li>
+<li class="next">
+<a href="/learn/demos.html">Continue to '
+Demos
+' →
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Contribute</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-contribute-html">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Contribute</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="offset2 span8 markdown">
+<p>As an open source project, your contributions are important to the
+future of Cappuccino. Whether you’re looking to write code, add new
+documentation, or just report a bug, you’ll be helping everyone who uses
+Cappuccino in the future.</p>
+
+<h3>Reporting Bugs or Missing Features <a name="bug-reports"> </a>
+</h3>
+
+<p>We use the <a href="http://github.com/cappuccino/cappuccino/issues">GitHub issue tracker</a> to report and
+follow bugs in Cappuccino. If you think you’ve found a problem in
+Cappuccino, you can always ask about it on the mailing list or in the
+IRC chat room, or you can search GitHub. If you’ve discovered a new bug,
+report it!</p>
+
+<p>These things are likely bugs:</p>
+
+<ul>
+<li>Code that doesn’t run at all due to JavaScript errors.</li>
+<li>Code that doesn’t behave according to the documentation (Cappuccino docs or Cocoa docs).</li>
+<li>Methods or features that behave differently in Cocoa than in Cappuccino.</li>
+</ul>
+
+<h4>Before You Report It</h4>
+
+<p>If you are sure the problem comes from Cappuccino and not from your
+code, we want to know about it. Before writing up a new ticket
+in the issue tracker, please consider these guidelines:</p>
+
+<ul>
+<li>  <strong>Do</strong> <a href="https://github.com/cappuccino/cappuccino/issues">search the issue
+tracker</a> to see if
+your issue has already been filed. If it has and you have some more
+details to add, add a comment to the existing issue.</li>
+<li>  <strong>Don’t</strong> reopen issues that have been tagged “#wont-fix”. This
+means that the decision has been made that we can’t or won’t fix
+this particular issue. If you’re not sure why, please ask on the
+<a href="http://groups.google.com/group/objectivej">Cappuccino users group</a>.</li>
+<li>  <strong>Do</strong> search the <a href="http://groups.google.com/group/objectivej">Cappuccino users group</a> and <a href="http://groups.google.com/group/objectivej-dev">Cappuccino developers group</a> to
+see if your issue has already been discussed. If it has not and you
+are not sure if what you are seeing is a bug, ask the users group.</li>
+<li>  <strong>Don’t</strong> use the ticket system to ask support questions. Use the
+<a href="http://groups.google.com/group/objectivej">Cappuccino users group</a>,
+or the #cappuccino IRC channel for that.</li>
+<li>  <strong>Don’t</strong> use the ticket system to make large-scale feature
+requests. Please discuss them on the <a href="http://groups.google.com/group/objectivej-dev">Cappuccino developers group</a> first.</li>
+</ul>
+
+<h4>Reporting Guidelines</h4>
+
+<p>Once you are ready to file a bug report or feature request, here are some tips:</p>
+
+<ul>
+<li>  <strong>Don’t</strong> just say “X doesn’t work” or “When I do X, it doesn’t
+work.” Please write a clear, concise description of the problem, and
+a clear set of instructions for replicating the problem. If there
+are error messages involved, please include them exactly as they
+appear.</li>
+<li>  <strong>Do</strong> include your operating system version, Cappuccino version,
+and browser version.</li>
+<li>  <strong>Do</strong> include a link to the source of a minimal example app that
+illustrates the bug.</li>
+<li>  <strong>Don’t</strong> post to one of the groups to announce that you have filed
+a bug report. We are notified as soon as they are filed.</li>
+</ul>
+
+<p>When you have everything ready, go ahead and <a href="https://github.com/cappuccino/cappuccino/issues/new">open a new ticket</a>.</p>
+
+<h3>The Issue Lifecycle</h3>
+
+<p>Once the ticket is created, there is a <a href="/contribute/issue-lifecycle.html">well-defined lifecycle</a> it goes through. We track its progress
+through the lifecycle with tags so you know what its status is.</p>
+
+<h3>Getting the Code <a name="get-code"> </a>
+</h3>
+
+<p>Cappuccino is hosted on
+<a href="http://github.com/cappuccino/cappuccino">GitHub</a> using the
+<a href="http://git-scm.com/">Git</a> version control system. You can get the code
+with the following command:</p>
+
+<pre>git clone git://github.com/cappuccino/cappuccino.git
+</pre>
+
+<p>If you don’t have Git installed, don’t worry, it’s simple. Check out the
+<a href="http://git-scm.com/download">official download page</a>, or view the
+installation guide on the <a href="http://git.or.cz/gitwiki/Installation">Git Wiki</a>.</p>
+
+<p>You can also download the latest source code as a <a href="http://github.com/cappuccino/cappuccino/zipball/master">zip
+file</a> or
+<a href="http://github.com/cappuccino/cappuccino/tarball/master">tarball</a>. These
+links go to the top of the tree, but using GitHub, you can find any
+specific revision on any branch and download either file.</p>
+
+<p>For help getting set up with the build tools and checking out the source
+code, follow <a href="http://wiki.github.com/cappuccino/cappuccino/getting-and-building-the-source">this guide</a>.</p>
+
+<h3>What to Work On</h3>
+
+<p>From time to time we might update the <a href="https://github.com/cappuccino/cappuccino/wiki/projects-to-work-on">Projects to Work On</a> list. If there’s nothing you want to work on there, there might be an open <a href="https://github.com/cappuccino/cappuccino/issues">issue</a> or two.</p>
+
+<h3>Contributing Code</h3>
+
+<p>Bug fixes, new features and other patches you write should be submitted as pull requests. Patches should conform to the project’s <a href="https://github.com/cappuccino/cappuccino/blob/master/CONTRIBUTING.md">contribution guidelines</a> as closely as possible.</p>
+
+<h3>Documentation, Wiki &amp; Tutorials</h3>
+
+<p>Cappuccino documentation is integrated inline with Cappuccino code. We
+use a documentation generating tool to create the <a href="/learn/documentation/">docs on this site</a>. You can run it yourself by running <code>jake docs</code> in the Cappuccino project. If you’d like to improve the documentation for a given section of the code, you can get the code as described above and make your changes. When you’re ready, go through the normal commit process to have your changes integrated with the project.</p>
+
+<p>Github has an <a href="http://github.com/cappuccino/cappuccino/wikis">integrated wiki</a> which this project
+uses for collaboration. We keep a list of projects we think need the most attention and are worth working on, along with lots of other useful information for developers. This site also has a <a href="/learn/">tutorial section</a> where we collect and link to tutorials. If you’ve written a tutorial, you can submit a pull request <a href="https://github.com/cappuccino/cappuccino.org">this site</a> for potential inclusion.</p>
+
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://www.gittip.com/for/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>
