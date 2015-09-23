@@ -1,0 +1,9 @@
+digraph "AppKit.doc/Platform" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_0e4e8176c2dd688a0cdab60948de03e6 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="AppKit.doc" fontname="Helvetica", fontsize="10", URL="dir_0e4e8176c2dd688a0cdab60948de03e6.html"]
+  dir_1b0450e5749dadee06d48aab150b21d3 [shape=box, label="Platform", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_1b0450e5749dadee06d48aab150b21d3.html"];
+  }
+}

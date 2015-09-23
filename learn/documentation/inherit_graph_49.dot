@@ -1,0 +1,11 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CPPredicate",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CPComparisonPredicate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_c_p_comparison_predicate.html",tooltip="CPComparisonPredicate is a subclass of CPPredicate used to compare expressions. "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CPCompoundPredicate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_c_p_compound_predicate.html",tooltip="CPCompoundPredicate is a subclass of CPPredicate used to represent logical “gate” operations (AND/O..."];
+}
