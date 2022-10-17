@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino - Testing with OJTest</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-ojtest-html folder-learn">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container learn">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Learn</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="span3">
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/">What is Cappuccino?</a>
+</li>
+<li>
+<a href="/learn/environment.html">Your development environment</a>
+</li>
+<li>
+<a href="/learn/starter.html">Get Started</a>
+</li>
+<li>
+<a href="/learn/build-source.html">Advanced: Install from Source</a>
+</li>
+<li>
+<a href="/learn/objective-j.html">Learning Objective-J</a>
+</li>
+<li>
+<a href="/learn/scrapbook-1.html">Scrapbook #1 - Views and Layers</a>
+</li>
+<li>
+<a href="/learn/scrapbook-2.html">Scrapbook #2 - Drag and Drop</a>
+</li>
+<li>
+<a href="/learn/automatic-layout.html">Tutorial: Automatic Layout</a>
+</li>
+<li>
+<a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
+</li>
+<li>
+<a href="/learn/simple-tableview.html">Tutorial: Simple Table View</a>
+</li>
+<li>
+<a href="/learn/simple-outlineview.html">Tutorial: Simple Outline View</a>
+</li>
+<li>
+<a href="/learn/debugging.html">Debugging</a>
+</li>
+<li class="active">
+<a href="/learn/ojtest.html">Testing with OJTest</a>
+</li>
+<li>
+<a href="/learn/cucapp.html">Testing with Cucapp</a>
+</li>
+</ul>
+<h5>Resources</h5>
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/demos.html">Demos</a>
+</li>
+<li>
+<a href="/learn/documentation/">API Documentation</a>
+</li>
+<li>
+<a href="/support/faq.html">FAQ</a>
+</li>
+</ul>
+</div>
+<div class="span9 text-body markdown">
+<h3>
+Testing with OJTest
+</h3>
+<p>OJTest is a collection of frameworks which aim to provide a comprehensive testing solution for Cappuccino applications. They are separate from Cappuccino itself. You can find the framworks <a href="https://github.com/cappuccino/OJTest">here</a>.</p>
+
+<p>OJTest is used to create unit-tests and test algorithms. OJTest runs in a shell and, unlike say Cucapp, does not use a web browser. This means there are no DOM elements, the actual browser based bits and pieces that implement the UI in Cappuccino. You still have all the logic but it’s running in a ‘headless’ mode so to speak. (To test with actual DOM elements in play (full UI simulation), see the next topic <a href="/learn/cucapp.html">Cucapp</a>.)</p>
+
+<p>Cappuccino itself is tested using OJTest, so there are many examples in its source code on how to write tests. Check out the <code>Tests/</code> folder of the Cappuccino sources.</p>
+
+<h3>Installation</h3>
+
+<p>OJTest is installed by default when you install Cappuccino from sources. If you did not do it, please follow the tutorial <a href="/learn/build-source.html">Advanced: Install from Source</a>.</p>
+
+<p>Once Cappuccino is installed, you may choose to install the latest version of OJTest, which might be newer than the version included with Cappuccino. To do so, follow these steps.</p>
+
+<p>First, clone the git repository of OJTest:</p>
+
+<div class="highlight"><pre>git clone https://github.com/cappuccino/OJTest
+</pre></div>
+
+<p>Then enter the OJTest directory and launch the install command:</p>
+
+<div class="highlight"><pre><span class="nb">cd </span>OJTest
+jake install
+</pre></div>
+
+<p>Verify that <code>ojtest</code> is in your <code>PATH</code>:</p>
+
+<div class="highlight"><pre><span class="c"># ojtest -h</span>
+Usage: ojtest <span class="o">[</span>OPTIONS<span class="o">]</span> INPUT_FILE ...
+<span class="o">[</span>...<span class="o">]</span>
+</pre></div>
+
+<h3>OJUnit - an xUnit Framework</h3>
+
+<p>To explain how OJUnit works we are going to create a very simple test to check if one feature of the class <code>CPDateFormatter</code> works as expected.</p>
+
+<h4>Structure of your test file</h4>
+
+<p>There is a rule for how to name your test files when working with OJTest. OJTest will only run tests found in files with names that follow the pattern <code>*Test.j</code>. In our example, let’s name the test file <code>CPDateFormatterTest.j</code>.</p>
+
+<p>Also, you need to name your test class inside of your test file to a <b>class name that exactly matches the name of your file</b>. The class should inherit from <code>OJTestCase</code>.</p>
+
+<p>OJTest supports the <code>setUp</code> and <code>tearDown</code> methods like in other xUnit frameworks. They enable you to configure your test environment. Here’s what we will use for this example.</p>
+
+<div class="highlight"><pre><span class="cp">@import</span> <span class="s2">&lt;Foundation/Foundation.j&gt;</span>
+<span class="cp">@import</span> <span class="s2">&lt;OJUnit/OJTestCase.j&gt;</span>
+
+<span class="k">@implementation</span> <span class="nc">CPDateFormatterTest</span> <span class="o">:</span> <span class="nc">OJTestCase</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="c1">// Only called one time, before all the tests of the class.</span>
+<span class="o">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setUp</span>
+<span class="p">{</span>
+    <span class="c1">// You could load data from a test file here or otherwise configure your environment for your test.</span>
+<span class="p">}</span>
+
+<span class="c1">// Only called one time, after all the tests of the class.</span>
+<span class="o">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">tearDown</span>
+<span class="p">{</span>
+    <span class="c1">// If you did anything in + setUp that needs to be undone, this is where to do that.</span>
+<span class="p">}</span>
+
+<span class="c1">// Called before each test.</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setUp</span>
+<span class="p">{</span>
+    <span class="n">_date</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPDate</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithString</span><span class="o">:</span><span class="s">@"2011-10-05 16:34:38 -0900"</span><span class="p">];</span>
+
+    <span class="n">_dateFormatter</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPDateFormatter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setDateStyle</span><span class="o">:</span><span class="n">CPDateFormatterMediumStyle</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setTimeStyle</span><span class="o">:</span><span class="n">CPDateFormatterShortStyle</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setLocale</span><span class="o">:</span><span class="p">[[</span><span class="n">CPLocale</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithLocaleIdentifier</span><span class="o">:</span><span class="s">@"en_US"</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setTimeZone</span><span class="o">:</span><span class="p">[</span><span class="n">CPTimeZone</span> <span class="n">timeZoneWithAbbreviation</span><span class="o">:</span><span class="s">@"PDT"</span><span class="p">]];</span>
+<span class="p">}</span>
+
+<span class="c1">// Called after each test.</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">tearDown</span>
+<span class="p">{</span>
+    <span class="c1">// If you did anything in - setUp, this is there to undo it.</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<h4>Write the test</h4>
+
+<p>Here is the test we’ll use for our example. It checks that <code>CPDateFormatter -stringFromDate</code> works as expected with a specific environment.</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">testStringFromDateDateFullStyleTimeFullStyle</span>
+<span class="p">{</span>
+    <span class="c1">// Configure the environment we want to test.</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setDateStyle</span><span class="o">:</span><span class="n">CPDateFormatterFullStyle</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setTimeStyle</span><span class="o">:</span><span class="n">CPDateFormatterFullStyle</span><span class="p">];</span>
+
+    <span class="c1">// Send a message, stringFromDate, to an instance of CPDateFormatter.</span>
+    <span class="kd">var</span> <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">stringFromDate</span><span class="o">:</span><span class="n">_date</span><span class="p">];</span>
+
+    <span class="c1">// Test if the result is the one we expect.</span>
+    <span class="p">[</span><span class="nb">self</span> <span class="n">assert</span><span class="o">:</span><span class="n">result</span> <span class="n">equals</span><span class="o">:</span><span class="s">@"Wednesday, October 5, 2011 6:34:38 PM Pacific Daylight Time"</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Note that the name of the method starts with the keyword test. This is <b>required</b>: it allows <code>OJTest</code> to know which methods are actual tests.</p>
+
+<p>We advise you to separate your tests into three different parts. Test specific setup, an action and finally verification. Try to test only one thing per test. This will allow you to give each test a clear and purposeful name so that when a test fails you’ll immediately know what failed (and conversely, when it succeeds you know what exactly it is that works).</p>
+
+<h4>Launch the tests</h4>
+
+<p>To run our tests we’ll use the <code>ojtest</code> command:</p>
+
+<div class="highlight"><pre>ojtest CPDateFormatterTest.j
+</pre></div>
+
+<h3>OJMoq - a mocking Framework</h3>
+
+<p>OJMoq allows you to replace parts of your system under test with mock objects and make assertions about how they have been used.</p>
+
+<p>It provides a core <code>OJMoqSpy</code> class which eliminates the need to create a host of stubs throughout your test suite. After performing an action, you can make assertions about which methods / attributes were used and which arguments they were called with.</p>
+
+<p>OJMoq can be used for a lot of different scenarios! For instance it’s the perfect tool to test if a class calls delegate or dataSource methods with correct arguments.</p>
+
+<h4>Write a test</h4>
+
+<p>Let us check the behaviour of the <code>CPTableView</code>‘s data source. For a data set with five objects, we know that the method <code>-numberOfRowsInTableView:</code> should be called one time and the method <code>tableView:objectValueForTableColumn:row:</code> should be called five times. The latter method should receive increasing <code>row</code> parameters, from zero to four.</p>
+
+<p>Here’s how we might test that.</p>
+
+<div class="highlight"><pre><span class="cp">@import</span> <span class="s2">&lt;Foundation/Foundation.j&gt;</span>
+<span class="cp">@import</span> <span class="s2">&lt;AppKit/AppKit.j&gt;</span>
+<span class="cp">@import</span> <span class="s2">&lt;OJMoq/OJMoq.j&gt;</span>
+
+<span class="k">@implementation</span> <span class="nc">CPTableViewTest</span> <span class="o">:</span> <span class="nc">OJTestCase</span>
+<span class="p">{</span>
+    <span class="n">CPArray</span>         <span class="n">_datas</span><span class="p">;</span>
+    <span class="n">CPTableView</span>     <span class="n">_tableView</span><span class="p">;</span>
+    <span class="n">CPTableColumn</span>   <span class="n">_tableColumn</span><span class="p">;</span>
+
+    <span class="n">OJMoqSpy</span>        <span class="n">dataSourceSpy</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setUp</span>
+<span class="p">{</span>
+    <span class="c1">// AppKit requires this to work.</span>
+    <span class="p">[[</span><span class="n">CPApplication</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+
+    <span class="n">_datas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+
+    <span class="c1">// Create our CPTableView.</span>
+    <span class="n">_tableView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPTableView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
+    <span class="n">_tableColumn</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPTableColumn</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithIdentifier</span><span class="o">:</span><span class="s">@"Foo"</span><span class="p">];</span>
+
+    <span class="p">[</span><span class="n">_tableView</span> <span class="n">addTableColumn</span><span class="o">:</span><span class="n">_tableColumn</span><span class="p">];</span>
+
+    <span class="p">[</span><span class="n">_tableView</span> <span class="n">setDataSource</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+
+    <span class="c1">// Create a spy which will spy the class CPTableViewTest.</span>
+    <span class="n">dataSourceSpy</span> <span class="o">=</span> <span class="nf">spy</span><span class="p">(</span><span class="nb">self</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">tearDown</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">reset</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">testDataSourceCPTableView</span>
+<span class="p">{</span>
+    <span class="c1">// Make sure we have empty starting point for the spy at the beginning of our test.</span>
+    <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">reset</span><span class="p">];</span>
+
+    <span class="c1">// As the class CPTableViewTest is the dataSource of the CPTableView, the following methods should be called when reloading the data.</span>
+    <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">numberOfRowsInTableView</span><span class="o">:</span><span class="p">)</span> <span class="n">times</span><span class="o">:</span><span class="mi">1</span> <span class="n">arguments</span><span class="o">:</span><span class="p">[</span><span class="n">_tableView</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">tableView</span><span class="o">:</span><span class="n">objectValueForTableColumn</span><span class="o">:</span><span class="n">row</span><span class="o">:</span><span class="p">)</span> <span class="n">times</span><span class="o">:</span><span class="mi">1</span> <span class="n">arguments</span><span class="o">:</span><span class="p">[</span><span class="n">_tableView</span><span class="p">,</span> <span class="n">_tableColumn</span><span class="p">,</span> <span class="mi">0</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">tableView</span><span class="o">:</span><span class="n">objectValueForTableColumn</span><span class="o">:</span><span class="n">row</span><span class="o">:</span><span class="p">)</span> <span class="n">times</span><span class="o">:</span><span class="mi">1</span> <span class="n">arguments</span><span class="o">:</span><span class="p">[</span><span class="n">_tableView</span><span class="p">,</span> <span class="n">_tableColumn</span><span class="p">,</span> <span class="mi">1</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">tableView</span><span class="o">:</span><span class="n">objectValueForTableColumn</span><span class="o">:</span><span class="n">row</span><span class="o">:</span><span class="p">)</span> <span class="n">times</span><span class="o">:</span><span class="mi">1</span> <span class="n">arguments</span><span class="o">:</span><span class="p">[</span><span class="n">_tableView</span><span class="p">,</span> <span class="n">_tableColumn</span><span class="p">,</span> <span class="mi">2</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">tableView</span><span class="o">:</span><span class="n">objectValueForTableColumn</span><span class="o">:</span><span class="n">row</span><span class="o">:</span><span class="p">)</span> <span class="n">times</span><span class="o">:</span><span class="mi">1</span> <span class="n">arguments</span><span class="o">:</span><span class="p">[</span><span class="n">_tableView</span><span class="p">,</span> <span class="n">_tableColumn</span><span class="p">,</span> <span class="mi">3</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">tableView</span><span class="o">:</span><span class="n">objectValueForTableColumn</span><span class="o">:</span><span class="n">row</span><span class="o">:</span><span class="p">)</span> <span class="n">times</span><span class="o">:</span><span class="mi">1</span> <span class="n">arguments</span><span class="o">:</span><span class="p">[</span><span class="n">_tableView</span><span class="p">,</span> <span class="n">_tableColumn</span><span class="p">,</span> <span class="mi">4</span><span class="p">]];</span>
+
+    <span class="c1">// At the same time we know there should be no call for row 5.</span>
+    <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">selector</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">tableView</span><span class="o">:</span><span class="n">objectValueForTableColumn</span><span class="o">:</span><span class="n">row</span><span class="o">:</span><span class="p">)</span> <span class="n">times</span><span class="o">:</span><span class="mi">0</span> <span class="n">arguments</span><span class="o">:</span><span class="p">[</span><span class="n">_tableView</span><span class="p">,</span> <span class="n">_tableColumn</span><span class="p">,</span> <span class="mi">5</span><span class="p">]];</span>
+
+    <span class="c1">// We reload the data here and flush the run loop.</span>
+    <span class="p">[</span><span class="n">_tableView</span> <span class="n">reloadData</span><span class="p">];</span>
+    <span class="p">[[</span><span class="n">CPRunLoop</span> <span class="n">currentRunLoop</span><span class="p">]</span> <span class="n">limitDateForMode</span><span class="o">:</span><span class="n">CPDefaultRunLoopMode</span><span class="p">];</span>
+
+    <span class="c1">// Were our expectations met?</span>
+    <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">verifyThatAllExpectationsHaveBeenMetInOrder</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+
+
+<span class="k">@implementation</span> <span class="nc">CPTableViewTest</span> <span class="p">(</span><span class="nl">CPTableViewTestDataSource</span>)
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="nf">numberOfRowsInTableView:</span><span class="p">(</span><span class="kt">CPTableView</span><span class="p">)</span>aTableView
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">_datas</span> <span class="n">count</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">tableView:</span><span class="p">(</span><span class="kt">CPTableView</span><span class="p">)</span>aTableView <span class="nf">objectValueForTableColumn:</span><span class="p">(</span><span class="kt">CPTableColumn</span><span class="p">)</span>aColumn <span class="nf">row:</span><span class="p">(</span><span class="kt">CPInteger</span><span class="p">)</span>aRow
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">_datas</span><span class="p">[</span><span class="n">aRow</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>You should play with this example. Try to change the order of the selectors or change the <code>times</code> argument and you should see the test fail.</p>
+
+<h3>The ojtest command</h3>
+
+<p>The command <code>ojtest</code> comes with different options. Some of them are very useful when debugging or testing an application.</p>
+
+<p>You can stop your suite of tests after the first failure by using the <code>-x</code> option:</p>
+
+<div class="highlight"><pre>ojtest -x Tests/Foundation/CPDateFormatterTest.j
+</pre></div>
+
+<p>You can launch a single test of a test file in this manner:</p>
+
+<div class="highlight"><pre>ojtest Tests/Foundation/CPDateFormatterTest.j:testStringFromDateDateFullStyleTimeFullStyle
+</pre></div>
+
+<p>You can check the test coverage while running your OJUnit test by using the `-c option:</p>
+
+<div class="highlight"><pre>ojtest -c Tests/Foundation/CPDateFormatterTest.j
+</pre></div>
+
+<h3>Additional Info</h3>
+
+<p>OJTest has a doxygen help document. You will find these docs in the <code>documentation</code> folder of the OJTest repository.</p>
+
+<p>If you have suggestions for improvements to this guide, or if you have questions that haven’t been answered here, please let us know on
+<a href="https://gitter.im/cappuccino/cappuccino">gitter</a>.</p>
+
+</div>
+</div>
+<div class="row">
+<div class="offset3 span9">
+<div class="learn-nav">
+<ul class="pager">
+<li class="previous">
+<a href="/learn/debugging.html">← Return to '
+Debugging
+'
+</a>
+</li>
+<li class="next">
+<a href="/learn/cucapp.html">Continue to '
+Testing with Cucapp
+' →
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

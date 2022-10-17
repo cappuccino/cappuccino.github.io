@@ -1,0 +1,25 @@
+var interface_c_p_font_panel =
+[
+    [ "browser:child:ofItem:", "interface_c_p_font_panel.html#ae19d0462f50a3921ece37c282280e989", null ],
+    [ "browser:isLeafItem:", "interface_c_p_font_panel.html#ab9f786d4b87519a84927701e49a0e18a", null ],
+    [ "browser:numberOfChildrenOfItem:", "interface_c_p_font_panel.html#af900cdaf1dafa88602bcd1d80669a9c6", null ],
+    [ "browser:objectValueForItem:", "interface_c_p_font_panel.html#a97d045f1c812cf17700072c68adf3867", null ],
+    [ "browserClicked:", "interface_c_p_font_panel.html#a5c2d86dea3f0d71cc4ae9ad258498e90", null ],
+    [ "changeColor:", "interface_c_p_font_panel.html#af64bef6aa83d4f128c4fc67b5a3b92f6", null ],
+    [ "currentFont", "interface_c_p_font_panel.html#a955bd9db57a7a41bc9a552c838c44628", null ],
+    [ "currentSize", "interface_c_p_font_panel.html#ab0f82fe0a553bb65f357385bb8b096cf", null ],
+    [ "currentTrait", "interface_c_p_font_panel.html#ac3a28714e8c239da18a8da8acb8fae2e", null ],
+    [ "dblClicked:", "interface_c_p_font_panel.html#a050fb9882002e1da3ebbb57a264245ba", null ],
+    [ "init", "interface_c_p_font_panel.html#a518374599c0adf01c66fa8c678b80ad1", null ],
+    [ "orderFront:", "interface_c_p_font_panel.html#a8d8de22680a83e4dccb8476b5f2d52a4", null ],
+    [ "panelConvertFont:", "interface_c_p_font_panel.html#a6e6a3aa22897acee307d5a68bf2c0627", null ],
+    [ "reloadDefaultFontFamilies", "interface_c_p_font_panel.html#a44adb3f89e64883f3f0988a011ebe911", null ],
+    [ "setCurrentFont:", "interface_c_p_font_panel.html#a64c6818d95d10670517d14c7736ba012", null ],
+    [ "setCurrentSize:", "interface_c_p_font_panel.html#af893d90dced50ad62c18a0a47dad1be8", null ],
+    [ "setCurrentTrait:", "interface_c_p_font_panel.html#ad90d13cc06bc48f841df03000505610d", null ],
+    [ "setPanelFont:isMultiple:", "interface_c_p_font_panel.html#a6ba6c9cb676f2e0a4d87fcc7d89820ef", null ],
+    [ "sharedFontPanel", "interface_c_p_font_panel.html#aa01df48595628e4a5cf4336815f5c761", null ],
+    [ "sharedFontPanelExists", "interface_c_p_font_panel.html#a8a1780dd1f46ac5c0eacb455804686bb", null ],
+    [ "textViewDidChangeSelection:", "interface_c_p_font_panel.html#adc835b0c5ca4af5467eb6ea4e1d8caa4", null ],
+    [ "worksWhenModal", "interface_c_p_font_panel.html#a61fa00edc84ed700cb12fb89895a4e45", null ]
+];

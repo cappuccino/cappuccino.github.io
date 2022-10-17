@@ -23,6 +23,7 @@ var interface_c_p_number =
     [ "initWithUnsignedInt:", "interface_c_p_number.html#aad1ef4a4ddf74579ab221162d2cb688b", null ],
     [ "initWithUnsignedLong:", "interface_c_p_number.html#aac5787f251e4d255b59390a21f66aac7", null ],
     [ "initWithUnsignedShort:", "interface_c_p_number.html#a52107aac70d0150d32f049e2ea389eea", null ],
+    [ "integerValue", "interface_c_p_number.html#ab69f8fa6f3130aa0b0fc111212a6fe53", null ],
     [ "intValue", "interface_c_p_number.html#a0f86a31f42dd81920782609e348a9fce", null ],
     [ "isEqualToNumber:", "interface_c_p_number.html#a6db09e6ae8d0cb1317c47b2d7895b9d6", null ],
     [ "longLongValue", "interface_c_p_number.html#a6dd476b414bbcf9bf47c8108f4298167", null ],

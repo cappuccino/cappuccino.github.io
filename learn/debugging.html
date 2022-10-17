@@ -5,8 +5,8 @@
 <title>Cappuccino - Debugging</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link href="/img/favicon.ico" rel="shortcut icon">
-<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
 <link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
 </head>
 <body class="file-debugging-html folder-learn">
@@ -85,8 +85,20 @@
 <li>
 <a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
 </li>
+<li>
+<a href="/learn/simple-tableview.html">Tutorial: Simple Table View</a>
+</li>
+<li>
+<a href="/learn/simple-outlineview.html">Tutorial: Simple Outline View</a>
+</li>
 <li class="active">
 <a href="/learn/debugging.html">Debugging</a>
+</li>
+<li>
+<a href="/learn/ojtest.html">Testing with OJTest</a>
+</li>
+<li>
+<a href="/learn/cucapp.html">Testing with Cucapp</a>
 </li>
 </ul>
 <h5>Resources</h5>
@@ -127,7 +139,7 @@ it’s found under Presentation &gt; Developers Options &gt; JavaScript console.
 
 <p>This is what the inspector looks like in Safari:</p>
 
-<p><img alt="Main Window" width="674" height="514" src="/img/tuto-debugger-0-86c68c3c.png"></p>
+<p><img alt="Main Window" width="750" height="435" src="/img/tuto-debugger-0-d8394cd3.png"></p>
 
 <p>As you can see it’s empty. You have several tools you access from the
 toolbar:</p>
@@ -177,7 +189,7 @@ will see nothing!</p>
 <p>his is normal, because you have opened <code>index.html</code> which logs nothing by default. Now open
 <code>index-debug.html</code>, and select the <code>Console</code> tool:</p>
 
-<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-2-47e0b806.png"></p>
+<p><img alt="Console" width="750" height="435" src="/img/tuto-debugger-2-2c606017.png"></p>
 
 <p><span class="label label-info">Info</span>  You can enable logging in <code>index.html</code> as well by registering a logger using <code>CPLogRegister</code>.</p>
 
@@ -208,9 +220,11 @@ will see nothing!</p>
 
 <p>Reload <code>index-debug.html</code> and look at the Console:</p>
 
-<p><img alt="Oops, an error" width="672" height="514" src="/img/tuto-debugger-3-2d9463bc.png"></p>
+<p><img alt="Oops, an error" width="750" height="434" src="/img/tuto-debugger-3-c92b7311.png"></p>
 
-<p>The Console shows an error: <code>ReferenceError: Can't find variable: notDefinedVariable</code>. In this example the cause is obvious, but sometimes it’s not. Let’s imagine you can’t find the cause.</p>
+<p>There are compilation warnings such as <code>WARNING line 47 in file:/Users/Dogild/Downloads/Starter/NewApplication/AppController.j: Using unknown class or uninitialized global variable 'notDefinedVariable'</code> and <code>WARNING line 47 in file:/Users/Dogild/Downloads/Starter/NewApplication/AppController.j: Using unknown class or uninitialized global variable 'withAnotherNotDefinedVariable'</code>. </p>
+
+<p>The Console shows an error as well: <code>ReferenceError: Can't find variable: notDefinedVariable</code>. In this example the cause is obvious, but sometimes it’s not. Let’s imagine you can’t find the cause.</p>
 
 <p>When an unmatched exception is logged, it’s too late to go back and
 see the cause. The debugger has to be enabled <strong>before</strong> the error.</p>
@@ -218,17 +232,21 @@ see the cause. The debugger has to be enabled <strong>before</strong> the error.
 <p>Go to the Script tab (Safari) or the Sources (Chrome), and click on the “Enable Debugging”
 button:</p>
 
-<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-4-0e261062.png"></p>
+<p><img alt="Console" width="750" height="400" src="/img/tuto-debugger-4-cf969eb1.png"></p>
 
-<p>The Debugger will become activated. Make sure the icon with a stop sign and two parallel lines is blue or purple. This activates the “Pause on [uncaught] exceptions” feature.</p>
+<p>The Debugger will become activated. Make sure to click the All Exceptions breakpoint icon. This activates the “Pause on [uncaught] exceptions” feature.</p>
 
-<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-5-83871cd0.png"></p>
+<p><img alt="Console" width="750" height="400" src="/img/tuto-debugger-5-95ce5914.png"></p>
 
 <p>Reload the application. When the error occurs, the debugger will stop JavaScript execution when it encounters an exception:</p>
 
-<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-6-552ab3f2.png"></p>
+<p><img alt="Console" width="1369" height="668" src="/img/tuto-debugger-6-8ac1fbb1.png"></p>
 
-<p>On the left side you can see the line of code in the code that caused the exception. On the right side you have the execution stack.</p>
+<p>On the left side, you can see the Call Stack of the application. This contains methods called internally by Cappuccino.</p>
+
+<p>In the middle you have your code compiled by Cappuccino. The debugger has stopped on the line of code that caused the exception.</p>
+
+<p>On the right side you can see the local variables of the current scope, the closure(s) and the global scope. (There are quite a few global  variables in Cappuccino.)</p>
 
 <p>Note that the code has been compiled from Objective-J to JavaScript by Cappuccino at this point, so the code does not look exactly like your original code. For example:</p>
 
@@ -237,15 +255,15 @@ button:</p>
 
 <p>Is compiled into:</p>
 
-<div class="highlight"><pre><span class="nf">objj_msgSend</span><span class="p">(</span><span class="n">myObject</span><span class="p">,</span> <span class="s">"saySomething:"</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">);</span>
+<div class="highlight"><pre><span class="p">(</span><span class="n">myObject</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="n">myObject</span><span class="p">.</span><span class="n">isa</span><span class="p">.</span><span class="nf">objj_msgSend1</span><span class="p">(</span><span class="n">myObject</span><span class="p">,</span> <span class="s">"saySomething:"</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">));</span>
 </pre></div>
 
 <p>If you want to delve into the depths of the Objective-J runtime, take a look at the equivalent documentation for Objective-C: <a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html">Apple’s developer documentation</a>. For the most part you don’t need to understand it perfectly to find out what’s wrong with your original code though.</p>
 
-<p>The Call Stack shown on the right hand side of the Debugger allows you to click on earlier calls in the execution stack to inspect what was going on at that point. You can also display the content of your objects by
+<p>The Call Stack shown on the left hand side of the Debugger allows you to click on earlier calls in the execution stack to inspect what was going on at that point. You can also display the content of your objects by
 putting the mouse over a declaration:</p>
 
-<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-7-c0f615d2.png"></p>
+<p><img alt="Console" width="1369" height="668" src="/img/tuto-debugger-7-b4189702.png"></p>
 
 <h3>Setting breakpoints</h3>
 
@@ -274,7 +292,7 @@ putting the mouse over a declaration:</p>
 
 <p>If the JavaScript debugger is active when you reload the app you will see it stop execution when the <code>debugger</code> statement is executed;</p>
 
-<p><img alt="Console" width="672" height="514" src="/img/tuto-debugger-8-cb792a83.png"></p>
+<p><img alt="Console" width="1369" height="668" src="/img/tuto-debugger-8-39469cbf.png"></p>
 
 <p>From here you can inspect the code, or single step forward using the debugger buttons.</p>
 
@@ -291,14 +309,14 @@ documentation</a>.</p>
 <div class="learn-nav">
 <ul class="pager">
 <li class="previous">
-<a href="/learn/xcode-basics.html">← Return to '
-Tutorial: Xcode Interface Builder
+<a href="/learn/simple-outlineview.html">← Return to '
+Tutorial: Simple Outline View
 '
 </a>
 </li>
 <li class="next">
-<a href="/learn/demos.html">Continue to '
-Demos
+<a href="/learn/ojtest.html">Continue to '
+Testing with OJTest
 ' →
 </a>
 </li>
@@ -327,15 +345,16 @@ Demos
 <a href="/contribute.html#bug-reports">Bug reports</a>
 <a href="https://github.com/cappuccino/cappuccino">Source code</a>
 <a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
 </div>
 <div class="span2">
 <h4>Get Answers</h4>
 <a href="/support/">Support</a>
 <a href="http://groups.google.com/group/objectivej">Mailing list</a>
 <a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
-<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
 <a href="/blog/">Blog</a>
 <a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
 </div>
 </div>
 </div>
@@ -359,7 +378,7 @@ Demos
 </a>
 </div>
 <div class="span8 copyright2">
-<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="https://pages.github.com">GithubPages</a>. Copyright © 2013 - Cappuccino Project.</p>
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
 </div>
 <div class="pull-right forkme">
 <p>
@@ -370,7 +389,7 @@ Demos
 
 </div>
 </div>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="/js/bootstrap.min-f6d9c45d.js"></script>
 <script src="/js/theme-09250c02.js"></script>
 </body>

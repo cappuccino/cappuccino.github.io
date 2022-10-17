@@ -6,6 +6,7 @@ var interface_c_p_save_panel =
     [ "canSelectHiddenExtension", "interface_c_p_save_panel.html#a8cb1d3c784732017448a0ea1c96feac8", null ],
     [ "init", "interface_c_p_save_panel.html#a85c524022e735fb17e5559b379d187e3", null ],
     [ "isExtensionHidden", "interface_c_p_save_panel.html#af35bf5689445cdbc0dde49cb1937e68c", null ],
+    [ "proposedFileURLWithDocumentName:", "interface_c_p_save_panel.html#aeeeb0d2805ac813b7f81043ce8c5cecb", null ],
     [ "runModal", "interface_c_p_save_panel.html#ab7a51ce2f68ea1e1903bdaf597e56c98", null ],
     [ "savePanel", "interface_c_p_save_panel.html#a6cca3927abecf5d720dd31778a9a6901", null ],
     [ "setAllowedFileTypes:", "interface_c_p_save_panel.html#ae644fe2d73f1f0a83f4fc226cce823cb", null ],

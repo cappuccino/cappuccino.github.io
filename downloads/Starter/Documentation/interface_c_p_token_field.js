@@ -29,7 +29,7 @@ var interface_c_p_token_field =
     [ "objectValue", "interface_c_p_token_field.html#a1c2825803e93f1aad30f3e7816f9ec32", null ],
     [ "performKeyEquivalent:", "interface_c_p_token_field.html#aa44adc7350705aafe44f45852ae7c3f8", null ],
     [ "resignFirstResponder", "interface_c_p_token_field.html#a2631179f6b0c31b3552140cd56ad37f6", null ],
-    [ "sendAction:to:", "interface_c_p_token_field.html#ab42bb50d643fb5f1938ebe4519d1a288", null ],
+    [ "sendAction:to:", "interface_c_p_token_field.html#a8ebc6ea4883d589dbc73c62a5b6b1b42", null ],
     [ "setButtonType:", "interface_c_p_token_field.html#abf1be009b479ab027295b3819cc0f43f", null ],
     [ "setCompletionDelay:", "interface_c_p_token_field.html#a8de751b099cf33c6ccb2acac990ae58f", null ],
     [ "setDelegate:", "interface_c_p_token_field.html#ac93f8e8c54afffc6d70b90607f0ee86f", null ],

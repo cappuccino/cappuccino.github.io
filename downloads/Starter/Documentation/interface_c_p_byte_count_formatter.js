@@ -4,7 +4,7 @@ var interface_c_p_byte_count_formatter =
     [ "allowsNonnumericFormatting", "interface_c_p_byte_count_formatter.html#aae39be1dc7aac6b3132ad464706240e0", null ],
     [ "countStyle", "interface_c_p_byte_count_formatter.html#a1cb78646dd2d8a1ae66353d9c1687693", null ],
     [ "encodeWithCoder:", "interface_c_p_byte_count_formatter.html#abbe5e61a1780f83da2b074bc31e25e40", null ],
-    [ "getObjectValue:forString:errorDescription:", "interface_c_p_byte_count_formatter.html#a1895b4cfe52ef4e767c8020a449de075", null ],
+    [ "getObjectValue:forString:errorDescription:", "interface_c_p_byte_count_formatter.html#a61f29757b0339d20e22f8458ed38d206", null ],
     [ "includesActualByteCount", "interface_c_p_byte_count_formatter.html#ac4ff7ba1941598797b5cb7695fedc5b5", null ],
     [ "includesCount", "interface_c_p_byte_count_formatter.html#a70915b66821992d78e5ce387fbfff735", null ],
     [ "includesUnit", "interface_c_p_byte_count_formatter.html#a7f77afbf5dd9279a34905393a7a3e1be", null ],
@@ -21,6 +21,6 @@ var interface_c_p_byte_count_formatter =
     [ "setZeroPadsFractionDigits:", "interface_c_p_byte_count_formatter.html#ac14fbcdf94eea1baeeddac951b1be670", null ],
     [ "stringForObjectValue:", "interface_c_p_byte_count_formatter.html#ae8daa9acdd498d67b15c3a2606e0f6b0", null ],
     [ "stringFromByteCount:", "interface_c_p_byte_count_formatter.html#ab33493aa27c0bf53157769f40a06386e", null ],
-    [ "stringFromByteCount:countStyle:", "interface_c_p_byte_count_formatter.html#a3c7d4d5fbb84e0f6ef711a8524d87653", null ],
+    [ "stringFromByteCount:countStyle:", "interface_c_p_byte_count_formatter.html#af16bbcb2c75034eb74840c5c04d1b192", null ],
     [ "zeroPadsFractionDigits", "interface_c_p_byte_count_formatter.html#ab9da37640ed19b163ed29cc7f9194062", null ]
 ];

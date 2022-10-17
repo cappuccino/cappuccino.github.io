@@ -5,8 +5,8 @@
 <title>Cappuccino - Learning Objective-J</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link href="/img/favicon.ico" rel="shortcut icon">
-<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
 <link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
 </head>
 <body class="file-objective-j-html folder-learn">
@@ -86,7 +86,19 @@
 <a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
 </li>
 <li>
+<a href="/learn/simple-tableview.html">Tutorial: Simple Table View</a>
+</li>
+<li>
+<a href="/learn/simple-outlineview.html">Tutorial: Simple Outline View</a>
+</li>
+<li>
 <a href="/learn/debugging.html">Debugging</a>
+</li>
+<li>
+<a href="/learn/ojtest.html">Testing with OJTest</a>
+</li>
+<li>
+<a href="/learn/cucapp.html">Testing with Cucapp</a>
 </li>
 </ul>
 <h5>Resources</h5>
@@ -229,6 +241,7 @@ see how you use them. This block of code creates a new Person object,
 and sets the name:</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="n">myPerson</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Person</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+
 <span class="p">[</span><span class="n">myPerson</span> <span class="n">setName</span><span class="o">:</span><span class="s">"John"</span><span class="p">];</span>
 </pre></div>
 
@@ -264,10 +277,12 @@ directly:</p>
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">initWithName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aName
 <span class="p">{</span>
     <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">];</span>
+
     <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">aName</span><span class="p">;</span>
     <span class="p">}</span>
+
     <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -330,6 +345,40 @@ the Cappuccino frameworks.</p>
 collected language, it’s possible to accidentally hold on to reference
 to objects such that they can’t be freed, so keep this in mind.</p>
 
+<h3>Protocols</h3>
+
+<p>A class interface declares the methods and properties associated with that
+class. A protocol, by contrast, is used to declare methods and properties
+that are independent of any specific class. The class implementing a protocol
+would need to implement the required methods, but they are not required to
+implement the optional methods.</p>
+
+<p>Create a protocol:</p>
+
+<div class="highlight"><pre><span class="k">@protocol</span> <span class="nc">Move</span> <span class="o">&lt;</span><span class="n">CPObject</span><span class="o">&gt;</span>
+
+<span class="c1">// Required methods</span>
+<span class="err">@</span><span class="n">required</span>
+<span class="o">-</span> <span class="p">(</span><span class="k">void</span><span class="p">)</span><span class="n">walk</span><span class="p">;</span>
+
+<span class="c1">// Optional methods</span>
+<span class="err">@</span><span class="n">optional</span>
+<span class="o">-</span> <span class="p">(</span><span class="k">void</span><span class="p">)</span><span class="n">run</span><span class="p">;</span>
+<span class="o">-</span> <span class="p">(</span><span class="k">void</span><span class="p">)</span><span class="n">jump</span><span class="p">;</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>Adopt a protocol:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span> <span class="o">&lt;</span><span class="n">Move</span><span class="o">&gt;</span>
+<span class="p">{</span>
+    <span class="n">CPString</span> <span class="n">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
 <h3>Categories</h3>
 
 <p>Categories allow you to add methods to a class without needing to create
@@ -364,6 +413,7 @@ like this:</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="n">myString</span> <span class="o">=</span> <span class="s">"hello world"</span><span class="p">,</span>
     <span class="n">reversed</span> <span class="o">=</span> <span class="p">[</span><span class="n">myString</span> <span class="n">reverse</span><span class="p">];</span>
+
 <span class="nf">alert</span><span class="p">(</span><span class="n">reversed</span><span class="p">);</span>  <span class="c1">// alerts "dlrow olleh"</span>
 </pre></div>
 
@@ -619,6 +669,16 @@ hides the underlying variable name and gives you a way of configuring the getter
 <div class="highlight"><pre><span class="err">@</span><span class="n">global</span> <span class="n">CPInvalidArgumentException</span>
 </pre></div>
 
+<h3>Declaring new types</h3>
+
+<p>The <code>@typdef</code> declaration is used to tell the compiler about new variable types. For example <code>CPButton.j</code> creates the <code>CPButtonType</code> out of a regular integer. Thanks to the keyword typedef, the compiler will not raise any warning when using this type in class interfaces. Here’s how it’s done:</p>
+
+<div class="highlight"><pre><span class="err">@</span><span class="n">typedef</span> <span class="n">CPButtonType</span>
+<span class="n">CPMomentaryLightButton</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">CPPushOnPushOffButton</span>   <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">CPToggleButton</span>          <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</pre></div>
+
 <h3>Wrapping Up</h3>
 
 <p>This concludes our basic overview of Objective-J. The language is a
@@ -671,15 +731,16 @@ Scrapbook #1 - Views and Layers
 <a href="/contribute.html#bug-reports">Bug reports</a>
 <a href="https://github.com/cappuccino/cappuccino">Source code</a>
 <a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
 </div>
 <div class="span2">
 <h4>Get Answers</h4>
 <a href="/support/">Support</a>
 <a href="http://groups.google.com/group/objectivej">Mailing list</a>
 <a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
-<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
 <a href="/blog/">Blog</a>
 <a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
 </div>
 </div>
 </div>
@@ -703,7 +764,7 @@ Scrapbook #1 - Views and Layers
 </a>
 </div>
 <div class="span8 copyright2">
-<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="https://pages.github.com">GithubPages</a>. Copyright © 2013 - Cappuccino Project.</p>
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
 </div>
 <div class="pull-right forkme">
 <p>
@@ -714,7 +775,7 @@ Scrapbook #1 - Views and Layers
 
 </div>
 </div>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="/js/bootstrap.min-f6d9c45d.js"></script>
 <script src="/js/theme-09250c02.js"></script>
 </body>

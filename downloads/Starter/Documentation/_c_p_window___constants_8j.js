@@ -29,6 +29,7 @@ var _c_p_window___constants_8j =
     [ "CPWindowDidBecomeKeyNotification", "_c_p_window___constants_8j.html#a6096ff05250b0baef240aeba865425ce", null ],
     [ "CPWindowDidBecomeMainNotification", "_c_p_window___constants_8j.html#a1f86d11c0903bf469a30c5c739fefa00", null ],
     [ "CPWindowDidDeminiaturizeNotification", "_c_p_window___constants_8j.html#addebc8dc8e3f07d1bd6edc5209dee66d", null ],
+    [ "CPWindowDidEndLiveResizeNotification", "_c_p_window___constants_8j.html#ab460bc41976f36ab63a5b84c7227889a", null ],
     [ "CPWindowDidEndSheetNotification", "_c_p_window___constants_8j.html#adf43f8ba8eeb80ae24cb5f1597b02667", null ],
     [ "CPWindowDidMiniaturizeNotification", "_c_p_window___constants_8j.html#af4d47f0cdc723d79e67566c288471d71", null ],
     [ "CPWindowDidMoveNotification", "_c_p_window___constants_8j.html#ab9e5d430bf9a3ca191d537acba2f5848", null ],
@@ -55,5 +56,6 @@ var _c_p_window___constants_8j =
     [ "CPWindowWidthSizable", "_c_p_window___constants_8j.html#a00f963c2ad31d2392edc1061592e1868", null ],
     [ "CPWindowWillBeginSheetNotification", "_c_p_window___constants_8j.html#a18a309ccb085d17d619b08eebb79c55b", null ],
     [ "CPWindowWillCloseNotification", "_c_p_window___constants_8j.html#a735ba3c488f8ed97989326775e3e6212", null ],
-    [ "CPWindowWillMiniaturizeNotification", "_c_p_window___constants_8j.html#aecca62ad4e9926b633453265e232ec45", null ]
+    [ "CPWindowWillMiniaturizeNotification", "_c_p_window___constants_8j.html#aecca62ad4e9926b633453265e232ec45", null ],
+    [ "CPWindowWillStartLiveResizeNotification", "_c_p_window___constants_8j.html#a432276e1cf86020565d947f0b39268c1", null ]
 ];

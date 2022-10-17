@@ -21,5 +21,5 @@ var interface_c_p_popover =
     [ "setContentViewController:", "interface_c_p_popover.html#a91eb25e89222e1605d0e68ab6b45ad40", null ],
     [ "setDelegate:", "interface_c_p_popover.html#a487297b6a6f48095bc2c369b6d769ebf", null ],
     [ "setPositioningRect:", "interface_c_p_popover.html#a1b62fedf0b010e7520b132b0f60e0048", null ],
-    [ "showRelativeToRect:ofView:preferredEdge:", "interface_c_p_popover.html#a5b48d2394391b2235c54605a8a873a2c", null ]
+    [ "showRelativeToRect:ofView:preferredEdge:", "interface_c_p_popover.html#aaecd7a35e6d8efd71f203878adb65729", null ]
 ];

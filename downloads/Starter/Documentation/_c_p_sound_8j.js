@@ -1,6 +1,6 @@
 var _c_p_sound_8j =
 [
-    [ "<CPSoundDelegate>", "protocol_c_p_sound_delegate-p.html", "protocol_c_p_sound_delegate-p" ],
+    [ "<CPSoundDelegate >", "protocol_c_p_sound_delegate_01-p.html", "protocol_c_p_sound_delegate_01-p" ],
     [ "CPSoundDelegate_sound_didFinishPlaying_", "_c_p_sound_8j.html#a1e62fa4fe75a7510932d960dd064b7e1", null ],
     [ "CPSoundLoadStateCanBePlayed", "_c_p_sound_8j.html#a07e5e50b85bdcf258dbe23c767549cd3", null ],
     [ "CPSoundLoadStateEmpty", "_c_p_sound_8j.html#a80465430f7f8cae086fb2d0195cf5470", null ],

@@ -5,7 +5,7 @@ var interface_c_p_scroll_view =
     [ "borderType", "interface_c_p_scroll_view.html#a97b467bbb5fed705ebfb7689386d6b03", null ],
     [ "bottomCornerView", "interface_c_p_scroll_view.html#aa10b33ef01aa9e06751420aaf48b69e5", null ],
     [ "contentSize", "interface_c_p_scroll_view.html#a0940cc6e68c103bb595d9bd8e39dfa7a", null ],
-    [ "contentSizeForFrameSize:hasHorizontalScroller:hasVerticalScroller:borderType:", "interface_c_p_scroll_view.html#a263a372df469b20e80618e2b9e0ed3aa", null ],
+    [ "contentSizeForFrameSize:hasHorizontalScroller:hasVerticalScroller:borderType:", "interface_c_p_scroll_view.html#a124e027a470e04466c7b63cc150f9117", null ],
     [ "contentView", "interface_c_p_scroll_view.html#a825890354742fb97fcfab753cb67588f", null ],
     [ "defaultThemeClass", "interface_c_p_scroll_view.html#a0d591e7ffe5f4dff666ea07091cadb86", null ],
     [ "delegate", "interface_c_p_scroll_view.html#ae18046c8c75fcf32dfe961c70402b9cf", null ],
@@ -14,7 +14,7 @@ var interface_c_p_scroll_view =
     [ "drawRect:", "interface_c_p_scroll_view.html#a582bd61250ff57f38ee93490d5b08d67", null ],
     [ "encodeWithCoder:", "interface_c_p_scroll_view.html#a6e26355dce3a3b9a71ad012a955c4855", null ],
     [ "flashScrollers", "interface_c_p_scroll_view.html#a19bc9253a75e75ae8e47ec327174cb4c", null ],
-    [ "frameSizeForContentSize:hasHorizontalScroller:hasVerticalScroller:borderType:", "interface_c_p_scroll_view.html#ab54e97fc232cfe34e39778bd355bfd85", null ],
+    [ "frameSizeForContentSize:hasHorizontalScroller:hasVerticalScroller:borderType:", "interface_c_p_scroll_view.html#a097e8ceecc7ca31e314ce53958218032", null ],
     [ "globalScrollerStyle", "interface_c_p_scroll_view.html#a8d5fec5af0b7289a4dc31cab53f28e31", null ],
     [ "hasHorizontalScroller", "interface_c_p_scroll_view.html#a017f805cbdb4dbb6819b7b9b40300085", null ],
     [ "hasVerticalScroller", "interface_c_p_scroll_view.html#a7bbf573943db6fd8ca32c092fceb8384", null ],
@@ -63,5 +63,6 @@ var interface_c_p_scroll_view =
     [ "tile", "interface_c_p_scroll_view.html#a07518f44db9a4a264cf20662931614da", null ],
     [ "verticalLineScroll", "interface_c_p_scroll_view.html#abc026386ef4796a0b8e14a197f4065c9", null ],
     [ "verticalPageScroll", "interface_c_p_scroll_view.html#a9c836e725df223c13e6da205ae88d23a", null ],
-    [ "verticalScroller", "interface_c_p_scroll_view.html#afc5f290e03fb742d961ebb9b9be9c050", null ]
+    [ "verticalScroller", "interface_c_p_scroll_view.html#afc5f290e03fb742d961ebb9b9be9c050", null ],
+    [ "viewWillMoveToWindow:", "interface_c_p_scroll_view.html#a4059404e9a00cd82d221814ef3d5bc38", null ]
 ];

@@ -11,25 +11,36 @@ var hierarchy =
       [ "CPMultipleValueAndBinding", "class_c_p_multiple_value_and_binding.html", null ],
       [ "CPMultipleValueOrBinding", "class_c_p_multiple_value_or_binding.html", null ]
     ] ],
+    [ "_CPObjectAnimator", null, [
+      [ "CPViewAnimator", "interface_c_p_view_animator.html", null ]
+    ] ],
     [ "_CPPatternBinding", null, [
       [ "CPTitleWithPatternBinding", "class_c_p_title_with_pattern_binding.html", null ],
       [ "CPValueWithPatternBinding", "class_c_p_value_with_pattern_binding.html", null ]
     ] ],
+    [ "CAAnimation(Additions)", "category_c_a_animation_07_additions_08.html", null ],
+    [ "CAAnimation(CPSynthesizedAccessors)", "category_c_a_animation_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CAKeyframeAnimation(Additions)", "category_c_a_keyframe_animation_07_additions_08.html", null ],
+    [ "CAKeyframeAnimation(CPSynthesizedAccessors)", "category_c_a_keyframe_animation_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CAMediaTimingFunction(Additions)", "category_c_a_media_timing_function_07_additions_08.html", null ],
     [ "CPAccordionViewItem(CPSynthesizedAccessors)", "category_c_p_accordion_view_item_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPAlert(CPAlertDelegate)", "category_c_p_alert_07_c_p_alert_delegate_08.html", null ],
     [ "CPAlert(CPSynthesizedAccessors)", "category_c_p_alert_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPAnimation(CPAnimationDelegate)", "category_c_p_animation_07_c_p_animation_delegate_08.html", null ],
+    [ "CPAnimationContext(CPSynthesizedAccessors)", "category_c_p_animation_context_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPAppearance(CPSynthesizedAccessors)", "category_c_p_appearance_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPApplication(CPSynthesizedAccessors)", "category_c_p_application_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPArray", null, [
       [ "CPMutableArray", "interface_c_p_mutable_array.html", null ]
     ] ],
+    [ "CPArray(Additions)", "category_c_p_array_07_additions_08.html", null ],
     [ "CPArray(CPKeyValueCoding)", "category_c_p_array_07_c_p_key_value_coding_08.html", null ],
     [ "CPArray(CPMutableCopying)", "category_c_p_array_07_c_p_mutable_copying_08.html", null ],
     [ "CPArray(KeyValueObserving)", "category_c_p_array_07_key_value_observing_08.html", null ],
+    [ "CPArray(SortedSearching)", "category_c_p_array_07_sorted_searching_08.html", null ],
     [ "CPArrayController(CPBinder)", "category_c_p_array_controller_07_c_p_binder_08.html", null ],
     [ "CPArrayController(CPCoding)", "category_c_p_array_controller_07_c_p_coding_08.html", null ],
     [ "CPAttributedString(CPCoding)", "category_c_p_attributed_string_07_c_p_coding_08.html", null ],
-    [ "CPBinder(CPSynthesizedAccessors)", "category_c_p_binder_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPBox(CPCoding)", "category_c_p_box_07_c_p_coding_08.html", null ],
     [ "CPBox(CPSynthesizedAccessors)", "category_c_p_box_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPBrowser(CPBrowserDelegate)", "category_c_p_browser_07_c_p_browser_delegate_08.html", null ],
@@ -43,7 +54,9 @@ var hierarchy =
     [ "CPCache(CPCacheDelegate)", "category_c_p_cache_07_c_p_cache_delegate_08.html", null ],
     [ "CPCache(CPSynthesizedAccessors)", "category_c_p_cache_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPCharacterSet(CPCoding)", "category_c_p_character_set_07_c_p_coding_08.html", null ],
+    [ "CPCheckBox(TableDataView)", "category_c_p_check_box_07_table_data_view_08.html", null ],
     [ "CPCib(CPCoding)", "category_c_p_cib_07_c_p_coding_08.html", null ],
+    [ "CPCib(CPSynthesizedAccessors)", "category_c_p_cib_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPCib(CPURLConnectionDelegate)", "category_c_p_cib_07_c_p_u_r_l_connection_delegate_08.html", null ],
     [ "CPCibConnector(CPCoding)", "category_c_p_cib_connector_07_c_p_coding_08.html", null ],
     [ "CPCibConnector(CPSynthesizedAccessors)", "category_c_p_cib_connector_07_c_p_synthesized_accessors_08.html", null ],
@@ -55,8 +68,10 @@ var hierarchy =
     [ "CPCollectionView(Deprecated)", "category_c_p_collection_view_07_deprecated_08.html", null ],
     [ "CPCollectionView(DragAndDrop)", "category_c_p_collection_view_07_drag_and_drop_08.html", null ],
     [ "CPCollectionView(KeyboardInteraction)", "category_c_p_collection_view_07_keyboard_interaction_08.html", null ],
+    [ "CPColor", "class_c_p_color.html", null ],
     [ "CPColor(CoreGraphicsExtensions)", "category_c_p_color_07_core_graphics_extensions_08.html", null ],
     [ "CPColor(CPCoding)", "category_c_p_color_07_c_p_coding_08.html", null ],
+    [ "CPColor(CSSTheming)", "category_c_p_color_07_c_s_s_theming_08.html", null ],
     [ "CPColor(Debugging)", "category_c_p_color_07_debugging_08.html", null ],
     [ "CPColorWell(CPCoding)", "category_c_p_color_well_07_c_p_coding_08.html", null ],
     [ "CPComboBox(Bindings)", "category_c_p_combo_box_07_bindings_08.html", null ],
@@ -67,6 +82,10 @@ var hierarchy =
     [ "CPCompoundPredicate(CPCoding)", "category_c_p_compound_predicate_07_c_p_coding_08.html", null ],
     [ "CPControl(CPCoding)", "category_c_p_control_07_c_p_coding_08.html", null ],
     [ "CPControl(CPSynthesizedAccessors)", "category_c_p_control_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPControl(CPTrackingArea)", "category_c_p_control_07_c_p_tracking_area_08.html", null ],
+    [ "<CPControlTextEditingDelegate>", null, [
+      [ "<CPTextFieldDelegate >", "protocol_c_p_text_field_delegate_01-p.html", null ]
+    ] ],
     [ "CPCursor(CPCoding)", "category_c_p_cursor_07_c_p_coding_08.html", null ],
     [ "CPCursor(CPSynthesizedAccessors)", "category_c_p_cursor_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPData(CPMutableData)", "category_c_p_data_07_c_p_mutable_data_08.html", null ],
@@ -98,9 +117,13 @@ var hierarchy =
     [ "CPFlashMovie(CPCoding)", "category_c_p_flash_movie_07_c_p_coding_08.html", null ],
     [ "CPFont(CPCoding)", "category_c_p_font_07_c_p_coding_08.html", null ],
     [ "CPFont(CPSynthesizedAccessors)", "category_c_p_font_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPFont(DescriptorAdditions)", "category_c_p_font_07_descriptor_additions_08.html", null ],
+    [ "CPFontDescriptor(CPCoding)", "category_c_p_font_descriptor_07_c_p_coding_08.html", null ],
+    [ "CPFontDescriptor(CPFontCSSHelper)", "category_c_p_font_descriptor_07_c_p_font_c_s_s_helper_08.html", null ],
     [ "CPFontManager(CPSynthesizedAccessors)", "category_c_p_font_manager_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPImage(CachedImage)", "category_c_p_image_07_cached_image_08.html", null ],
     [ "CPImage(CPCoding)", "category_c_p_image_07_c_p_coding_08.html", null ],
+    [ "CPImage(CSSTheming)", "category_c_p_image_07_c_s_s_theming_08.html", null ],
     [ "CPImageView(CPCoding)", "category_c_p_image_view_07_c_p_coding_08.html", null ],
     [ "CPIndexPath(CPCoding)", "category_c_p_index_path_07_c_p_coding_08.html", null ],
     [ "CPIndexPath(CPSynthesizedAccessors)", "category_c_p_index_path_07_c_p_synthesized_accessors_08.html", null ],
@@ -108,6 +131,7 @@ var hierarchy =
     [ "CPIndexSet(CPCopying)", "category_c_p_index_set_07_c_p_copying_08.html", null ],
     [ "CPIndexSet(CPMutableIndexSet)", "category_c_p_index_set_07_c_p_mutable_index_set_08.html", null ],
     [ "CPInvocation(CPCoding)", "category_c_p_invocation_07_c_p_coding_08.html", null ],
+    [ "CPLayoutManager(CPCoding)", "category_c_p_layout_manager_07_c_p_coding_08.html", null ],
     [ "CPLevelIndicator(CPCoding)", "category_c_p_level_indicator_07_c_p_coding_08.html", null ],
     [ "CPLevelIndicator(CPSynthesizedAccessors)", "category_c_p_level_indicator_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPLocale(CPCoding)", "category_c_p_locale_07_c_p_coding_08.html", null ],
@@ -123,8 +147,9 @@ var hierarchy =
     [ "CPNumberFormatter(CPSynthesizedAccessors)", "category_c_p_number_formatter_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPObject", "class_c_p_object.html", [
       [ "CAAnimation", "interface_c_a_animation.html", [
-        [ "CAPropertyAnimation", "class_c_a_property_animation.html", [
-          [ "CABasicAnimation", "class_c_a_basic_animation.html", null ]
+        [ "CAPropertyAnimation", "interface_c_a_property_animation.html", [
+          [ "CABasicAnimation", "interface_c_a_basic_animation.html", null ],
+          [ "CAKeyframeAnimation", "interface_c_a_keyframe_animation.html", null ]
         ] ]
       ] ],
       [ "CALayer", "interface_c_a_layer.html", [
@@ -136,8 +161,12 @@ var hierarchy =
       [ "CPAnimation", "interface_c_p_animation.html", [
         [ "CPViewAnimation", "interface_c_p_view_animation.html", null ]
       ] ],
+      [ "CPAnimationContext", "interface_c_p_animation_context.html", null ],
+      [ "CPAppearance", "interface_c_p_appearance.html", null ],
       [ "CPAttributedString", "interface_c_p_attributed_string.html", [
-        [ "CPMutableAttributedString", "class_c_p_mutable_attributed_string.html", null ]
+        [ "CPMutableAttributedString", "class_c_p_mutable_attributed_string.html", [
+          [ "CPTextStorage", "interface_c_p_text_storage.html", null ]
+        ] ]
       ] ],
       [ "CPBasePlatform", "interface_c_p_base_platform.html", [
         [ "CPPlatform", "interface_c_p_platform.html", null ]
@@ -168,7 +197,6 @@ var hierarchy =
         [ "CPKeyedArchiver", "interface_c_p_keyed_archiver.html", null ],
         [ "CPKeyedUnarchiver", "interface_c_p_keyed_unarchiver.html", null ]
       ] ],
-      [ "CPColor", "interface_c_p_color.html", null ],
       [ "CPColorPicker", "interface_c_p_color_picker.html", [
         [ "CPColorWheelColorPicker", "class_c_p_color_wheel_color_picker.html", null ],
         [ "CPSliderColorPicker", "interface_c_p_slider_color_picker.html", null ]
@@ -201,6 +229,7 @@ var hierarchy =
       [ "CPException", "interface_c_p_exception.html", null ],
       [ "CPFlashMovie", "interface_c_p_flash_movie.html", null ],
       [ "CPFont", "interface_c_p_font.html", null ],
+      [ "CPFontDescriptor", "interface_c_p_font_descriptor.html", null ],
       [ "CPFontManager", "interface_c_p_font_manager.html", null ],
       [ "CPFormatter", "interface_c_p_formatter.html", [
         [ "CPByteCountFormatter", "interface_c_p_byte_count_formatter.html", null ],
@@ -217,12 +246,14 @@ var hierarchy =
       [ "CPInvocation", "interface_c_p_invocation.html", null ],
       [ "CPJSONPConnection", "interface_c_p_j_s_o_n_p_connection.html", null ],
       [ "CPKeyBinding", "interface_c_p_key_binding.html", null ],
+      [ "CPLayoutManager", "interface_c_p_layout_manager.html", null ],
       [ "CPLocale", "interface_c_p_locale.html", null ],
       [ "CPMenu", "interface_c_p_menu.html", null ],
       [ "CPMenuItem", "interface_c_p_menu_item.html", null ],
       [ "CPNinePartImage", "class_c_p_nine_part_image.html", null ],
       [ "CPNotification", "interface_c_p_notification.html", null ],
       [ "CPNotificationCenter", "interface_c_p_notification_center.html", null ],
+      [ "CPNotificationQueue", "interface_c_p_notification_queue.html", null ],
       [ "CPNull", "interface_c_p_null.html", null ],
       [ "CPNumber", "interface_c_p_number.html", [
         [ "CPDecimalNumber", "interface_c_p_decimal_number.html", null ]
@@ -232,6 +263,7 @@ var hierarchy =
         [ "CPInvocationOperation", "interface_c_p_invocation_operation.html", null ]
       ] ],
       [ "CPOperationQueue", "interface_c_p_operation_queue.html", null ],
+      [ "CPParagraphStyle", "interface_c_p_paragraph_style.html", null ],
       [ "CPPasteboard", "interface_c_p_pasteboard.html", null ],
       [ "CPPlatformWindow", "interface_c_p_platform_window.html", null ],
       [ "CPPredicateEditorRowTemplate", "interface_c_p_predicate_editor_row_template.html", null ],
@@ -241,57 +273,13 @@ var hierarchy =
         [ "CPApplication", "interface_c_p_application.html", null ],
         [ "CPDocument", "interface_c_p_document.html", null ],
         [ "CPPopover", "interface_c_p_popover.html", null ],
-        [ "CPView", "interface_c_p_view.html", [
-          [ "CPAccordionView", "interface_c_p_accordion_view.html", null ],
-          [ "CPBox", "interface_c_p_box.html", null ],
-          [ "CPButtonBar", "interface_c_p_button_bar.html", null ],
-          [ "CPClipView", "interface_c_p_clip_view.html", null ],
-          [ "CPCollectionView", "interface_c_p_collection_view.html", null ],
-          [ "CPControl", "interface_c_p_control.html", [
-            [ "CPBrowser", "interface_c_p_browser.html", null ],
-            [ "CPButton", "interface_c_p_button.html", [
-              [ "CPCheckBox", "interface_c_p_check_box.html", null ],
-              [ "CPDisclosureButton", "interface_c_p_disclosure_button.html", null ],
-              [ "CPPopUpButton", "interface_c_p_pop_up_button.html", null ],
-              [ "CPRadio", "interface_c_p_radio.html", null ]
-            ] ],
-            [ "CPColorWell", "interface_c_p_color_well.html", null ],
-            [ "CPDatePicker", "interface_c_p_date_picker.html", null ],
-            [ "CPImageView", "interface_c_p_image_view.html", null ],
-            [ "CPLevelIndicator", "interface_c_p_level_indicator.html", null ],
-            [ "CPRuleEditor", "interface_c_p_rule_editor.html", [
-              [ "CPPredicateEditor", "interface_c_p_predicate_editor.html", null ]
-            ] ],
-            [ "CPScroller", "interface_c_p_scroller.html", null ],
-            [ "CPSegmentedControl", "interface_c_p_segmented_control.html", null ],
-            [ "CPSlider", "interface_c_p_slider.html", null ],
-            [ "CPStepper", "interface_c_p_stepper.html", null ],
-            [ "CPTableView", "interface_c_p_table_view.html", [
-              [ "CPOutlineView", "interface_c_p_outline_view.html", null ]
-            ] ],
-            [ "CPTextField", "interface_c_p_text_field.html", [
-              [ "CPComboBox", "interface_c_p_combo_box.html", null ],
-              [ "CPSearchField", "interface_c_p_search_field.html", null ],
-              [ "CPSecureTextField", "interface_c_p_secure_text_field.html", null ],
-              [ "CPTokenField", "interface_c_p_token_field.html", null ]
-            ] ]
-          ] ],
-          [ "CPFlashView", "interface_c_p_flash_view.html", null ],
-          [ "CPProgressIndicator", "interface_c_p_progress_indicator.html", null ],
-          [ "CPScrollView", "interface_c_p_scroll_view.html", null ],
-          [ "CPShadowView", "interface_c_p_shadow_view.html", null ],
-          [ "CPSplitView", "interface_c_p_split_view.html", null ],
-          [ "CPTableCellView", "interface_c_p_table_cell_view.html", null ],
-          [ "CPTableHeaderView", "interface_c_p_table_header_view.html", null ],
-          [ "CPTabView", "interface_c_p_tab_view.html", null ],
-          [ "CPWebView", "interface_c_p_web_view.html", null ]
-        ] ],
         [ "CPViewController", "interface_c_p_view_controller.html", [
           [ "CPCollectionViewItem", "interface_c_p_collection_view_item.html", null ]
         ] ],
         [ "CPWindow", "interface_c_p_window.html", [
           [ "CPPanel", "interface_c_p_panel.html", [
             [ "CPColorPanel", "interface_c_p_color_panel.html", null ],
+            [ "CPFontPanel", "interface_c_p_font_panel.html", null ],
             [ "CPOpenPanel", "interface_c_p_open_panel.html", null ],
             [ "CPSavePanel", "interface_c_p_save_panel.html", null ]
           ] ]
@@ -307,13 +295,19 @@ var hierarchy =
       [ "CPString", "interface_c_p_string.html", null ],
       [ "CPTableColumn", "interface_c_p_table_column.html", null ],
       [ "CPTabViewItem", "interface_c_p_tab_view_item.html", null ],
+      [ "CPTextContainer", "interface_c_p_text_container.html", null ],
+      [ "CPTextTab", "class_c_p_text_tab.html", null ],
       [ "CPTheme", "interface_c_p_theme.html", null ],
       [ "CPThemeBlend", "interface_c_p_theme_blend.html", null ],
       [ "CPThreePartImage", "class_c_p_three_part_image.html", null ],
       [ "CPTimer", "interface_c_p_timer.html", null ],
       [ "CPTimeZone", "interface_c_p_time_zone.html", null ],
       [ "CPToolbar", "interface_c_p_toolbar.html", null ],
+      [ "CPTrackingArea", "interface_c_p_tracking_area.html", null ],
       [ "CPTreeNode", "interface_c_p_tree_node.html", null ],
+      [ "CPTypesetter", "interface_c_p_typesetter.html", [
+        [ "CPSimpleTypesetter", "interface_c_p_simple_typesetter.html", null ]
+      ] ],
       [ "CPUndoManager", "interface_c_p_undo_manager.html", null ],
       [ "CPURL", "interface_c_p_u_r_l.html", null ],
       [ "CPURLConnection", "interface_c_p_u_r_l_connection.html", null ],
@@ -322,10 +316,12 @@ var hierarchy =
         [ "CPHTTPURLResponse", "interface_c_p_h_t_t_p_u_r_l_response.html", null ]
       ] ],
       [ "CPUserDefaults", "interface_c_p_user_defaults.html", null ],
-      [ "CPUserDefaultsStore", "class_c_p_user_defaults_store.html", [
-        [ "CPUserDefaultsCookieStore", "class_c_p_user_defaults_cookie_store.html", null ],
-        [ "CPUserDefaultsLocalStore", "class_c_p_user_defaults_local_store.html", null ]
+      [ "CPUserDefaultsStore", "interface_c_p_user_defaults_store.html", [
+        [ "CPUserDefaultsCookieStore", "interface_c_p_user_defaults_cookie_store.html", null ],
+        [ "CPUserDefaultsLocalStore", "interface_c_p_user_defaults_local_store.html", null ]
       ] ],
+      [ "CPUserNotification", "interface_c_p_user_notification.html", null ],
+      [ "CPUserNotificationCenter", "interface_c_p_user_notification_center.html", null ],
       [ "CPUserSessionManager", "interface_c_p_user_session_manager.html", null ],
       [ "CPValue", "interface_c_p_value.html", null ],
       [ "CPValueTransformer", "interface_c_p_value_transformer.html", [
@@ -347,37 +343,44 @@ var hierarchy =
     [ "CPObject(KeyValueBindingCreation)", "category_c_p_object_07_key_value_binding_creation_08.html", null ],
     [ "CPObject(KeyValueObserving)", "category_c_p_object_07_key_value_observing_08.html", null ],
     [ "<CPObject>", "protocol_c_p_object-p.html", [
-      [ "<CPAlertDelegate>", "protocol_c_p_alert_delegate-p.html", null ],
-      [ "<CPAnimationDelegate>", "protocol_c_p_animation_delegate-p.html", null ],
-      [ "<CPApplicationDelegate>", "protocol_c_p_application_delegate-p.html", null ],
-      [ "<CPBrowserDelegate>", "protocol_c_p_browser_delegate-p.html", null ],
-      [ "<CPCacheDelegate>", "protocol_c_p_cache_delegate-p.html", null ],
-      [ "<CPCollectionViewDelegate>", "protocol_c_p_collection_view_delegate-p.html", null ],
-      [ "<CPComboBoxDataSource>", "protocol_c_p_combo_box_data_source-p.html", null ],
-      [ "<CPComboBoxDelegate>", "protocol_c_p_combo_box_delegate-p.html", null ],
-      [ "<CPControlTextEditingDelegate>", "protocol_c_p_control_text_editing_delegate-p.html", [
-        [ "<CPTextFieldDelegate>", "protocol_c_p_text_field_delegate-p.html", null ]
-      ] ],
-      [ "<CPImageDelegate>", "protocol_c_p_image_delegate-p.html", null ],
-      [ "<CPMenuDelegate>", "protocol_c_p_menu_delegate-p.html", null ],
-      [ "<CPOutlineViewDataSource>", "protocol_c_p_outline_view_data_source-p.html", null ],
-      [ "<CPOutlineViewDelegate>", "protocol_c_p_outline_view_delegate-p.html", null ],
-      [ "<CPPopoverDelegate>", "protocol_c_p_popover_delegate-p.html", null ],
-      [ "<CPRuleEditorDelegate>", "protocol_c_p_rule_editor_delegate-p.html", null ],
-      [ "<CPScrollViewDelegate>", "protocol_c_p_scroll_view_delegate-p.html", null ],
-      [ "<CPSoundDelegate>", "protocol_c_p_sound_delegate-p.html", null ],
-      [ "<CPSplitViewDelegate>", "protocol_c_p_split_view_delegate-p.html", null ],
-      [ "<CPTableViewDataSource>", "protocol_c_p_table_view_data_source-p.html", null ],
-      [ "<CPTableViewDelegate>", "protocol_c_p_table_view_delegate-p.html", null ],
-      [ "<CPTabViewDelegate>", "protocol_c_p_tab_view_delegate-p.html", null ],
-      [ "<CPTokenFieldDelegate>", "protocol_c_p_token_field_delegate-p.html", null ],
-      [ "<CPToolbarDelegate>", "protocol_c_p_toolbar_delegate-p.html", null ],
-      [ "<CPWindowDelegate>", "protocol_c_p_window_delegate-p.html", null ]
+      [ "<CPAlertDelegate >", "protocol_c_p_alert_delegate_01-p.html", null ],
+      [ "<CPAnimationDelegate >", "protocol_c_p_animation_delegate_01-p.html", null ],
+      [ "<CPAppearanceCustomization >", "protocol_c_p_appearance_customization_01-p.html", null ],
+      [ "<CPApplicationDelegate >", "protocol_c_p_application_delegate_01-p.html", null ],
+      [ "<CPBrowserDelegate >", "protocol_c_p_browser_delegate_01-p.html", null ],
+      [ "<CPBundleDelegate >", "protocol_c_p_bundle_delegate_01-p.html", null ],
+      [ "<CPCacheDelegate >", "protocol_c_p_cache_delegate_01-p.html", null ],
+      [ "<CPCollectionViewDelegate >", "protocol_c_p_collection_view_delegate_01-p.html", null ],
+      [ "<CPComboBoxDataSource >", "protocol_c_p_combo_box_data_source_01-p.html", null ],
+      [ "<CPComboBoxDelegate >", "protocol_c_p_combo_box_delegate_01-p.html", null ],
+      [ "<CPControlTextEditingDelegate >", "protocol_c_p_control_text_editing_delegate_01-p.html", null ],
+      [ "<CPImageDelegate >", "protocol_c_p_image_delegate_01-p.html", null ],
+      [ "<CPMenuDelegate >", "protocol_c_p_menu_delegate_01-p.html", null ],
+      [ "<CPOutlineViewDataSource >", "protocol_c_p_outline_view_data_source_01-p.html", null ],
+      [ "<CPOutlineViewDelegate >", "protocol_c_p_outline_view_delegate_01-p.html", null ],
+      [ "<CPPopoverDelegate >", "protocol_c_p_popover_delegate_01-p.html", null ],
+      [ "<CPRuleEditorDelegate >", "protocol_c_p_rule_editor_delegate_01-p.html", null ],
+      [ "<CPScrollViewDelegate >", "protocol_c_p_scroll_view_delegate_01-p.html", null ],
+      [ "<CPSoundDelegate >", "protocol_c_p_sound_delegate_01-p.html", null ],
+      [ "<CPSplitViewDelegate >", "protocol_c_p_split_view_delegate_01-p.html", null ],
+      [ "<CPTableViewDataSource >", "protocol_c_p_table_view_data_source_01-p.html", null ],
+      [ "<CPTableViewDelegate >", "protocol_c_p_table_view_delegate_01-p.html", null ],
+      [ "<CPTabViewDelegate >", "protocol_c_p_tab_view_delegate_01-p.html", null ],
+      [ "<CPTextDelegate >", "protocol_c_p_text_delegate_01-p.html", null ],
+      [ "<CPTextStorageDelegate >", "protocol_c_p_text_storage_delegate_01-p.html", null ],
+      [ "<CPTokenFieldDelegate >", "protocol_c_p_token_field_delegate_01-p.html", null ],
+      [ "<CPToolbarDelegate >", "protocol_c_p_toolbar_delegate_01-p.html", null ],
+      [ "<CPURLConnectionDelegate >", "protocol_c_p_u_r_l_connection_delegate_01-p.html", null ],
+      [ "<CPUserNotificationCenterDelegate >", "protocol_c_p_user_notification_center_delegate_01-p.html", null ],
+      [ "<CPWindowDelegate >", "protocol_c_p_window_delegate_01-p.html", null ]
     ] ],
     [ "CPObjectController(CPCoding)", "category_c_p_object_controller_07_c_p_coding_08.html", null ],
+    [ "CPObjectController(CPSynthesizedAccessors)", "category_c_p_object_controller_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPOpenPanel(CPSynthesizedAccessors)", "category_c_p_open_panel_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPOperationQueue(CPSynthesizedAccessors)", "category_c_p_operation_queue_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPOutlineView(CPCoding)", "category_c_p_outline_view_07_c_p_coding_08.html", null ],
+    [ "CPParagraphStyle(CPCoding)", "category_c_p_paragraph_style_07_c_p_coding_08.html", null ],
+    [ "CPParagraphStyle(CPSynthesizedAccessors)", "category_c_p_paragraph_style_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPPopover(CPCoding)", "category_c_p_popover_07_c_p_coding_08.html", null ],
     [ "CPPopover(CPSynthesizedAccessors)", "category_c_p_popover_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPPopover(Deprecated)", "category_c_p_popover_07_deprecated_08.html", null ],
@@ -401,7 +404,9 @@ var hierarchy =
     [ "CPScroller(CPSynthesizedAccessors)", "category_c_p_scroller_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPScroller(Deprecated)", "category_c_p_scroller_07_deprecated_08.html", null ],
     [ "CPScrollView(CPCoding)", "category_c_p_scroll_view_07_c_p_coding_08.html", null ],
+    [ "CPScrollView(FirstResponder)", "category_c_p_scroll_view_07_first_responder_08.html", null ],
     [ "CPSearchField(CPCoding)", "category_c_p_search_field_07_c_p_coding_08.html", null ],
+    [ "CPSearchField(CPTrackingArea)", "category_c_p_search_field_07_c_p_tracking_area_08.html", null ],
     [ "CPSegmentedControl(BindingSupport)", "category_c_p_segmented_control_07_binding_support_08.html", null ],
     [ "CPSegmentedControl(CPCoding)", "category_c_p_segmented_control_07_c_p_coding_08.html", null ],
     [ "CPSegmentedControl(CPSynthesizedAccessors)", "category_c_p_segmented_control_07_c_p_synthesized_accessors_08.html", null ],
@@ -410,6 +415,7 @@ var hierarchy =
     ] ],
     [ "CPSet(CPKeyValueCoding)", "category_c_p_set_07_c_p_key_value_coding_08.html", null ],
     [ "CPShadow(CPSynthesizedAccessors)", "category_c_p_shadow_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPSimpleTypesetter(CPSynthesizedAccessors)", "category_c_p_simple_typesetter_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPSlider(CPCoding)", "category_c_p_slider_07_c_p_coding_08.html", null ],
     [ "CPSlider(Deprecated)", "category_c_p_slider_07_deprecated_08.html", null ],
     [ "CPSortDescriptor(CPCoding)", "category_c_p_sort_descriptor_07_c_p_coding_08.html", null ],
@@ -417,6 +423,7 @@ var hierarchy =
     [ "CPSound(CPSynthesizedAccessors)", "category_c_p_sound_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPSplitView(CPCoding)", "category_c_p_split_view_07_c_p_coding_08.html", null ],
     [ "CPSplitView(CPSplitViewDelegate)", "category_c_p_split_view_07_c_p_split_view_delegate_08.html", null ],
+    [ "CPSplitView(CPTrackingArea)", "category_c_p_split_view_07_c_p_tracking_area_08.html", null ],
     [ "CPStepper(CPCoding)", "category_c_p_stepper_07_c_p_coding_08.html", null ],
     [ "CPStepper(CPSynthesizedAccessors)", "category_c_p_stepper_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPString(CPCharacterSetAdditions)", "category_c_p_string_07_c_p_character_set_additions_08.html", null ],
@@ -433,15 +440,37 @@ var hierarchy =
     [ "CPTableHeaderView(CPCoding)", "category_c_p_table_header_view_07_c_p_coding_08.html", null ],
     [ "CPTableHeaderView(CPSynthesizedAccessors)", "category_c_p_table_header_view_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPTableHeaderView(CPTableHeaderViewPrivate)", "category_c_p_table_header_view_07_c_p_table_header_view_private_08.html", null ],
+    [ "CPTableHeaderView(CPTrackingArea)", "category_c_p_table_header_view_07_c_p_tracking_area_08.html", null ],
     [ "CPTableView(Bindings)", "category_c_p_table_view_07_bindings_08.html", null ],
     [ "CPTableView(CPCoding)", "category_c_p_table_view_07_c_p_coding_08.html", null ],
     [ "CPTableView(CPSynthesizedAccessors)", "category_c_p_table_view_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPTableView(TableViewDataSource)", "category_c_p_table_view_07_table_view_data_source_08.html", null ],
     [ "CPTableView(TableViewDelegate)", "category_c_p_table_view_07_table_view_delegate_08.html", null ],
+    [ "CPTabView(BindingSupport)", "category_c_p_tab_view_07_binding_support_08.html", null ],
     [ "CPTabView(CPCoding)", "category_c_p_tab_view_07_c_p_coding_08.html", null ],
+    [ "CPTabView(CPSynthesizedAccessors)", "category_c_p_tab_view_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPTabViewItem(CPCoding)", "category_c_p_tab_view_item_07_c_p_coding_08.html", null ],
+    [ "CPTabViewItem(CPSynthesizedAccessors)", "category_c_p_tab_view_item_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPText(CPCoding)", "category_c_p_text_07_c_p_coding_08.html", null ],
+    [ "CPText(CPSynthesizedAccessors)", "category_c_p_text_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPTextContainer(CPCoding)", "category_c_p_text_container_07_c_p_coding_08.html", null ],
+    [ "CPTextContainer(CPSynthesizedAccessors)", "category_c_p_text_container_07_c_p_synthesized_accessors_08.html", null ],
+    [ "<CPTextDelegate>", null, [
+      [ "<CPTextViewDelegate >", "protocol_c_p_text_view_delegate_01-p.html", null ]
+    ] ],
     [ "CPTextField(CPCoding)", "category_c_p_text_field_07_c_p_coding_08.html", null ],
+    [ "CPTextField(CPTrackingArea)", "category_c_p_text_field_07_c_p_tracking_area_08.html", null ],
+    [ "CPTextField(TableDataView)", "category_c_p_text_field_07_table_data_view_08.html", null ],
+    [ "CPTextStorage(CPCoding)", "category_c_p_text_storage_07_c_p_coding_08.html", null ],
+    [ "CPTextStorage(CPSynthesizedAccessors)", "category_c_p_text_storage_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPTextStorage(CPTextStorageDelegate)", "category_c_p_text_storage_07_c_p_text_storage_delegate_08.html", null ],
+    [ "CPTextTab(CPCoding)", "category_c_p_text_tab_07_c_p_coding_08.html", null ],
+    [ "CPTextTab(CPSynthesizedAccessors)", "category_c_p_text_tab_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPTextView(CPCoding)", "category_c_p_text_view_07_c_p_coding_08.html", null ],
+    [ "CPTextView(CPSynthesizedAccessors)", "category_c_p_text_view_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPTextView(CPTextViewDelegate)", "category_c_p_text_view_07_c_p_text_view_delegate_08.html", null ],
     [ "CPTheme(CPCoding)", "category_c_p_theme_07_c_p_coding_08.html", null ],
+    [ "CPTheme(CSSTheming)", "category_c_p_theme_07_c_s_s_theming_08.html", null ],
     [ "CPThemeBlend(CPSynthesizedAccessors)", "category_c_p_theme_blend_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPThreePartImage(CPCoding)", "category_c_p_three_part_image_07_c_p_coding_08.html", null ],
     [ "CPTimeZone(CPSynthesizedAccessors)", "category_c_p_time_zone_07_c_p_synthesized_accessors_08.html", null ],
@@ -451,6 +480,8 @@ var hierarchy =
     [ "CPToolbar(CPCoding)", "category_c_p_toolbar_07_c_p_coding_08.html", null ],
     [ "CPToolbar(CPSynthesizedAccessors)", "category_c_p_toolbar_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPToolbar(CPToolbarDelegate)", "category_c_p_toolbar_07_c_p_toolbar_delegate_08.html", null ],
+    [ "CPTrackingArea(CPCoding)", "category_c_p_tracking_area_07_c_p_coding_08.html", null ],
+    [ "CPTrackingArea(CPSynthesizedAccessors)", "category_c_p_tracking_area_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPTreeNode(CPCoding)", "category_c_p_tree_node_07_c_p_coding_08.html", null ],
     [ "CPTreeNode(CPSynthesizedAccessors)", "category_c_p_tree_node_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPUndoManager(CPCoding)", "category_c_p_undo_manager_07_c_p_coding_08.html", null ],
@@ -462,20 +493,78 @@ var hierarchy =
     [ "CPURLRequest(CPSynthesizedAccessors)", "category_c_p_u_r_l_request_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPUserDefaultsController(CPCoding)", "category_c_p_user_defaults_controller_07_c_p_coding_08.html", null ],
     [ "CPUserDefaultsController(CPSynthesizedAccessors)", "category_c_p_user_defaults_controller_07_c_p_synthesized_accessors_08.html", null ],
-    [ "CPUserDefaultsStore(CPSynthesizedAccessors)", "category_c_p_user_defaults_store_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPUserNotification(CPSynthesizedAccessors)", "category_c_p_user_notification_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPUserNotificationCenter(CPSynthesizedAccessors)", "category_c_p_user_notification_center_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPUserNotificationCenter(CPUserNotificationCenterDelegate)", "category_c_p_user_notification_center_07_c_p_user_notification_center_delegate_08.html", null ],
     [ "CPValue(CPCoding)", "category_c_p_value_07_c_p_coding_08.html", null ],
+    [ "CPView", "class_c_p_view.html", [
+      [ "CPAccordionView", "interface_c_p_accordion_view.html", null ],
+      [ "CPBox", "interface_c_p_box.html", null ],
+      [ "CPButtonBar", "interface_c_p_button_bar.html", null ],
+      [ "CPClipView", "interface_c_p_clip_view.html", null ],
+      [ "CPCollectionView", "interface_c_p_collection_view.html", null ],
+      [ "CPControl", "interface_c_p_control.html", [
+        [ "CPBrowser", "interface_c_p_browser.html", null ],
+        [ "CPButton", "interface_c_p_button.html", [
+          [ "CPCheckBox", "interface_c_p_check_box.html", null ],
+          [ "CPDisclosureButton", "interface_c_p_disclosure_button.html", null ],
+          [ "CPPopUpButton", "interface_c_p_pop_up_button.html", null ],
+          [ "CPRadio", "interface_c_p_radio.html", null ]
+        ] ],
+        [ "CPColorWell", "interface_c_p_color_well.html", null ],
+        [ "CPDatePicker", "interface_c_p_date_picker.html", null ],
+        [ "CPImageView", "interface_c_p_image_view.html", null ],
+        [ "CPLevelIndicator", "interface_c_p_level_indicator.html", null ],
+        [ "CPRuleEditor", "interface_c_p_rule_editor.html", [
+          [ "CPPredicateEditor", "interface_c_p_predicate_editor.html", null ]
+        ] ],
+        [ "CPScroller", "interface_c_p_scroller.html", null ],
+        [ "CPSegmentedControl", "interface_c_p_segmented_control.html", null ],
+        [ "CPSlider", "interface_c_p_slider.html", null ],
+        [ "CPStepper", "interface_c_p_stepper.html", null ],
+        [ "CPTableView", "interface_c_p_table_view.html", [
+          [ "CPOutlineView", "interface_c_p_outline_view.html", null ]
+        ] ],
+        [ "CPTextField", "interface_c_p_text_field.html", [
+          [ "CPComboBox", "interface_c_p_combo_box.html", null ],
+          [ "CPSearchField", "interface_c_p_search_field.html", null ],
+          [ "CPSecureTextField", "interface_c_p_secure_text_field.html", null ],
+          [ "CPTokenField", "interface_c_p_token_field.html", null ]
+        ] ]
+      ] ],
+      [ "CPFlashView", "interface_c_p_flash_view.html", null ],
+      [ "CPProgressIndicator", "interface_c_p_progress_indicator.html", null ],
+      [ "CPScrollView", "interface_c_p_scroll_view.html", null ],
+      [ "CPShadowView", "interface_c_p_shadow_view.html", null ],
+      [ "CPSplitView", "interface_c_p_split_view.html", null ],
+      [ "CPTableCellView", "interface_c_p_table_cell_view.html", null ],
+      [ "CPTableHeaderView", "interface_c_p_table_header_view.html", null ],
+      [ "CPTabView", "interface_c_p_tab_view.html", null ],
+      [ "CPText", "interface_c_p_text.html", [
+        [ "CPTextView", "interface_c_p_text_view.html", null ]
+      ] ],
+      [ "CPVisualEffectView", "interface_c_p_visual_effect_view.html", null ],
+      [ "CPWebView", "interface_c_p_web_view.html", null ]
+    ] ],
+    [ "CPView(Appearance)", "category_c_p_view_07_appearance_08.html", null ],
     [ "CPView(CoreAnimationAdditions)", "category_c_p_view_07_core_animation_additions_08.html", null ],
+    [ "CPView(CPAnimatablePropertyContainer)", "category_c_p_view_07_c_p_animatable_property_container_08.html", null ],
+    [ "CPView(CPAnimationContext)", "category_c_p_view_07_c_p_animation_context_08.html", null ],
     [ "CPView(CPCoding)", "category_c_p_view_07_c_p_coding_08.html", null ],
-    [ "CPView(CPSynthesizedAccessors)", "category_c_p_view_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPView(CSSTheming)", "category_c_p_view_07_c_s_s_theming_08.html", null ],
     [ "CPView(KeyView)", "category_c_p_view_07_key_view_08.html", null ],
     [ "CPView(Scaling)", "category_c_p_view_07_scaling_08.html", null ],
     [ "CPView(Theming)", "category_c_p_view_07_theming_08.html", null ],
+    [ "CPView(TrackingAreaAdditions)", "category_c_p_view_07_tracking_area_additions_08.html", null ],
+    [ "CPViewAnimator(CPSynthesizedAccessors)", "category_c_p_view_animator_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPViewController(CPCoding)", "category_c_p_view_controller_07_c_p_coding_08.html", null ],
     [ "CPViewController(CPSynthesizedAccessors)", "category_c_p_view_controller_07_c_p_synthesized_accessors_08.html", null ],
+    [ "CPVisualEffectView(CPSynthesizedAccessors)", "category_c_p_visual_effect_view_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPWebView(CPCoding)", "category_c_p_web_view_07_c_p_coding_08.html", null ],
     [ "CPWindow(BridgeSupport)", "category_c_p_window_07_bridge_support_08.html", null ],
     [ "CPWindow(CPDraggingAdditions)", "category_c_p_window_07_c_p_dragging_additions_08.html", null ],
     [ "CPWindow(CPSynthesizedAccessors)", "category_c_p_window_07_c_p_synthesized_accessors_08.html", null ],
     [ "CPWindow(CPWindowDelegate)", "category_c_p_window_07_c_p_window_delegate_08.html", null ],
-    [ "CPWindow(Deprecated)", "category_c_p_window_07_deprecated_08.html", null ]
+    [ "CPWindow(Deprecated)", "category_c_p_window_07_deprecated_08.html", null ],
+    [ "CPWindow(TrackingAreaAdditions)", "category_c_p_window_07_tracking_area_additions_08.html", null ]
 ];

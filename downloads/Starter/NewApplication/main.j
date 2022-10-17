@@ -2,8 +2,8 @@
  * AppController.j
  * NewApplication
  *
- * Created by You on March 29, 2015.
- * Copyright 2015, Your Company All rights reserved.
+ * Created by You on September 10, 2018.
+ * Copyright 2018, Your Company All rights reserved.
  */
 
 @import <Foundation/Foundation.j>

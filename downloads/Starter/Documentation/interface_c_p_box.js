@@ -27,7 +27,7 @@ var interface_c_p_box =
     [ "setTitle:", "interface_c_p_box.html#a00ce37c4b2c0a07904a8d22d51cdb5e2", null ],
     [ "setTitleFont:", "interface_c_p_box.html#a0a6505b813b30d7a42994ee27229f7ec", null ],
     [ "setTitlePosition:", "interface_c_p_box.html#acada07b8f8b473f7e96282f7d6b01e4c", null ],
-    [ "setValue:forKey:", "interface_c_p_box.html#a3c74b0472caab5d1e8d9cd70b9651fa7", null ],
+    [ "setValue:forKey:", "interface_c_p_box.html#a4770b23fdf972c4e012f9cd4c8f13a59", null ],
     [ "sizeToFit", "interface_c_p_box.html#a6aca9e06497bfdd1d3105215ea001743", null ],
     [ "themeAttributes", "interface_c_p_box.html#af965610e3c0d8e17cc14d265d94203a5", null ],
     [ "title", "interface_c_p_box.html#a3d6894a48b9fab6fcb26e2c9a2fb7580", null ],

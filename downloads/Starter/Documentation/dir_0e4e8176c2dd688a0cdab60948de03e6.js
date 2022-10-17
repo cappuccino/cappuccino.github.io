@@ -7,6 +7,7 @@ var dir_0e4e8176c2dd688a0cdab60948de03e6 =
     [ "CPMenu", "dir_92408d2365f141ab5c1b7edc78b82f1b.html", "dir_92408d2365f141ab5c1b7edc78b82f1b" ],
     [ "CPMenuItem", "dir_3c0647b5cc10a66ec823370bf2a2516f.html", "dir_3c0647b5cc10a66ec823370bf2a2516f" ],
     [ "CPRuleEditor", "dir_fc132eb981070bff01114b7499547a3a.html", "dir_fc132eb981070bff01114b7499547a3a" ],
+    [ "CPTextView", "dir_55e1a292cb428e6e49f00848c550660e.html", "dir_55e1a292cb428e6e49f00848c550660e" ],
     [ "CPWindow", "dir_283af5193e6c45ea3f016e5258965c2d.html", "dir_283af5193e6c45ea3f016e5258965c2d" ],
     [ "Platform", "dir_1b0450e5749dadee06d48aab150b21d3.html", "dir_1b0450e5749dadee06d48aab150b21d3" ],
     [ "AppKit.j", "_app_kit_8j.html", null ],
@@ -20,6 +21,8 @@ var dir_0e4e8176c2dd688a0cdab60948de03e6 =
     [ "CPAlert.j", "_c_p_alert_8j.html", "_c_p_alert_8j" ],
     [ "CPAnimation.h", "_c_p_animation_8h.html", null ],
     [ "CPAnimation.j", "_c_p_animation_8j.html", "_c_p_animation_8j" ],
+    [ "CPAppearance.h", "_c_p_appearance_8h.html", null ],
+    [ "CPAppearance.j", "_c_p_appearance_8j.html", "_c_p_appearance_8j" ],
     [ "CPApplication.h", "_c_p_application_8h.html", null ],
     [ "CPApplication.j", "_c_p_application_8j.html", "_c_p_application_8j" ],
     [ "CPApplication_Constants.j", "_c_p_application___constants_8j.html", "_c_p_application___constants_8j" ],
@@ -48,9 +51,7 @@ var dir_0e4e8176c2dd688a0cdab60948de03e6 =
     [ "CPCheckBox.j", "_c_p_check_box_8j.html", "_c_p_check_box_8j" ],
     [ "CPClipView.h", "_c_p_clip_view_8h.html", null ],
     [ "CPClipView.j", "_c_p_clip_view_8j.html", "_c_p_clip_view_8j" ],
-    [ "CPCollectionView.h", "_c_p_collection_view_8h.html", [
-      [ "CPCollectionView", "interface_c_p_collection_view.html", "interface_c_p_collection_view" ]
-    ] ],
+    [ "CPCollectionView.h", "_c_p_collection_view_8h.html", null ],
     [ "CPCollectionView.j", "_c_p_collection_view_8j.html", "_c_p_collection_view_8j" ],
     [ "CPCollectionViewItem.h", "_c_p_collection_view_item_8h.html", [
       [ "CPCollectionViewItem", "interface_c_p_collection_view_item.html", "interface_c_p_collection_view_item" ]
@@ -168,9 +169,7 @@ var dir_0e4e8176c2dd688a0cdab60948de03e6 =
     [ "CPOpenPanel.j", "_c_p_open_panel_8j.html", null ],
     [ "CPOutlineView.h", "_c_p_outline_view_8h.html", null ],
     [ "CPOutlineView.j", "_c_p_outline_view_8j.html", "_c_p_outline_view_8j" ],
-    [ "CPPanel.h", "_c_p_panel_8h.html", [
-      [ "CPPanel", "interface_c_p_panel.html", "interface_c_p_panel" ]
-    ] ],
+    [ "CPPanel.h", "_c_p_panel_8h.html", null ],
     [ "CPPanel.j", "_c_p_panel_8j.html", "_c_p_panel_8j" ],
     [ "CPPasteboard.h", "_c_p_pasteboard_8h.html", null ],
     [ "CPPasteboard.j", "_c_p_pasteboard_8j.html", "_c_p_pasteboard_8j" ],
@@ -180,9 +179,7 @@ var dir_0e4e8176c2dd688a0cdab60948de03e6 =
     [ "CPPopUpButton.j", "_c_p_pop_up_button_8j.html", "_c_p_pop_up_button_8j" ],
     [ "CPProgressIndicator.h", "_c_p_progress_indicator_8h.html", null ],
     [ "CPProgressIndicator.j", "_c_p_progress_indicator_8j.html", "_c_p_progress_indicator_8j" ],
-    [ "CPRadio.h", "_c_p_radio_8h.html", [
-      [ "CPRadio", "interface_c_p_radio.html", "interface_c_p_radio" ]
-    ] ],
+    [ "CPRadio.h", "_c_p_radio_8h.html", null ],
     [ "CPRadio.j", "_c_p_radio_8j.html", "_c_p_radio_8j" ],
     [ "CPRadioGroup.h", "_c_p_radio_group_8h.html", [
       [ "CPRadioGroup", "class_c_p_radio_group.html", "class_c_p_radio_group" ]
@@ -195,13 +192,9 @@ var dir_0e4e8176c2dd688a0cdab60948de03e6 =
     [ "CPSavePanel.j", "_c_p_save_panel_8j.html", null ],
     [ "CPScreen.h", "_c_p_screen_8h.html", null ],
     [ "CPScreen.j", "_c_p_screen_8j.html", null ],
-    [ "CPScroller.h", "_c_p_scroller_8h.html", [
-      [ "CPScroller", "interface_c_p_scroller.html", "interface_c_p_scroller" ]
-    ] ],
+    [ "CPScroller.h", "_c_p_scroller_8h.html", null ],
     [ "CPScroller.j", "_c_p_scroller_8j.html", "_c_p_scroller_8j" ],
-    [ "CPScrollView.h", "_c_p_scroll_view_8h.html", [
-      [ "CPScrollView", "interface_c_p_scroll_view.html", "interface_c_p_scroll_view" ]
-    ] ],
+    [ "CPScrollView.h", "_c_p_scroll_view_8h.html", null ],
     [ "CPScrollView.j", "_c_p_scroll_view_8j.html", "_c_p_scroll_view_8j" ],
     [ "CPSearchField.h", "_c_p_search_field_8h.html", null ],
     [ "CPSearchField.j", "_c_p_search_field_8j.html", "_c_p_search_field_8j" ],
@@ -256,6 +249,9 @@ var dir_0e4e8176c2dd688a0cdab60948de03e6 =
     [ "CPTabView.j", "_c_p_tab_view_8j.html", "_c_p_tab_view_8j" ],
     [ "CPTabViewItem.h", "_c_p_tab_view_item_8h.html", null ],
     [ "CPTabViewItem.j", "_c_p_tab_view_item_8j.html", "_c_p_tab_view_item_8j" ],
+    [ "CPText.h", "_c_p_text_8h.html", [
+      [ "CPText", "interface_c_p_text.html", "interface_c_p_text" ]
+    ] ],
     [ "CPText.j", "_c_p_text_8j.html", "_c_p_text_8j" ],
     [ "CPTextField.h", "_c_p_text_field_8h.html", null ],
     [ "CPTextField.j", "_c_p_text_field_8j.html", "_c_p_text_field_8j" ],
@@ -276,6 +272,8 @@ var dir_0e4e8176c2dd688a0cdab60948de03e6 =
     [ "CPToolbar.h", "_c_p_toolbar_8h.html", null ],
     [ "CPToolbar.j", "_c_p_toolbar_8j.html", "_c_p_toolbar_8j" ],
     [ "CPToolbarItem.j", "_c_p_toolbar_item_8j.html", null ],
+    [ "CPTrackingArea.h", "_c_p_tracking_area_8h.html", null ],
+    [ "CPTrackingArea.j", "_c_p_tracking_area_8j.html", "_c_p_tracking_area_8j" ],
     [ "CPTreeNode.h", "_c_p_tree_node_8h.html", [
       [ "CPTreeNode", "interface_c_p_tree_node.html", "interface_c_p_tree_node" ]
     ] ],
@@ -296,6 +294,8 @@ var dir_0e4e8176c2dd688a0cdab60948de03e6 =
     [ "CPViewAnimation.j", "_c_p_view_animation_8j.html", "_c_p_view_animation_8j" ],
     [ "CPViewController.h", "_c_p_view_controller_8h.html", null ],
     [ "CPViewController.j", "_c_p_view_controller_8j.html", "_c_p_view_controller_8j" ],
+    [ "CPVisualEffectView.h", "_c_p_visual_effect_view_8h.html", null ],
+    [ "CPVisualEffectView.j", "_c_p_visual_effect_view_8j.html", "_c_p_visual_effect_view_8j" ],
     [ "CPWebScriptObject.h", "_c_p_web_script_object_8h.html", [
       [ "CPWebScriptObject", "interface_c_p_web_script_object.html", "interface_c_p_web_script_object" ]
     ] ],

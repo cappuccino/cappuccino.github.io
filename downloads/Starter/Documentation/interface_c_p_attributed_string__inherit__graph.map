@@ -1,4 +1,5 @@
 <map id="CPAttributedString" name="CPAttributedString">
-<area shape="rect" id="node3" href="$class_c_p_mutable_attributed_string.html" title="CPMutableAttributedString" alt="" coords="5,161,184,189"/>
-<area shape="rect" id="node2" href="$class_c_p_object.html" title="CPObject" alt="" coords="55,6,133,34"/>
+<area shape="rect" id="node3" href="$class_c_p_mutable_attributed_string.html" title="CPMutableAttributedString" alt="" coords="5,152,185,177"/>
+<area shape="rect" id="node2" href="$class_c_p_object.html" title="CPObject" alt="" coords="56,5,134,31"/>
+<area shape="rect" id="node4" href="$interface_c_p_text_storage.html" title="CPTextStorage" alt="" coords="39,225,150,251"/>
 </map>

@@ -10,7 +10,7 @@ var interface_c_p_platform_window =
     [ "initWithWindow:", "interface_c_p_platform_window.html#a648f4af4ed50b230e800c54bc120f356", null ],
     [ "isVisible", "interface_c_p_platform_window.html#a756d72c227aeb4caa68c78efe8c80f30", null ],
     [ "miniaturize:", "interface_c_p_platform_window.html#adb41d8972e36b0d18a8a8936648f4157", null ],
-    [ "moveWindow:fromLevel:toLevel:", "interface_c_p_platform_window.html#a3f3e8f697d7563b29f297804001a01de", null ],
+    [ "moveWindow:fromLevel:toLevel:", "interface_c_p_platform_window.html#aab33eee93bad140772da943665261d0c", null ],
     [ "primaryPlatformWindow", "interface_c_p_platform_window.html#a5b0f6e7fb5ccfe5a7a4b4423ba65691a", null ],
     [ "setContentRect:", "interface_c_p_platform_window.html#ac0dae068310c2609323f2c73df5748a2", null ],
     [ "setHasShadow:", "interface_c_p_platform_window.html#a0769864bc2a1d753fdb8780293987af0", null ],

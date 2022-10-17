@@ -1,6 +1,6 @@
 var _c_p_toolbar_8j =
 [
-    [ "<CPToolbarDelegate>", "protocol_c_p_toolbar_delegate-p.html", "protocol_c_p_toolbar_delegate-p" ],
+    [ "<CPToolbarDelegate >", "protocol_c_p_toolbar_delegate_01-p.html", "protocol_c_p_toolbar_delegate_01-p" ],
     [ "CPToolbarDisplayModeDefault", "_c_p_toolbar_8j.html#ade4552549b244d3eb58a31d2ce4d1b88", null ],
     [ "CPToolbarSizeModeDefault", "_c_p_toolbar_8j.html#a624d2688127923d4823d8d310957fbb3", null ],
     [ "CPToolbarAllowedItemsKey", "_c_p_toolbar_8j.html#a62c468355ffc0fb98e230e5892fc154b", null ],

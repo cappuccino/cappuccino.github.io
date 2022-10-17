@@ -2,6 +2,7 @@ var interface_c_p_responder =
 [
     [ "acceptsFirstResponder", "interface_c_p_responder.html#a5aedc154ed18f6cf4857ef9e565ba78b", null ],
     [ "becomeFirstResponder", "interface_c_p_responder.html#a3361db12f56d72886836f82a782df99f", null ],
+    [ "cursorUpdate:", "interface_c_p_responder.html#ad328bcf418b40381c45e297bb90729c6", null ],
     [ "doCommandBySelector:", "interface_c_p_responder.html#aa7486f25921d4f7d452dde0cf144733f", null ],
     [ "encodeWithCoder:", "interface_c_p_responder.html#a3d36871d03fa9eaa55b84ae1854a5370", null ],
     [ "flagsChanged:", "interface_c_p_responder.html#abcea6405dc6319bfc3be39371f9ba638", null ],
@@ -30,6 +31,6 @@ var interface_c_p_responder =
     [ "scrollWheel:", "interface_c_p_responder.html#a0a6e754165cddf5e936f61724dcd4e5a", null ],
     [ "setMenu:", "interface_c_p_responder.html#ad5e2efcaaf475c412b862d6e6f5a1530", null ],
     [ "setNextResponder:", "interface_c_p_responder.html#a39e121624766cd4414b4108c05751220", null ],
-    [ "tryToPerform:with:", "interface_c_p_responder.html#a5924b93490d16d065ff00c23b9db156e", null ],
+    [ "tryToPerform:with:", "interface_c_p_responder.html#a2f9f842b123fc76719dc48575467902f", null ],
     [ "undoManager", "interface_c_p_responder.html#a6e9237e011ed568d4d2d3d1463b5a97d", null ]
 ];

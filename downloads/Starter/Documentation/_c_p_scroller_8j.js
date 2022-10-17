@@ -23,7 +23,7 @@ var _c_p_scroller_8j =
     [ "CPThemeStateScrollerKnobDark", "_c_p_scroller_8j.html#a7ac1fd19ff18158964b603d2ccdf8be0", null ],
     [ "CPThemeStateScrollerKnobLight", "_c_p_scroller_8j.html#ab39890d6c82c9a6aac979dc2e105adf9", null ],
     [ "CPThemeStateScrollViewLegacy", "_c_p_scroller_8j.html#acf4de72ab64c141b3867e3333779ba04", null ],
-    [ "NAMES_FOR_PARTS", "_c_p_scroller_8j.html#ga1411ad62def5aaa297f82c4212b6ac1f", null ],
-    [ "PARTS_ARRANGEMENT", "_c_p_scroller_8j.html#ga0b1f11a8d70fd441b36e9fb240460d10", null ],
-    [ "PARTS_FOR_NAMES", "_c_p_scroller_8j.html#gacce8676341331284b5f777b68002dbc9", null ]
+    [ "NAMES_FOR_PARTS", "_c_p_scroller_8j.html#a1411ad62def5aaa297f82c4212b6ac1f", null ],
+    [ "PARTS_ARRANGEMENT", "_c_p_scroller_8j.html#a0b1f11a8d70fd441b36e9fb240460d10", null ],
+    [ "PARTS_FOR_NAMES", "_c_p_scroller_8j.html#acce8676341331284b5f777b68002dbc9", null ]
 ];

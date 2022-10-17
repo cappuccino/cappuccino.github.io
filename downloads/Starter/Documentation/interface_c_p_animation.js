@@ -7,7 +7,7 @@ var interface_c_p_animation =
     [ "delegate", "interface_c_p_animation.html#ac1ce5ba22e34134ac8a51aae8cd5594a", null ],
     [ "duration", "interface_c_p_animation.html#a4ff05c4e582e5c21eee6952981d8d315", null ],
     [ "frameRate", "interface_c_p_animation.html#a73ca8cc2525b3a545de97fe33d2a4692", null ],
-    [ "initWithDuration:animationCurve:", "interface_c_p_animation.html#a51ac5696ab2f2cba707d8cc525e112df", null ],
+    [ "initWithDuration:animationCurve:", "interface_c_p_animation.html#a88eea90d6d6bfb213c3ebf6c815bba46", null ],
     [ "isAnimating", "interface_c_p_animation.html#ada8a0ed8ddef15e0d6cf35bdbff39245", null ],
     [ "setAnimationCurve:", "interface_c_p_animation.html#a97541df9c31575f8400f9fd6327296cd", null ],
     [ "setCurrentProgress:", "interface_c_p_animation.html#a43dcc753d8b953db60271d8cab641cc8", null ],

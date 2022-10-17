@@ -1,6 +1,6 @@
 var _c_p_scroll_view_8j =
 [
-    [ "<CPScrollViewDelegate>", "protocol_c_p_scroll_view_delegate-p.html", "protocol_c_p_scroll_view_delegate-p" ],
+    [ "<CPScrollViewDelegate >", "protocol_c_p_scroll_view_delegate_01-p.html", "protocol_c_p_scroll_view_delegate_01-p" ],
     [ "SHOULD_SHOW_CORNER_VIEW", "_c_p_scroll_view_8j.html#af0bc7bbd4d7e59a039c521f294587e8b", null ],
     [ "CPScrollerStyleGlobal", "_c_p_scroll_view_8j.html#ab3ecb190882d1513ea5fed7fbf82aeca", null ],
     [ "CPScrollerStyleGlobalChangeNotification", "_c_p_scroll_view_8j.html#ac32981a0f4ceb17fd9dc4158616bddc2", null ],
@@ -9,9 +9,9 @@ var _c_p_scroll_view_8j =
     [ "CPScrollViewBottomCornerViewKey", "_c_p_scroll_view_8j.html#a88ba925bddf4f3ba564d827d94748374", null ],
     [ "CPScrollViewContentViewKey", "_c_p_scroll_view_8j.html#a06c52eba67f9c0654836a017c6b44871", null ],
     [ "CPScrollViewCornerViewKey", "_c_p_scroll_view_8j.html#aa84450adca1ff7bb54846fd0c2143063", null ],
-    [ "CPScrollViewDelegate_scrollViewDidScroll_", "_c_p_scroll_view_8j.html#ga73a87981ecef451f85b6603c90a0d082", null ],
-    [ "CPScrollViewDelegate_scrollViewWillScroll_", "_c_p_scroll_view_8j.html#ga21622882e833b466552493286ed21137", null ],
-    [ "CPScrollViewFadeOutTime", "_c_p_scroll_view_8j.html#ga98413acbad11ccd6cc123567e92ff98b", null ],
+    [ "CPScrollViewDelegate_scrollViewDidScroll_", "_c_p_scroll_view_8j.html#a73a87981ecef451f85b6603c90a0d082", null ],
+    [ "CPScrollViewDelegate_scrollViewWillScroll_", "_c_p_scroll_view_8j.html#a21622882e833b466552493286ed21137", null ],
+    [ "CPScrollViewFadeOutTime", "_c_p_scroll_view_8j.html#a98413acbad11ccd6cc123567e92ff98b", null ],
     [ "CPScrollViewHasHScrollerKey", "_c_p_scroll_view_8j.html#a385c09887ae4bf3fec650028d3fe9e38", null ],
     [ "CPScrollViewHasVScrollerKey", "_c_p_scroll_view_8j.html#a4cee32422733f3be74adc8b4bb2cf5f9", null ],
     [ "CPScrollViewHeaderClipViewKey", "_c_p_scroll_view_8j.html#a013766f76f44d39860ea6c6561f49d53", null ],
@@ -23,5 +23,5 @@ var _c_p_scroll_view_8j =
     [ "CPScrollViewVLineScrollKey", "_c_p_scroll_view_8j.html#aef1347deda120a430592e8ebf0258385", null ],
     [ "CPScrollViewVPageScrollKey", "_c_p_scroll_view_8j.html#a9e99f5c6a82a2b0b33f921180e5901e2", null ],
     [ "CPScrollViewVScrollerKey", "_c_p_scroll_view_8j.html#a169fd11800930617609a2a34a1216ef2", null ],
-    [ "TIMER_INTERVAL", "_c_p_scroll_view_8j.html#ga9130a5aa04cd429b1df98809c727be8f", null ]
+    [ "TIMER_INTERVAL", "_c_p_scroll_view_8j.html#a9130a5aa04cd429b1df98809c727be8f", null ]
 ];

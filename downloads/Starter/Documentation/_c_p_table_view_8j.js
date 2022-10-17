@@ -1,7 +1,7 @@
 var _c_p_table_view_8j =
 [
-    [ "<CPTableViewDataSource>", "protocol_c_p_table_view_data_source-p.html", "protocol_c_p_table_view_data_source-p" ],
-    [ "<CPTableViewDelegate>", "protocol_c_p_table_view_delegate-p.html", "protocol_c_p_table_view_delegate-p" ],
+    [ "<CPTableViewDataSource >", "protocol_c_p_table_view_data_source_01-p.html", "protocol_c_p_table_view_data_source_01-p" ],
+    [ "<CPTableViewDelegate >", "protocol_c_p_table_view_delegate_01-p.html", "protocol_c_p_table_view_delegate_01-p" ],
     [ "FULL_ROW_HEIGHT", "_c_p_table_view_8j.html#a3c9003b0a97bc491df8b6ec7b02f4120", null ],
     [ "HAS_VARIABLE_ROW_HEIGHTS", "_c_p_table_view_8j.html#ac2bcf5323fa10cbacadb5b100067b443", null ],
     [ "NUMBER_OF_COLUMNS", "_c_p_table_view_8j.html#aa0c3e20940452d04b6708ec8b82b482b", null ],

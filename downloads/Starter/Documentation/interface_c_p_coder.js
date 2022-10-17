@@ -10,5 +10,5 @@ var interface_c_p_coder =
     [ "encodeRect:", "interface_c_p_coder.html#a691b22e9b1d056a60f5b24e11d76cb36", null ],
     [ "encodeRootObject:", "interface_c_p_coder.html#ad66e6daeb7002a3a6caaed7d92a74c29", null ],
     [ "encodeSize:", "interface_c_p_coder.html#a38af68efa1fa90eb4e7f84a05942cf28", null ],
-    [ "encodeValueOfObjJType:at:", "interface_c_p_coder.html#aab1857c065af8b445ff00347e9ec4b4a", null ]
+    [ "encodeValueOfObjJType:at:", "interface_c_p_coder.html#ac1307ea97b1a33f5ca3f970797e15d6c", null ]
 ];

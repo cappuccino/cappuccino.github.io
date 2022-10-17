@@ -4,7 +4,7 @@ var interface_c_p_cib_connector =
     [ "encodeWithCoder:", "interface_c_p_cib_connector.html#affecf2163fb2648d6af56ebed79522bf", null ],
     [ "initWithCoder:", "interface_c_p_cib_connector.html#ab53911ca8305f33f8b87044a9ef30181", null ],
     [ "label", "interface_c_p_cib_connector.html#ab0eaf99edbe0b5bc86fa5587cade7011", null ],
-    [ "replaceObject:withObject:", "interface_c_p_cib_connector.html#a291b40cfb43eaf02406bf4729c025262", null ],
+    [ "replaceObject:withObject:", "interface_c_p_cib_connector.html#a0f98d5d94eecc3895bca7e037e0dd25c", null ],
     [ "replaceObjects:", "interface_c_p_cib_connector.html#ab1b138dea6ce0c49154d9b99e4efc300", null ],
     [ "setDestination:", "interface_c_p_cib_connector.html#ad0ee4fbe502bbce10f30b8f0c014fab6", null ],
     [ "setLabel:", "interface_c_p_cib_connector.html#a596f6db0ff4d3760311176a7a09ac18f", null ],

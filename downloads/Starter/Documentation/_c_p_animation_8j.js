@@ -1,6 +1,6 @@
 var _c_p_animation_8j =
 [
-    [ "<CPAnimationDelegate>", "protocol_c_p_animation_delegate-p.html", "protocol_c_p_animation_delegate-p" ],
+    [ "<CPAnimationDelegate >", "protocol_c_p_animation_delegate_01-p.html", "protocol_c_p_animation_delegate_01-p" ],
     [ "CPAnimationEaseInOut", "_c_p_animation_8j.html#a3c1080b38925d76405cc0bfd7305c299", null ],
     [ "ACTUAL_FRAME_RATE", "_c_p_animation_8j.html#a7b2a03cbc2fda6a7b904233f7acfed30", null ],
     [ "CPAnimationDelegate_animation_valueForProgress_", "_c_p_animation_8j.html#a36ead2f3f45589f364dce8745bbfd6cf", null ],

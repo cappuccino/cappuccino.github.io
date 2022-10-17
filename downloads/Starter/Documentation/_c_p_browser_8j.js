@@ -1,6 +1,6 @@
 var _c_p_browser_8j =
 [
-    [ "<CPBrowserDelegate>", "protocol_c_p_browser_delegate-p.html", "protocol_c_p_browser_delegate-p" ],
+    [ "<CPBrowserDelegate >", "protocol_c_p_browser_delegate_01-p.html", "protocol_c_p_browser_delegate_01-p" ],
     [ "CPBrowserDelegate_browser_acceptDrop_atRow_column_dropOperation_", "_c_p_browser_8j.html#afd28d2a3e2458c467cc25bcd146ff819", null ],
     [ "CPBrowserDelegate_browser_canDragRowsWithIndexes_inColumn_withEvent_", "_c_p_browser_8j.html#ae8efa0740474522fdc089e324202dcb3", null ],
     [ "CPBrowserDelegate_browser_child_ofItem_", "_c_p_browser_8j.html#ac23cc313c8c31b0c8abe2d2e27878a30", null ],

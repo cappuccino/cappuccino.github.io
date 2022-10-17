@@ -10,8 +10,8 @@ var protocol_c_p_object_p =
     [ "isMemberOfClass:", "protocol_c_p_object-p.html#a4ea38153d88b89a1ca09f1db6f8d8978", null ],
     [ "isProxy", "protocol_c_p_object-p.html#a17e96942a2968f8278de0aac5600d9b3", null ],
     [ "performSelector:", "protocol_c_p_object-p.html#adc088c65478a482d7373097858b5a25d", null ],
-    [ "performSelector:withObject:", "protocol_c_p_object-p.html#aee750b234f17435d299084499f00b18d", null ],
-    [ "performSelector:withObject:withObject:", "protocol_c_p_object-p.html#a8c2408a65701407e8880e48ee9ef394f", null ],
+    [ "performSelector:withObject:", "protocol_c_p_object-p.html#a6f38062f1734ac4f33f38fa68fd1a730", null ],
+    [ "performSelector:withObject:withObject:", "protocol_c_p_object-p.html#af6a66fb31b68233023bd58a63390b6c7", null ],
     [ "respondsToSelector:", "protocol_c_p_object-p.html#a140a8149d963b0b795f528d33e2a9302", null ],
     [ "self", "protocol_c_p_object-p.html#a8b8e99558a392ed6dbd486bf90197dbc", null ],
     [ "superclass", "protocol_c_p_object-p.html#ab369d7acabaff12d8c93e39db46ca848", null ]

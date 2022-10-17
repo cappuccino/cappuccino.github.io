@@ -21,7 +21,7 @@ var interface_c_p_array_controller =
     [ "initialize", "interface_c_p_array_controller.html#a3e664efa487b876ac9ce4b2560afc3d1", null ],
     [ "initWithCoder:", "interface_c_p_array_controller.html#a9cad054603064c521bab33ce236c5213", null ],
     [ "insert:", "interface_c_p_array_controller.html#a20981d2fb65652d134bf516c289a1039", null ],
-    [ "insertObject:atArrangedObjectIndex:", "interface_c_p_array_controller.html#a853f2dbea53244233531bc9819f1e64e", null ],
+    [ "insertObject:atArrangedObjectIndex:", "interface_c_p_array_controller.html#a769316d73d726961bf30b879a5b3ab6c", null ],
     [ "keyPathsForValuesAffectingArrangedObjects", "interface_c_p_array_controller.html#a1806dabfd05702e52f887377f9368e74", null ],
     [ "keyPathsForValuesAffectingCanRemove", "interface_c_p_array_controller.html#a18ce79c03d4e95a5a9b5148e3bd33ad7", null ],
     [ "keyPathsForValuesAffectingCanSelectNext", "interface_c_p_array_controller.html#aa4c73242ce68e58e7fc0e5306bd1d918", null ],

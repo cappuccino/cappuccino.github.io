@@ -1,5 +1,6 @@
 var _c_p_application___constants_8j =
 [
+    [ "CPTerminateNow", "_c_p_application___constants_8j.html#a1c76febee415ee4aa1eb9c843452c061", null ],
     [ "CPApp", "_c_p_application___constants_8j.html#a428912231c07effc32c420ee523bf0b7", null ],
     [ "CPApplicationDidBecomeActiveNotification", "_c_p_application___constants_8j.html#a32f8bcec351622bcd170d032f1c7fba7", null ],
     [ "CPApplicationDidChangeScreenParametersNotification", "_c_p_application___constants_8j.html#a3da55fd3bc10a48ca3ee3e6712066a82", null ],
@@ -13,6 +14,5 @@ var _c_p_application___constants_8j =
     [ "CPRunContinuesResponse", "_c_p_application___constants_8j.html#a26c5f833094fa3e4f82261f5e2ad4bff", null ],
     [ "CPRunStoppedResponse", "_c_p_application___constants_8j.html#aa01509a2e282606b2008e0aac6cb4065", null ],
     [ "CPTerminateCancel", "_c_p_application___constants_8j.html#aa7f5c38748ea5a451ad464552ae873cf", null ],
-    [ "CPTerminateLater", "_c_p_application___constants_8j.html#adcb66381834174fe992c5b6372cae06c", null ],
-    [ "CPTerminateNow", "_c_p_application___constants_8j.html#a0bca35cb292f7c58d4a3cbd28fa8d775", null ]
+    [ "CPTerminateLater", "_c_p_application___constants_8j.html#adcb66381834174fe992c5b6372cae06c", null ]
 ];

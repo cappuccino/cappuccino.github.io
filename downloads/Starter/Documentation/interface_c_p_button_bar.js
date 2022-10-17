@@ -11,7 +11,7 @@ var interface_c_p_button_bar =
     [ "initWithFrame:", "interface_c_p_button_bar.html#a0d7e3c970a81ad4fcace51bd2038a7ec", null ],
     [ "layoutSubviews", "interface_c_p_button_bar.html#a444d73bd67152e06d0d4c38a1a9575d4", null ],
     [ "minusButton", "interface_c_p_button_bar.html#aeeadd9ed57a84131748c6cc124ae2713", null ],
-    [ "observeValueForKeyPath:ofObject:change:context:", "interface_c_p_button_bar.html#a2c6eb183c279fb3c5c44a14a756aa281", null ],
+    [ "observeValueForKeyPath:ofObject:change:context:", "interface_c_p_button_bar.html#a51a6eae15384c08ae06a042223572bd0", null ],
     [ "plusButton", "interface_c_p_button_bar.html#a5d8fd54d80fba336678d3859a1661600", null ],
     [ "rectForEphemeralSubviewNamed:", "interface_c_p_button_bar.html#a7585ad745f1926328c40d251514fee04", null ],
     [ "resizeControlFrame", "interface_c_p_button_bar.html#ad44c4d1d44b1a81415ab1c04022ea2e8", null ],

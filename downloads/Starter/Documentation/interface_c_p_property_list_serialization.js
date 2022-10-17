@@ -1,7 +1,7 @@
 var interface_c_p_property_list_serialization =
 [
-    [ "dataFromPropertyList:format:", "interface_c_p_property_list_serialization.html#af6399e3f12eb6e565d07a52af47ca4b1", null ],
-    [ "dataFromPropertyList:format:errorDescription:", "interface_c_p_property_list_serialization.html#ab2338caa7de1f7f20053f79dbbb2b307", null ],
-    [ "propertyListFromData:format:", "interface_c_p_property_list_serialization.html#aa668cb9f5b0da6929f9b03408087108c", null ],
-    [ "propertyListFromData:format:errorDescription:", "interface_c_p_property_list_serialization.html#a43dd80c210fdb0cca67a06f950f36e36", null ]
+    [ "dataFromPropertyList:format:", "interface_c_p_property_list_serialization.html#a3ff0876c4ba0476285421af41ae13ce4", null ],
+    [ "dataFromPropertyList:format:errorDescription:", "interface_c_p_property_list_serialization.html#ac21fd3128253fc23e934b5bfcf6e2a5d", null ],
+    [ "propertyListFromData:format:", "interface_c_p_property_list_serialization.html#a323d75e63c112a4e592c58e4e1a71e37", null ],
+    [ "propertyListFromData:format:errorDescription:", "interface_c_p_property_list_serialization.html#aa808e541b5fe5a91882b6590d4fc8397", null ]
 ];

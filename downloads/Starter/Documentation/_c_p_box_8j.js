@@ -11,6 +11,7 @@ var _c_p_box_8j =
     [ "CPBelowTop", "_c_p_box_8j.html#ac55de182033b9dfd11e5180a6916689b", null ],
     [ "CPBezelBorder", "_c_p_box_8j.html#ad03f11ec606cea083149874427e685ac", null ],
     [ "CPBoxBorderTypeKey", "_c_p_box_8j.html#a388a0bb99cf560e2f0f9a7cc1b294210", null ],
+    [ "CPBoxContentView", "_c_p_box_8j.html#ac38894a4d8d080004ec1b9efb1eb8bec", null ],
     [ "CPBoxCustom", "_c_p_box_8j.html#a07bbbfc38dee980753c71781e134a826", null ],
     [ "CPBoxOldStyle", "_c_p_box_8j.html#a2b767b272bde8a9314bf2448e16e1f0d", null ],
     [ "CPBoxSecondary", "_c_p_box_8j.html#a24e20891c8890c220ffc0542bca024c8", null ],

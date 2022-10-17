@@ -21,7 +21,7 @@ var interface_c_p_stepper =
     [ "setMinValue:", "interface_c_p_stepper.html#ac930cfb0fbd79b3685f49bec3cc67afb", null ],
     [ "setValueWraps:", "interface_c_p_stepper.html#afdeb6c9a6c012ddd9aaa572eb870a5b1", null ],
     [ "stepper", "interface_c_p_stepper.html#a389521f37ad6d58819ffcc684f1f2c51", null ],
-    [ "stepperWithInitialValue:minValue:maxValue:", "interface_c_p_stepper.html#a49f325d8d6890799f6e3e34166980ac3", null ],
+    [ "stepperWithInitialValue:minValue:maxValue:", "interface_c_p_stepper.html#a10fd427a33399d6a115e11902a98d2ba", null ],
     [ "themeAttributes", "interface_c_p_stepper.html#a188799fb497589c80df554c37a895e52", null ],
     [ "valueWraps", "interface_c_p_stepper.html#aadb5f34c3a8367e2fdba85616d1eca3a", null ]
 ];

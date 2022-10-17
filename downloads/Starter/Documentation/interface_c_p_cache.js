@@ -10,8 +10,8 @@ var interface_c_p_cache =
     [ "setCountLimit:", "interface_c_p_cache.html#aca3140675d7081cf7d2e436354b4c93f", null ],
     [ "setDelegate:", "interface_c_p_cache.html#a96a963e7978531e700d0522e7e18e778", null ],
     [ "setName:", "interface_c_p_cache.html#ae7c9e3609d5643a68adc1fc645c16495", null ],
-    [ "setObject:forKey:", "interface_c_p_cache.html#ae8afa87b5ef278f7aa17bc9ce3327939", null ],
-    [ "setObject:forKey:cost:", "interface_c_p_cache.html#a2fa2ab7671c1532bb0de52205ca9a31b", null ],
+    [ "setObject:forKey:", "interface_c_p_cache.html#a6a0852bc860663a845d538d0751ebae7", null ],
+    [ "setObject:forKey:cost:", "interface_c_p_cache.html#ab6fd7bb0d5d4f55441d45e7e0e6d56dd", null ],
     [ "setTotalCostLimit:", "interface_c_p_cache.html#aef5d11deaa9037edacfe0b90027bed86", null ],
     [ "totalCostLimit", "interface_c_p_cache.html#a39f25767db9768ddc204b3a51aad30cc", null ]
 ];

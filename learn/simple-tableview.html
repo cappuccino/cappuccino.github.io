@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino - Tutorial: Simple Table View</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-simple-tableview-html folder-learn">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container learn">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Learn</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="span3">
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/">What is Cappuccino?</a>
+</li>
+<li>
+<a href="/learn/environment.html">Your development environment</a>
+</li>
+<li>
+<a href="/learn/starter.html">Get Started</a>
+</li>
+<li>
+<a href="/learn/build-source.html">Advanced: Install from Source</a>
+</li>
+<li>
+<a href="/learn/objective-j.html">Learning Objective-J</a>
+</li>
+<li>
+<a href="/learn/scrapbook-1.html">Scrapbook #1 - Views and Layers</a>
+</li>
+<li>
+<a href="/learn/scrapbook-2.html">Scrapbook #2 - Drag and Drop</a>
+</li>
+<li>
+<a href="/learn/automatic-layout.html">Tutorial: Automatic Layout</a>
+</li>
+<li>
+<a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
+</li>
+<li class="active">
+<a href="/learn/simple-tableview.html">Tutorial: Simple Table View</a>
+</li>
+<li>
+<a href="/learn/simple-outlineview.html">Tutorial: Simple Outline View</a>
+</li>
+<li>
+<a href="/learn/debugging.html">Debugging</a>
+</li>
+<li>
+<a href="/learn/ojtest.html">Testing with OJTest</a>
+</li>
+<li>
+<a href="/learn/cucapp.html">Testing with Cucapp</a>
+</li>
+</ul>
+<h5>Resources</h5>
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/demos.html">Demos</a>
+</li>
+<li>
+<a href="/learn/documentation/">API Documentation</a>
+</li>
+<li>
+<a href="/support/faq.html">FAQ</a>
+</li>
+</ul>
+</div>
+<div class="span9 text-body markdown">
+<h3>
+Tutorial: Simple Table View
+</h3>
+<p>In this tutorial we will create a simple cell-based table view. The table view control, <code>CPTableView</code>, is one of the simplest way to organize our data into columns and rows, whether that’s just for display or for editing. At the conclusion of this tutorial you will know how to populate data into <code>CPTableView</code> and how to add and remove elements.
+<img width="3356" height="1948" src="/img/simpletableview/simpletableview1-e1eaeaa7.png"></p>
+
+<p>We will be using Xcode’s Interface Builder in this tutorial, so if you haven’t already you should read our <a href="/learn/xcode-basics.html">Xcode Interface Builder tutorial</a>.</p>
+
+<h3>Create the project</h3>
+
+<p>First, go to the folder in which you want create the project. Run the <code>capp</code> command:</p>
+
+<div class="highlight"><pre>capp gen -l -t NibApplication SimpleTableView
+</pre></div>
+
+<p>This will generate an empty new project using the Nib template.</p>
+
+<h3>Code</h3>
+
+<p>Since we will be interacting with our table view in the app controller, let’s start by giving it an outlet. While we’re there let’s add an ivar to store our content too. In <code>AppController.j</code>:</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="kt">@outlet</span> <span class="n">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="n">CPTableView</span> <span class="n">tableView</span><span class="p">;</span>
+    <span class="n">CPMutableArray</span>      <span class="n">_names</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Tables need a data source from which to read its row data. In this case we’ll store that data in a mutable array:</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">init</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">])</span>
+    <span class="p">{</span>
+        <span class="n">_names</span> <span class="o">=</span> <span class="err">@</span><span class="p">[</span><span class="s">"Alpha"</span><span class="p">,</span> <span class="s">"Beta"</span><span class="p">,</span> <span class="s">"Charlie"</span><span class="p">,</span> <span class="s">"Delta"</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Let’s make a windowed application for this tutorial, by setting <code>setFullPlatformWindow:NO</code> in the <code>awakeFromCib</code> method:</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">awakeFromCib</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">setFullPlatformWindow</span><span class="o">:</span><span class="kc">NO</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><code>CPTableView</code> uses a core concept in Cappuccino which you will see implemented in many different settings: a data source. The data source should at a minimum be able to let the table view know how many rows of data there are and what each row is.</p>
+
+<p>This is what the <a href="http://www.cappuccino-project.org/learn/documentation/interface_c_p_table_view.html">CPTableView API docs</a> have to say about it:</p>
+
+<blockquote>
+<p>… displays record-oriented data in a table and allows the user to edit values and resize and rearrange columns. A <code>CPTableView</code> requires you to either set a data source which implements <code>numberOfRowsInTableView:</code> and <code>tableView:objectValueForTableColumn:row:</code> , or alternatively to provide data through Key Value Bindings.</p>
+</blockquote>
+
+<p>In our case the number of rows in the table view is equivalent to the number of elements in our array. We are going to make the app controller our data source, so let’s add this method to <code>AppController.j</code>:</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="nf">numberOfRowsInTableView:</span><span class="p">(</span><span class="kt">CPTableView</span><span class="p">)</span>aTableView
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">_names</span> <span class="n">count</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>And then the method to actually return the elements of each row:</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">tableView:</span><span class="p">(</span><span class="kt">CPTableView</span><span class="p">)</span>aTableView <span class="nf">objectValueForTableColumn:</span><span class="p">(</span><span class="kt">CPTableColumn</span><span class="p">)</span>aColumn <span class="nf">row:</span><span class="p">(</span><span class="kt">CPInteger</span><span class="p">)</span>aRowIndex
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">_names</span> <span class="n">objectAtIndex</span><span class="o">:</span><span class="n">aRowIndex</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>Clean up the nib</h3>
+
+<p>In Xcode, open up the main window by double clicking <code>Window - Window</code> in the Object navigator.
+<img width="3360" height="1948" src="/img/simpletableview/simpletableview2-a44cef10.png"></p>
+
+<p>By default, there is a text field and a slider in the window. Select and remove them (using the Delete key).</p>
+
+<h3>Creating the new interface</h3>
+
+<p>Choose “Table View” from the Object Library.
+<img width="3358" height="1948" src="/img/simpletableview/simpletableview3-b827ec3f.png"></p>
+
+<p>Drag and drop “Table View” onto the Window.
+<img width="3358" height="1948" src="/img/simpletableview/simpletableview4-94a2855b.png"></p>
+
+<p>By dragging the right corner of Table View, resize it to fill the Window.
+<img width="3358" height="1948" src="/img/simpletableview/simpletableview5-0f552eeb.png"></p>
+
+<p>Choose “Table View” in the Document Outline, then open the Attributes inspector by clicking its button on the top right side of Xcode. In this tutorial we will a cell based table view (rather than a view based one), so we need to change the “Content Mode” from “View based” to “Cell based”.
+<img width="3358" height="1948" src="/img/simpletableview/simpletableview6-3aaa03a1.png"></p>
+
+<p>As we need only one column, reduce the column number from 2 to 1. We don’t need a header, so uncheck that. Set the “Column Sizing” to “First Column Only”. Let’s enable “Alternating Rows” too.
+<img width="3358" height="1948" src="/img/simpletableview/simpletableview7-cf5142c3.png"></p>
+
+<p>Now it’s time to make use of our new data source by connecting the <code>dataSource</code> and <code>delegate</code> outlets.
+<img width="3360" height="1947" src="/img/simpletableview/datasource-65362f50.png">
+<img width="3360" height="1947" src="/img/simpletableview/delegate-1f89a240.png">
+<img width="3360" height="1947" src="/img/simpletableview/tableview-0e65eb7c.png"></p>
+
+<h3>Run the application</h3>
+
+<p>As usual the best way to run a Cappuccino app for testing is to start a local webserver. So in the root of your project folder, type:</p>
+
+<div class="highlight"><pre>python -m SimpleHTTPServer
+</pre></div>
+
+<p>Now, open your browser and type in the address given by SimpleHTTPServer: <code>localhost:8000</code>
+<img width="3356" height="1948" src="/img/simpletableview/simpletableview8-090f8ed0.png"></p>
+
+<h3>‘Add’ function</h3>
+
+<p>So far so good, but what if we want to add elements to our list?</p>
+
+<p>Let’s add two more controls fromthe library. One is CPTextField, the second one is CPButton.
+<img width="3358" height="1948" src="/img/simpletableview/simpletableview9-8e532e2f.png">
+<img width="3358" height="1948" src="/img/simpletableview/simpletableview11-7176a819.png"></p>
+
+<p>You can change the CPButton title on the Attributes inspector tab
+<img width="3358" height="1948" src="/img/simpletableview/simpletableview12-601caaf9.png"></p>
+
+<p>Define the CPTextField as an outlet in the AppController. This will help us to get its value.</p>
+
+<div class="highlight"><pre><span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">textField</span><span class="p">;</span>
+</pre></div>
+
+<p>Create the CPButton as an action.</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">@action</span><span class="p">)</span><span class="n">addItem</span><span class="o">:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">sender</span>
+<span class="p">{</span>
+    <span class="c1">// Get CPTextField value and add to our CPMutableArray</span>
+    <span class="p">[</span><span class="n">_names</span> <span class="n">addObject</span><span class="o">:</span> <span class="p">[</span><span class="n">textField</span> <span class="n">stringValue</span><span class="p">]];</span>
+
+    <span class="c1">// Clear the CPTextField</span>
+    <span class="p">[</span><span class="n">textField</span> <span class="n">setStringValue</span><span class="o">:</span><span class="s">""</span><span class="p">];</span>
+
+    <span class="c1">// Reload CPTableView to see the changes</span>
+    <span class="p">[</span><span class="n">tableView</span> <span class="n">reloadData</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Connect our newly added outlet and action.
+<img width="3360" height="1947" src="/img/simpletableview/textfield-2e0f7cf2.png">
+<img width="3360" height="1947" src="/img/simpletableview/add-802f2079.png"></p>
+
+<h3>Run the application</h3>
+
+<p>Refresh your borwser.</p>
+
+<p><img width="3356" height="1948" src="/img/simpletableview/simpletableview13-61df362a.png"></p>
+
+<h3>'Remove’ function</h3>
+
+<p>Now that we are able to add, we would like to be able to remove items as well.</p>
+
+<p>Let’s add another button called “Remove”.</p>
+
+<p><img width="3358" height="1948" src="/img/simpletableview/simpletableview14-ba84d8fd.png"></p>
+
+<p>When the user selects a row in the table, that’s the element they want to remove. Using the <code>selectedRow</code> attribute on the table we can find the row index to delete. Then we can delete it using <code>CPMutableArray removeObject:</code>. Here’s the code:</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">@action</span><span class="p">)</span><span class="n">removeItem</span><span class="o">:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">sender</span>
+<span class="p">{</span>
+    <span class="c1">// Check if any row is selected; if not the value is -1.</span>
+    <span class="k">if</span> <span class="p">([</span><span class="n">tableView</span> <span class="n">selectedRow</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="p">[</span><span class="n">_names</span> <span class="n">removeObject</span><span class="o">:</span><span class="p">[</span><span class="n">_names</span> <span class="n">objectAtIndex</span><span class="o">:</span><span class="p">[</span><span class="n">tableView</span> <span class="n">selectedRow</span><span class="p">]]];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Reload CPTableView to see the changes</span>
+    <span class="p">[</span><span class="n">tableView</span> <span class="n">reloadData</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Connect the button and the action:</p>
+
+<p><img width="3360" height="1947" src="/img/simpletableview/remove-ec8aca9c.png"></p>
+
+<p>Now, you have a fully functioning application!</p>
+
+<h3>Source</h3>
+
+<p>You can download the archive of this project <a href="/learn/files/SimpleTableView.zip">here</a>.</p>
+
+</div>
+</div>
+<div class="row">
+<div class="offset3 span9">
+<div class="learn-nav">
+<ul class="pager">
+<li class="previous">
+<a href="/learn/xcode-basics.html">← Return to '
+Tutorial: Xcode Interface Builder
+'
+</a>
+</li>
+<li class="next">
+<a href="/learn/simple-outlineview.html">Continue to '
+Tutorial: Simple Outline View
+' →
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

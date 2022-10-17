@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino - Testing with Cucapp</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-cucapp-html folder-learn">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container learn">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Learn</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="span3">
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/">What is Cappuccino?</a>
+</li>
+<li>
+<a href="/learn/environment.html">Your development environment</a>
+</li>
+<li>
+<a href="/learn/starter.html">Get Started</a>
+</li>
+<li>
+<a href="/learn/build-source.html">Advanced: Install from Source</a>
+</li>
+<li>
+<a href="/learn/objective-j.html">Learning Objective-J</a>
+</li>
+<li>
+<a href="/learn/scrapbook-1.html">Scrapbook #1 - Views and Layers</a>
+</li>
+<li>
+<a href="/learn/scrapbook-2.html">Scrapbook #2 - Drag and Drop</a>
+</li>
+<li>
+<a href="/learn/automatic-layout.html">Tutorial: Automatic Layout</a>
+</li>
+<li>
+<a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
+</li>
+<li>
+<a href="/learn/simple-tableview.html">Tutorial: Simple Table View</a>
+</li>
+<li>
+<a href="/learn/simple-outlineview.html">Tutorial: Simple Outline View</a>
+</li>
+<li>
+<a href="/learn/debugging.html">Debugging</a>
+</li>
+<li>
+<a href="/learn/ojtest.html">Testing with OJTest</a>
+</li>
+<li class="active">
+<a href="/learn/cucapp.html">Testing with Cucapp</a>
+</li>
+</ul>
+<h5>Resources</h5>
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/demos.html">Demos</a>
+</li>
+<li>
+<a href="/learn/documentation/">API Documentation</a>
+</li>
+<li>
+<a href="/support/faq.html">FAQ</a>
+</li>
+</ul>
+</div>
+<div class="span9 text-body markdown">
+<h3>
+Testing with Cucapp
+</h3>
+<p>Cucapp is a framework which allows you to create tests in <a href="https://cucumber.io">Cucumber</a> for testing your Cappuccino Application. Cucapp can be used either for unit-testing or functional testing. It can be used in a black, grey or white box testing environment.</p>
+
+<p>By default Cucapp will launch the Firefox browser when running the tests. Generally a headless browser like <a href="http://phantomjs.org">phantomjs</a> will work better though.</p>
+
+<p>When launching your tests with Cucapp, the Cappuccino application is served via a <a href="http://code.macournoyer.com/thin/">thin</a> web server and a small piece of code is injected. This code connects back to your Cucumber script via AJAX requests.</p>
+
+<p>Cucapp provides an abstract layer of steps to simulate actions and check values of control.</p>
+
+<p>Cucapp and its source code is available <a href="https://github.com/cappuccino/cucapp">here</a>.</p>
+
+<h3>Installation</h3>
+
+<p>If you haven’t installed Cappuccino from source, please follow the tutorial <a href="/learn/build-source.html">Advanced: Install from Source</a>.</p>
+
+<p>Cucapp is a separate install on top of Cappuccino. Let’s set that up next.</p>
+
+<p><span class="label label-info">Info</span> Ruby needs to be installed on your system. <a href="http://rvm.io">RVM</a> is a good choice which allows you to easily manage a Ruby environment.</p>
+
+<p>To get started, download the current version of Cuccap:</p>
+
+<div class="highlight"><pre>git clone git://github.com/cappuccino/cucapp.git
+</pre></div>
+
+<p>Then install Cucapp on your system:</p>
+
+<div class="highlight"><pre><span class="nb">cd </span>cucapp
+jake install
+</pre></div>
+
+<p>When installing Cucapp, the following Ruby gems are going to be installed: <code>Cucumber</code>, <code>Thin</code>, <code>Nokogiri</code>, <code>JSON</code> and <code>Watir-Webdriver</code>.</p>
+
+<p><span class="label label-info">Info</span> <code>Nokogiri</code> can be painful to install on El Capitan. You can find help <a href="http://www.nokogiri.org/tutorials/installing_nokogiri.html">here</a>.</p>
+
+<p>Verify that you have the <code>cucapp</code> command in your <code>PATH</code>:</p>
+
+<div class="highlight"><pre>cucapp
+Usage: cucapp <span class="o">[</span>OPTIONS<span class="o">]</span> -p PATH ...
+</pre></div>
+
+<p>Cucapp will use Firefox by default. If you want to use Chrome or Safari, you will need to install the relevant webdrivers: <a href="http://watirwebdriver.com/chrome/">Chrome webdrivers</a> and <a href="http://watirwebdriver.com/safari/">Safari webdrivers</a> respectively.</p>
+
+<h3>The cucapp command</h3>
+
+<p>The <code>cucapp</code> command only has one purpose at this time: to allow you to create a testing architecture for your Cappuccino Application.</p>
+
+<p>Execute <code>cucapp</code> on the targeted application with the following command:</p>
+
+<div class="highlight"><pre>cucapp -p path/to/your/application
+</pre></div>
+
+<p>The command will create a folder named <code>features</code> in your application. This folder contains default Cucumber steps and utilities to easily create tests for your application.</p>
+
+<p>A new task will be added to your <code>Jakefile</code> as well. The command <code>jake cucumber-test</code> will launch the Cucumber tests of your application.</p>
+
+<p>Note that the category <code>CPResponder+CuCapp.j</code> has been added as well. This category adds the property <code>cucappIdentifier</code> to the <code>CPResponder</code> class.</p>
+
+<h3>Usage</h3>
+
+<p>To explain how Cucapp works, we are going to test the application created in the tutorial <a href="/learn/xcode-basics.html">Xcode Interface Builder</a>. You can find the source for this application <a href="/learn/files/AdvancedHelloWorld.zip">here</a>.</p>
+
+<p>Unzip the file <code>AdvancedHelloWorld.zip</code> and launch the command below:</p>
+
+<div class="highlight"><pre><span class="nb">cd </span>AdvancedHelloWorld
+capp gen -fl .
+nib2cib Resources/MainMenu.xib
+</pre></div>
+
+<h4>Link Cucapp to the project</h4>
+
+<p>As described above we begin by executing the <code>cucapp</code> command to set up Cucapp for the project:</p>
+
+<div class="highlight"><pre>cucapp -p path/to/AdvancedHelloWorld/
+</pre></div>
+
+<p>You should see the folder <code>features</code> in <code>AdvancedHelloWorld</code>.</p>
+
+<h4>Create a test</h4>
+
+<p>First we need to make a few modifications to the <code>AppController</code>. We need to import the category <code>CPResponder+CuCapp.j</code> and set <code>cucappIdentifier</code>s for our <code>CPTextField</code>s. This allows us to identify the <code>CPTextFields</code> in tests.</p>
+
+<div class="highlight"><pre><span class="cm">/*</span>
+<span class="cm"> * AppController.j</span>
+<span class="cm"> * AdvancedHelloWorld</span>
+<span class="cm"> *</span>
+<span class="cm"> * Created by You on December 8, 2011.</span>
+<span class="cm"> * Copyright 2011, Your Company All rights reserved.</span>
+<span class="cm"> */</span>
+
+<span class="cp">@import</span> <span class="s2">&lt;Foundation/CPObject.j&gt;</span>
+
+<span class="cp">@import</span> <span class="s2">"CPResponder+Cucapp.j"</span>
+
+<span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="cm">/* this "outlet" is connected automatically by the Cib */</span>
+    <span class="n">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
+
+    <span class="cm">/* We create the outlets of the textfields here */</span>
+    <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myTextField</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myLabel</span> <span class="p">;</span>
+
+    <span class="cm">/* As you can see, the label is also a CPTextField, it's just not editable and not bordered.</span>
+<span class="cm">       It is important you declare correctly the class names of the outlets, or Xcode, won't see them.</span>
+<span class="cm">    */</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">awakeFromCib</span>
+<span class="p">{</span>
+    <span class="cm">/* This is called when the cib is done loading.</span>
+<span class="cm">       You can implement this method on any object instantiated from a Cib.</span>
+<span class="cm">       It's a useful hook for setting up current UI values, and other things.</span>
+<span class="cm">       In this case, we want the window from Cib to become our full browser window</span>
+<span class="cm">    */</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">setFullPlatformWindow</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
+
+    <span class="p">[</span><span class="n">myTextField</span> <span class="n">setCucappIdentifier</span><span class="o">:</span><span class="s">@"myTextField"</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">myLabel</span> <span class="n">setCucappIdentifier</span><span class="o">:</span><span class="s">@"myLabel"</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nf">sayHello:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>aSender
+<span class="p">{</span>
+   <span class="cm">/* We get the content of the textfield</span>
+<span class="cm">      and we set it as the value of the label</span>
+<span class="cm">   */</span>
+   <span class="p">[</span><span class="n">myLabel</span> <span class="n">setStringValue</span><span class="o">:</span><span class="p">[</span><span class="n">myTextField</span> <span class="n">stringValue</span><span class="p">]];</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>Now, we need to write our test. The test will be very simple: we will simulate a user typing the word Cucumber, then hitting enter. Finally we will confirm that the word Cucumber is shown in the label.</p>
+
+<p>To do this, open the file <code>test_application.feature</code> in the folder <code>features</code> and modify it as shown below:</p>
+
+<div class="highlight"><pre><span class="k">Feature:</span><span class="nf"> Demo of cucapp</span>
+<span class="nf">This test is used to make a demo of cucapp</span>
+
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Check if the demo application works</span>
+<span class="k">    Given </span><span class="nf">the application is launched</span>
+<span class="nf">    </span><span class="k">When </span><span class="nf">I hit the keys Cucumber</span>
+<span class="nf">    </span><span class="k">When </span><span class="nf">I hit the key enter</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">the field with the property cucapp-identifier set to myLabel should have the value Cucumber</span>
+</pre></div>
+
+<p>These steps are provided by the ‘abstract steps’ layer of Cucapp. More default steps (click, drag and drop, scrolling etc.) are available. You can find the full list in the <a href="https://github.com/cappuccino/cucapp">documentation</a> of Cucapp.</p>
+
+<h4>Launch the tests</h4>
+
+<p>Launch the tests like this:</p>
+
+<div class="highlight"><pre>jake cucumber-test
+</pre></div>
+
+<p>Et voilà! If everything worked as expected, you should have seen Cucumber open the browser, perform the actions specified. The results shoulw have been shown in the terminal.</p>
+
+<p><img width="1067" height="296" src="/img/cucapp-1-terminal-39a7d85c.png"></p>
+
+<h3>Create your own steps</h3>
+
+<p>In the previous example, we used the “abstract steps” layer of Cucapp to write our test. Maybe you don’t want that. Maybe you want to be in control to know and understand what you are doing in your steps. If tht’s the case: good news, Cucapp gives you the possibility to write your own steps as well.</p>
+
+<p>Let’s create a variation of the previous step which clicks a <code>CPTextField</code> and enters the value Cucumber.</p>
+
+<div class="highlight"><pre><span class="k">Feature:</span><span class="nf"> Demo of cucapp</span>
+<span class="nf">This test is used to make a demo of cucapp</span>
+
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Check if the demo application works</span>
+<span class="k">    Given </span><span class="nf">the application is launched</span>
+<span class="nf">    </span><span class="k">When </span><span class="nf">I click on the editable text-field and enter the value Cucumber</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">the field with the property cucapp-identifier set to myLabel should have the value Cucumber</span>
+</pre></div>
+
+<p>Then, in the folder <code>features/step_definitions</code>, create a new file <code>my_steps.rb</code> and modify it as below:</p>
+
+<div class="highlight"><pre><span class="no">When</span> <span class="sr">/^I click on the editable text-field and enter the value (.*)$/</span> <span class="k">do</span> <span class="o">|</span><span class="n">value</span><span class="o">|</span>
+  <span class="c1"># Here we tell the app to simulate a click on the CPTextField with the property cucappIdentifier set to myTextField</span>
+  <span class="n">app</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">simulate_left_click</span>       <span class="s2">"//CPTextField[cucappIdentifier='myTextField']"</span>
+
+  <span class="c1"># Here we tell the app to simulate keyboard events with the value got in parameters</span>
+  <span class="n">app</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">simulate_keyboard_events</span>  <span class="n">value</span>
+
+  <span class="c1"># Here we tell to the app to simulate a newline character keyboard event</span>
+  <span class="n">app</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">simulate_keyboard_event</span>   <span class="vg">$CPNewlineCharacter</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>As you can see, we just tell Cucapp to simulate actions. The object app provides an API to simulate everything that a user could do!</p>
+
+<p>You can find the source of this demo <a href="/learn/files/AdvancedHelloWorldCucapp.zip">here</a>.</p>
+
+<h3>Additional Info</h3>
+
+<p>If you have suggestions for improvements to this guide, or if you have questions that haven’t been answered here, please let us know on
+<a href="https://gitter.im/cappuccino/cappuccino">gitter</a>.</p>
+
+</div>
+</div>
+<div class="row">
+<div class="offset3 span9">
+<div class="learn-nav">
+<ul class="pager">
+<li class="previous">
+<a href="/learn/ojtest.html">← Return to '
+Testing with OJTest
+'
+</a>
+</li>
+<li class="next">
+<a href="/learn/demos.html">Continue to '
+Demos
+' →
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

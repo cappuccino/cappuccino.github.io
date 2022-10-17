@@ -16,9 +16,9 @@ var interface_c_p_keyed_unarchiver =
     [ "finishDecoding", "interface_c_p_keyed_unarchiver.html#aded1286687cb1f7df55c6bccb53b3071", null ],
     [ "initForReadingWithData:", "interface_c_p_keyed_unarchiver.html#ac54567fa2cf775de8bcaafb8260aa9b3", null ],
     [ "initialize", "interface_c_p_keyed_unarchiver.html#a2d8c432d5cd2ab038869feba7afc44b1", null ],
-    [ "setClass:forClassName:", "interface_c_p_keyed_unarchiver.html#a542d26311ce80cb398198fa69bc0f3ae", null ],
+    [ "setClass:forClassName:", "interface_c_p_keyed_unarchiver.html#a71b32713f68d1eeacaaac0561018dca0", null ],
     [ "setDelegate:", "interface_c_p_keyed_unarchiver.html#aaa4621f216b1c325f622244427c448fe", null ],
     [ "unarchiveObjectWithData:", "interface_c_p_keyed_unarchiver.html#af40950c4b7c66437516eeb96ff3f27d6", null ],
     [ "unarchiveObjectWithFile:", "interface_c_p_keyed_unarchiver.html#aa5ee4e43602727fa6dded9905aed4c72", null ],
-    [ "unarchiveObjectWithFile:asynchronously:", "interface_c_p_keyed_unarchiver.html#a2bf7efe0138d3edf84e56f6bc8940b51", null ]
+    [ "unarchiveObjectWithFile:asynchronously:", "interface_c_p_keyed_unarchiver.html#a73a2106db48d87b554a4d4f0a1493d18", null ]
 ];

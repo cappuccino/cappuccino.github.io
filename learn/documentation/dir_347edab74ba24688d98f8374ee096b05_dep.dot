@@ -1,9 +1,0 @@
-digraph "AppKit.doc/CoreAnimation" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_0e4e8176c2dd688a0cdab60948de03e6 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="AppKit.doc" fontname="Helvetica", fontsize="10", URL="dir_0e4e8176c2dd688a0cdab60948de03e6.html"]
-  dir_347edab74ba24688d98f8374ee096b05 [shape=box, label="CoreAnimation", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_347edab74ba24688d98f8374ee096b05.html"];
-  }
-}

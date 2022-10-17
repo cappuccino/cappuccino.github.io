@@ -1,7 +1,7 @@
 var interface_c_p_slider =
 [
     [ "altIncrementValue", "interface_c_p_slider.html#a3de5239f211b79728872c9f458d29120", null ],
-    [ "continueTracking:at:", "interface_c_p_slider.html#a69e9887a3f195bfea3916f06c6087a3c", null ],
+    [ "continueTracking:at:", "interface_c_p_slider.html#a5217915548fc805a9e20bf4f8c8ff110", null ],
     [ "createEphemeralSubviewNamed:", "interface_c_p_slider.html#aaf5c4425bec5a0c64fd548acd6ff16c5", null ],
     [ "defaultThemeClass", "interface_c_p_slider.html#a2aab402e189d3f475b4dfb5d6df27577", null ],
     [ "encodeWithCoder:", "interface_c_p_slider.html#a379e8f9179e5040456374e7326982907", null ],
@@ -24,8 +24,8 @@ var interface_c_p_slider =
     [ "setValue:", "interface_c_p_slider.html#ab1fcda9b491d5269d4a80cdc984cf912", null ],
     [ "sliderType", "interface_c_p_slider.html#aed51af320f3b1d91267d26026d7059ed", null ],
     [ "startTrackingAt:", "interface_c_p_slider.html#aa004d93583db204d7b68609e5815129d", null ],
-    [ "stopTracking:at:mouseIsUp:", "interface_c_p_slider.html#a863740ad91997a2bf9918c346ed44f79", null ],
-    [ "takeValueFromKeyPath:ofObjects:", "interface_c_p_slider.html#ad5ce6357bf478846877bf7a538d43fca", null ],
+    [ "stopTracking:at:mouseIsUp:", "interface_c_p_slider.html#ad4085d82c00ac33005b6d96be2643e4c", null ],
+    [ "takeValueFromKeyPath:ofObjects:", "interface_c_p_slider.html#a5c61eff2ab0285fe73317f757267d5ce", null ],
     [ "themeAttributes", "interface_c_p_slider.html#a6fb387466379ac27afb5d3b83e9e4a1a", null ],
     [ "trackRectForBounds:", "interface_c_p_slider.html#ade5d717ba1933de1c8061350a274e7cc", null ],
     [ "tracksMouseOutsideOfFrame", "interface_c_p_slider.html#a21a1db1b1d8ca3a16c26702040416fbe", null ],

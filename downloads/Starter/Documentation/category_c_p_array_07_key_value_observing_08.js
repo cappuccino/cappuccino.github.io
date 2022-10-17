@@ -1,7 +1,7 @@
 var category_c_p_array_07_key_value_observing_08 =
 [
-    [ "addObserver:forKeyPath:options:context:", "category_c_p_array_07_key_value_observing_08.html#a728e727766f2245e009fdb666436dc22", null ],
-    [ "addObserver:toObjectsAtIndexes:forKeyPath:options:context:", "category_c_p_array_07_key_value_observing_08.html#a57cd050746730325e2ba32350fda8613", null ],
-    [ "removeObserver:forKeyPath:", "category_c_p_array_07_key_value_observing_08.html#aff96871093fc4c3f42380a6a0990436f", null ],
-    [ "removeObserver:fromObjectsAtIndexes:forKeyPath:", "category_c_p_array_07_key_value_observing_08.html#abdd6428d4f5a8dcb0d88bcf2ca485914", null ]
+    [ "addObserver:forKeyPath:options:context:", "category_c_p_array_07_key_value_observing_08.html#a3e17835efb5a9811cdf065696de205c1", null ],
+    [ "addObserver:toObjectsAtIndexes:forKeyPath:options:context:", "category_c_p_array_07_key_value_observing_08.html#a701c629d91d4e0821ecab398358da0f1", null ],
+    [ "removeObserver:forKeyPath:", "category_c_p_array_07_key_value_observing_08.html#a4cd47693f022560938db076f1749822b", null ],
+    [ "removeObserver:fromObjectsAtIndexes:forKeyPath:", "category_c_p_array_07_key_value_observing_08.html#acbe1338e59459e85b88f914db8fdf9d9", null ]
 ];

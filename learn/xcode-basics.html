@@ -5,8 +5,8 @@
 <title>Cappuccino - Tutorial: Xcode Interface Builder</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link href="/img/favicon.ico" rel="shortcut icon">
-<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
 <link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
 </head>
 <body class="file-xcode-basics-html folder-learn">
@@ -86,7 +86,19 @@
 <a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
 </li>
 <li>
+<a href="/learn/simple-tableview.html">Tutorial: Simple Table View</a>
+</li>
+<li>
+<a href="/learn/simple-outlineview.html">Tutorial: Simple Outline View</a>
+</li>
+<li>
 <a href="/learn/debugging.html">Debugging</a>
+</li>
+<li>
+<a href="/learn/ojtest.html">Testing with OJTest</a>
+</li>
+<li>
+<a href="/learn/cucapp.html">Testing with Cucapp</a>
 </li>
 </ul>
 <h5>Resources</h5>
@@ -106,9 +118,9 @@
 <h3>
 Tutorial: Xcode Interface Builder
 </h3>
-<p>In this tutorial, we will create a simple “Hellow World” app using Xcode to edit the user interface. You will see that even for a small project there are big time saving benefits in graphical UI editing.</p>
+<p>In this tutorial, we will create a simple “Hello World” app using Xcode to edit the user interface. You will see that even for a small project there are big time saving benefits in graphical UI editing.</p>
 
-<p>This tutorial assumes you have a Mac with Xcode 4 installed and that you have installed the Cappuccino toolchain using <a href="/learn/">bootstrap.sh</a> or by <a href="/learn/build-source.html">installing from source</a>.</p>
+<p>This tutorial assumes you have a Mac and that you have installed the Cappuccino toolchain using <a href="/learn/">bootstrap.sh</a> or by <a href="/learn/build-source.html">installing from source</a>. It also assumes that you have installed the current master version of Cappuccino.</p>
 
 <h3>Create the project</h3>
 
@@ -134,39 +146,39 @@ from Xcode to Cappuccino. It is basically a bridge between
 these two worlds. It works completely transparently. XcodeCapp is
 shipped with Cappuccino. In the default installation, you’ll find it here:</p>
 
-<pre>/usr/local/narwhal/packages/cappuccino/support/XcodeCapp.app
+<pre>/Applications/XcodeCapp.app/
 </pre>
 
-<p>For convenience, you can move it or copy it to your <code>/Applications</code> folder.</p>
+<p>Once launched, you will see a small coffee machine icon in your Mac OS X menu bar that should be grayed out. The main window of the application shold be displayed as well. There is only one button - go ahead and click it!</p>
 
-<p>Once launched, you will see a small coffee machine icon in your Mac OS X
-menu bar that should be grayed out. Click on this icon, and select “Listen to Project…”.</p>
-
-<p><a href="xcode/menu1.png"><img width="211" height="172" src="/img/xcode/menu1-3c7f2b09.png"></a></p>
+<p><a href="xcode/state1.png"><img width="800" height="622" src="/img/xcode/state1-0b25c563.png"></a></p>
 
 <p>A standard folder chooser dialog will appear. Choose the folder of the
 Cappuccino project you just created. The icon will become darker, and
-you may notice some Growl notifications indicating XcodeCapp is
+you may notice some user notifications indicating XcodeCapp is
 currently loading the project. The initial time to load a project
 depends on the size of the project. For a new template it should be very
 quick.</p>
+
+<p>Once loaded you should see this:</p>
+
+<p><a href="xcode/state2.png"><img width="800" height="622" src="/img/xcode/state2-18b54c56.png"></a></p>
 
 <h3>Xcode</h3>
 
 <p>XcodeCapp will have generated a hidden folder located in your root
 project folder, named <code>.XcodeSupport</code> and an XcodeProject named <code>Your-Application-Name.xcodeproj</code>. You should never need to edit
 anything in it. To launch the Xcode project of your Cappuccino project,
-click on the XcodeCapp icon, and choose <code>Open Project in Xcode</code>. Xcode
-will start.</p>
+click on the XcodeCapp icon (the hammer).</p>
 
-<p><img width="1176" height="851" src="/img/xcode/xcode1-6abb8631.png"></p>
+<p><img width="1136" height="702" src="/img/xcode/xcode1-e4a3dc9d.png"></p>
 
 <h3>Creating the interface</h3>
 
 <p>With Xcode we can place controls without writing any code. Let’s see how. First, in Xcode, go to the
 Resources folder from the tree view on the left and select <code>MainMenu.xib</code>. It will open in the main view.</p>
 
-<p><img width="1176" height="851" src="/img/xcode/xcode2-d02b803c.png"></p>
+<p><img width="1323" height="702" src="/img/xcode/xcode2-57a1bfbf.png"></p>
 
 <p>This is where you are going to build you UI.</p>
 
@@ -175,7 +187,7 @@ Resources folder from the tree view on the left and select <code>MainMenu.xib</c
 <p>Let’s start. First, we will add a label. To do so, open the main window, by double clicking <code>Window - Window</code>
 in the Object navigator.</p>
 
-<p><img width="1176" height="851" src="/img/xcode/xcode3-ca0c2b1a.png"></p>
+<p><img width="1323" height="702" src="/img/xcode/xcode3-0cc2c11d.png"></p>
 
 <p>By default, there is a text field and a slider. Select them and remove them
 (using the <code>Delete</code> key).</p>
@@ -185,7 +197,7 @@ in the Object navigator.</p>
 <p>On the bottom right part of Xcode, you’ll see a library of controls.
 Search for <code>label</code>:</p>
 
-<p><img width="280" height="285" src="/img/xcode/xcode4-f952a40f.png"></p>
+<p><img width="270" height="259" src="/img/xcode/xcode4-3cff3012.png"></p>
 
 <p>Just drag and drop the <code>label</code> into the window, and position it where you
 want to. You will see Xcode has a system of automatic rulers that will
@@ -197,26 +209,34 @@ really help you to build a nice, aligned UI.</p>
 
 <p>Change the content of the label and the button, by double clicking on them:</p>
 
-<p><img width="339" height="161" src="/img/xcode/xcode5-ba87b0a7.png"></p>
+<p><img width="335" height="145" src="/img/xcode/xcode5-d62d00a0.png"></p>
 
 <p>Align all the controls to your pleasing. At the end you should get something
 like this:</p>
 
-<p><img width="1176" height="851" src="/img/xcode/xcode6-b8a48389.png"></p>
+<p><img width="1350" height="702" src="/img/xcode/xcode6-5d8015f7.png"></p>
 
 <h3>Conversion</h3>
 
-<p>When your UI is ready, we need to convert the Xib file into a Cib file.
-XcodeCapp will do it automatically for us. Every time you save a change to the Xib file, XcodeCapp will convert it automatically. So when you save the file in Xcode, you will see a notification telling you the conversion
-has been a success:</p>
+<p>When your UI is ready, we need to convert the Xib file into a Cib file. XcodeCapp will do it automatically for us. Every time you save a change to the Xib file, XcodeCapp will convert it automatically.</p>
 
-<p><img width="285" height="101" src="/img/xcode/xcode7-e8e3101b.png"></p>
+<p>You will be noticed by a user notification if something goes wrong during the conversion.</p>
+
+<p><img width="337" height="75" src="/img/xcode/xcode7-20bc6207.png"></p>
+
+<p>XcodeCapp will give you more information about any current errors. When there are errors or warnings, the icon will turn orange.</p>
+
+<p><img width="1600" height="1244" src="/img/xcode/xcode9-2bdc31f3.png"></p>
+
+<p>In the operations tab you can see what XcodeCapp is currently processing. You can cancel any ongoing operations.</p>
+
+<p><img width="1600" height="1244" src="/img/xcode/xcode15-aaeb0260.png"></p>
 
 <h3>Run the application</h3>
 
 <p>Now, the UI is ready, you can load your application and you should see your UI:</p>
 
-<p><img width="638" height="405" src="/img/xcode/xcode8-2b9e8b6c.png"></p>
+<p><img width="553" height="257" src="/img/xcode/xcode8-01e73141.png"></p>
 
 <p>Note that you have not written a single line of code!</p>
 
@@ -242,7 +262,7 @@ it, it will be the button that will interact with the code. Let’s see:</p>
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
     <span class="cm">/* this "outlet" is connected automatically by the Cib */</span>
-    <span class="n">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="n">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
 
     <span class="cm">/* We create the outlets of the textfields here */</span>
     <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myTextField</span><span class="p">;</span>
@@ -275,7 +295,7 @@ action like we’ve seen in previous tutorials:</p>
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="n">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="n">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
 
     <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myTextField</span><span class="p">;</span>
     <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myLabel</span><span class="p">;</span>
@@ -294,17 +314,6 @@ action like we’ve seen in previous tutorials:</p>
 <span class="k">@end</span>
 </pre></div>
 
-<h3>Conversion</h3>
-
-<p>In order to make Xcode able to read the outlets/actions, we need
-to convert the Objective-J source file into a standard Objective-C header file.
-Again XcodeCapp will do the work for you! When you save the
-<code>AppController.j</code> file, you may see a notification telling you the
-conversion has been a success (or an error in of case syntax problems).
-We now just have to bind the code with the UI.</p>
-
-<p><img width="280" height="94" src="/img/xcode/xcode9-d6a3c42f.png"></p>
-
 <h3>Defining outlets and actions from Xcode</h3>
 
 <p>This is the final step. Return to Xcode in order to indicate the outlets
@@ -314,7 +323,7 @@ and the actions.</p>
 
 <p>Draw a line between the <code>AppController</code> object to the label, using right click (or cmd + click):</p>
 
-<p><img width="1073" height="755" src="/img/xcode/xcode10-209a356b.png"></p>
+<p><img width="1974" height="1032" src="/img/xcode/xcode10-4ce82ce3.png"></p>
 
 <p>When you release the mouse button, a small dark dialog will ask you what outlet it should be:</p>
 
@@ -331,7 +340,7 @@ and the actions.</p>
 <p>Connecting the action is the reverse process. Start the line from the sender
 of the action (so in that case, the button), and go to <code>AppController</code>:</p>
 
-<p><img width="1077" height="750" src="/img/xcode/xcode12-2fe20f0a.png"></p>
+<p><img width="1976" height="1038" src="/img/xcode/xcode12-82d53a7f.png"></p>
 
 <p>This time, the dark dialog will show all available actions exposed by the
 class. Choose <code>sayHello:</code>.</p>
@@ -346,7 +355,7 @@ text field, draw a line from the textfield to <code>AppController</code>, and ch
 
 <p>Finally, save the Xib file, wait for the XcodeCapp icon to flicker green and then become a solid black, then open index.html. You will have a fully functional application, with almost no code!</p>
 
-<p><img width="638" height="405" src="/img/xcode/xcode14-7eaf6f43.png"></p>
+<p><img width="553" height="257" src="/img/xcode/xcode14-517f6924.png"></p>
 
 <p>You can download the archive of this project <a href="/learn/files/AdvancedHelloWorld.zip">here</a>.</p>
 
@@ -363,8 +372,8 @@ Tutorial: Automatic Layout
 </a>
 </li>
 <li class="next">
-<a href="/learn/debugging.html">Continue to '
-Debugging
+<a href="/learn/simple-tableview.html">Continue to '
+Tutorial: Simple Table View
 ' →
 </a>
 </li>
@@ -393,15 +402,16 @@ Debugging
 <a href="/contribute.html#bug-reports">Bug reports</a>
 <a href="https://github.com/cappuccino/cappuccino">Source code</a>
 <a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
 </div>
 <div class="span2">
 <h4>Get Answers</h4>
 <a href="/support/">Support</a>
 <a href="http://groups.google.com/group/objectivej">Mailing list</a>
 <a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
-<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
 <a href="/blog/">Blog</a>
 <a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
 </div>
 </div>
 </div>
@@ -425,7 +435,7 @@ Debugging
 </a>
 </div>
 <div class="span8 copyright2">
-<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="https://pages.github.com">GithubPages</a>. Copyright © 2013 - Cappuccino Project.</p>
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
 </div>
 <div class="pull-right forkme">
 <p>
@@ -436,7 +446,7 @@ Debugging
 
 </div>
 </div>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="/js/bootstrap.min-f6d9c45d.js"></script>
 <script src="/js/theme-09250c02.js"></script>
 </body>

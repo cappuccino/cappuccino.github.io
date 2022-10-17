@@ -6,7 +6,7 @@ var interface_c_p_user_defaults_controller =
     [ "hasUnappliedChanges", "interface_c_p_user_defaults_controller.html#a93a0ba26964a6c2fabd1ab6ac4d4d996", null ],
     [ "initialValues", "interface_c_p_user_defaults_controller.html#a45c1cc2a9ec74182bf35f81f1fab9c26", null ],
     [ "initWithCoder:", "interface_c_p_user_defaults_controller.html#a75cd1fe149ce9943517188ff49fc73ae", null ],
-    [ "initWithDefaults:initialValues:", "interface_c_p_user_defaults_controller.html#a89a141ce3a87973d034ca97edc301808", null ],
+    [ "initWithDefaults:initialValues:", "interface_c_p_user_defaults_controller.html#abb977910c56fb58a6c599c175184b880", null ],
     [ "revert:", "interface_c_p_user_defaults_controller.html#a01d9ec57c59b0cdf86feb72e12134035", null ],
     [ "revertToInitialValues:", "interface_c_p_user_defaults_controller.html#a95dba43524ca07ecb5cd2dead6ce9faa", null ],
     [ "save:", "interface_c_p_user_defaults_controller.html#a97e245782221e509130018ef651e67a3", null ],

@@ -6,6 +6,7 @@ var interface_c_p_progress_indicator =
     [ "defaultThemeClass", "interface_c_p_progress_indicator.html#ad0ad455934d3a15f5838b53d3e1848ed", null ],
     [ "doubleValue", "interface_c_p_progress_indicator.html#a56891f067dc9fe60b642a9c8f4857da4", null ],
     [ "drawBar", "interface_c_p_progress_indicator.html#a10582960cadabe91f1ccd826d4c844ae", null ],
+    [ "drawRect:", "interface_c_p_progress_indicator.html#afedf2298a8ecf62d7246a430918c6a17", null ],
     [ "encodeWithCoder:", "interface_c_p_progress_indicator.html#ae2ac2e227906a55b65bd3b8c310cd4b4", null ],
     [ "incrementBy:", "interface_c_p_progress_indicator.html#a1e597a7170dd2736b9810b2703f5d896", null ],
     [ "initWithCoder:", "interface_c_p_progress_indicator.html#a3aa3671c9c595cb929ab4c26cc5673c1", null ],

@@ -9,7 +9,7 @@ var interface_c_p_color_panel =
     [ "provideColorPickerClass:", "interface_c_p_color_panel.html#a63f116befa299626cad89edd30f3ff10", null ],
     [ "setAction:", "interface_c_p_color_panel.html#a191fa68f80a017c33d291a8db307c498", null ],
     [ "setColor:", "interface_c_p_color_panel.html#af746caf3fc7be422caaa8cdc23c4345c", null ],
-    [ "setColor:updatePicker:", "interface_c_p_color_panel.html#a66704b2adb0028f538de1db4441acfbf", null ],
+    [ "setColor:updatePicker:", "interface_c_p_color_panel.html#a31929b0bb7bec97ee6b0b4916ad9294e", null ],
     [ "setMode:", "interface_c_p_color_panel.html#af4c946b3b51b7b1d0fe32990705d6a58", null ],
     [ "setOpacity:", "interface_c_p_color_panel.html#a755218e56fc22fe6cfa46fd5f302abc5", null ],
     [ "setPickerMode:", "interface_c_p_color_panel.html#aebfd7f52699903a1530f1acc88b7cd94", null ],

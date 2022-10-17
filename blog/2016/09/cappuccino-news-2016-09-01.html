@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino News 2016 September 1st</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-cappuccino-news-2016-09-01-html folder-blog-2016-09 folder-blog-2016 folder-blog">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="blog_post" id="blog_wrapper">
+<div class="container">
+<div class="row">
+<div class="span8">
+<h1 class="header">
+Cappuccino News 2016 September 1st
+</h1>
+<div class="post_content">
+<p>Here’s a quick update on what’s new with Cappuccino recently.</p>
+
+<h3>Community</h3>
+
+<p>If you missed the CappCon2016, you can find the story of this amazing day <a href="http://www.cappuccino-project.org/blog/2016/04/cappcon-2016.html">here</a>! Videos and slides have been released.</p>
+
+<p>In a bit of sad news for the Cappuccino Community, Aparajita Fishman has left the Cappuccino project to take on a role at Apple. Thanks you for all your great work on Cappuccino and we hope you’ll show them how it’s done over at Apple! More information <a href="http://www.cappuccino-project.org/blog/2016/08/aparajita-leaves.html">here</a>.</p>
+
+<p>Taking a step back to look at the last 6 months, we can see lots of improvements and news. To pick just a few, <code>CPView</code> has been optimized, while <code>CPAnimationContext</code> and <code>CPViewAnimator</code> have been added to the framework. As always, minor bugs have been fixed. The full list is below.</p>
+
+<p>We are getting close to a new release Cappuccino 0.9.10, which will probably be released in October 2016!</p>
+
+<h3>Cappuccino</h3>
+
+<h5>New</h5>
+
+<ul>
+<li><p>New: <code>CPAnimationContext</code> and <code>CPViewAnimator</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/598a6ebaed43f65fa91374cdfa2a976fc4cd19e4">598a6eb</a>)</p></li>
+<li><p>New: Sweden / Swedish as a possible locale. (<a href="https://github.com/aljungberg">aljungberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/41a741724f7da85835ed3b7e12eee1376b0b0cfc">41a7417</a>)</p></li>
+<li><p>New: <code>CPViewController -viewWill/DidAppear</code> and <code>CPViewController viewWill/didDisappear</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/fedc721432bb30c244030a5f632ca27474b966c2">fedc7214</a>)</p></li>
+<li><p>New: show successfully loaded <code>NSClasses</code> in <code>nib2cib</code> verbose. (<a href="https://github.com/aljungberg">aljungberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/dde805931dbb2d04ad0ec8124da2b1cc5d2a0bd2">dde8059</a>)</p></li>
+</ul>
+
+<h5>Changes/Fixes</h5>
+
+<ul>
+<li><p>Fixed: bump <code>XcodeCapp</code> copyright year. (<a href="https://github.com/aljungberg">aljungberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/087e811586879d9ceedb5316a5fb49f784653c8d">087e811</a>)</p></li>
+<li><p>Fixed: <code>CPNumber</code> intValue did not return an integer. (<a href="https://github.com/aljungberg">aljungberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/fa07bc143e2427c2a1d373b5ea7149eb3d34d883">fa07bc1</a>)</p></li>
+<li><p>Fixed: missed some version number bumps in the 0.9.9 release. (<a href="https://github.com/aljungberg">aljungberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/e13f5ed730f52c77836654df2ad3f41e00b599f1">e13f5ed</a>)</p></li>
+<li><p>Fixed: formatting <code>CPCache</code>. (<a href="https://github.com/aljungberg">aljungberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/42d7e4312bcfe4c7d1257e1aff9c5a5c68f71495">42d7e43</a>)</p></li>
+<li><p>Fixed: crash when having a <code>CPTableViewHeader</code> without a <code>CPTableView</code>. (<a href="https://github.com/Dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/c24c3868bb78d942e4309d18329da4f2cedd84a9">c24c386</a>)</p></li>
+<li><p>Fixed: cache control was not set properly in <code>CPURLRequest</code>. (<a href="https://github.com/Dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/5c60819668b1446127e4989e059bc6f3b3c46cee">5c60819</a>)</p></li>
+<li><p>Fixed : <code>capp_env</code> did not use the master version of cappuccino. (<a href="https://github.com/primalmotion">primalmotion</a> - <a href="https://github.com/cappuccino/cappuccino/commit/584aebf76bf644fc18a630cf30be445301ec394b">584aebf</a>)</p></li>
+<li><p>Fixed: cursor key binding methods did not fire in IE 11. (<a href="https://github.com/herbatnik">herbatnik</a> - <a href="https://github.com/cappuccino/cappuccino/commit/43a248069921716ae2d30879ef9d7481b0ba3cfa">43a2480</a>)</p></li>
+<li><p>Fixed: first <code>CPPopUpItem</code> is always selected if selected binding value is set before content binding value. (<a href="https://github.com/mrcarlberg">mrcarlberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/5c58552d9165b0f5804e624ca7a0cb1472260519">5c58552</a>)</p></li>
+<li><p>Fixed: <code>CPObjectController -setEntityName</code> did not work. (<a href="https://github.com/mrcarlberg">mrcarlberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/cd92ebd69cad6b3cd6014614f3ff2f8935faa332">cd92ebd</a>)</p></li>
+<li><p>Fixed: ‘Unknown function getPropertyCSSValue’ error in Chrome in <code>CPAnimationContext</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/57189183d642e02c5724c82af178f19788cc0d3b">571891</a>)</p></li>
+<li><p>Fixed: <code>CPTableView</code> <code>viewBasedCib</code> manual test was broken due to <code>CPBox</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/1575c2bc10715199d092ca359a624ddfe75375ee">1575c2b</a>)</p></li>
+<li><p>Fixed: manual test <code>SmartFoldersDemo</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/ffcac677e0d41bcd5e54654540f510f626d5d7e1">ffcac67</a>)</p></li>
+<li><p>Fixed: <code>CPCollectionView</code> content binding. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/f67fafdb8ece3a6cd921c63c9d9eaf9f58c86493">f67faf</a>)</p></li>
+<li><p>Fixed: when dependent key paths use a relationship, only the first added observer would observe the attribute for the relationship object. (<a href="https://github.com/mrcarlberg">mrcarlberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/ae5d31746e9d157f2500a6e4a5996fb0d451a577">ae5d317</a>)</p></li>
+<li><p>Fixed: <code>CPViewController -isViewLoaded</code> property was always set to NO in async mode. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/3e6e5f95ecc088126445eafa25e910263f7e6bf4">3e6e5f9</a>)</p></li>
+<li><p>Fixed: <code>CPObject +implementsSelector:</code> did not work with proxies and KVO swizzled classes. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/a1926982c64216041e74e3502732e9ee7cf95b2e">a192698</a>)</p></li>
+<li><p>Fixed: date comparisons in <code>CPPredicateEditor</code>. (<a href="https://github.com/eussam">eussam</a> - <a href="https://github.com/cappuccino/cappuccino/commit/818d5d782fe3771563b0ada4e3f1e9af8aff0030">818d5d5</a>)</p></li>
+<li><p>Fixed: unit tests for <code>CPPredicateEditor</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/c38daac6469e2cae92a07d9fc3f9f0991bef5d08">c38daac</a> <a href="https://github.com/cappuccino/cappuccino/commit/c31f5b1d593484379dca362567b5e1b06a487b9b">c31f5b1</a>)</p></li>
+<li><p>Fixed: <code>CPPredicateEditor</code> predicate when the template has a <code>CPFloatAttributeType</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/333e112e375f74e0d812cc9c02f2d90e2a825b05">333e112</a>)</p></li>
+<li><p>New: enable autoscrolling for table view columns. (<a href="https://github.com/daboe01">daboe01</a> - <a href="https://github.com/cappuccino/cappuccino/commit/abb0799817aaad2a10e093eeaae3c30907a202dd">abb0799</a>)</p></li>
+<li><p>Fixed: <code>CPColorPanel</code> always opened in main platform window. (<a href="https://github.com/didierkorthoudt">didierkorthoudt</a> - <a href="https://github.com/cappuccino/cappuccino/commit/9273c9ee10e109ca3698306c975ef85a6280ba85">9273c9e</a>)</p></li>
+<li><p>Fixed: <code>CPTextField</code> didn’t optimize tracking areas management. (<a href="https://github.com/didierkorthoudt">didierkorthoudt</a> - <a href="https://github.com/cappuccino/cappuccino/commit/1927bb479813ffc3849d421aa424c356ab49425f">1927bb4</a>)</p></li>
+<li><p>Fixed: right mouse clicking during a drag operation canceled it. (<a href="https://github.com/didierkorthoudt">didierkorthoudt</a> - <a href="https://github.com/cappuccino/cappuccino/commit/a28f9ceebac335a2a983dfd59ab0e5e100454bf8">a28f9ce</a>)</p></li>
+<li><p>Fixed: the background of the brightness slider had a uniform color in <code>CPColorPicker</code> (<a href="https://github.com/daboe01">daboe01</a> - <a href="https://github.com/cappuccino/cappuccino/commit/a84a7bb7c344ec674341fd12248fff8f7838cbb8">a84a7bb</a>)</p></li>
+<li><p>New: merged in the parser and compiler that is used in the node objj-runtime. (<a href="https://github.com/mrcarlberg">mrcarlberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/e134f910aadb6ccf9a518e00d0dd7d85107d53fb">e134f91</a>)</p></li>
+<li><p>Fixed: missing import in <code>CPCollectionView</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/5f12291ac4fab4351f0cfbc85df88066ac6ad329">5f1229</a>)</p></li>
+<li><p>New: removed Native Host. (<a href="https://github.com/daboe01">daboe01</a> - <a href="https://github.com/cappuccino/cappuccino/commit/5bc3609ad7def39309d939e68e8497d428763527">5bc3609</a>)</p></li>
+<li><p>Fixed: <code>CPView</code> received multiple <code>-viewDidHide/Unhide</code> messages. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/12dde5154fbe9e1b27ec5a5d98ac6cb4993b38e1">12dde51</a>)</p></li>
+<li><p>New: removed rakefile. (<a href="https://github.com/daboe01">daboe01</a> - <a href="https://github.com/cappuccino/cappuccino/commit/80bfeb1a29ba52a0a3fd35a0189c48f9e8b5971e">80bfeb1</a>)</p></li>
+<li><p>Fixed: XcodeCapp ‘Preferences’ menu item not in the standard place. (<a href="https://github.com/enquora">enquora</a> - <a href="https://github.com/cappuccino/cappuccino/commit/b09cb2480464e1dccf45c40e892e344b7766d138">b09cb24</a>)</p></li>
+<li><p>Fixed: <code>nib2cib</code>‘ed files different with jake release and jake deploy. (<a href="https://github.com/aljungberg">aljungberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/f4c11d14e734cb6e78dd998735cbfac8af4734b8">f4c11d1</a>)</p></li>
+<li><p>Fixed: XcodeCapp <code>nib2cib</code> incorrect vs jake release. (<a href="https://github.com/aljungberg">aljungberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/3e56c8ed8b27284defdf9f46e0e9809b644fde3a">3e56c8e</a>)</p></li>
+<li><p>Fixed: <code>CPPasteBoard</code> dead code. (<a href="https://github.com/daboe01">daboe01</a> - <a href="https://github.com/cappuccino/cappuccino/commit/a2960a7997ff82b12d9c679a449e46459d7dd4ee">a2960a7</a>)</p></li>
+<li><p>Fixed: missing requirements in the README. (<a href="https://github.com/daboe01">daboe01</a> - <a href="https://github.com/cappuccino/cappuccino/commit/f9cc77382a5fb3909198b22683a52c6d851d4274">f9cc773</a>)</p></li>
+<li><p>Fixed: scrolling events were not dispatched to the <code>CPApp</code> on slower system under Chrome 52. (<a href="https://github.com/daboe01">daboe01</a> - <a href="https://github.com/cappuccino/cappuccino/commit/e4fce08effcee54287eaaa512ccf14891e805cad">e4fce08</a>)</p></li>
+<li><p>Fixed: iOS virtual keyboard “done” button not working and tapping other text fields while editing (often) not working. (<a href="https://github.com/aljungberg">aljungberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/4395c0764841655d1213002d9cd8da230b05f365">4395c07</a>)</p></li>
+</ul>
+
+<h3>Cucapp</h3>
+
+<h5>Changes/Fixes</h5>
+
+<ul>
+<li>Fixed: the function <code>dumpGuiObject</code> was called two times for the class <code>CPScrollView</code> (<a href="https://github.com/t00f">t00f</a> - <a href="https://github.com/cappuccino/cucapp/commit/732d77ee8e686c74745df7dd4e128996920ad3f6">732d77e</a>)</li>
+</ul>
+
+<a class="pull-right action" href="/blog/feed.xml" id="rss_link">
+<img alt="RSS" width="28" height="28" src="/img/feed-icon-28x28-0489f1cd.png">
+</a>
+<div class="author">
+Posted by
+Alexandre Wilhelm
+</div>
+<div class="date">
+on
+Sep 01, 2016.
+</div>
+<div class="tags">
+Tagged
+<a href="/blog/tags/cappuccino.html">Cappuccino</a>, <a href="/blog/tags/objj.html">objj</a>, <a href="/blog/tags/update.html">update</a>, <a href="/blog/tags/cucapp.html">cucapp</a>, <a href="/blog/tags/cappcon2016.html">cappCon2016</a>.
+</div>
+</div>
+<ul class="pager">
+<li class="previous">
+<a href="/blog/2016/08/aparajita-leaves.html" rel="prev">← Previous Article</a>
+</li>
+<li class="next">
+<a href="/blog/2016/09/table-view-tutorial.html" rel="next">Next Article →</a>
+</li>
+</ul>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_container_id = 'disqus_thread',
+      disqus_domain = 'disqus.com',
+      disqus_shortname = 'cappuccino',
+      disqus_url = 'http://www.cappuccino-project.org/blog/2016/09/cappuccino-news-2016-09-01.html',
+      disqus_developer = 0;
+</script>
+<script>
+  var disqus_identifier = '2016-09-01-cappuccino-news-2016-09-01-markdown';
+</script>
+<script>
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">
+comments powered by Disqus.
+</a>
+</noscript>
+<a class="dsq-brlink" href="http://disqus.com">
+comments powered by
+<span class="logo-disqus">Disqus</span>
+</a>
+</div>
+<div class="span3 sidebar offset1">
+<form action="http://google.com/cse" id="cse-search-box">
+<input name="cx" type="hidden" value="003886841673136914364:g4k5gxiukag">
+<input name="ie" type="hidden" value="UTF-8">
+<input class="input-large search-query" name="q" placeholder="Search" size="31" type="text">
+<!-- %input.btn{:name => "sa", :type => "submit", :value => "Search"}/ -->
+</form>
+<h4 class="sidebar_header">
+Recent posts
+</h4>
+<ul class="recent_posts">
+<li>
+<a href="/blog/2018/04/cappuccino-1-0-is-announced.html">CappCon 2018 and the release of Cappuccino 1.0!</a>
+</li>
+<li>
+<a href="/blog/2017/07/cappuccino-0-9-10.html">Cappuccino 0.9.10</a>
+</li>
+<li>
+<a href="/blog/2017/04/cappuccino-on-node-js.html">Cappuccino on Node.js</a>
+</li>
+<li>
+<a href="/blog/2016/11/cappuccino-news-2016-11-01.html">Cappuccino News 2016 November 1st</a>
+</li>
+<li>
+<a href="/blog/2016/09/table-view-tutorial.html">Table view tutorial</a>
+</li>
+</ul>
+<h4 class="sidebar_header">
+Tags
+</h4>
+<ul class="tags">
+<li>
+<a href="/blog/tags/cappuccino.html">Cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/objj.html">objj</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">update</a>
+</li>
+<li>
+<a href="/blog/tags/cucapp.html">cucapp</a>
+</li>
+<li>
+<a href="/blog/tags/localization.html">localization</a>
+</li>
+<li>
+<a href="/blog/tags/cpnotificationqueue.html">CPNotificationQueue</a>
+</li>
+<li>
+<a href="/blog/tags/theme.html">theme</a>
+</li>
+<li>
+<a href="/blog/tags/ojtest.html">ojtest</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino.html">cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/280-north.html">280 north</a>
+</li>
+<li>
+<a href="/blog/tags/github.html">github</a>
+</li>
+<li>
+<a href="/blog/tags/capp_env.html">capp_env</a>
+</li>
+<li>
+<a href="/blog/tags/tools.html">tools</a>
+</li>
+<li>
+<a href="/blog/tags/jake.html">jake</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">rake</a>
+</li>
+<li>
+<a href="/blog/tags/compiler.html">compiler</a>
+</li>
+<li>
+<a href="/blog/tags/tutorial.html">tutorial</a>
+</li>
+<li>
+<a href="/blog/tags/scrapbook.html">scrapbook</a>
+</li>
+<li>
+<a href="/blog/tags/draganddrop.html">draganddrop</a>
+</li>
+<li>
+<a href="/blog/tags/cucapp.html">Cucapp</a>
+</li>
+<li>
+<a href="/blog/tags/cucumber.html">Cucumber</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">Objective-J</a>
+</li>
+<li>
+<a href="/blog/tags/ojtest.html">OJTest</a>
+</li>
+<li>
+<a href="/blog/tags/xcodecapp.html">xcodecapp</a>
+</li>
+<li>
+<a href="/blog/tags/node.html">Node</a>
+</li>
+<li>
+<a href="/blog/tags/community-highlights.html">community highlights</a>
+</li>
+<li>
+<a href="/blog/tags/screencasts.html">Screencasts</a>
+</li>
+<li>
+<a href="/blog/tags/slicehost.html">slicehost</a>
+</li>
+<li>
+<a href="/blog/tags/280north.html">280north</a>
+</li>
+<li>
+<a href="/blog/tags/team.html">team</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">Update</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">sofa</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">objective-j</a>
+</li>
+<li>
+<a href="/blog/tags/build-tool.html">build tool</a>
+</li>
+<li>
+<a href="/blog/tags/code.html">code</a>
+</li>
+<li>
+<a href="/blog/tags/events.html">events</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">conferences</a>
+</li>
+<li>
+<a href="/blog/tags/accessor-synthesizing.html">Accessor Synthesizing</a>
+</li>
+<li>
+<a href="/blog/tags/accessors.html">@accessors</a>
+</li>
+<li>
+<a href="/blog/tags/tutorials.html">tutorials</a>
+</li>
+<li>
+<a href="/blog/tags/projects.html">projects</a>
+</li>
+<li>
+<a href="/blog/tags/releases.html">releases</a>
+</li>
+<li>
+<a href="/blog/tags/atlas.html">atlas</a>
+</li>
+<li>
+<a href="/blog/tags/fowa.html">fowa</a>
+</li>
+<li>
+<a href="/blog/tags/london.html">london</a>
+</li>
+<li>
+<a href="/blog/tags/cappcon2016.html">cappCon2016</a>
+</li>
+<li>
+<a href="/blog/tags/interface-builder.html">interface builder</a>
+</li>
+<li>
+<a href="/blog/tags/xcode.html">xcode</a>
+</li>
+<li>
+<a href="/blog/tags/objj2objcskeleton.html">objj2objcskeleton</a>
+</li>
+<li>
+<a href="/blog/tags/events.html">Events</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">Conferences</a>
+</li>
+<li>
+<a href="/blog/tags/cpurlconnection.html">CPURLConnection</a>
+</li>
+<li>
+<a href="/blog/tags/ajax.html">AJAX</a>
+</li>
+<li>
+<a href="/blog/tags/xmlhttprequest.html">XMLHTTPRequest</a>
+</li>
+<li>
+<a href="/blog/tags/ide.html">ide</a>
+</li>
+<li>
+<a href="/blog/tags/test.html">test</a>
+</li>
+<li>
+<a href="/blog/tags/automation-test.html">Automation test</a>
+</li>
+<li>
+<a href="/blog/tags/functional-test.html">Functional test</a>
+</li>
+<li>
+<a href="/blog/tags/nuage-networks.html">Nuage Networks</a>
+</li>
+<li>
+<a href="/blog/tags/release.html">release</a>
+</li>
+<li>
+<a href="/blog/tags/virtualenv.html">virtualenv</a>
+</li>
+<li>
+<a href="/blog/tags/cappenv.html">cappenv</a>
+</li>
+<li>
+<a href="/blog/tags/node-js.html">Node.js</a>
+</li>
+<li>
+<a href="/blog/tags/meetup.html">meetup</a>
+</li>
+<li>
+<a href="/blog/tags/cappcon2016.html">cappcon2016</a>
+</li>
+<li>
+<a href="/blog/tags/cappcon.html">cappcon</a>
+</li>
+<li>
+<a href="/blog/tags/xcodecapp.html">XcodeCapp</a>
+</li>
+<li>
+<a href="/blog/tags/issues.html">issues</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino-org.html">cappuccino.org</a>
+</li>
+<li>
+<a href="/blog/tags/tool.html">tool</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">Rake</a>
+</li>
+<li>
+<a href="/blog/tags/nib2cib.html">nib2cib</a>
+</li>
+<li>
+<a href="/blog/tags/aristo.html">Aristo</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">Sofa</a>
+</li>
+<li>
+<a href="/blog/tags/open-source.html">open source</a>
+</li>
+<li>
+<a href="/blog/tags/narwhal.html">Narwhal</a>
+</li>
+<li>
+<a href="/blog/tags/layout.html">layout</a>
+</li>
+<li>
+<a href="/blog/tags/release.html">Release</a>
+</li>
+<li>
+<a href="/blog/tags/nuagenetworks.html">nuagenetworks</a>
+</li>
+<li>
+<a href="/blog/tags/sdn.html">sdn</a>
+</li>
+<li>
+<a href="/blog/tags/showcase.html">showcase</a>
+</li>
+<li>
+<a href="/blog/tags/cocoa.html">cocoa</a>
+</li>
+<li>
+<a href="/blog/tags/iphone.html">iphone</a>
+</li>
+<li>
+<a href="/blog/tags/porting.html">porting</a>
+</li>
+<li>
+<a href="/blog/tags/frameworks.html">frameworks</a>
+</li>
+<li>
+<a href="/blog/tags/website.html">website</a>
+</li>
+<li>
+<a href="/blog/tags/documentation.html">documentation</a>
+</li>
+<li>
+<a href="/blog/tags/doxygen.html">doxygen</a>
+</li>
+<li>
+<a href="/blog/tags/docsets.html">docsets</a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

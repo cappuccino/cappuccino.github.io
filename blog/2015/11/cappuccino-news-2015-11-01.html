@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino News 2015 November 1st</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-cappuccino-news-2015-11-01-html folder-blog-2015-11 folder-blog-2015 folder-blog">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="blog_post" id="blog_wrapper">
+<div class="container">
+<div class="row">
+<div class="span8">
+<h1 class="header">
+Cappuccino News 2015 November 1st
+</h1>
+<div class="post_content">
+<p>Here’s a quick update on what’s new with Cappuccino in the last month.</p>
+
+<h3>Community</h3>
+
+<p>The Cappuccino Core Team are planning to organize a conference about Cappuccino and how people are using it. Please let us know if you would like to join this event by taking this <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.surveymonkey.com%2Fr%2FZ9P7L55&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEu1mNy0xq0iIBdsSpeftYkWTKEqw">survey</a>.</p>
+
+<p>More information <a href="http://www.cappuccino-project.org/blog/2015/10/cappcon-2016.html">here</a>.</p>
+
+<h3>Cappuccino</h3>
+
+<h5>News</h5>
+
+<ul>
+<li><p>New: <code>CPURLConnection +sendAsynchronousRequest:queue:completionHandler:</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/8809c1634f683efe1142833deaa8f5565fa6fcba">8809c16</a>)</p></li>
+<li><p>New: <code>CPNotificationQueue</code>. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/ce8f8c05e1b409c6a75849793bb1ee5e30b524f5">ce8f8c0</a>)</p></li>
+<li><p>New: ability to localize a Cappuccino application. An app can be localized through <code>strings</code> and <code>cib</code>s. The language to use is selected from the brower or from the <code>Info.plist</code>. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/686f931fb48fd2a2950519d5d957ed756528b0b2">686f931</a>)</p></li>
+<li><p>New: ability to more widely theme AppKit: in particular <code>CPColor alternateSelectedControlColor</code> and related <code>CPColor</code> fields can now be themed. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/1fe1e6f265b9c3175622458721d3afbab89aead6">1fe1e6f</a>)</p></li>
+<li><p>New: <code>CPRunLoop -performBlock:argument:order:modes:</code>. (<a href="https://github.com/dogild">Dogild</a>-<a href="https://github.com/cappuccino/cappuccino/commit/d5f38fe2f2cb2b55a4e6c1b6c3f4c28805f47957">d5f38fe</a>)</p></li>
+</ul>
+
+<h5>Changes/Fixes</h5>
+
+<ul>
+<li><p>Fixed: <code>CPImage -size</code> returned internal object ref. (<a href="https://github.com/aparajita">aparajita</a> - <a href="https://github.com/cappuccino/cappuccino/commit/526181a76b3e28775dea24c917aa16b6e929128b">526181a</a>)</p></li>
+<li><p>New: <code>CPTabView</code> improvements. The methods <code>CPTabViewItem -tabViewItemWithViewController:</code> and <code>CPTabViewItem -setImage:</code> have been added. New bindings options (<code>CPContentBinding</code> - <code>CPSelectedIndexBinding</code> - <code>CPSelectionIndexesBinding</code>) have been added to <code>CPTabView</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/d5b90c91f572a803a61290e44460cf1728d9d046">d5b90c9</a>)</p></li>
+<li><p>Fixed: <code>CPTabView -insertTabViewItem:atIndex:</code>. (<a href="https://github.com/cacaodev">cacaodev</a> - <a href="https://github.com/cappuccino/cappuccino/commit/d5b90c91f572a803a61290e44460cf1728d9d046">d5b90c9</a>)</p></li>
+<li><p>Fixed: <code>CPDictionary -initWithObjectsAndKeys:</code> and <code>CPDictionary -initWithObjects:forKeys:</code> was not compliant with Cocoa when duplicated keys were passed to the method. (<a href="https://github.com/mrcarlberg">mrcarlberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/9129301c890c1ff1dc11e91a1fb6ba7f183938a7">912930</a></p></li>
+<li><p>Optmization: some AppKit speed improvements through the use of the new <code>objj_msgSend</code> in some places including <code>CPTableView</code> and <code>CPWindow</code>. (<a href="https://github.com/mrcarlberg">mrcarlberg</a> - <a href="https://github.com/cappuccino/cappuccino/commit/4b81e0d8afd941bb1356f22630ee70ddae5566b1">4b81e0d</a></p></li>
+<li><p>Fixed: warning when compiling AppKit. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/c30f8b09b08404d8898723736f68172f120a391a">c30f8b0</a>)</p></li>
+<li><p>Fixed: crash when a new <code>CPPlatformWindow</code> was blocked by the browser when opening (adblock for instance). (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/40a9f19352d8a1bbfdf9ccc49f44bc94bca67d31">40a9f19</a>)</p></li>
+<li><p>Optimization: <code>CPView -layoutSubviews</code> and <code>CPView -viewWillLayout</code>. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/f062fda2f7d2e5767468a71a2656eed661edd1dc">f062fda</a>)</p></li>
+<li><p>Fixed: the param queue of the method <code>CPNotificationCenter -addObserverForName:object:queue:usingBlock:</code> was ignored. It now creates a new operation and adds it to the given queue if needed. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/3e29732e462e02dacfd66851e6dd67886ed69889">3e29732</a>)</p></li>
+<li><p>Tests: new unittests for the method <code>CPString -stringByReplacingCharactersInRange:</code>. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/b04e5760fb30464dc457ecc0a7dc26c6ca6d8f2e">b04e576</a>)</p></li>
+<li><p>Fixed: copy and pasty did not work properly in a new <code>CPPlatformWindow</code>. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cappuccino/commit/d4b168072745dfcd94ff38d1646ee164d9b1de69">d4b1680</a>)</p></li>
+<li><p>Fixed: timing key responder issue when a <code>CPTextField</code> became the first key responder. (<a href="https://github.com/dogild">Dogild</a>-<a href="https://github.com/cappuccino/cappuccino/commit/d5f38fe2f2cb2b55a4e6c1b6c3f4c28805f47957">d5f38fe</a></p></li>
+</ul>
+
+<h3>Cucapp</h3>
+
+<h5>News</h5>
+
+<ul>
+<li><p>New: <code>jake install</code> for <code>cucapp</code>. The command will install <code>cucapp</code> in <code>narwhal</code> and every gems needed (<code>Cucumber</code>, <code>Thin</code>, <code>Nokogiri</code>, <code>Launchy</code> and <code>JSON</code>). (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cucapp/commit/e0f276e45def1d59a99b224d6aff31c4cce741e">e0f276e</a>)</p></li>
+<li><p>New: added the command <code>cucapp</code>. This command allows you to create a testing architecture in your Cappuccino application. The architecture provides a new command <code>jake cucumber-test</code>, creates a soft link where <code>cucapp</code> is installed and creates every file needed to create cucumber tests. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cucapp/commit/e0f276e45def1d59a99b224d6aff31c4cce741e">e0f276e</a>)</p></li>
+</ul>
+
+<h5>Change/Fixes</h5>
+
+<ul>
+<li>Fixed: <code>CPRunLoop</code> was not called between every event simulated. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/cucapp/commit/fa281e86357653cd6e2aa797952ff1ea94801b6c">fa281e8</a>)</li>
+</ul>
+
+<h3>OJTest</h3>
+
+<h5>New</h5>
+
+<ul>
+<li>New: the option <code>-x</code> to stop the suite of tests when a test fails. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/OJTest/commit/7c473061450f27b27b97ae6e04793ba140613f21">7c47306</a>)</li>
+</ul>
+
+<h5>Changes/Fixes</h5>
+
+<ul>
+<li><p>Fixed: use runtime functions instead of accessing attribute names directly. (<a href="https://github.com/mrcarlberg">mrcarlberg</a> - <a href="https://github.com/cappuccino/OJTest/commit/f799634d20a62c32ef421eef8d7fd8660e7ee860">f799634</a>)</p></li>
+<li><p>Fixed: <code>CPRunLoop</code> was not called at the end of every tests. (<a href="https://github.com/dogild">Dogild</a> - <a href="https://github.com/cappuccino/OJTest/commit/def9006f14ed05d218623388145e1c44edf24c51">def9006</a>)</p></li>
+</ul>
+
+<a class="pull-right action" href="/blog/feed.xml" id="rss_link">
+<img alt="RSS" width="28" height="28" src="/img/feed-icon-28x28-0489f1cd.png">
+</a>
+<div class="author">
+Posted by
+Alexandre Wilhelm
+</div>
+<div class="date">
+on
+Nov 01, 2015.
+</div>
+<div class="tags">
+Tagged
+<a href="/blog/tags/cappuccino.html">Cappuccino</a>, <a href="/blog/tags/objj.html">objj</a>, <a href="/blog/tags/update.html">update</a>, <a href="/blog/tags/cucapp.html">cucapp</a>, <a href="/blog/tags/localization.html">localization</a>, <a href="/blog/tags/cpnotificationqueue.html">CPNotificationQueue</a>, <a href="/blog/tags/theme.html">theme</a>, <a href="/blog/tags/ojtest.html">ojtest</a>.
+</div>
+</div>
+<ul class="pager">
+<li class="previous">
+<a href="/blog/2015/10/cappcon-2016.html" rel="prev">← Previous Article</a>
+</li>
+<li class="next">
+<a href="/blog/2015/11/cappuccino-meetup2015-11-20.html" rel="next">Next Article →</a>
+</li>
+</ul>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_container_id = 'disqus_thread',
+      disqus_domain = 'disqus.com',
+      disqus_shortname = 'cappuccino',
+      disqus_url = 'http://www.cappuccino-project.org/blog/2015/11/cappuccino-news-2015-11-01.html',
+      disqus_developer = 0;
+</script>
+<script>
+  var disqus_identifier = '2015-11-01-cappuccino-news-2015-11-01-markdown';
+</script>
+<script>
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>
+Please enable JavaScript to view the
+<a href="http://disqus.com/?ref_noscript">
+comments powered by Disqus.
+</a>
+</noscript>
+<a class="dsq-brlink" href="http://disqus.com">
+comments powered by
+<span class="logo-disqus">Disqus</span>
+</a>
+</div>
+<div class="span3 sidebar offset1">
+<form action="http://google.com/cse" id="cse-search-box">
+<input name="cx" type="hidden" value="003886841673136914364:g4k5gxiukag">
+<input name="ie" type="hidden" value="UTF-8">
+<input class="input-large search-query" name="q" placeholder="Search" size="31" type="text">
+<!-- %input.btn{:name => "sa", :type => "submit", :value => "Search"}/ -->
+</form>
+<h4 class="sidebar_header">
+Recent posts
+</h4>
+<ul class="recent_posts">
+<li>
+<a href="/blog/2018/04/cappuccino-1-0-is-announced.html">CappCon 2018 and the release of Cappuccino 1.0!</a>
+</li>
+<li>
+<a href="/blog/2017/07/cappuccino-0-9-10.html">Cappuccino 0.9.10</a>
+</li>
+<li>
+<a href="/blog/2017/04/cappuccino-on-node-js.html">Cappuccino on Node.js</a>
+</li>
+<li>
+<a href="/blog/2016/11/cappuccino-news-2016-11-01.html">Cappuccino News 2016 November 1st</a>
+</li>
+<li>
+<a href="/blog/2016/09/table-view-tutorial.html">Table view tutorial</a>
+</li>
+</ul>
+<h4 class="sidebar_header">
+Tags
+</h4>
+<ul class="tags">
+<li>
+<a href="/blog/tags/cappuccino.html">Cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/objj.html">objj</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">update</a>
+</li>
+<li>
+<a href="/blog/tags/cucapp.html">cucapp</a>
+</li>
+<li>
+<a href="/blog/tags/localization.html">localization</a>
+</li>
+<li>
+<a href="/blog/tags/cpnotificationqueue.html">CPNotificationQueue</a>
+</li>
+<li>
+<a href="/blog/tags/theme.html">theme</a>
+</li>
+<li>
+<a href="/blog/tags/ojtest.html">ojtest</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino.html">cappuccino</a>
+</li>
+<li>
+<a href="/blog/tags/280-north.html">280 north</a>
+</li>
+<li>
+<a href="/blog/tags/github.html">github</a>
+</li>
+<li>
+<a href="/blog/tags/capp_env.html">capp_env</a>
+</li>
+<li>
+<a href="/blog/tags/tools.html">tools</a>
+</li>
+<li>
+<a href="/blog/tags/jake.html">jake</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">rake</a>
+</li>
+<li>
+<a href="/blog/tags/compiler.html">compiler</a>
+</li>
+<li>
+<a href="/blog/tags/tutorial.html">tutorial</a>
+</li>
+<li>
+<a href="/blog/tags/scrapbook.html">scrapbook</a>
+</li>
+<li>
+<a href="/blog/tags/draganddrop.html">draganddrop</a>
+</li>
+<li>
+<a href="/blog/tags/cucapp.html">Cucapp</a>
+</li>
+<li>
+<a href="/blog/tags/cucumber.html">Cucumber</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">Objective-J</a>
+</li>
+<li>
+<a href="/blog/tags/ojtest.html">OJTest</a>
+</li>
+<li>
+<a href="/blog/tags/xcodecapp.html">xcodecapp</a>
+</li>
+<li>
+<a href="/blog/tags/node.html">Node</a>
+</li>
+<li>
+<a href="/blog/tags/community-highlights.html">community highlights</a>
+</li>
+<li>
+<a href="/blog/tags/screencasts.html">Screencasts</a>
+</li>
+<li>
+<a href="/blog/tags/slicehost.html">slicehost</a>
+</li>
+<li>
+<a href="/blog/tags/280north.html">280north</a>
+</li>
+<li>
+<a href="/blog/tags/team.html">team</a>
+</li>
+<li>
+<a href="/blog/tags/update.html">Update</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">sofa</a>
+</li>
+<li>
+<a href="/blog/tags/objective-j.html">objective-j</a>
+</li>
+<li>
+<a href="/blog/tags/build-tool.html">build tool</a>
+</li>
+<li>
+<a href="/blog/tags/code.html">code</a>
+</li>
+<li>
+<a href="/blog/tags/events.html">events</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">conferences</a>
+</li>
+<li>
+<a href="/blog/tags/accessor-synthesizing.html">Accessor Synthesizing</a>
+</li>
+<li>
+<a href="/blog/tags/accessors.html">@accessors</a>
+</li>
+<li>
+<a href="/blog/tags/tutorials.html">tutorials</a>
+</li>
+<li>
+<a href="/blog/tags/projects.html">projects</a>
+</li>
+<li>
+<a href="/blog/tags/releases.html">releases</a>
+</li>
+<li>
+<a href="/blog/tags/atlas.html">atlas</a>
+</li>
+<li>
+<a href="/blog/tags/fowa.html">fowa</a>
+</li>
+<li>
+<a href="/blog/tags/london.html">london</a>
+</li>
+<li>
+<a href="/blog/tags/cappcon2016.html">cappCon2016</a>
+</li>
+<li>
+<a href="/blog/tags/interface-builder.html">interface builder</a>
+</li>
+<li>
+<a href="/blog/tags/xcode.html">xcode</a>
+</li>
+<li>
+<a href="/blog/tags/objj2objcskeleton.html">objj2objcskeleton</a>
+</li>
+<li>
+<a href="/blog/tags/events.html">Events</a>
+</li>
+<li>
+<a href="/blog/tags/conferences.html">Conferences</a>
+</li>
+<li>
+<a href="/blog/tags/cpurlconnection.html">CPURLConnection</a>
+</li>
+<li>
+<a href="/blog/tags/ajax.html">AJAX</a>
+</li>
+<li>
+<a href="/blog/tags/xmlhttprequest.html">XMLHTTPRequest</a>
+</li>
+<li>
+<a href="/blog/tags/ide.html">ide</a>
+</li>
+<li>
+<a href="/blog/tags/test.html">test</a>
+</li>
+<li>
+<a href="/blog/tags/automation-test.html">Automation test</a>
+</li>
+<li>
+<a href="/blog/tags/functional-test.html">Functional test</a>
+</li>
+<li>
+<a href="/blog/tags/nuage-networks.html">Nuage Networks</a>
+</li>
+<li>
+<a href="/blog/tags/release.html">release</a>
+</li>
+<li>
+<a href="/blog/tags/virtualenv.html">virtualenv</a>
+</li>
+<li>
+<a href="/blog/tags/cappenv.html">cappenv</a>
+</li>
+<li>
+<a href="/blog/tags/node-js.html">Node.js</a>
+</li>
+<li>
+<a href="/blog/tags/meetup.html">meetup</a>
+</li>
+<li>
+<a href="/blog/tags/cappcon2016.html">cappcon2016</a>
+</li>
+<li>
+<a href="/blog/tags/cappcon.html">cappcon</a>
+</li>
+<li>
+<a href="/blog/tags/xcodecapp.html">XcodeCapp</a>
+</li>
+<li>
+<a href="/blog/tags/issues.html">issues</a>
+</li>
+<li>
+<a href="/blog/tags/cappuccino-org.html">cappuccino.org</a>
+</li>
+<li>
+<a href="/blog/tags/tool.html">tool</a>
+</li>
+<li>
+<a href="/blog/tags/rake.html">Rake</a>
+</li>
+<li>
+<a href="/blog/tags/nib2cib.html">nib2cib</a>
+</li>
+<li>
+<a href="/blog/tags/aristo.html">Aristo</a>
+</li>
+<li>
+<a href="/blog/tags/sofa.html">Sofa</a>
+</li>
+<li>
+<a href="/blog/tags/open-source.html">open source</a>
+</li>
+<li>
+<a href="/blog/tags/narwhal.html">Narwhal</a>
+</li>
+<li>
+<a href="/blog/tags/layout.html">layout</a>
+</li>
+<li>
+<a href="/blog/tags/release.html">Release</a>
+</li>
+<li>
+<a href="/blog/tags/nuagenetworks.html">nuagenetworks</a>
+</li>
+<li>
+<a href="/blog/tags/sdn.html">sdn</a>
+</li>
+<li>
+<a href="/blog/tags/showcase.html">showcase</a>
+</li>
+<li>
+<a href="/blog/tags/cocoa.html">cocoa</a>
+</li>
+<li>
+<a href="/blog/tags/iphone.html">iphone</a>
+</li>
+<li>
+<a href="/blog/tags/porting.html">porting</a>
+</li>
+<li>
+<a href="/blog/tags/frameworks.html">frameworks</a>
+</li>
+<li>
+<a href="/blog/tags/website.html">website</a>
+</li>
+<li>
+<a href="/blog/tags/documentation.html">documentation</a>
+</li>
+<li>
+<a href="/blog/tags/doxygen.html">doxygen</a>
+</li>
+<li>
+<a href="/blog/tags/docsets.html">docsets</a>
+</li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

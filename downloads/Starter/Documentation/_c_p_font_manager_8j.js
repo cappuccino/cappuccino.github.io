@@ -1,17 +1,26 @@
 var _c_p_font_manager_8j =
 [
+    [ "CPAddTraitFontAction", "_c_p_font_manager_8j.html#aa8774f6319d1645df0ea0b7baf42b30a", null ],
     [ "CPBoldFontMask", "_c_p_font_manager_8j.html#a277c663826dc36ee557c654866de3ad3", null ],
     [ "CPCompressedFontMask", "_c_p_font_manager_8j.html#ac833b180f11f91906e55c989a98ff0ce", null ],
     [ "CPCondensedFontMask", "_c_p_font_manager_8j.html#a50cc9bf195d5d43c3e09ddd7d3af99e2", null ],
     [ "CPExpandedFontMask", "_c_p_font_manager_8j.html#a4e0fe98d8a3800f254d5dabebb4bb20e", null ],
     [ "CPFixedPitchFontMask", "_c_p_font_manager_8j.html#a77ff86716b8278944531bb11ad07deba", null ],
     [ "CPFontManagerFactory", "_c_p_font_manager_8j.html#aca218d4aabc760f3c21083b06d1ec70b", null ],
+    [ "CPFontPanelFactory", "_c_p_font_manager_8j.html#aad8020916a2d5298407c0db0910fc0fb", null ],
+    [ "CPHeavierFontAction", "_c_p_font_manager_8j.html#aa44dda1cd77902728ddbd446e6ab8fa8", null ],
     [ "CPItalicFontMask", "_c_p_font_manager_8j.html#a748499cbc99d753e3eb1b88135b7c4ff", null ],
+    [ "CPLighterFontAction", "_c_p_font_manager_8j.html#aee1251c35a0a49d47f2801c8745c762b", null ],
     [ "CPNarrowFontMask", "_c_p_font_manager_8j.html#ac59a670f35ef2ea2a293b901e07f68d5", null ],
+    [ "CPNoFontChangeAction", "_c_p_font_manager_8j.html#a97571790ab8fa334e83f625df2f903a6", null ],
     [ "CPNonStandardCharacterSetFontMask", "_c_p_font_manager_8j.html#a19dc923842b0904526639eec1dc858bb", null ],
     [ "CPPosterFontMask", "_c_p_font_manager_8j.html#a981ff0f6603757b93c5a5ac68ff0762f", null ],
+    [ "CPRemoveTraitFontAction", "_c_p_font_manager_8j.html#a7b9fa9fd0e7ccda10960f4db25719746", null ],
     [ "CPSharedFontManager", "_c_p_font_manager_8j.html#a8de846460544704a2085846c5c18a268", null ],
+    [ "CPSizeDownFontAction", "_c_p_font_manager_8j.html#a7e294cdc31975faa9acb33243f0ef993", null ],
+    [ "CPSizeUpFontAction", "_c_p_font_manager_8j.html#a6bdf49a9c5c9120d82f12f5adf41e129", null ],
     [ "CPSmallCapsFontMask", "_c_p_font_manager_8j.html#a996b39faafc05ce8b99ae5fab2ebb97b", null ],
     [ "CPUnboldFontMask", "_c_p_font_manager_8j.html#aa9ea9b29596a54b227a6c56516381a4d", null ],
-    [ "CPUnitalicFontMask", "_c_p_font_manager_8j.html#aed1e6c47a0b3a7721b0d16b804ef09a6", null ]
+    [ "CPUnitalicFontMask", "_c_p_font_manager_8j.html#aed1e6c47a0b3a7721b0d16b804ef09a6", null ],
+    [ "CPViaPanelFontAction", "_c_p_font_manager_8j.html#a37932608d6ed7aa6c301572f65fe3830", null ]
 ];

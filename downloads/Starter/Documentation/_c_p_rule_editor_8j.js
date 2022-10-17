@@ -1,6 +1,6 @@
 var _c_p_rule_editor_8j =
 [
-    [ "<CPRuleEditorDelegate>", "protocol_c_p_rule_editor_delegate-p.html", "protocol_c_p_rule_editor_delegate-p" ],
+    [ "<CPRuleEditorDelegate >", "protocol_c_p_rule_editor_delegate_01-p.html", "protocol_c_p_rule_editor_delegate_01-p" ],
     [ "boundArrayContext", "_c_p_rule_editor_8j.html#a8bff62fe6dcb4cc807b1a93164e5c46e", null ],
     [ "CPRuleEditorDelegate_ruleEditor_predicatePartsForCriterion_withDisplayValue_inRow_", "_c_p_rule_editor_8j.html#a1c48877b4b05217ad6dc324164abb241", null ],
     [ "CPRuleEditorItemPBoardType", "_c_p_rule_editor_8j.html#a981011b9de400af569604e903c3a05a7", null ],

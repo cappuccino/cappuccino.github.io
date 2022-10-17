@@ -1,6 +1,6 @@
 var _c_p_popover_8j =
 [
-    [ "<CPPopoverDelegate>", "protocol_c_p_popover_delegate-p.html", "protocol_c_p_popover_delegate-p" ],
+    [ "<CPPopoverDelegate >", "protocol_c_p_popover_delegate_01-p.html", "protocol_c_p_popover_delegate_01-p" ],
     [ "CPPopoverAnimatesKey", "_c_p_popover_8j.html#a2541d230d2b57f69a614ef45251676ab", null ],
     [ "CPPopoverAppearanceKey", "_c_p_popover_8j.html#acc84bb6758525a7f6f924bf823087fed", null ],
     [ "CPPopoverBehaviorApplicationDefined", "_c_p_popover_8j.html#a83415c483d5d2ce12e1be244cc13df00", null ],

@@ -1,7 +1,7 @@
 var interface_c_p_operation_queue =
 [
     [ "addOperation:", "interface_c_p_operation_queue.html#ad59c43e3114ea2468c3d504e6fe1539f", null ],
-    [ "addOperations:waitUntilFinished:", "interface_c_p_operation_queue.html#ab44f211b27adba968d318a987afa58fc", null ],
+    [ "addOperations:waitUntilFinished:", "interface_c_p_operation_queue.html#afd667101f5817f73c3c3c2272e993ae5", null ],
     [ "addOperationWithFunction:", "interface_c_p_operation_queue.html#ad351bedb166e66eb7c8370b3d842bf6e", null ],
     [ "cancelAllOperations", "interface_c_p_operation_queue.html#a68a81f69ecdafe53fd842fdd8cb90977", null ],
     [ "currentQueue", "interface_c_p_operation_queue.html#a773bf1d5b03385216a2641dbec8ced94", null ],

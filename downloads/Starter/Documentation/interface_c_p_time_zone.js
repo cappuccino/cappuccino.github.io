@@ -8,10 +8,10 @@ var interface_c_p_time_zone =
     [ "description", "interface_c_p_time_zone.html#a28b88f931a8f8c97034daad0fd8a0948", null ],
     [ "initialize", "interface_c_p_time_zone.html#a25335c4dfc817332b3f26f1caf538ac2", null ],
     [ "initWithName:", "interface_c_p_time_zone.html#aca2966f8943ace17d3367f585a9e0cbb", null ],
-    [ "initWithName:data:", "interface_c_p_time_zone.html#a83800d5158265a23053d5ba36d426acc", null ],
+    [ "initWithName:data:", "interface_c_p_time_zone.html#ae26d89de81cebcd9ffd5ed775d6b348e", null ],
     [ "isEqualToTimeZone:", "interface_c_p_time_zone.html#ae303af141dade639da2d8ca5284f82b4", null ],
     [ "knownTimeZoneNames", "interface_c_p_time_zone.html#ae6398f89299f73d534107883cee32239", null ],
-    [ "localizedName:locale:", "interface_c_p_time_zone.html#a44a4ad1a9eafb1c434da00d04f5d3e32", null ],
+    [ "localizedName:locale:", "interface_c_p_time_zone.html#acf028de2632abbb76567b3d8d0475d31", null ],
     [ "localTimeZone", "interface_c_p_time_zone.html#a420e49638d16d27159ddbdb7dcd76f02", null ],
     [ "name", "interface_c_p_time_zone.html#af2f7c6640e744ddf883657d0eb239a4d", null ],
     [ "resetSystemTimeZone", "interface_c_p_time_zone.html#ad04d026faca3f5e299a1a68734ac94db", null ],
@@ -25,5 +25,5 @@ var interface_c_p_time_zone =
     [ "timeZoneForSecondsFromGMT:", "interface_c_p_time_zone.html#a78b9d1d127bf27a7c36a2713e3a58c8b", null ],
     [ "timeZoneWithAbbreviation:", "interface_c_p_time_zone.html#a30fa7cdbeeb50fe3e792b791559a368d", null ],
     [ "timeZoneWithName:", "interface_c_p_time_zone.html#a9ed082979899b8b515846d4c44953e89", null ],
-    [ "timeZoneWithName:data:", "interface_c_p_time_zone.html#acdc545540615519eeb070d1aca1aafbd", null ]
+    [ "timeZoneWithName:data:", "interface_c_p_time_zone.html#a506cb509e5049c8808e12d63ab461993", null ]
 ];

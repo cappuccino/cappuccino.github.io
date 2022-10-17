@@ -1,7 +1,7 @@
 <map id="CPController" name="CPController">
-<area shape="rect" id="node3" href="$interface_c_p_object_controller.html" title="CPObjectController" alt="" coords="15,161,151,189"/>
-<area shape="rect" id="node6" href="$interface_c_p_user_defaults_controller.html" title="CPUserDefaultsController" alt="" coords="175,161,349,189"/>
-<area shape="rect" id="node2" href="$class_c_p_object.html" title="CPObject" alt="" coords="133,6,211,34"/>
-<area shape="rect" id="node4" href="$interface_c_p_array_controller.html" title="CPArrayController" alt="" coords="18,238,147,266"/>
-<area shape="rect" id="node5" href="$interface_c_p_dictionary_controller.html" title="CPDictionaryController" alt="" coords="4,315,160,343"/>
+<area shape="rect" id="node3" href="$interface_c_p_object_controller.html" title="CPObjectController" alt="" coords="16,152,152,177"/>
+<area shape="rect" id="node6" href="$interface_c_p_user_defaults_controller.html" title="CPUserDefaultsController" alt="" coords="176,152,351,177"/>
+<area shape="rect" id="node2" href="$class_c_p_object.html" title="CPObject" alt="" coords="134,5,212,31"/>
+<area shape="rect" id="node4" href="$interface_c_p_array_controller.html" title="CPArrayController" alt="" coords="20,225,148,251"/>
+<area shape="rect" id="node5" href="$interface_c_p_dictionary_controller.html" title="CPDictionaryController" alt="" coords="5,299,162,324"/>
 </map>

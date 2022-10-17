@@ -15,7 +15,7 @@ var interface_c_p_date =
     [ "encodeWithCoder:", "interface_c_p_date.html#a1cc2f8eee6c5726c1f02a02907e3d307", null ],
     [ "initWithCoder:", "interface_c_p_date.html#a01c7dd959b7c2f3532ae0411070127c9", null ],
     [ "initWithString:", "interface_c_p_date.html#aa4aee25d604c1e280a460a7a67624f69", null ],
-    [ "initWithTimeInterval:sinceDate:", "interface_c_p_date.html#a0f2f95accff50ce3bb723f8cce4b3ac5", null ],
+    [ "initWithTimeInterval:sinceDate:", "interface_c_p_date.html#a308d7f44c7d8dd6167b5ed478846e1dd", null ],
     [ "initWithTimeIntervalSince1970:", "interface_c_p_date.html#a37fbbb2966a16ba0ddacb3aa51e1cfaa", null ],
     [ "initWithTimeIntervalSinceNow:", "interface_c_p_date.html#a59cbc39c6d54137bc35e8947e353654a", null ],
     [ "initWithTimeIntervalSinceReferenceDate:", "interface_c_p_date.html#a9d68e242a23b46c2e96a61b7d6474d55", null ],

@@ -1,0 +1,43 @@
+<map id="CPView" name="CPView">
+<area shape="rect" id="node2" href="$interface_c_p_accordion_view.html" title="CPAccordionView" alt="" coords="131,79,257,104"/>
+<area shape="rect" id="node3" href="$interface_c_p_box.html" title="CPBox" alt="" coords="163,128,225,153"/>
+<area shape="rect" id="node4" href="$interface_c_p_button_bar.html" title="CPButtonBar" alt="" coords="144,177,244,203"/>
+<area shape="rect" id="node5" href="$interface_c_p_clip_view.html" title="CPClipView" alt="" coords="148,227,240,252"/>
+<area shape="rect" id="node6" href="$interface_c_p_collection_view.html" title="CPCollectionView" alt="" coords="130,276,258,301"/>
+<area shape="rect" id="node7" href="$interface_c_p_control.html" title="CPControl" alt="" coords="153,325,235,351"/>
+<area shape="rect" id="node31" href="$interface_c_p_flash_view.html" title="CPFlashView" alt="" coords="143,375,245,400"/>
+<area shape="rect" id="node32" href="$interface_c_p_progress_indicator.html" title="CPProgressIndicator" alt="" coords="122,424,266,449"/>
+<area shape="rect" id="node33" href="$interface_c_p_scroll_view.html" title="CPScrollView" alt="" coords="143,473,245,499"/>
+<area shape="rect" id="node34" href="$interface_c_p_shadow_view.html" title="CPShadowView" alt="" coords="136,523,252,548"/>
+<area shape="rect" id="node35" href="$interface_c_p_split_view.html" title="CPSplitView" alt="" coords="147,572,241,597"/>
+<area shape="rect" id="node36" href="$interface_c_p_table_cell_view.html" title="CPTableCellView" alt="" coords="132,621,256,647"/>
+<area shape="rect" id="node37" href="$interface_c_p_table_header_view.html" title="CPTableHeaderView" alt="" coords="122,671,266,696"/>
+<area shape="rect" id="node38" href="$interface_c_p_tab_view.html" title="CPTabView" alt="" coords="149,720,239,745"/>
+<area shape="rect" id="node39" href="$interface_c_p_text.html" title="CPText" alt="" coords="162,769,226,795"/>
+<area shape="rect" id="node41" href="$interface_c_p_visual_effect_view.html" title="CPVisualEffectView" alt="" coords="125,819,263,844"/>
+<area shape="rect" id="node42" href="$interface_c_p_web_view.html" title="CPWebView" alt="" coords="146,868,242,893"/>
+<area shape="rect" id="node8" href="$interface_c_p_browser.html" title="CPBrowser" alt="" coords="345,29,434,55"/>
+<area shape="rect" id="node9" href="$interface_c_p_button.html" title="CPButton" alt="" coords="351,79,429,104"/>
+<area shape="rect" id="node14" href="$interface_c_p_color_well.html" title="CPColorWell" alt="" coords="341,128,438,153"/>
+<area shape="rect" id="node15" href="$interface_c_p_date_picker.html" title="CPDatePicker" alt="" coords="337,177,442,203"/>
+<area shape="rect" id="node16" href="$interface_c_p_image_view.html" title="CPImageView" alt="" coords="337,227,443,252"/>
+<area shape="rect" id="node17" href="$interface_c_p_level_indicator.html" title="CPLevelIndicator" alt="" coords="328,276,451,301"/>
+<area shape="rect" id="node18" href="$interface_c_p_rule_editor.html" title="A view for creating and configuring criteria. " alt="" coords="339,325,441,351"/>
+<area shape="rect" id="node20" href="$interface_c_p_scroller.html" title="CPScroller" alt="" coords="347,375,432,400"/>
+<area shape="rect" id="node21" href="$interface_c_p_segmented_control.html" title="CPSegmentedControl" alt="" coords="314,424,465,449"/>
+<area shape="rect" id="node22" href="$interface_c_p_slider.html" title="CPSlider" alt="" coords="353,473,427,499"/>
+<area shape="rect" id="node23" href="$interface_c_p_stepper.html" title="CPStepper" alt="" coords="346,523,433,548"/>
+<area shape="rect" id="node24" href="$interface_c_p_table_view.html" title="CPTableView" alt="" coords="340,572,440,597"/>
+<area shape="rect" id="node26" href="$interface_c_p_text_field.html" title="CPTextField" alt="" coords="343,645,436,671"/>
+<area shape="rect" id="node10" href="$interface_c_p_check_box.html" title="CPCheckBox" alt="" coords="533,5,634,31"/>
+<area shape="rect" id="node11" href="$interface_c_p_disclosure_button.html" title="CPDisclosureButton" alt="" coords="513,55,654,80"/>
+<area shape="rect" id="node12" href="$interface_c_p_pop_up_button.html" title="CPPopUpButton" alt="" coords="524,104,643,129"/>
+<area shape="rect" id="node13" href="$interface_c_p_radio.html" title="CPRadio" alt="" coords="546,153,621,179"/>
+<area shape="rect" id="node19" href="$interface_c_p_predicate_editor.html" title="CPPredicateEditor" alt="" coords="518,325,649,351"/>
+<area shape="rect" id="node25" href="$interface_c_p_outline_view.html" title="CPOutlineView" alt="" coords="528,547,639,572"/>
+<area shape="rect" id="node27" href="$interface_c_p_combo_box.html" title="CPComboBox" alt="" coords="531,596,636,621"/>
+<area shape="rect" id="node28" href="$interface_c_p_search_field.html" title="CPSearchField" alt="" coords="528,645,639,671"/>
+<area shape="rect" id="node29" href="$interface_c_p_secure_text_field.html" title="CPSecureTextField" alt="" coords="516,695,651,720"/>
+<area shape="rect" id="node30" href="$interface_c_p_token_field.html" title="CPTokenField" alt="" coords="531,744,636,769"/>
+<area shape="rect" id="node40" href="$interface_c_p_text_view.html" title="CPTextView" alt="" coords="343,769,436,795"/>
+</map>

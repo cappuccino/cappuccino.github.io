@@ -2,8 +2,8 @@
  * Jakefile
  * NewApplication
  *
- * Created by You on March 29, 2015.
- * Copyright 2015, Your Company All rights reserved.
+ * Created by You on September 10, 2018.
+ * Copyright 2018, Your Company All rights reserved.
  */
 
 var ENV = require("system").env,
@@ -38,9 +38,9 @@ app (projectName, function(task)
     task.setInfoPlistPath("Info.plist");
 
     if (configuration === "Debug")
-        task.setCompilerFlags("-DDEBUG -g");
+        task.setCompilerFlags("-DDEBUG -g -S --inline-msg-send");
     else
-        task.setCompilerFlags("-O");
+        task.setCompilerFlags("-O2");
 });
 
 task ("default", [projectName], function()

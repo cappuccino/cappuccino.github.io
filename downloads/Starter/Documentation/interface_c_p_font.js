@@ -1,8 +1,8 @@
 var interface_c_p_font =
 [
     [ "ascender", "interface_c_p_font.html#a3f08ec7c8da438daccfec1a2ad00cece", null ],
-    [ "boldFontWithName:size:", "interface_c_p_font.html#ad07cba707ca28895d8483750bc1fd022", null ],
-    [ "boldFontWithName:size:italic:", "interface_c_p_font.html#a55860bf501dd25224db8462504b380c5", null ],
+    [ "boldFontWithName:size:", "interface_c_p_font.html#a6eb95a5ede5325443a80cc96c9eaa9bc", null ],
+    [ "boldFontWithName:size:italic:", "interface_c_p_font.html#a5de7a4a8951125fd7af25aa331063584", null ],
     [ "boldSystemFontOfSize:", "interface_c_p_font.html#ac327fc231b12558933066ec1d61cb06b", null ],
     [ "copy", "interface_c_p_font.html#a4dfb35bd00f48da07a6caff3ea9b84f6", null ],
     [ "cssString", "interface_c_p_font.html#ade1d8ffe91cab2427fdd35472a58795d", null ],
@@ -11,8 +11,10 @@ var interface_c_p_font =
     [ "description", "interface_c_p_font.html#a5cb7be6944eb5a89ac7fecc145b0bad1", null ],
     [ "encodeWithCoder:", "interface_c_p_font.html#acda49a2bd0ad9f80178cea821b2fb133", null ],
     [ "familyName", "interface_c_p_font.html#ab35d92321459af4cbde82104599ac195", null ],
-    [ "fontWithName:size:", "interface_c_p_font.html#a7743052c1b5925a47efb49080b4864b6", null ],
-    [ "fontWithName:size:italic:", "interface_c_p_font.html#ab07143b6e0a526cb5a3cc1b00f8015ab", null ],
+    [ "fontDescriptor", "interface_c_p_font.html#adfca15cb2b481d32de22973a2d79b938", null ],
+    [ "fontWithDescriptor:size:", "interface_c_p_font.html#ab0b7db4675828cf146dc3fc430f4e9d6", null ],
+    [ "fontWithName:size:", "interface_c_p_font.html#a256ea53c38f685fbf2f12ef595e5cb23", null ],
+    [ "fontWithName:size:italic:", "interface_c_p_font.html#a1adec1760fc973b720ce7e79c12e7629", null ],
     [ "initialize", "interface_c_p_font.html#a457b2d497f2092b421f757afed595e4c", null ],
     [ "initWithCoder:", "interface_c_p_font.html#a621005e8a94771c909648a571e3c10cb", null ],
     [ "isBold", "interface_c_p_font.html#a882f794ffce256808965669c49993acf", null ],

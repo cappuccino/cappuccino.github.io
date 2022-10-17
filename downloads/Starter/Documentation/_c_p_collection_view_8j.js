@@ -1,6 +1,6 @@
 var _c_p_collection_view_8j =
 [
-    [ "<CPCollectionViewDelegate>", "protocol_c_p_collection_view_delegate-p.html", "protocol_c_p_collection_view_delegate-p" ],
+    [ "<CPCollectionViewDelegate >", "protocol_c_p_collection_view_delegate_01-p.html", "protocol_c_p_collection_view_delegate_01-p" ],
     [ "CPCollectionViewAllowsMultipleSelectionKey", "_c_p_collection_view_8j.html#a6f5e8f1cf64010a5c736379a9b369173", null ],
     [ "CPCollectionViewBackgroundColorsKey", "_c_p_collection_view_8j.html#ac4545fc81a9a800b0fad4771ebad798e", null ],
     [ "CPCollectionViewDelegate_collectionView_acceptDrop_index_dropOperation_", "_c_p_collection_view_8j.html#a6f5f6ff6b174dde45b04c07b3be91b14", null ],
@@ -18,5 +18,5 @@ var _c_p_collection_view_8j =
     [ "CPCollectionViewMinItemSizeKey", "_c_p_collection_view_8j.html#a441f38bb0b93ea62e27bd64e878b7b8c", null ],
     [ "CPCollectionViewSelectableKey", "_c_p_collection_view_8j.html#a4a21b2b086e445a2955b744347c3402a", null ],
     [ "CPCollectionViewVerticalMarginKey", "_c_p_collection_view_8j.html#a5fb05760157ca2a6150194f015684fb1", null ],
-    [ "HORIZONTAL_MARGIN", "_c_p_collection_view_8j.html#ga003be77c7cea09b503b8cfff73aef3b2", null ]
+    [ "HORIZONTAL_MARGIN", "_c_p_collection_view_8j.html#a003be77c7cea09b503b8cfff73aef3b2", null ]
 ];

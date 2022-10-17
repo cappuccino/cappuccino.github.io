@@ -1,9 +1,0 @@
-digraph "Foundation.doc/CPPredicate" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_09d74b6bee122a43a4672bd91fa2871b {
-    graph [ bgcolor="#ddddee", pencolor="black", label="Foundation.doc" fontname="Helvetica", fontsize="10", URL="dir_09d74b6bee122a43a4672bd91fa2871b.html"]
-  dir_b9e73f3b5f2e8b115b66e396be1b386e [shape=box, label="CPPredicate", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_b9e73f3b5f2e8b115b66e396be1b386e.html"];
-  }
-}

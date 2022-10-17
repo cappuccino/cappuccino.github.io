@@ -1,18 +1,18 @@
 var globals_func =
 [
     [ "a", "globals_func.html", null ],
-    [ "b", "globals_func_0x62.html", null ],
-    [ "c", "globals_func_0x63.html", null ],
-    [ "d", "globals_func_0x64.html", null ],
-    [ "e", "globals_func_0x65.html", null ],
-    [ "f", "globals_func_0x66.html", null ],
-    [ "h", "globals_func_0x68.html", null ],
-    [ "i", "globals_func_0x69.html", null ],
-    [ "l", "globals_func_0x6c.html", null ],
-    [ "n", "globals_func_0x6e.html", null ],
-    [ "o", "globals_func_0x6f.html", null ],
-    [ "p", "globals_func_0x70.html", null ],
-    [ "r", "globals_func_0x72.html", null ],
-    [ "s", "globals_func_0x73.html", null ],
-    [ "t", "globals_func_0x74.html", null ]
+    [ "b", "globals_func_b.html", null ],
+    [ "c", "globals_func_c.html", null ],
+    [ "d", "globals_func_d.html", null ],
+    [ "e", "globals_func_e.html", null ],
+    [ "f", "globals_func_f.html", null ],
+    [ "h", "globals_func_h.html", null ],
+    [ "i", "globals_func_i.html", null ],
+    [ "l", "globals_func_l.html", null ],
+    [ "n", "globals_func_n.html", null ],
+    [ "o", "globals_func_o.html", null ],
+    [ "p", "globals_func_p.html", null ],
+    [ "r", "globals_func_r.html", null ],
+    [ "s", "globals_func_s.html", null ],
+    [ "t", "globals_func_t.html", null ]
 ];

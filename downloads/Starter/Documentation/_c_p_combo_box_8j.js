@@ -1,7 +1,7 @@
 var _c_p_combo_box_8j =
 [
-    [ "<CPComboBoxDataSource>", "protocol_c_p_combo_box_data_source-p.html", "protocol_c_p_combo_box_data_source-p" ],
-    [ "<CPComboBoxDelegate>", "protocol_c_p_combo_box_delegate-p.html", "protocol_c_p_combo_box_delegate-p" ],
+    [ "<CPComboBoxDataSource >", "protocol_c_p_combo_box_data_source_01-p.html", "protocol_c_p_combo_box_data_source_01-p" ],
+    [ "<CPComboBoxDelegate >", "protocol_c_p_combo_box_delegate_01-p.html", "protocol_c_p_combo_box_delegate_01-p" ],
     [ "CPComboBoxButtonBorderedKey", "_c_p_combo_box_8j.html#a802374a82704da7aafeaa2fbe0cf354a", null ],
     [ "CPComboBoxButtonSubview", "_c_p_combo_box_8j.html#ae45e433c5b9db3f7fec5b515c9534f6a", null ],
     [ "CPComboBoxCompletesKey", "_c_p_combo_box_8j.html#afb60748fd966dedcf02239e35ca5e79a", null ],

@@ -1,6 +1,6 @@
 var _c_p_menu_8j =
 [
-    [ "<CPMenuDelegate>", "protocol_c_p_menu_delegate-p.html", "protocol_c_p_menu_delegate-p" ],
+    [ "<CPMenuDelegate >", "protocol_c_p_menu_delegate_01-p.html", "protocol_c_p_menu_delegate_01-p" ],
     [ "CPMenuAutoEnablesItemsKey", "_c_p_menu_8j.html#a328b5f0d835720b32a1d736d763a6dd5", null ],
     [ "CPMenuDelegate_menuDidClose_", "_c_p_menu_8j.html#ada264e0958c3c7d4575e405bd18aeb94", null ],
     [ "CPMenuDelegate_menuWillOpen_", "_c_p_menu_8j.html#a1fc79a85f6d79ae9d36e91482b250db7", null ],

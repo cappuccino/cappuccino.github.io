@@ -5,8 +5,8 @@
 <title>Cappuccino - Advanced: Install from Source</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link href="/img/favicon.ico" rel="shortcut icon">
-<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
 <link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
 </head>
 <body class="file-build-source-html folder-learn">
@@ -86,7 +86,19 @@
 <a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
 </li>
 <li>
+<a href="/learn/simple-tableview.html">Tutorial: Simple Table View</a>
+</li>
+<li>
+<a href="/learn/simple-outlineview.html">Tutorial: Simple Outline View</a>
+</li>
+<li>
 <a href="/learn/debugging.html">Debugging</a>
+</li>
+<li>
+<a href="/learn/ojtest.html">Testing with OJTest</a>
+</li>
+<li>
+<a href="/learn/cucapp.html">Testing with Cucapp</a>
 </li>
 </ul>
 <h5>Resources</h5>
@@ -106,7 +118,7 @@
 <h3>
 Advanced: Install from Source
 </h3>
-<p>This is an optional section. It is not necessary to build Cappuccino from source just to write a basic app - the starter package already contains a ready to go version of Cappuccino. You can read about how to get started with the starter package in ’<a href="/learn/starter.html">Get Started</a>’.</p>
+<p>This is an optional section. It is not necessary to build Cappuccino from source just to write a basic app - the starter package already contains a ready to go version of Cappuccino. You can read about how to get started with the starter package in ‘<a href="/learn/starter.html">Get Started</a>’.</p>
 
 <p>You should install Cappuccino from source if you need:</p>
 
@@ -120,13 +132,29 @@ Advanced: Install from Source
 
 <h5>Get Developers Tools (Mac OS X only)</h5>
 
-<p>In order to use Xcode’s Interface Builder, and to compile Cappuccino itself, you need the Mac developer tools installed. You can get the latest version from the <a href="http://itunes.apple.com/en/app/xcode/id448457090">AppStore for free</a>. Xcode 4 is the current version, but Xcode 3 is (probably) still usable.</p>
+<p>In order to use Xcode’s Interface Builder, and to compile Cappuccino itself, you need the Mac developer tools installed. You can get the latest version from the <a href="http://itunes.apple.com/en/app/xcode/id448457090">AppStore for free</a>. Xcode 11 is the current version.</p>
+
+<h6>autoconf</h6>
+
+<p>Apple no longer includes autoconf in the developer tools. You can check if you have it by entering the following command in your Terminal:</p>
+
+<div class="highlight"><pre><span class="c"># autoconf --version</span>
+autoconf <span class="o">(</span>GNU Autoconf<span class="o">)</span> 2.69
+</pre></div>
+
+<p>If you don’t have it you can get it installed via Homebrew:</p>
+
+<pre>::bash
+# brew install autoconf
+</pre>
+
+<p>More info here: <a href="https://superuser.com/questions/383580/how-to-install-autoconf-automake-and-related-tools-on-mac-os-x-from-source">How to install autoconf</a></p>
 
 <h5>Install Git</h5>
 
 <p>If you wish to install the Cappuccino sources you’ll need the source control management software Git.</p>
 
-<p>Git is included with Xcode 4. You can check you have it by entering the following command in your Terminal:</p>
+<p>Git has been included in the developer tools since Xcode 4. You can check you have it by entering the following command in your Terminal:</p>
 
 <div class="highlight"><pre><span class="c"># git --version</span>
 git version 1.7.4.4
@@ -181,7 +209,7 @@ should say “yes”.</p>
  
 ================================================================================
  
-                                 Version 0.9.6
+                                 Version 0.9.8
  
  
                          http://cappuccino-project.org
@@ -218,7 +246,7 @@ Enter "yes" or "no":
 
 <pre>You must add Cappuccino's "bin" directory to your PATH environment variable.
 Do this automatically now?
-    "export PATH="/usr/local/narwhal/bin:$PATH"" will be appended to "/root/.bashrc".
+    "export PATH="/usr/local/narwhal/bin:$PATH"" will be appended to "~/.profile".
 Enter "yes" or "no":
 =&gt; yes [ENTER]
 </pre>
@@ -229,12 +257,12 @@ Enter "yes" or "no":
 Before building Cappuccino we recommend you set the $CAPP_BUILD environment
 variable to a path where you wish to build Cappuccino. This can be automatically
 set to the default value of "/root/Build", or you can set $CAPP_BUILD yourself.
-    "export CAPP_BUILD="/root/Build"" will be appended to "/root/.bashrc".
+    "export CAPP_BUILD="/root/Build"" will be appended to "~/.profile".
 Enter "yes" or "no":
 =&gt; yes [ENTER]
 </pre>
 
-<p>Finally, you will get:</p>
+<p>There will be some warnings when building narwhal, but these are mostly harmless. Finally, you will get:</p>
 
 <pre>================================================================================
 Bootstrapping of Cappuccino and other required tools is complete.
@@ -243,9 +271,9 @@ you restart the shell.
 </pre>
 
 <p>Forget about restarting the shell, we are adults, just re-source
-the <code>.bash_profile</code> or <code>.bashrc</code>:</p>
+the <code>.profile</code> or <code>.bashrc</code>:</p>
 
-<pre>source ~/.bash_profile
+<pre>source ~/.profile
 </pre>
 
 <p>or</p>
@@ -285,7 +313,7 @@ capp [--version] COMMAND [OPTIONS] [ARGS]
 [...]
 </pre>
 
-<p>Again, if you get a “command not found” error, please use the <a href="http://groups.google.com/group/objectivej">mailing list</a>, or join us on our IRC channel at <a href="irc://irc.freenode.net/#cappuccino">irc://irc.freenode.net/#cappuccino</a> and ask for help.</p>
+<p>Again, if you get a “command not found” error, please use the <a href="http://groups.google.com/group/objectivej">mailing list</a>, or join us on our <a href="https://gitter.im/cappuccino/cappuccino">gitter</a> and ask for help.</p>
 
 <h5>Wait! Don’t forget the documentation!</h5>
 
@@ -296,7 +324,7 @@ capp [--version] COMMAND [OPTIONS] [ARGS]
 
 <p>This should also work with the HomeBrew version of Doxygen. But at the moment, the provided formula seems to have problems, so you may prefer the GUI Application. If you have no idea what we are talking about, no worries. You can view the documentation <a href="/learn/documentation">right here</a>.</p>
 
-<p>If you want the documentation to generate the images representing the class graphs, you need to install <code>graphviz</code>, a utility which provides <code>dot</code>. On the Mac you can use <a href="http://mxcl.github.com/homebrew/">HomeBrew</a>. Note this
+<p>If you want the documentation to generate the images representing the class graphs, you need to install <code>graphviz</code>, a utility which provides <code>dot</code>. On the Mac you can use <a href="http://brew.sh/">HomeBrew</a>. Note this
 is optional.</p>
 
 <p>Once built, you can open the documentation using the following command:</p>
@@ -347,15 +375,16 @@ Learning Objective-J
 <a href="/contribute.html#bug-reports">Bug reports</a>
 <a href="https://github.com/cappuccino/cappuccino">Source code</a>
 <a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
 </div>
 <div class="span2">
 <h4>Get Answers</h4>
 <a href="/support/">Support</a>
 <a href="http://groups.google.com/group/objectivej">Mailing list</a>
 <a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
-<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
 <a href="/blog/">Blog</a>
 <a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
 </div>
 </div>
 </div>
@@ -379,7 +408,7 @@ Learning Objective-J
 </a>
 </div>
 <div class="span8 copyright2">
-<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="https://pages.github.com">GithubPages</a>. Copyright © 2013 - Cappuccino Project.</p>
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
 </div>
 <div class="pull-right forkme">
 <p>
@@ -390,7 +419,7 @@ Learning Objective-J
 
 </div>
 </div>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="/js/bootstrap.min-f6d9c45d.js"></script>
 <script src="/js/theme-09250c02.js"></script>
 </body>

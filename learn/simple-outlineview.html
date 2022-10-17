@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cappuccino - Tutorial: Simple Outline View</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="/img/favicon.ico" rel="shortcut icon">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
+</head>
+<body class="file-simple-outlineview-html folder-learn">
+<a class="scrolltop" href="#">
+<span>up</span>
+</a>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="/">
+<img alt="logo" src="/img/cappuccino-website-logo-333bd6a0.png">
+</a>
+<div class="nav-collapse collapse">
+<ul class="nav pull-right">
+<li>
+<a class="scroller" href="/#features">Features</a>
+</li>
+<li>
+<a class="scroller" href="/downloads.html#download">Download</a>
+</li>
+<li>
+<a href="/learn/">Learn</a>
+</li>
+<li>
+<a href="/contribute.html">Contribute</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a href="/learn/documentation/">API</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="container learn">
+<h2 class="section_header">
+<hr class="left visible-desktop">
+<span>Learn</span>
+<hr class="right visible-desktop">
+</h2>
+<div class="row">
+<div class="span3">
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/">What is Cappuccino?</a>
+</li>
+<li>
+<a href="/learn/environment.html">Your development environment</a>
+</li>
+<li>
+<a href="/learn/starter.html">Get Started</a>
+</li>
+<li>
+<a href="/learn/build-source.html">Advanced: Install from Source</a>
+</li>
+<li>
+<a href="/learn/objective-j.html">Learning Objective-J</a>
+</li>
+<li>
+<a href="/learn/scrapbook-1.html">Scrapbook #1 - Views and Layers</a>
+</li>
+<li>
+<a href="/learn/scrapbook-2.html">Scrapbook #2 - Drag and Drop</a>
+</li>
+<li>
+<a href="/learn/automatic-layout.html">Tutorial: Automatic Layout</a>
+</li>
+<li>
+<a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
+</li>
+<li>
+<a href="/learn/simple-tableview.html">Tutorial: Simple Table View</a>
+</li>
+<li class="active">
+<a href="/learn/simple-outlineview.html">Tutorial: Simple Outline View</a>
+</li>
+<li>
+<a href="/learn/debugging.html">Debugging</a>
+</li>
+<li>
+<a href="/learn/ojtest.html">Testing with OJTest</a>
+</li>
+<li>
+<a href="/learn/cucapp.html">Testing with Cucapp</a>
+</li>
+</ul>
+<h5>Resources</h5>
+<ul class="nav nav-tabs nav-stacked">
+<li>
+<a href="/learn/demos.html">Demos</a>
+</li>
+<li>
+<a href="/learn/documentation/">API Documentation</a>
+</li>
+<li>
+<a href="/support/faq.html">FAQ</a>
+</li>
+</ul>
+</div>
+<div class="span9 text-body markdown">
+<h3>
+Tutorial: Simple Outline View
+</h3>
+<p>In this tutorial we will create a simple view-based outline view. <code>CPOutlineView</code> displays data in hierarchical format. You might know it as a ‘tree’ view from other frameworks. Although <code>CPOutlineView</code> is a subclass of <code>CPTableView</code> and inherits the row and column format, you use it in a slightly different way. </p>
+
+<p>In this tutorial we will create an organisation chart of a company with the ability to expand and collapse items.</p>
+
+<p><img width="3354" height="1948" src="/img/simpleoutlineview/simpleoutlineview-917b048f.png"></p>
+
+<h3>Create the project</h3>
+
+<p>We will start out the same was as in the table view tutorial. First, go to the folder in which you want create the project and run:</p>
+
+<div class="highlight"><pre>capp gen -l -t NibApplication SimpleOutlineView
+</pre></div>
+
+<p>This will generate an empty new project using the Nib template.</p>
+
+<h3>Code</h3>
+
+<p>To keep our code organized, we will create our data source model in a separate file. We want to structure our code according to the MVC pattern. In <code>Employee.j</code>:</p>
+
+<div class="highlight"><pre><span class="cp">@import</span> <span class="s2">&lt;Foundation/CPObject.j&gt;</span>
+
+<span class="k">@implementation</span> <span class="nc">Employee</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="n">CPString</span>       <span class="n">_name</span>      <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">name</span><span class="p">);</span>
+    <span class="n">CPString</span>       <span class="n">_title</span>     <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">title</span><span class="p">);</span>
+    <span class="n">CPMutableArray</span> <span class="n">_employees</span> <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">employees</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">initWithName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aName <span class="nf">title:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aTitle
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">])</span>
+    <span class="p">{</span>
+        <span class="n">_name</span> <span class="o">=</span> <span class="n">aName</span><span class="p">;</span>
+        <span class="n">_title</span> <span class="o">=</span> <span class="n">aTitle</span><span class="p">;</span>
+        <span class="n">_employees</span> <span class="o">=</span> <span class="p">[</span><span class="n">CPMutableArray</span> <span class="n">array</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
+</pre></div>
+
+<p>Open up <code>AppController.j</code> and add the import for our new file:</p>
+
+<div class="highlight"><pre><span class="cp">@import</span> <span class="s2">"Employee.j"</span>
+</pre></div>
+
+<p>While we’re in the app controller, let’s add a var to hold our Employee model and some outlets.</p>
+
+<div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
+<span class="p">{</span>
+    <span class="kt">@outlet</span> <span class="n">CPWindow</span>        <span class="n">theWindow</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="n">CPOutlineView</span>   <span class="n">outlineView</span><span class="p">;</span>
+    <span class="n">Employee</span>                <span class="n">_ceo</span><span class="p">;</span> <span class="c1">// This will hold our root item</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Use a Cappuccino bordered window for this tutorial by sending <code>setFullPlatformWindow:NO</code> in the <code>awakeFromCib</code> method:</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">awakeFromCib</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">setFullPlatformWindow</span><span class="o">:</span><span class="kc">NO</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>In the <code>init</code> method we will define the data source using our Employee model.</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">init</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">])</span>
+    <span class="p">{</span>
+
+        <span class="c1">// First we create our root item, the CEO.</span>
+        <span class="n">_ceo</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Employee</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithName</span><span class="o">:</span><span class="s">"Ben"</span> <span class="n">title</span><span class="o">:</span><span class="s">"CEO"</span><span class="p">];</span>
+
+        <span class="c1">// Then we create other employees and add them under their respective managers.</span>
+        <span class="kd">var</span> <span class="n">simon</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Employee</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithName</span><span class="o">:</span><span class="s">"Simon"</span> <span class="n">title</span><span class="o">:</span><span class="s">"CFO"</span><span class="p">];</span>
+
+        <span class="c1">// We have an array called 'employees' in our Employee class, to represent who reports to whom.</span>
+        <span class="c1">// Simon reports directly to the CEO:</span>
+        <span class="p">[[</span><span class="n">_ceo</span> <span class="n">employees</span><span class="p">]</span> <span class="n">addObject</span><span class="o">:</span><span class="n">simon</span><span class="p">];</span>
+
+        <span class="kd">var</span> <span class="n">sarah</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Employee</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithName</span><span class="o">:</span><span class="s">"Sarah"</span> <span class="n">title</span><span class="o">:</span><span class="s">"Assistant to CFO"</span><span class="p">];</span>
+        <span class="c1">// Sarah reports to Simon.</span>
+        <span class="p">[[</span><span class="n">simon</span> <span class="n">employees</span><span class="p">]</span> <span class="n">addObject</span><span class="o">:</span><span class="n">sarah</span><span class="p">];</span>
+
+        <span class="kd">var</span> <span class="n">maarten</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Employee</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithName</span><span class="o">:</span><span class="s">"Maarten"</span> <span class="n">title</span><span class="o">:</span><span class="s">"VP of Marketing"</span><span class="p">];</span>
+        <span class="p">[[</span><span class="n">_ceo</span> <span class="n">employees</span><span class="p">]</span> <span class="n">addObject</span><span class="o">:</span><span class="n">maarten</span><span class="p">];</span>
+
+        <span class="kd">var</span> <span class="n">donny</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Employee</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithName</span><span class="o">:</span><span class="s">"Donny"</span> <span class="n">title</span><span class="o">:</span><span class="s">"Head of Communication"</span><span class="p">];</span>
+        <span class="p">[[</span><span class="n">maarten</span> <span class="n">employees</span><span class="p">]</span> <span class="n">addObject</span><span class="o">:</span><span class="n">donny</span><span class="p">];</span>
+
+        <span class="kd">var</span> <span class="n">ronan</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Employee</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithName</span><span class="o">:</span><span class="s">"Ronan"</span> <span class="n">title</span><span class="o">:</span><span class="s">"Communication Specialist"</span><span class="p">];</span>
+        <span class="p">[[</span><span class="n">donny</span> <span class="n">employees</span><span class="p">]</span> <span class="n">addObject</span><span class="o">:</span><span class="n">ronan</span><span class="p">];</span>
+
+        <span class="kd">var</span> <span class="n">dick</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Employee</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithName</span><span class="o">:</span><span class="s">"Dick"</span> <span class="n">title</span><span class="o">:</span><span class="s">"Head of Legal"</span><span class="p">];</span>
+        <span class="p">[[</span><span class="n">_ceo</span> <span class="n">employees</span><span class="p">]</span> <span class="n">addObject</span><span class="o">:</span><span class="n">dick</span><span class="p">];</span>
+
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Our next stop is the <a href="http://www.cappuccino-project.org/learn/documentation/interface_c_p_outline_view.html">oultine view documentation</a> to see what methods we need to provide data.</p>
+
+<ul>
+<li><code>(int)outlineView:(CPOutlineView)outlineView numberOfChildrenOfItem:(id)item;</code></li>
+</ul>
+
+<p>Returns the number of child items of a given item. If item is nil you should return the number of top level (root) items.</p>
+
+<ul>
+<li><code>(BOOL)outlineView:(CPOutlineView)outlineView isItemExpandable:(id)item;</code></li>
+</ul>
+
+<p>Returns YES if the item is expandable, otherwise NO.</p>
+
+<ul>
+<li><code>(id)outlineView:(CPOutlineView)outlineView child:(CPInteger)index ofItem:(id)item;</code></li>
+</ul>
+
+<p>Returns the child item at an index of a given item. If item is nil you should return the appropriate root item.</p>
+
+<ul>
+<li><code>(id)outlineView:(CPOutlineView)outlineView objectValueForTableColumn:(CPTableColumn)tableColumn byItem:(id)item;</code></li>
+</ul>
+
+<p>Returns the object value of the item in a given column.</p>
+
+<h4>Implementing the methods</h4>
+
+<p>The easiest method to implement is <code>numberOfChildrenOfItem</code>.</p>
+
+<p>The <code>item</code> will be nil when the outline view is asking about the root. In all other cases, we will be interested in how many “child nodes” the current item has. Recall that above we stored the children of each employee in the <code>employees</code> array. </p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="nf">outlineView:</span><span class="p">(</span><span class="kt">CPOutlineView</span><span class="p">)</span>outlineView <span class="nf">numberOfChildrenOfItem:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>item
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// We have one root item, the CEO only</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">[[</span><span class="n">item</span> <span class="n">employees</span><span class="p">]</span> <span class="n">count</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>The next step is to signal whether the item has subitems. Such items will be expandable in the outline view.</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">outlineView:</span><span class="p">(</span><span class="kt">CPOutlineView</span><span class="p">)</span>outlineView <span class="nf">isItemExpandable:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>item
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">YES</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">[[</span><span class="n">item</span> <span class="n">employees</span><span class="p">]</span> <span class="n">count</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>The next method is to provide the child items at a certain point in the tree. If <code>item</code> is nil, we are being asked about the child items of the root.</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">outlineView:</span><span class="p">(</span><span class="kt">CPOutlineView</span><span class="p">)</span>outlineView <span class="nf">child:</span><span class="p">(</span><span class="kt">CPInteger</span><span class="p">)</span>index <span class="nf">ofItem:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>item
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Our root item is the CEO</span>
+        <span class="k">return</span> <span class="n">ceo</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">item</span> <span class="n">employees</span><span class="p">][</span><span class="n">index</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Finally, we need to provide the object values of the actual columns for a given item. Our first column is called “NameColumn” and the second is “TitleColumn”. We will set up these names later in the Interface Builder.</p>
+
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">outlineView:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>anOutlineView <span class="nf">viewForTableColumn:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>tableColumn <span class="nf">item:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>items
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="n">identifier</span> <span class="o">=</span> <span class="p">[</span><span class="n">tableColumn</span> <span class="n">identifier</span><span class="p">];</span>
+
+    <span class="kd">var</span> <span class="n">view</span> <span class="o">=</span> <span class="p">[</span><span class="n">outlineView</span> <span class="n">makeViewWithIdentifier</span><span class="o">:</span><span class="s">"NameCell"</span> <span class="n">owner</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">identifier</span> <span class="o">==</span> <span class="s">"NameColumn"</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="p">[[</span><span class="n">view</span> <span class="n">textField</span><span class="p">]</span> <span class="n">setStringValue</span><span class="o">:</span><span class="p">[</span><span class="n">item</span> <span class="n">name</span><span class="p">]];</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="kd">var</span> <span class="n">view</span> <span class="o">=</span> <span class="p">[</span><span class="n">outlineView</span> <span class="n">makeViewWithIdentifier</span><span class="o">:</span><span class="s">"TitleCell"</span> <span class="n">owner</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+        <span class="p">[[</span><span class="n">view</span> <span class="n">textField</span><span class="p">]</span> <span class="n">setStringValue</span><span class="o">:</span><span class="p">[</span><span class="n">item</span> <span class="n">title</span><span class="p">]];</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">view</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3>Clean up the nib</h3>
+
+<p>Open up the main window by double clicking Window - Window in the Object navigator.
+<img width="3360" height="1948" src="/img/simpleoutlineview/simpleoutlineview2-1d0fdb9d.png"></p>
+
+<p>By default, there is a text field and a slider. Select and remove them (using the Delete key).</p>
+
+<h3>Creating the new interface</h3>
+
+<p>Choose “Outline View” from the Object Library.
+<img width="3360" height="1948" src="/img/simpleoutlineview/simpleoutlineview3-1c894f47.png"></p>
+
+<p>Drag and Drop an Outline View onto the Window.
+<img width="3360" height="1948" src="/img/simpleoutlineview/simpleoutlineview4-4a3c0483.png"></p>
+
+<p>By dragging the right corner of Outline View, resize it to fill the Window.
+<img width="3360" height="1948" src="/img/simpleoutlineview/simpleoutlineview5-821c285f.png"></p>
+
+<p>Remember that in the <code>(id)outlineView:(id)outlineView viewForTableColumn:(id)tableColumn item:(id)item</code> method we used both the table column identifier and the view identifier. Where do those come from? We’re going to add them right now.</p>
+
+<p>Choose the Outline View from the Document Outline. Expand the items until you reach Table Column. Now, click on Identity Inspector on the top right side of the Xcode and set the Identifier to “NameColumn”.
+<img width="3360" height="1948" src="/img/simpleoutlineview/simpleoutlineview6-1ed2c185.png"></p>
+
+<p>Repeat the same for the second column, and set its Identifier to “TitleColumn”.
+<img width="3360" height="1948" src="/img/simpleoutlineview/simpleoutlineview7-8c20e30c.png"></p>
+
+<p>Expand the NameColumn and add “NameCell” as the Table Cell View’s Identifier.
+<img width="3360" height="1948" src="/img/simpleoutlineview/simpleoutlineview8-4bdb25ce.png"></p>
+
+<p>Do the same for TitleColumn with “TitleCell”.
+<img width="3360" height="1948" src="/img/simpleoutlineview/simpleoutlineview9-2b34ad33.png"></p>
+
+<p>Double click on the Header of the Ouline View, and set its “Name” and “Title”.
+<img width="3360" height="1948" src="/img/simpleoutlineview/simpleoutlineview10-698a5f8b.png">
+<img width="3360" height="1948" src="/img/simpleoutlineview/simpleoutlineview11-a049aece.png"></p>
+
+<p>Before testing our new application, there is one more thing left: connect the Outline View to our <code>AppDelegate</code>.
+<img width="3357" height="1954" src="/img/simpleoutlineview/simpleoutlineviewdatasource-2b81286e.png">
+<img width="3357" height="1954" src="/img/simpleoutlineview/simpleoutlineviewdelegate-958aded7.png">
+<img width="3357" height="1954" src="/img/simpleoutlineview/simpleoutlineviewoutlet-fd37f645.png"></p>
+
+<p>As usual the best way to run a Cappuccino app for testing is to start a local webserver. So in the root of your project folder, type:</p>
+
+<div class="highlight"><pre>python -m SimpleHTTPServer
+</pre></div>
+
+<p>Now, open your browser and type in the address given by SimpleHTTPServer: <code>localhost:8000</code>.
+<img width="3354" height="1948" src="/img/simpleoutlineview/simpleoutlineview-917b048f.png"></p>
+
+<p>Now, you have a fully functioning application!</p>
+
+<h3>Source</h3>
+
+<p>You can download the archive of this project <a href="/learn/files/SimpleOutlineView.zip">here</a>.</p>
+
+</div>
+</div>
+<div class="row">
+<div class="offset3 span9">
+<div class="learn-nav">
+<ul class="pager">
+<li class="previous">
+<a href="/learn/simple-tableview.html">← Return to '
+Tutorial: Simple Table View
+'
+</a>
+</li>
+<li class="next">
+<a href="/learn/debugging.html">Continue to '
+Debugging
+' →
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6 links">
+<h3>Links</h3>
+<div class="row">
+<div class="span2">
+<h4>Get Started</h4>
+<a href="/#features">Features</a>
+<a href="/learn/">Tutorials</a>
+<a href="/downloads.html">Download</a>
+<a href="/learn/documentation/">API Docs</a>
+</div>
+<div class="span2">
+<h4>Contribute</h4>
+<a></a>
+<a href="/contribute.html#bug-reports">Bug reports</a>
+<a href="https://github.com/cappuccino/cappuccino">Source code</a>
+<a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
+</div>
+<div class="span2">
+<h4>Get Answers</h4>
+<a href="/support/">Support</a>
+<a href="http://groups.google.com/group/objectivej">Mailing list</a>
+<a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
+<a href="/blog/">Blog</a>
+<a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
+</div>
+</div>
+</div>
+<div class="span6 stats">
+<h3>Project Stats</h3>
+<div class="row">
+<div class="span2">
+<h4>Build</h4>
+<a href="https://travis-ci.org/cappuccino/cappuccino"><img src="https://travis-ci.org/cappuccino/cappuccino.png?branch=master">
+</a>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="row copyright">
+<div class="span2">
+<h3>Social</h3>
+<a class="social tw" href="https://twitter.com/cappuccino">
+<i class="i_twitter"></i>
+</a>
+</div>
+<div class="span8 copyright2">
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
+</div>
+<div class="pull-right forkme">
+<p>
+<a href="https://github.com/cappuccino/cappuccino.org">Fork and edit this site.</a>
+</p>
+</div>
+</div>
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min-f6d9c45d.js"></script>
+<script src="/js/theme-09250c02.js"></script>
+</body>
+</html>

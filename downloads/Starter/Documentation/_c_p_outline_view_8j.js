@@ -1,7 +1,7 @@
 var _c_p_outline_view_8j =
 [
-    [ "<CPOutlineViewDataSource>", "protocol_c_p_outline_view_data_source-p.html", "protocol_c_p_outline_view_data_source-p" ],
-    [ "<CPOutlineViewDelegate>", "protocol_c_p_outline_view_delegate-p.html", "protocol_c_p_outline_view_delegate-p" ],
+    [ "<CPOutlineViewDataSource >", "protocol_c_p_outline_view_data_source_01-p.html", "protocol_c_p_outline_view_data_source_01-p" ],
+    [ "<CPOutlineViewDelegate >", "protocol_c_p_outline_view_delegate_01-p.html", "protocol_c_p_outline_view_delegate_01-p" ],
     [ "SELECTION_SHOULD_CHANGE", "_c_p_outline_view_8j.html#ab4f9dcbe807c4fbe64d81605a017106f", null ],
     [ "SHOULD_SELECT_ITEM", "_c_p_outline_view_8j.html#a6b25b53c3500fc9c94dd41e62de1c36d", null ],
     [ "colorForDisclosureTriangle", "_c_p_outline_view_8j.html#a2cc76ddc6ba35fba81fd44dfbc123e5e", null ],

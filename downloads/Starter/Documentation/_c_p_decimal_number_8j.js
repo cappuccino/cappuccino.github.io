@@ -12,5 +12,6 @@ var _c_p_decimal_number_8j =
     [ "CPDecimalNumberHandlerRaiseOnUnderflowKey", "_c_p_decimal_number_8j.html#a42037dd49f1f7d0b58fea83e41ea6908", null ],
     [ "CPDecimalNumberHandlerRoundingModeKey", "_c_p_decimal_number_8j.html#a9b3fd01ec17c543bb65fe28b10c539a8", null ],
     [ "CPDecimalNumberHandlerScaleKey", "_c_p_decimal_number_8j.html#a2824f5d9d3cbeca841bb5dfb3c84bc1a", null ],
+    [ "CPDecimalNumberUIDs", "_c_p_decimal_number_8j.html#aa4fa55ef664e7b7685312a3780ecbc20", null ],
     [ "CPDefaultDcmHandler", "_c_p_decimal_number_8j.html#acbda85e1ad0552f1c5db0d23864dfb20", null ]
 ];

@@ -1,10 +1,11 @@
 var _c_p_text_field_8j =
 [
-    [ "<CPTextFieldDelegate>", "protocol_c_p_text_field_delegate-p.html", null ],
+    [ "<CPTextFieldDelegate >", "protocol_c_p_text_field_delegate_01-p.html", null ],
     [ "CPTextFieldSquareBezel", "_c_p_text_field_8j.html#a18028d3da1a74a3af4ae4300a688fd10", null ],
     [ "CPTextFieldBlurFunction", "_c_p_text_field_8j.html#a5ed61015ba53c8bd466a7418c9c18040", null ],
     [ "CPTextFieldHandleBlur", "_c_p_text_field_8j.html#af021b37581055ca75a0919c90346979a", null ],
     [ "CPSecureTextFieldCharacter", "_c_p_text_field_8j.html#a980528c034ab9ad8a4fe446d70394a5c", null ],
+    [ "CPTexFieldCurrentCSSSelectableField", "_c_p_text_field_8j.html#a31796fa1cc8d42730021067884895902", null ],
     [ "CPTextFieldAlignmentKey", "_c_p_text_field_8j.html#ab87d71ccfa736740edb12b78c398484c", null ],
     [ "CPTextFieldBackgroundColorKey", "_c_p_text_field_8j.html#a4dcb1d5c1218deb66015b64667d560e8", null ],
     [ "CPTextFieldBezelStyleKey", "_c_p_text_field_8j.html#afc00109c001c17251046c0e5a86e96f2", null ],

@@ -11,10 +11,10 @@ var _c_p_pasteboard_8j =
     [ "CPImagePboardType", "_c_p_pasteboard_8j.html#a1b99d846af276286d72913f45200c2fa", null ],
     [ "CPImagesPboardType", "_c_p_pasteboard_8j.html#a7cedfeff6b09447b83e6fada1686fa76", null ],
     [ "CPPasteboards", "_c_p_pasteboard_8j.html#a721046d0ea0b20f24a720eb6763eb0be", null ],
+    [ "CPRTFPboardType", "_c_p_pasteboard_8j.html#a32a28abb22fff589294a82d12f0f1162", null ],
     [ "CPRulerPboard", "_c_p_pasteboard_8j.html#a5f7ea2220f1a549657a3dc9bf45439c3", null ],
     [ "CPStringPboardType", "_c_p_pasteboard_8j.html#acd5614f9dbe81f6c200152e81093f22e", null ],
     [ "CPURLPboardType", "_c_p_pasteboard_8j.html#a55d91517136906d195d45522562cdca1", null ],
     [ "CPVideosPboardType", "_c_p_pasteboard_8j.html#a3b0cdf336289bbf13bbf8b316a2bd99d", null ],
-    [ "supportsNativePasteboard", "_c_p_pasteboard_8j.html#af0bd494a46ca48b37f47b158463d9a9d", null ],
     [ "UTF8PboardType", "_c_p_pasteboard_8j.html#a95c060bb77d7d01b6eed3a5fba998536", null ]
 ];

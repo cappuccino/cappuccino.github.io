@@ -1,9 +1,12 @@
 var _c_p_image_8j =
 [
-    [ "<CPImageDelegate>", "protocol_c_p_image_delegate-p.html", "protocol_c_p_image_delegate-p" ],
+    [ "<CPImageDelegate >", "protocol_c_p_image_delegate_01-p.html", "protocol_c_p_image_delegate_01-p" ],
     [ "CPAppKitImage", "_c_p_image_8j.html#ab88c9a40318a8696b6f1d3757989e69d", null ],
     [ "CPImageInBundle", "_c_p_image_8j.html#a95d50a45bce9cd181695f4c281eeb0a5", null ],
     [ "AppKitImageForNames", "_c_p_image_8j.html#a03eec37028ac7cdfba02579a9a513b51", null ],
+    [ "CPImageCSSAfterDictionaryKey", "_c_p_image_8j.html#ab157a1d1e4e52464834040362189986f", null ],
+    [ "CPImageCSSBeforeDictionaryKey", "_c_p_image_8j.html#aec946e7a8245c4116764413b86f5d7eb", null ],
+    [ "CPImageCSSDictionaryKey", "_c_p_image_8j.html#ad97b4a09f14ef48eb0921b1713fb8e67", null ],
     [ "CPImageDelegate_imageDidAbort_", "_c_p_image_8j.html#a9d9b6df25fb25dc467afc03faa082aa1", null ],
     [ "CPImageDelegate_imageDidError_", "_c_p_image_8j.html#aad52a6cc9e8c33575013594e778cbce6", null ],
     [ "CPImageDelegate_imageDidLoad_", "_c_p_image_8j.html#ad612f6341b38841458d0b0ad25678f3a", null ],

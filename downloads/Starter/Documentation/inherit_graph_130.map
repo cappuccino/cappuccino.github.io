@@ -1,3 +1,162 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$interface_c_p_proxy.html" title="CPProxy" alt="" coords="6,5,80,33"/>
+<area shape="rect" id="node1" href="$class_c_p_object.html" title="CPObject" alt="" coords="5,2571,84,2596"/>
+<area shape="rect" id="node2" href="$interface_c_a_animation.html" title="CAAnimation" alt="" coords="188,29,287,55"/>
+<area shape="rect" id="node6" href="$interface_c_a_layer.html" title="CALayer" alt="" coords="201,79,274,104"/>
+<area shape="rect" id="node8" href="$interface_c_a_media_timing_function.html" title="CAMediaTimingFunction" alt="" coords="154,128,321,153"/>
+<area shape="rect" id="node9" href="$class_c_p_accordion_view_item.html" title="CPAccordionViewItem" alt="" coords="161,177,314,203"/>
+<area shape="rect" id="node10" href="$interface_c_p_alert.html" title="CPAlert" alt="" coords="204,227,271,252"/>
+<area shape="rect" id="node11" href="$interface_c_p_animation.html" title="CPAnimation" alt="" coords="189,276,287,301"/>
+<area shape="rect" id="node13" href="$interface_c_p_animation_context.html" title="CPAnimationContext" alt="" coords="166,325,310,351"/>
+<area shape="rect" id="node14" href="$interface_c_p_appearance.html" title="CPAppearance" alt="" coords="182,375,293,400"/>
+<area shape="rect" id="node15" href="$interface_c_p_attributed_string.html" title="A mutable character string with attributes. " alt="" coords="172,424,303,449"/>
+<area shape="rect" id="node18" href="$interface_c_p_base_platform.html" title="CPBasePlatform" alt="" coords="178,473,298,499"/>
+<area shape="rect" id="node20" href="$interface_c_p_base_platform_string.html" title="CPBasePlatformString" alt="" coords="160,523,315,548"/>
+<area shape="rect" id="node22" href="$interface_c_p_bezier_path.html" title="CPBezierPath" alt="" coords="185,572,290,597"/>
+<area shape="rect" id="node23" href="$interface_c_p_binder.html" title="CPBinder" alt="" coords="198,621,277,647"/>
+<area shape="rect" id="node29" href="$interface_c_p_bundle.html" title="CPBundle" alt="" coords="197,671,278,696"/>
+<area shape="rect" id="node30" href="$interface_c_p_cache.html" title="A collection&#45;like container with discardable objects. " alt="" coords="198,720,277,745"/>
+<area shape="rect" id="node31" href="$interface_c_p_character_set.html" title="CPCharacterSet" alt="" coords="178,769,297,795"/>
+<area shape="rect" id="node32" href="$interface_c_p_cib.html" title="CPCib" alt="" coords="208,819,268,844"/>
+<area shape="rect" id="node33" href="$interface_c_p_cib_connector.html" title="CPCibConnector" alt="" coords="177,868,298,893"/>
+<area shape="rect" id="node39" href="$interface_c_p_coder.html" title="Defines methods for use when archiving &amp; restoring (enc/decoding). " alt="" coords="200,917,276,943"/>
+<area shape="rect" id="node42" href="$interface_c_p_color_picker.html" title="CPColorPicker" alt="" coords="183,967,292,992"/>
+<area shape="rect" id="node45" href="$interface_c_p_color_space.html" title="CPColorSpace" alt="" coords="183,1016,292,1041"/>
+<area shape="rect" id="node46" href="$interface_c_p_controller.html" title="CPController" alt="" coords="189,1065,286,1091"/>
+<area shape="rect" id="node51" href="$interface_c_p_controller_selection_proxy.html" title="CPControllerSelectionProxy" alt="" coords="144,1115,331,1140"/>
+<area shape="rect" id="node52" href="$interface_c_p_cookie.html" title="CPCookie" alt="" coords="197,1164,278,1189"/>
+<area shape="rect" id="node53" href="$interface_c_p_cursor.html" title="CPCursor" alt="" coords="198,1213,278,1239"/>
+<area shape="rect" id="node54" href="$interface_c_p_data.html" title="A Cappuccino wrapper for any data type. " alt="" coords="204,1263,272,1288"/>
+<area shape="rect" id="node55" href="$interface_c_p_date.html" title="A representation of a single point in time. " alt="" coords="204,1312,272,1337"/>
+<area shape="rect" id="node56" href="$class_c_p_decimal_number_handler.html" title="Decimal floating point number exception and rounding behavior. This class is mutable. " alt="" coords="147,1361,329,1387"/>
+<area shape="rect" id="node57" href="$interface_c_p_delayed_perform.html" title="CPDelayedPerform" alt="" coords="170,1411,306,1436"/>
+<area shape="rect" id="node58" href="$interface_c_p_dictionary.html" title="A mutable key&#45;value pair collection. " alt="" coords="188,1460,287,1485"/>
+<area shape="rect" id="node60" href="$interface_c_p_document_controller.html" title="CPDocumentController" alt="" coords="158,1509,317,1535"/>
+<area shape="rect" id="node61" href="$interface_c_p_dragging_info.html" title="CPDraggingInfo" alt="" coords="180,1559,296,1584"/>
+<area shape="rect" id="node62" href="$interface_c_p_drag_server.html" title="CPDragServer" alt="" coords="184,1608,292,1633"/>
+<area shape="rect" id="node63" href="$interface_c_p_enumerator.html" title="Defines an interface for enumerators. " alt="" coords="183,1657,292,1683"/>
+<area shape="rect" id="node64" href="$interface_c_p_error.html" title="Used for encapsulating, presenting, and recovery from errors. " alt="" coords="203,1707,272,1732"/>
+<area shape="rect" id="node65" href="$interface_c_p_event.html" title="CPEvent" alt="" coords="201,1756,275,1781"/>
+<area shape="rect" id="node66" href="$interface_c_p_exception.html" title="Used to implement exception handling (creating &amp; raising). " alt="" coords="188,1805,287,1831"/>
+<area shape="rect" id="node67" href="$interface_c_p_flash_movie.html" title="CPFlashMovie" alt="" coords="184,1855,292,1880"/>
+<area shape="rect" id="node68" href="$interface_c_p_font.html" title="CPFont" alt="" coords="204,1904,271,1929"/>
+<area shape="rect" id="node69" href="$interface_c_p_font_descriptor.html" title="CPFontDescriptor" alt="" coords="174,1953,301,1979"/>
+<area shape="rect" id="node70" href="$interface_c_p_font_manager.html" title="CPFontManager" alt="" coords="178,2003,297,2028"/>
+<area shape="rect" id="node71" href="$interface_c_p_formatter.html" title="CPFormatter is an abstract class that declares an interface for objects that create, interpret, and validate the textual representation of cell contents. The Foundation framework provides two concrete subclasses of CPFormatter to generate these objects: CPNumberFormatter and CPDateFormatter. " alt="" coords="189,2052,286,2077"/>
+<area shape="rect" id="node75" href="$interface_c_p_gradient.html" title="CPGradient" alt="" coords="192,2101,283,2127"/>
+<area shape="rect" id="node76" href="$interface_c_p_graphics_context.html" title="CPGraphicsContext" alt="" coords="168,2151,307,2176"/>
+<area shape="rect" id="node77" href="$interface_c_p_image.html" title="CPImage" alt="" coords="199,2200,276,2225"/>
+<area shape="rect" id="node78" href="$interface_c_p_index_path.html" title="CPIndexPath" alt="" coords="188,2249,288,2275"/>
+<area shape="rect" id="node79" href="$interface_c_p_index_set.html" title="A collection of unique integers. " alt="" coords="191,2299,284,2324"/>
+<area shape="rect" id="node81" href="$interface_c_p_invocation.html" title="An object representation of a message. " alt="" coords="187,2348,288,2373"/>
+<area shape="rect" id="node82" href="$interface_c_p_j_s_o_n_p_connection.html" title="Allows cross domain connections using JSONP protocol. " alt="" coords="162,2397,314,2423"/>
+<area shape="rect" id="node83" href="$interface_c_p_key_binding.html" title="CPKeyBinding" alt="" coords="184,2447,291,2472"/>
+<area shape="rect" id="node84" href="$interface_c_p_layout_manager.html" title="CPLayoutManager" alt="" coords="171,2496,304,2521"/>
+<area shape="rect" id="node85" href="$interface_c_p_locale.html" title="CPLocale" alt="" coords="198,2545,277,2571"/>
+<area shape="rect" id="node86" href="$interface_c_p_menu.html" title="CPMenu" alt="" coords="201,2595,274,2620"/>
+<area shape="rect" id="node87" href="$interface_c_p_menu_item.html" title="CPMenuItem" alt="" coords="188,2644,287,2669"/>
+<area shape="rect" id="node88" href="$class_c_p_nine_part_image.html" title="CPNinePartImage" alt="" coords="173,2693,302,2719"/>
+<area shape="rect" id="node89" href="$interface_c_p_notification.html" title="A notification that can be posted to a CPNotificationCenter. " alt="" coords="185,2743,291,2768"/>
+<area shape="rect" id="node90" href="$interface_c_p_notification_center.html" title="Sends messages (CPNotification) between objects. " alt="" coords="165,2792,311,2817"/>
+<area shape="rect" id="node91" href="$interface_c_p_notification_queue.html" title="CPNotificationQueue objects act as buffers for notification centers (instances of CPNotificationCente..." alt="" coords="165,2841,311,2867"/>
+<area shape="rect" id="node92" href="$interface_c_p_null.html" title="An object representation of nil. " alt="" coords="206,2891,269,2916"/>
+<area shape="rect" id="node93" href="$interface_c_p_number.html" title="A bridged object to native Javascript numbers. " alt="" coords="194,2940,281,2965"/>
+<area shape="rect" id="node95" href="$interface_c_p_operation.html" title="Represents an operation that can be run in an CPOperationQueue. " alt="" coords="188,2989,287,3015"/>
+<area shape="rect" id="node98" href="$interface_c_p_operation_queue.html" title="Represents an operation queue that can run CPOperations. " alt="" coords="168,3039,307,3064"/>
+<area shape="rect" id="node99" href="$interface_c_p_paragraph_style.html" title="CPParagraphStyle" alt="" coords="172,3088,304,3113"/>
+<area shape="rect" id="node100" href="$interface_c_p_pasteboard.html" title="CPPasteboard" alt="" coords="184,3137,292,3163"/>
+<area shape="rect" id="node101" href="$interface_c_p_platform_window.html" title="CPPlatformWindow" alt="" coords="169,3187,306,3212"/>
+<area shape="rect" id="node102" href="$interface_c_p_predicate_editor_row_template.html" title="CPPredicateEditorRowTemplate" alt="" coords="132,3236,344,3261"/>
+<area shape="rect" id="node103" href="$interface_c_p_property_list_serialization.html" title="CPPropertyListSerialization" alt="" coords="146,3285,329,3311"/>
+<area shape="rect" id="node104" href="$class_c_p_radio_group.html" title="CPRadioGroup" alt="" coords="182,3335,293,3360"/>
+<area shape="rect" id="node105" href="$interface_c_p_responder.html" title="CPResponder" alt="" coords="185,3384,290,3409"/>
+<area shape="rect" id="node118" href="$interface_c_p_run_loop.html" title="The main run loop for the application. " alt="" coords="191,3433,285,3459"/>
+<area shape="rect" id="node119" href="$interface_c_p_scanner.html" title="CPScanner" alt="" coords="193,3483,282,3508"/>
+<area shape="rect" id="node120" href="$interface_c_p_screen.html" title="CPScreen" alt="" coords="197,3532,279,3557"/>
+<area shape="rect" id="node121" href="$interface_c_p_shadow.html" title="CPShadow" alt="" coords="194,3581,282,3607"/>
+<area shape="rect" id="node122" href="$interface_c_p_sort_descriptor.html" title="Holds attributes necessary to describe how to sort a set of objects. " alt="" coords="175,3631,300,3656"/>
+<area shape="rect" id="node123" href="$interface_c_p_sound.html" title="CPSound" alt="" coords="198,3680,277,3705"/>
+<area shape="rect" id="node124" href="$interface_c_p_string.html" title="An immutable string (collection of characters). " alt="" coords="200,3729,275,3755"/>
+<area shape="rect" id="node125" href="$interface_c_p_table_column.html" title="CPTableColumn" alt="" coords="179,3779,296,3804"/>
+<area shape="rect" id="node126" href="$interface_c_p_tab_view_item.html" title="CPTabViewItem" alt="" coords="180,3828,296,3853"/>
+<area shape="rect" id="node127" href="$interface_c_p_text_container.html" title="CPTextContainer" alt="" coords="177,3877,299,3903"/>
+<area shape="rect" id="node128" href="$class_c_p_text_tab.html" title="CPTextTab" alt="" coords="195,3927,281,3952"/>
+<area shape="rect" id="node129" href="$interface_c_p_theme.html" title="CPTheme" alt="" coords="197,3976,278,4001"/>
+<area shape="rect" id="node130" href="$interface_c_p_theme_blend.html" title="CPThemeBlend" alt="" coords="180,4025,295,4051"/>
+<area shape="rect" id="node131" href="$class_c_p_three_part_image.html" title="CPThreePartImage" alt="" coords="170,4075,306,4100"/>
+<area shape="rect" id="node132" href="$interface_c_p_timer.html" title="A timer object that can send a message after the given time interval. " alt="" coords="201,4124,274,4149"/>
+<area shape="rect" id="node133" href="$interface_c_p_time_zone.html" title="CPTimeZone is a class to define the behvior of time zone object (like CPDatePicker) ..." alt="" coords="188,4173,287,4199"/>
+<area shape="rect" id="node134" href="$interface_c_p_toolbar.html" title="CPToolbar" alt="" coords="196,4223,279,4248"/>
+<area shape="rect" id="node135" href="$interface_c_p_tracking_area.html" title="CPTrackingArea" alt="" coords="178,4272,297,4297"/>
+<area shape="rect" id="node136" href="$interface_c_p_tree_node.html" title="CPTreeNode" alt="" coords="188,4321,287,4347"/>
+<area shape="rect" id="node137" href="$interface_c_p_typesetter.html" title="CPTypesetter" alt="" coords="187,4371,289,4396"/>
+<area shape="rect" id="node139" href="$interface_c_p_undo_manager.html" title="A general mechanism for user action &quot;undo&quot;. " alt="" coords="175,4420,300,4445"/>
+<area shape="rect" id="node140" href="$interface_c_p_u_r_l.html" title="CPURL" alt="" coords="204,4469,271,4495"/>
+<area shape="rect" id="node141" href="$interface_c_p_u_r_l_connection.html" title="Provides loading of a URL request. " alt="" coords="171,4519,305,4544"/>
+<area shape="rect" id="node142" href="$interface_c_p_u_r_l_request.html" title="Contains data obtained during a request made with CPURLConnection. " alt="" coords="180,4568,296,4593"/>
+<area shape="rect" id="node143" href="$interface_c_p_u_r_l_response.html" title="Protocol agnostic information about a request to a specific URL. " alt="" coords="174,4617,301,4643"/>
+<area shape="rect" id="node145" href="$interface_c_p_user_defaults.html" title="CPUserDefaults" alt="" coords="179,4667,296,4692"/>
+<area shape="rect" id="node146" href="$interface_c_p_user_defaults_store.html" title="CPUserDefaultsStore" alt="" coords="163,4716,312,4741"/>
+<area shape="rect" id="node149" href="$interface_c_p_user_notification.html" title="The CPUserNotification class is used to configure a notification that is scheduled for display by the..." alt="" coords="171,4765,305,4791"/>
+<area shape="rect" id="node150" href="$interface_c_p_user_notification_center.html" title="The CPUserNotificationCenter class delivers user notifications to the user from applications or helpe..." alt="" coords="151,4815,325,4840"/>
+<area shape="rect" id="node151" href="$interface_c_p_user_session_manager.html" title="CPUserSessionManager" alt="" coords="154,4864,322,4889"/>
+<area shape="rect" id="node152" href="$interface_c_p_value.html" title="A generic &quot;value&quot;. Can be subclassed to hold specific data types. " alt="" coords="201,4913,274,4939"/>
+<area shape="rect" id="node153" href="$interface_c_p_value_transformer.html" title="CPValueTransformer" alt="" coords="165,4963,310,4988"/>
+<area shape="rect" id="node158" href="$interface_c_p_web_d_a_v_manager.html" title="CPWebDAVManager" alt="" coords="165,5012,311,5037"/>
+<area shape="rect" id="node159" href="$interface_c_p_web_script_object.html" title="CPWebScriptObject" alt="" coords="168,5061,307,5087"/>
+<area shape="rect" id="node160" href="$interface_c_p_workspace.html" title="CPWorkspace" alt="" coords="184,5111,291,5136"/>
+<area shape="rect" id="node3" href="$interface_c_a_property_animation.html" title="CAPropertyAnimation" alt="" coords="432,29,582,55"/>
+<area shape="rect" id="node4" href="$interface_c_a_basic_animation.html" title="CABasicAnimation" alt="" coords="683,5,815,31"/>
+<area shape="rect" id="node5" href="$interface_c_a_keyframe_animation.html" title="CAKeyframeAnimation" alt="" coords="671,55,827,80"/>
+<area shape="rect" id="node7" href="$interface_c_a_flash_layer.html" title="CAFlashLayer" alt="" coords="454,79,560,104"/>
+<area shape="rect" id="node12" href="$interface_c_p_view_animation.html" title="CPViewAnimation" alt="" coords="443,276,571,301"/>
+<area shape="rect" id="node16" href="$class_c_p_mutable_attributed_string.html" title="CPMutableAttributedString" alt="" coords="418,325,597,351"/>
+<area shape="rect" id="node17" href="$interface_c_p_text_storage.html" title="CPTextStorage" alt="" coords="693,325,804,351"/>
+<area shape="rect" id="node19" href="$interface_c_p_platform.html" title="CPPlatform" alt="" coords="462,375,552,400"/>
+<area shape="rect" id="node21" href="$interface_c_p_platform_string.html" title="CPPlatformString" alt="" coords="445,424,569,449"/>
+<area shape="rect" id="node24" href="$class_c_p_color_well_value_binder.html" title="CPColorWellValueBinder" alt="" coords="423,473,592,499"/>
+<area shape="rect" id="node25" href="$class_c_p_image_view_value_binder.html" title="CPImageViewValueBinder" alt="" coords="419,523,596,548"/>
+<area shape="rect" id="node26" href="$interface_c_p_predicate_editor_value_binder.html" title="CPPredicateEditorValueBinder" alt="" coords="406,572,608,597"/>
+<area shape="rect" id="node27" href="$class_c_p_table_column_value_binder.html" title="CPTableColumnValueBinder" alt="" coords="412,621,602,647"/>
+<area shape="rect" id="node28" href="$interface_c_p_table_content_binder.html" title="CPTableContentBinder" alt="" coords="429,671,586,696"/>
+<area shape="rect" id="node34" href="$interface_c_p_cib_binding_connector.html" title="CPCibBindingConnector" alt="" coords="424,720,590,745"/>
+<area shape="rect" id="node35" href="$interface_c_p_cib_control_connector.html" title="CPCibControlConnector" alt="" coords="425,769,589,795"/>
+<area shape="rect" id="node36" href="$interface_c_p_cib_help_connector.html" title="CPCibHelpConnector" alt="" coords="433,819,582,844"/>
+<area shape="rect" id="node37" href="$interface_c_p_cib_outlet_connector.html" title="CPCibOutletConnector" alt="" coords="429,868,586,893"/>
+<area shape="rect" id="node38" href="$interface_c_p_cib_runtime_attributes_connector.html" title="CPCibRuntimeAttributesConnector" alt="" coords="393,917,621,943"/>
+<area shape="rect" id="node40" href="$interface_c_p_keyed_archiver.html" title="Implements keyed archiving of object graphs (e.g. for storing data). " alt="" coords="444,967,570,992"/>
+<area shape="rect" id="node41" href="$interface_c_p_keyed_unarchiver.html" title="Unarchives objects created using CPKeyedArchiver. " alt="" coords="436,1016,578,1041"/>
+<area shape="rect" id="node43" href="$class_c_p_color_wheel_color_picker.html" title="CPColorWheelColorPicker" alt="" coords="418,1065,596,1091"/>
+<area shape="rect" id="node44" href="$interface_c_p_slider_color_picker.html" title="CPSliderColorPicker" alt="" coords="436,1115,579,1140"/>
+<area shape="rect" id="node47" href="$interface_c_p_object_controller.html" title="CPObjectController" alt="" coords="439,1164,575,1189"/>
+<area shape="rect" id="node50" href="$interface_c_p_user_defaults_controller.html" title="CPUserDefaultsController" alt="" coords="420,1213,595,1239"/>
+<area shape="rect" id="node48" href="$interface_c_p_array_controller.html" title="CPArrayController" alt="" coords="685,1164,813,1189"/>
+<area shape="rect" id="node49" href="$interface_c_p_dictionary_controller.html" title="CPDictionaryController" alt="" coords="875,1164,1032,1189"/>
+<area shape="rect" id="node59" href="$class_c_p_mutable_dictionary.html" title="CPMutableDictionary" alt="" coords="434,1460,580,1485"/>
+<area shape="rect" id="node72" href="$interface_c_p_byte_count_formatter.html" title="CPByteCountFormatter" alt="" coords="427,2003,587,2028"/>
+<area shape="rect" id="node73" href="$interface_c_p_date_formatter.html" title="CPDateFormatter" alt="" coords="444,2052,570,2077"/>
+<area shape="rect" id="node74" href="$interface_c_p_number_formatter.html" title="CPNumberFormatter" alt="" coords="435,2101,580,2127"/>
+<area shape="rect" id="node80" href="$class_c_p_mutable_index_set.html" title="CPMutableIndexSet" alt="" coords="437,2299,577,2324"/>
+<area shape="rect" id="node94" href="$interface_c_p_decimal_number.html" title="Decimal floating point number. " alt="" coords="439,2940,575,2965"/>
+<area shape="rect" id="node96" href="$interface_c_p_function_operation.html" title="Represents an operation using a JavaScript function that can be run in an CPOperationQueue. " alt="" coords="432,2989,582,3015"/>
+<area shape="rect" id="node97" href="$interface_c_p_invocation_operation.html" title="Represents an operation using an invocation that can be run in an CPOperationQueue. " alt="" coords="428,3039,587,3064"/>
+<area shape="rect" id="node106" href="$interface_c_p_application.html" title="CPApplication" alt="" coords="455,3261,559,3287"/>
+<area shape="rect" id="node107" href="$interface_c_p_document.html" title="CPDocument" alt="" coords="457,3311,557,3336"/>
+<area shape="rect" id="node108" href="$interface_c_p_popover.html" title="CPPopover" alt="" coords="462,3360,552,3385"/>
+<area shape="rect" id="node109" href="$interface_c_p_view_controller.html" title="CPViewController" alt="" coords="444,3409,570,3435"/>
+<area shape="rect" id="node111" href="$interface_c_p_window.html" title="CPWindow" alt="" coords="464,3459,551,3484"/>
+<area shape="rect" id="node117" href="$interface_c_p_window_controller.html" title="CPWindowController" alt="" coords="435,3508,580,3533"/>
+<area shape="rect" id="node110" href="$interface_c_p_collection_view_item.html" title="CPCollectionViewItem" alt="" coords="672,3409,825,3435"/>
+<area shape="rect" id="node112" href="$interface_c_p_panel.html" title="CPPanel" alt="" coords="712,3459,786,3484"/>
+<area shape="rect" id="node113" href="$interface_c_p_color_panel.html" title="CPColorPanel" alt="" coords="901,3384,1006,3409"/>
+<area shape="rect" id="node114" href="$interface_c_p_font_panel.html" title="CPFontPanel" alt="" coords="903,3433,1004,3459"/>
+<area shape="rect" id="node115" href="$interface_c_p_open_panel.html" title="CPOpenPanel" alt="" coords="900,3483,1007,3508"/>
+<area shape="rect" id="node116" href="$interface_c_p_save_panel.html" title="CPSavePanel" alt="" coords="901,3532,1006,3557"/>
+<area shape="rect" id="node138" href="$interface_c_p_simple_typesetter.html" title="CPSimpleTypesetter" alt="" coords="436,4371,579,4396"/>
+<area shape="rect" id="node144" href="$interface_c_p_h_t_t_p_u_r_l_response.html" title="CPHTTPURLResponse" alt="" coords="426,4617,588,4643"/>
+<area shape="rect" id="node147" href="$interface_c_p_user_defaults_cookie_store.html" title="CPUserDefaultsCookieStore" alt="" coords="412,4691,602,4716"/>
+<area shape="rect" id="node148" href="$interface_c_p_user_defaults_local_store.html" title="CPUserDefaultsLocalStore" alt="" coords="417,4740,597,4765"/>
+<area shape="rect" id="node154" href="$interface_c_p_is_nil_transformer.html" title="CPIsNilTransformer" alt="" coords="438,4888,576,4913"/>
+<area shape="rect" id="node155" href="$interface_c_p_is_not_nil_transformer.html" title="CPIsNotNilTransformer" alt="" coords="428,4937,586,4963"/>
+<area shape="rect" id="node156" href="$interface_c_p_negate_boolean_transformer.html" title="CPNegateBooleanTransformer" alt="" coords="405,4987,609,5012"/>
+<area shape="rect" id="node157" href="$interface_c_p_unarchive_from_data_transformer.html" title="CPUnarchiveFromDataTransformer" alt="" coords="392,5036,623,5061"/>
 </map>

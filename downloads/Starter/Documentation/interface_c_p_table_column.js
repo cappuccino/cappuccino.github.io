@@ -1,10 +1,11 @@
 var interface_c_p_table_column =
 [
-    [ "bind:toObject:withKeyPath:options:", "interface_c_p_table_column.html#a6f366415ca278582fd27fe50a84e46d5", null ],
+    [ "bind:toObject:withKeyPath:options:", "interface_c_p_table_column.html#a856b8b813ab610175704acad9420b239", null ],
     [ "dataCell", "interface_c_p_table_column.html#ab2a7245e2eba99ee0a2c02b13a203f22", null ],
     [ "dataCellForRow:", "interface_c_p_table_column.html#ae49ee2676931bb51f7362344b04a681f", null ],
     [ "dataView", "interface_c_p_table_column.html#ae764835c1aebbb385b59f8a65e02f418", null ],
     [ "dataViewForRow:", "interface_c_p_table_column.html#a61807029ac95dfe099d2875e022b0812", null ],
+    [ "description", "interface_c_p_table_column.html#ab270ad5f6b9dd846dda7439e6d6a10bf", null ],
     [ "disableResizingPosting", "interface_c_p_table_column.html#a22d80bb7a50bd9a434d0ceb30259542c", null ],
     [ "encodeWithCoder:", "interface_c_p_table_column.html#a0ecd4bc3613d974fd3108cc98729448c", null ],
     [ "headerCell", "interface_c_p_table_column.html#a79495f208393c56d117eafb90353c54a", null ],

@@ -5,8 +5,8 @@
 <title>Cappuccino - Get Started</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link href="/img/favicon.ico" rel="shortcut icon">
-<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
 <link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
 </head>
 <body class="file-starter-html folder-learn">
@@ -86,7 +86,19 @@
 <a href="/learn/xcode-basics.html">Tutorial: Xcode Interface Builder</a>
 </li>
 <li>
+<a href="/learn/simple-tableview.html">Tutorial: Simple Table View</a>
+</li>
+<li>
+<a href="/learn/simple-outlineview.html">Tutorial: Simple Outline View</a>
+</li>
+<li>
 <a href="/learn/debugging.html">Debugging</a>
+</li>
+<li>
+<a href="/learn/ojtest.html">Testing with OJTest</a>
+</li>
+<li>
+<a href="/learn/cucapp.html">Testing with Cucapp</a>
 </li>
 </ul>
 <h5>Resources</h5>
@@ -139,7 +151,7 @@ Get Started
 <p>If you haven’t already, download the <a href="/downloads.html">Cappuccino Starter package</a>. This zip file includes a sample application (<code>NewApplication</code>), licensing info, a script you can run later to download
 all the Cappuccino tools, and a README.</p>
 
-<p><img alt="open new application" width="456" height="366" src="/img/new-application-4cd43f45.png"></p>
+<p><img alt="open new application" width="710" height="301" src="/img/new-application-b7dd78a1.png"></p>
 
 <h3>Running NewApplication</h3>
 
@@ -149,9 +161,10 @@ simply open that file in your favorite web browser by double-clicking
 it, or just by dragging it on top of your browser application. You
 should end up with something that looks like this (in Safari):</p>
 
-<p><img alt="New Application running in Safari" width="600" height="389" src="/img/new-app-running-safari-d83f870b.png"></p>
+<p><img alt="New Application running in Safari" width="895" height="556" src="/img/new-app-running-safari-2939349a.png"></p>
 
-<p><span class="label label-info">Info</span>  This will only work in some browsers. Normally you’ll need to start a web server too. We’ll update this section with more information soon.</p>
+<p><span class="label label-info">Info</span>  This will only work in some browsers. Normally you’ll need to start a web server too.
+One easy way to start a web server is to use Python: just run <code>python -m SimpleHTTPServer</code> from the folder in which your project is located.</p>
 
 <h3>The Code</h3>
 
@@ -160,7 +173,7 @@ Although there are a few files, the only one we’re interested in right
 now is <code>AppController.j</code>. The others are necessary, but you don’t need
 to modify them to work on your application.</p>
 
-<p><img alt="AppController.j" width="600" height="422" src="/img/new-app-appcontroller-97c92c47.png"></p>
+<p><img alt="AppController.j" width="1137" height="739" src="/img/new-app-appcontroller-54ff914c.png"></p>
 
 <p>You can see in the image above that we have syntax highlighting in
 TextMate. You can get this by installing the appropriate mode, found on
@@ -314,7 +327,7 @@ see the string change back and forth between “Hello World!” and
 complete changes, you can download this copy of
 <a href="/learn/files/AppController.j">AppController.j</a>.</p>
 
-<p><img alt="finished version" width="600" height="396" src="/img/new-app-completed-c40c6235.png"></p>
+<p><img alt="finished version" width="2100" height="1264" src="/img/new-app-completed-a636d3ef.png"></p>
 
 <h3>Wrapping Up</h3>
 
@@ -365,15 +378,16 @@ Advanced: Install from Source
 <a href="/contribute.html#bug-reports">Bug reports</a>
 <a href="https://github.com/cappuccino/cappuccino">Source code</a>
 <a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
 </div>
 <div class="span2">
 <h4>Get Answers</h4>
 <a href="/support/">Support</a>
 <a href="http://groups.google.com/group/objectivej">Mailing list</a>
 <a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
-<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
 <a href="/blog/">Blog</a>
 <a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
 </div>
 </div>
 </div>
@@ -397,7 +411,7 @@ Advanced: Install from Source
 </a>
 </div>
 <div class="span8 copyright2">
-<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="https://pages.github.com">GithubPages</a>. Copyright © 2013 - Cappuccino Project.</p>
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
 </div>
 <div class="pull-right forkme">
 <p>
@@ -408,7 +422,7 @@ Advanced: Install from Source
 
 </div>
 </div>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="/js/bootstrap.min-f6d9c45d.js"></script>
 <script src="/js/theme-09250c02.js"></script>
 </body>

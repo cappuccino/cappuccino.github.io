@@ -20,7 +20,7 @@ var interface_c_p_color_well =
     [ "rectForEphemeralSubviewNamed:", "interface_c_p_color_well.html#ad3b9e91b080cd85205b8f51577b4b110", null ],
     [ "setBordered:", "interface_c_p_color_well.html#ab2360be89c347d9df3189e1c826df97b", null ],
     [ "setColor:", "interface_c_p_color_well.html#aa31d12b84c88461a057cb69ce047ab6c", null ],
-    [ "stopTracking:at:mouseIsUp:", "interface_c_p_color_well.html#ad9b870ce2d01055622561adab9661d86", null ],
+    [ "stopTracking:at:mouseIsUp:", "interface_c_p_color_well.html#a75c9e2bb25fd879b8d963b442aad7841", null ],
     [ "takeColorFrom:", "interface_c_p_color_well.html#a5da4ae9eccb76f8fc8407a6a1dfa159f", null ],
     [ "themeAttributes", "interface_c_p_color_well.html#ac1b5863a3b5781398b1ce5312615f96d", null ]
 ];

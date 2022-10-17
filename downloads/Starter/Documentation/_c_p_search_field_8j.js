@@ -9,6 +9,5 @@ var _c_p_search_field_8j =
     [ "CPSearchFieldRecentsTitleMenuItemTag", "_c_p_search_field_8j.html#a05b058cb114cedf0a74be467cde4d269", null ],
     [ "CPSearchMenuTemplateKey", "_c_p_search_field_8j.html#a4dc7e6f7ce9ee0f0d536bd15ddd4c714", null ],
     [ "CPSendsSearchStringImmediatelyKey", "_c_p_search_field_8j.html#ac14b61610afc9433469f4519c2b55fc8", null ],
-    [ "CPSendsWholeSearchStringKey", "_c_p_search_field_8j.html#a0a5f47a755b37d9d24da48abfbdc9c57", null ],
-    [ "RECENT_SEARCH_PREFIX", "_c_p_search_field_8j.html#ac278d6f15fd372a58f1068ab06484681", null ]
+    [ "CPSendsWholeSearchStringKey", "_c_p_search_field_8j.html#a0a5f47a755b37d9d24da48abfbdc9c57", null ]
 ];

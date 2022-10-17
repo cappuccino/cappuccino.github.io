@@ -11,7 +11,7 @@ var interface_c_p_menu_item =
     [ "indentationLevel", "interface_c_p_menu_item.html#a1fe690cef7fff2967a769cbb9f83e718", null ],
     [ "init", "interface_c_p_menu_item.html#a52ebcad96d7757af79bc60d433705e66", null ],
     [ "initWithCoder:", "interface_c_p_menu_item.html#afa4b742f6f3bb61fe35cd6c2580ad305", null ],
-    [ "initWithTitle:action:keyEquivalent:", "interface_c_p_menu_item.html#a758d300e466e19c73646ffdff4e11750", null ],
+    [ "initWithTitle:action:keyEquivalent:", "interface_c_p_menu_item.html#a4e8af71ffc5a29bf21d6a6c555e4d28c", null ],
     [ "isAlternate", "interface_c_p_menu_item.html#ad7d05c056dfcd7642f0866a4f31598e8", null ],
     [ "isEnabled", "interface_c_p_menu_item.html#a47c3dadad9767b5e2519222ae2fbcb09", null ],
     [ "isHidden", "interface_c_p_menu_item.html#a9a6e2ec3808fce4e99c17983fb36a877", null ],

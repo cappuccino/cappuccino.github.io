@@ -4,7 +4,7 @@ var dir_09d74b6bee122a43a4672bd91fa2871b =
     [ "CPPredicate", "dir_b9e73f3b5f2e8b115b66e396be1b386e.html", "dir_b9e73f3b5f2e8b115b66e396be1b386e" ],
     [ "CPSet", "dir_a7450b4e1b6f6f1b84558da98d65c750.html", "dir_a7450b4e1b6f6f1b84558da98d65c750" ],
     [ "CPArray+KVO.j", "_c_p_array_09_k_v_o_8j.html", null ],
-    [ "CPArray.h", "_c_p_array_8h.html", null ],
+    [ "CPArray.h", "_foundation_8doc_2_c_p_array_8h.html", null ],
     [ "CPAttributedString.h", "_c_p_attributed_string_8h.html", null ],
     [ "CPAttributedString.j", "_c_p_attributed_string_8j.html", "_c_p_attributed_string_8j" ],
     [ "CPBundle.h", "_foundation_8doc_2_c_p_bundle_8h.html", [
@@ -102,6 +102,8 @@ var dir_09d74b6bee122a43a4672bd91fa2871b =
     [ "CPNotification.j", "_c_p_notification_8j.html", null ],
     [ "CPNotificationCenter.h", "_c_p_notification_center_8h.html", null ],
     [ "CPNotificationCenter.j", "_c_p_notification_center_8j.html", "_c_p_notification_center_8j" ],
+    [ "CPNotificationQueue.h", "_c_p_notification_queue_8h.html", null ],
+    [ "CPNotificationQueue.j", "_c_p_notification_queue_8j.html", "_c_p_notification_queue_8j" ],
     [ "CPNull.h", "_c_p_null_8h.html", null ],
     [ "CPNull.j", "_c_p_null_8j.html", "_c_p_null_8j" ],
     [ "CPNumber.h", "_c_p_number_8h.html", null ],
@@ -157,20 +159,26 @@ var dir_09d74b6bee122a43a4672bd91fa2871b =
     [ "CPURLConnection.j", "_c_p_u_r_l_connection_8j.html", "_c_p_u_r_l_connection_8j" ],
     [ "CPURLError.j", "_c_p_u_r_l_error_8j.html", "_c_p_u_r_l_error_8j" ],
     [ "CPURLRequest.h", "_c_p_u_r_l_request_8h.html", null ],
-    [ "CPURLRequest.j", "_c_p_u_r_l_request_8j.html", null ],
+    [ "CPURLRequest.j", "_c_p_u_r_l_request_8j.html", "_c_p_u_r_l_request_8j" ],
     [ "CPURLResponse.h", "_c_p_u_r_l_response_8h.html", null ],
     [ "CPURLResponse.j", "_c_p_u_r_l_response_8j.html", null ],
-    [ "CPUserDefaults.h", "_c_p_user_defaults_8h.html", null ],
+    [ "CPUserDefaults.h", "_c_p_user_defaults_8h.html", [
+      [ "CPUserDefaults", "interface_c_p_user_defaults.html", null ]
+    ] ],
     [ "CPUserDefaults.j", "_c_p_user_defaults_8j.html", "_c_p_user_defaults_8j" ],
     [ "CPUserDefaultsCookieStore.h", "_c_p_user_defaults_cookie_store_8h.html", [
-      [ "CPUserDefaultsCookieStore", "class_c_p_user_defaults_cookie_store.html", "class_c_p_user_defaults_cookie_store" ]
+      [ "CPUserDefaultsCookieStore", "interface_c_p_user_defaults_cookie_store.html", null ]
     ] ],
     [ "CPUserDefaultsLocalStore.h", "_c_p_user_defaults_local_store_8h.html", [
-      [ "CPUserDefaultsLocalStore", "class_c_p_user_defaults_local_store.html", "class_c_p_user_defaults_local_store" ]
+      [ "CPUserDefaultsLocalStore", "interface_c_p_user_defaults_local_store.html", null ]
     ] ],
     [ "CPUserDefaultsStore.h", "_c_p_user_defaults_store_8h.html", [
-      [ "CPUserDefaultsStore", "class_c_p_user_defaults_store.html", "class_c_p_user_defaults_store" ]
+      [ "CPUserDefaultsStore", "interface_c_p_user_defaults_store.html", null ]
     ] ],
+    [ "CPUserNotification.h", "_c_p_user_notification_8h.html", null ],
+    [ "CPUserNotification.j", "_c_p_user_notification_8j.html", "_c_p_user_notification_8j" ],
+    [ "CPUserNotificationCenter.h", "_c_p_user_notification_center_8h.html", null ],
+    [ "CPUserNotificationCenter.j", "_c_p_user_notification_center_8j.html", "_c_p_user_notification_center_8j" ],
     [ "CPUserSessionManager.h", "_c_p_user_session_manager_8h.html", [
       [ "CPUserSessionManager", "interface_c_p_user_session_manager.html", "interface_c_p_user_session_manager" ]
     ] ],

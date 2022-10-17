@@ -4,6 +4,7 @@ var interface_c_p_search_field =
     [ "cancelButtonRectForBounds:", "interface_c_p_search_field.html#a2223ae8dd5ec881c8f424011f2431c7a", null ],
     [ "cancelOperation:", "interface_c_p_search_field.html#ac35d4604f7e9fea1bbfc1f895cc57fcd", null ],
     [ "contentRectForBounds:", "interface_c_p_search_field.html#a38f31671433817a139765152189fd9e3", null ],
+    [ "cursorUpdate:", "interface_c_p_search_field.html#a61eca37749ec1bd40cd0a6072fb48d2b", null ],
     [ "defaultSearchMenuTemplate", "interface_c_p_search_field.html#a834e71929dfc538cc14f8b3452568acb", null ],
     [ "defaultThemeClass", "interface_c_p_search_field.html#ab575c752be246bbb606385ba6856f753", null ],
     [ "encodeWithCoder:", "interface_c_p_search_field.html#a87c0ada9ed24c5bf4203be646efe2747", null ],
@@ -25,7 +26,7 @@ var interface_c_p_search_field =
     [ "searchButtonRectForBounds:", "interface_c_p_search_field.html#ae876584da84ddf68f020ff2f7ec35c77", null ],
     [ "searchMenuTemplate", "interface_c_p_search_field.html#aff583487c3c7952046dc7d66f35e3f18", null ],
     [ "searchTextRectForBounds:", "interface_c_p_search_field.html#a69ac399ffb3503f5778570e510cd3c42", null ],
-    [ "sendAction:to:", "interface_c_p_search_field.html#ae93ff2126ae48efa9121ad5d3f8278ba", null ],
+    [ "sendAction:to:", "interface_c_p_search_field.html#a8b246cc45fc1d5446a69e75a3eff0c6e", null ],
     [ "sendsSearchStringImmediately", "interface_c_p_search_field.html#ac0d69077ec0921f7ccdeeac874c92492", null ],
     [ "sendsWholeSearchString", "interface_c_p_search_field.html#ad0c7311544177fee9ac7d770957a3545", null ],
     [ "setCancelButton:", "interface_c_p_search_field.html#abcbd7372e98a3fc492875fa8a72602e5", null ],
@@ -36,5 +37,7 @@ var interface_c_p_search_field =
     [ "setSearchMenuTemplate:", "interface_c_p_search_field.html#afd551122bd184268145b27facb5672b5", null ],
     [ "setSendsSearchStringImmediately:", "interface_c_p_search_field.html#ab26c2483255ad492bba731d04cf97806", null ],
     [ "setSendsWholeSearchString:", "interface_c_p_search_field.html#ac8a16187295cf4338a75e6188783d6cb", null ],
-    [ "themeAttributes", "interface_c_p_search_field.html#a49780c7810f2378a034e78e398f0ef19", null ]
+    [ "themeAttributes", "interface_c_p_search_field.html#a49780c7810f2378a034e78e398f0ef19", null ],
+    [ "unbind:", "interface_c_p_search_field.html#a2f7257a9fc9b9352c98f8e385f832489", null ],
+    [ "updateTrackingAreas", "interface_c_p_search_field.html#a1ce5cdfdc3e0e562e8d13596c41e1ac0", null ]
 ];

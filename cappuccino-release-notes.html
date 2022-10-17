@@ -5,8 +5,8 @@
 <title>Cappuccino Release Notes</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link href="/img/favicon.ico" rel="shortcut icon">
-<link href="/css/main-2a413576.css" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+<link href="/css/main-6ee61d5e.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
 <link href="/blog/feed.xml" rel="alternate" title="Cappuccino Blog Feed" type="application/atom+xml">
 </head>
 <body class="file-cappuccino-release-notes-html">
@@ -57,6 +57,453 @@
 </h2>
 <div class="row">
 <div class="offset2 span8 markdown">
+<h2>What’s New in Cappuccino 0.9.10</h2>
+
+<p><em>Release date: 2017-07-11</em></p>
+
+<p>Cappuccino 0.9.10 introduces <code>CPTextView</code>, <code>CPViewAnimator</code>, <code>CGContextText</code>, support of node as a narwhal engine and over 100 other changes and improvements.</p>
+
+<p>Highlights in this release:</p>
+
+<ul>
+<li>New: node can be now set as the narwhal engine.</li>
+<li>New: <code>CPTextView</code> in AppKit.</li>
+<li>New: <code>CGContextText</code> in AppKit.</li>
+<li>New: <code>CPAnimationContext</code> and <code>CPViewAnimator</code> in AppKit.</li>
+</ul>
+
+<h2>Foundation and Core</h2>
+
+<ul>
+<li>(a10dfa4) New: <code>CPNumber -integerValue</code> and <code>CPString -integerValue</code>.</li>
+<li>(41a7417) New: Sweden / Swedish as a possible locale.</li>
+<li>(5da8728) New: <code>CPObject +instancesImplementSelector:(SEL)aSelector</code>.</li>
+</ul>
+
+<p><em>Bug fixes:</em></p>
+
+<ul>
+<li>(a995f3a) Fixed: no exception thrown if a plist was not valid in <code>CPKeyedUnarchiver</code>.</li>
+<li>(e13f5ed) Fixed: <code>CPNumber intValue</code> did not return an integer.</li>
+<li>(42d7e43) Fixed: formatting of <code>CPCache</code>.</li>
+<li>(5c60819) Fixed: cache control was not set properly in <code>CPURLRequest</code>.</li>
+<li>(ae5d317) Fixed: when dependent key paths used a relationship, only the first added observer would observe the attribute for the relationship object.</li>
+<li>(a192698) Fixed: <code>CPObject +implementsSelector:</code> did not work with proxies and KVO swizzled classes.</li>
+<li>(12ed42e) Fixed: regular expression were not compatible with <code>gcc</code> &gt; 4.9.</li>
+</ul>
+
+<h2>AppKit</h2>
+
+<ul>
+<li>(b12d149) New: <code>CPViewController -loadViewAsynchronously:</code>.</li>
+<li>(598a6eb) (571891) (410ad0d) New: <code>CPAnimationContext</code> and <code>CPViewAnimator</code>.</li>
+<li>(fedc721) New: <code>CPViewController -viewWill/DidAppear</code> and <code>CPViewController viewWill/didDisappear</code>.</li>
+<li>(abb0799) New: autoscrolling for table view columns.</li>
+<li>(0aeccb) (bea03d) (65f701) (6c9c135) (249ebeb) New: <code>CPTextView</code> in AppKit.</li>
+<li>(315a7b9) New: <code>CGContextText</code> in CoreGraphics.</li>
+<li>(606132)  New: manual test for <code>CPSegmentedControl</code>.</li>
+<li>(5059028) New: documentation for autoscroll of <code>CPView</code>.</li>
+<li>(0eb196e) New: <code>CPTabView</code> loads the views asynchronously when possible.</li>
+<li>(6652a27) New: allow a text based control to stay on a single line when text wraps.</li>
+<li>(3f64b74) New: <code>CPSetPlatformFeature</code> function in <code>CPCompatibility</code>.</li>
+<li>(f18074b) New: optional declarative layout for use in <code>CoreAnimation</code> (‘CSS animations’).</li>
+</ul>
+
+<p><em>Bug fixes:</em></p>
+
+<ul>
+<li>(8f11917) Fixed: race condition when editing a <code>CPTextField</code> in a <code>CPTableView</code> with a double click; focus was lost under some conditions.</li>
+<li>(6d1a094) Fixed: <code>CPSearchField</code> did not support <code>CPMenuItem -setIndentationLevel:</code>.</li>
+<li>(c24c386) Fixed: crash when having a <code>CPTableViewHeader</code> without a <code>CPTableView</code>.</li>
+<li>(43a2480) Fixed: cursor key binding methods did not fire in IE 11.</li>
+<li>(5c58552) Fixed: first <code>CPPopUpItem</code> was always selected if selected binding value was set before content binding value.</li>
+<li>(cd92ebd) Fixed: <code>CPObjectController -setEntityName</code> did not work.</li>
+<li>(1575c2b) Fixed: <code>CPTableView</code> <code>viewBasedCib</code> manual test was broken due to <code>CPBox</code>.</li>
+<li>(ffcac67) Fixed: manual test <code>SmartFoldersDemo</code>.</li>
+<li>(f67faf)  Fixed: <code>CPCollectionView</code> content binding.</li>
+<li>(3e6e5f9) Fixed: <code>CPViewController -isViewLoaded</code> property was always set to NO in async mode.</li>
+<li>(818d5d5) Fixed: date comparisons in <code>CPPredicateEditor</code>.</li>
+<li>(c38daac) Fixed: unit tests for <code>CPPredicateEditor</code>.</li>
+<li>(333e112) Fixed: <code>CPPredicateEditor</code> predicate when the template has a <code>CPFloatAttributeType</code>.</li>
+<li>(9273c9e) Fixed: <code>CPColorPanel</code> always opened in main platform window.</li>
+<li>(1927bb4) Fixed: <code>CPTextField</code> didn’t optimize tracking areas management.</li>
+<li>(a28f9ce) Fixed: right mouse clicking during a drag operation canceled it.</li>
+<li>(a84a7bb) Fixed: the background of the brightness slider had a uniform color in <code>CPColorPicker</code>.</li>
+<li>(5f1229)  Fixed: missing import in <code>CPCollectionView</code>.</li>
+<li>(12dde51) Fixed: <code>CPView</code> received multiple <code>-viewDidHide/Unhide</code> messages.</li>
+<li>(a2960a7) Fixed: <code>CPPasteBoard</code> dead code.</li>
+<li>(e4fce08) Fixed: scrolling events were not dispatched to the <code>CPApp</code> on slower systems under Chrome 52.</li>
+<li>(4395c07) Fixed: iOS virtual keyboard “done” button not working and tapping other text fields while editing (often) not working.</li>
+<li>(1360caa) Fixed: editing in a cell-based <code>CPTableView</code> was broken in an editing session.</li>
+<li>(2f82fb8) Fixed: typo in the documentation of <code>CPControl</code>.</li>
+<li>(c2b7cc7) Fixed: formatting of <code>CPView</code>.</li>
+<li>(969d1d)  Fixed: optimization of the tracking areas feature in <code>CPView</code>.</li>
+<li>(4b55a69) Fixed: issues in <code>CPAnimationContext</code> and <code>CPView</code> animator.</li>
+<li>(62e5d8d) Fixed: incorrect type declaration in <code>CPCache</code>.</li>
+<li>(037bc4e) New: test to demonstrate the <code>wantsPeriodicFrameUpdates</code> animator property.</li>
+<li>(cfbef14) New: inhibit DOM updates during size animation in <code>CPAnimationContext</code>.</li>
+<li>(3d9b42f) Fixed: <code>CSSAnimation</code> linting.</li>
+<li>(8d403f5) Fixed: IB connections in <code>CPTabViewNibTest</code>.</li>
+<li>(eeea21c) Fixed: <code>CPViewAnimator</code> was not giving correct frame information.</li>
+<li>(60b2f7d) Fixed: legacy scrollers were not clickable under some circumstances.</li>
+<li>(51b9b40) Fixed: native paste in Chrome was not working as robustly as it should.</li>
+<li>(6aea016) Fixed: text-sizing by canvas and via DOM sizing differed by 1px.</li>
+<li>(1a299d8) Fixed: <code>CPBox</code> drawing artifacts when used in <code>CPSeparator</code> mode.</li>
+<li>(f00a5fb) Fixed: delegate <code>-tableView:didDragTableColumn:</code> was never sent.</li>
+</ul>
+
+<h2>Objective-J</h2>
+
+<ul>
+<li>(f24c4b0) New: node can be used as a narwhal engine.</li>
+<li>(e134f91) New: merged in the parser and compiler that is used in the node objj-runtime.</li>
+</ul>
+
+<p><em>Bug fixes:</em></p>
+
+<ul>
+<li>(3ba2158) Fixed: outdated sourcemap syntax prevented showing the right sources when debugging in the browser. <code>//@ sourceURL=...</code> has now been replaced by <code>//# sourceURL=...</code> when compiling Objective-J code.</li>
+</ul>
+
+<h2>XcodeCapp</h2>
+
+<p><em>Bug fixes:</em></p>
+
+<ul>
+<li>(087e811) New: bump <code>XcodeCapp</code> copyright year.</li>
+<li>(b09cb24) Fixed: XcodeCapp ‘Preferences’ menu item not in the standard place.</li>
+<li>(dd62c0)  Fixed: <code>XcodeCapp</code> was broken under macOS Sierra.</li>
+</ul>
+
+<h2>Misc</h2>
+
+<ul>
+<li>(5bc3609) New: removed Native Host.</li>
+</ul>
+
+<p><em>Bug fixes:</em></p>
+
+<ul>
+<li>(584aebf) Fixed: <code>capp_env</code> did not use the master version of Cappuccino.</li>
+<li>(80bfeb1) Fixed: vestigial rakefile.</li>
+</ul>
+
+<h2>Nib2Cib</h2>
+
+<ul>
+<li>(edbc1ba) New: <code>nib2cib</code> support for <code>CPButton -imageScaling</code>.</li>
+</ul>
+
+<p><em>Bug fixes:</em></p>
+
+<ul>
+<li>(dde8059) New: show successfully loaded <code>NSClasses</code> in <code>nib2cib</code> verbose mode.</li>
+<li>(f4c11d1) Fixed: <code>nib2cib</code>‘ed files different with jake release and jake deploy.</li>
+<li>(3e56c8e) Fixed: XcodeCapp <code>nib2cib</code> incorrect vs jake release.</li>
+<li>(c4bf67d) Fixed: selection in <code>CPTabView</code> when set through <code>nib2cib</code>.</li>
+</ul>
+
+<h2>Cucapp</h2>
+
+<p><em>Bug fixes:</em></p>
+
+<ul>
+<li>(67c767c) Fixed: accidental Nuage Networks specific code related to text fields made it into the general release.</li>
+<li>(a924fcf) Fixed: wrong default path for loading Cucapp in the CLI.</li>
+<li>(2fe795f) Fixed: private API <code>_mainDOMWindow</code> did not actually return the main DOM window but the key DOM window.</li>
+<li>(732d77e) Fixed: the function <code>dumpGuiObject</code> was called two times for the class <code>CPScrollView</code>.</li>
+</ul>
+
+<h2>Other changes</h2>
+
+<ul>
+<li>(598a482) New: Gitter badge in the README.</li>
+</ul>
+
+<p><em>Bug fixes:</em></p>
+
+<ul>
+<li>(fa07bc1) Fixed: missed some version number bumps in the 0.9.9 release.</li>
+<li>(f9cc773) Fixed: missing requirements in the README.</li>
+</ul>
+
+<h2>What’s New in Cappuccino 0.9.9</h2>
+
+<p><em>Release date : 2016-03-31</em></p>
+
+<p>Cappuccino 0.9.9 introduces CPLocalization, XcodeCapp 4.0, CPTrackingArea, retina drawing support and over 250 other changes and improvements.</p>
+
+<p>Highlights in this release:</p>
+
+<ul>
+<li>New: ability to localize a Cappuccino app using standard methods.</li>
+<li>New: <code>CPUserNotification</code> and <code>CPUserNotificationCenter</code> support.</li>
+<li>New: <code>CPCache</code> support.</li>
+<li>New: <code>CPTrackingArea</code> support.</li>
+<li>New: draw in high DPI (Retina drawing) when using <code>canvas2D</code>.</li>
+<li>New: XcodeCapp 4.0.</li>
+<li>New: <code>capp_env</code> virtual environments support.</li>
+<li>New: abstract library for <code>Cucapp</code>.</li>
+<li>New: runtime method binding for Objective-J (speed improvement of 20%).</li>
+<li>New: <code>CPAppearance</code> and <code>CPVisualEffectView</code> support.</li>
+<li>Optimization of the <code>CPTableView</code>.</li>
+</ul>
+
+<h2>Foundation and Core</h2>
+
+<ul>
+<li>(630aa53) New: <code>CPCache</code> has been added to <code>Foundation</code>.</li>
+<li>(58afc92) New: timeout and cache feature in <code>CPURLRequest</code>.</li>
+<li>(806be95) New: <code>CPURLConnectionDelegate</code> protocol.</li>
+<li>(8809c16) New: <code>CPURLConnection +sendAsynchronousRequest:queue:completionHandler:</code>.</li>
+<li>(ce8f8c0) New: <code>CPNotificationQueue</code>.</li>
+<li>(686f931) New: ability to localize a Cappuccino application. An app can be localized through <code>strings</code> and <code>cib</code>s. The language to use is selected from the browser or from the <code>Info.plist</code>.</li>
+<li>(e172217) New: <code>CPArray -arrayByApplyingBlock:</code>.</li>
+<li>(cbc653b) Cappuccino now supports the KVC operators <code>unionOfObjects</code>, <code>distinctUnionOfObjects</code>, <code>unionOfArrays</code>, <code>distinctUnionOfArrays</code> and <code>distinctUnionOfSets</code>.</li>
+</ul>
+
+<p><em>Bug Fixes:</em></p>
+
+<ul>
+<li>(8599ad4) Fixed: the init method <code>CPArray initWithObjects:count:</code> did not work on a native <code>CPJavascriptArray</code> when the argument count was different than the length of the provided array.</li>
+<li>(912930) Fixed: <code>CPDictionary -initWithObjectsAndKeys:</code> and <code>CPDictionary -initWithObjects:forKeys:</code> were not compliant with Cocoa when duplicated keys were passed to the method.</li>
+<li>(3e29732) Fixed: the parameter <code>queue</code> of the method <code>CPNotificationCenter -addObserverForName:object:queue:usingBlock:</code> was ignored. It now creates a new operation and adds it to the given queue if needed.</li>
+<li>(04f8545)(0508b70) Fixed: incompatibility with Internet Explorer 10. The <code>withCredentials</code> property is now set after the <code>XMLHttpRequest</code> has been opened.</li>
+<li>(b59b025) Fixed: <code>CPDateFormatter</code> did not work with the symbols <code>MM</code> and <code>LL</code> for the month of December.</li>
+<li>(ea644a2) Fixed: <code>CPObjectController -setValue:forKey:</code> incorrectly used the key as the value.</li>
+<li>(ec55bdd) Fixed:  not throw exception if plist is not valid. It will return nil instead.</li>
+</ul>
+
+<h2>AppKit</h2>
+
+<ul>
+<li>(14349cb) New: <code>CPPlatformWindow -initWithWindow</code>. This feature allows you to manipulate a <code>CPPlatformWindow</code> through the given <code>CPWindow</code>, which is easier than regular platform window manipulation.</li>
+<li>(4d7cb06) New: the theme attributes <code>image-search-inset</code> and <code>image-cancel-inset</code> have been added for <code>CPSearchField</code>.</li>
+<li>(51bdfa4) New: the protocol <code>CPScrollViewDelegate</code> has been added for <code>CPScrollView.j</code>.</li>
+<li>(7b4365b) New: added the delegate method <code>windowWillResize:toSize:</code> for <code>CPWindow</code>.</li>
+<li>(737ef58) New: added the delegate methods <code>windowDidMiniaturize:</code>, <code>windowWillMiniaturize:</code> and <code>windowDidDeminiaturize:</code> for <code>CPWindow</code>.</li>
+<li>(0dad10d) New: send the <code>CPAppKitDefined</code> notification when the application is launched.</li>
+<li>(57b6888)(899bbc2)(0d17757) New: indeterminate spinning <code>CPProgressBarIndicator</code>.</li>
+<li>(bdbf1fb) New: added the property <code>baseWritingDirection</code> to <code>CPControl</code>. This allows you to write from left to right or right to left.</li>
+<li>(3a6a849) New: <code>CPUserNotification</code> and <code>CPUserNotificationCenter</code>.</li>
+<li>(3f9f92) New: <code>CPPlatform +closeAllPlatformWindows</code>. This method is called when reloading or closing the Cappuccino application. The method closes every platform window opened in the application.</li>
+<li>(058a73) New: delegate methods <code>applicationShouldTerminate</code> and <code>applicationShouldTerminateMessage</code> for the <code>CPApplicationDelegateProtocol</code>.</li>
+<li>(ab61aef) New: <code>CPVisualEffectView</code> and <code>CPAppearance</code>.</li>
+<li>(2f79b07) New: default system menu is now disabled for right click, except for a right click on a <code>CPTextField</code>.</li>
+<li>(448c2a2) New: speed up app loading by creating the <code>DOMCanvas</code> only if <code>CPView -drawRect:</code> or <code>CPView -viewWillDraw</code> are overridden, and do it lazily (on the first <code>viewWillLayout</code>).</li>
+<li>(448c2a2) New: (private API) <code>CPView viewWillLayout</code> and <code>CPView viewDidLayout</code>.</li>
+<li>(1fe1e6f) New: ability to more widely theme AppKit. In particular <code>CPColor alternateSelectedControlColor</code> and related <code>CPColor</code> fields can now be themed.</li>
+<li>(d5f38fe) New: <code>CPRunLoop -performBlock:argument:order:modes:</code>.</li>
+<li>(932b82)(770d5e) New: <code>CPTrackingArea</code>.</li>
+<li>(a2c0b47) New: the graphical <code>CPDatePicker</code> now disallows dates outside of the specified <code>minDate</code> and <code>maxDate</code>.</li>
+<li>(2d474cc) New: by default, Cappuccino now draws in high DPI when using <code>canvas2D</code>. You can disable this feature globally using the method <code>CPView +setAllowsHighDPIDrawing:</code>.</li>
+<li>(c04d3b2 ) New: <code>CPView -setNeedsLayout:</code> and <code>CPView -needsLayout</code> have been added. This makes it possible to choose not to lay out a view when needed, whereas previously once a layout had been scheduled it would always occur.</li>
+<li>(1c9e9da) New: <code>CPTableView -viewAtColumn:row:makeIfNecessary</code>.</li>
+</ul>
+
+<p><em>Bug Fixes:</em></p>
+
+<ul>
+<li>(eca9590) Fixed: <code>CPTableColumn</code>’s binding documentation was not clear.</li>
+<li>(b16b838) Fixed: <code>CPSearchField</code>s were not properly aligned when coming from a xib.</li>
+<li>(7c09517)(2b853df) Fixed: <code>CPSegmentedControl -widthForSegment:</code> and <code>CPSegmentedControl -frameForSegment:</code> did not return the correct value when using <code>CPSegmentedControl -sizeToFit</code>. The <code>selectedSegment</code> variable is now correctly updated.</li>
+<li>(027a317) Fixed: memory leaks with tooltips in <code>CPView</code>. This was due to handlers not being released.</li>
+<li>(1dc0601) Fixed: closing a <code>CPPlatformWindow</code> did not close its main <code>CPWindow</code>.</li>
+<li>(cf92fb9) Fixed: <code>CPComboBox</code>es were not properly aligned when coming from a xib.</li>
+<li>(f2c5515) Fixed: <code>CPTableView -reloadData</code> caused an extra run loop perform.</li>
+<li>(6aece1c) Fixed: the default template generated by the command <code>capp gen -t ThemeDescriptor</code> was slightly non-standard compared to that of Aristo 1 and Aristo 2.</li>
+<li>(98d0a39) Fixed: in <code>CPTableView</code>, <code>clickedRow</code> and <code>clickedColumn</code> did not behave like in Cocoa outside of the scope of a mouse event.</li>
+<li>(44c686f) Fixed: the method <code>CPView -scrollRectToVisible:</code> did not behave like in Cocoa.</li>
+<li>(914a3d7) Fixed: the height of a <code>CPSegmentedControl</code> brought in via <code>nib2cib</code> was incorrect.</li>
+<li>(10792c0)(01ba6dd)(fd06844) Fixed: the <code>keyWindow</code> and <code>mainWindow</code> of the application were not updated when switching from a platform window to another one.</li>
+<li>(9798b9f) Fixed: the overflow of a <code>CPPlatformWindow</code> was not clipped; it was possible to scroll a platform window.</li>
+<li>(769b379) Fixed: a <code>CPPopover</code> closed itself even on a click in another platform window.</li>
+<li>(6efe563) Fixed: the private method <code>CPEvent -_initOtherEventWithType:location:modifierFlags:timestamp:windowNumber:context:</code> did not save the  <code>windowNumber</code> provided.</li>
+<li>(0dad10d) Fixed: notifications <code>willBecomeActive:</code> and <code>didBecomeActive:</code> were called even if the application was already active. These notifications are now also sent when the application just finished launch.</li>
+<li>(5c2e093) Fixed: notifications <code>willBecomeActive:</code>, <code>didBecomeActive:</code>, <code>willResignActive:</code>, <code>didResignActive:</code> were not sent when the application focus was lost or gained.</li>
+<li>(da15cc4) Fixed: the <code>nextValidKeyView</code> calculated by Cappuccino in a <code>CPScrollView</code> did not behave as in Cocoa. It didn’t take the scroll position into consideration.</li>
+<li>(da15cc4) Fixed: a <code>CPTextField</code> could not become first responder when not visible.</li>
+<li>(136138d) Fixed: incorrect <code>CPTextField</code> first responder resignation behavior for a non key window <code>CPWindow</code>.</li>
+<li>(65a379c) Fixed: the textual <code>CPDatePicker</code> did not respect the English format.</li>
+<li>(f822268) Fixed: memory leaks in <code>CPSplitView</code> when using a delegate.</li>
+<li>(a7b6010) Fixed: <code>CPScrollView -documentVisibleRect</code> did not return the expected result when the document view was scaled.</li>
+<li>(9694c7) Fixed: <code>CPButton -sizeToFit</code> was broken when calling the method with a new title or a new image.</li>
+<li>(d6b0fc)(d1e31d) Fixed: when selecting a label through a right click, its selectable state was not taken into consideration.</li>
+<li>(6fe9da)(923d32) Fixed: <code>AppKit</code> unit-tests were not stand-alone.</li>
+<li>(5cd25e2) Fixed: type of boolean values lost when parsing a <code>CPPredicate</code> format.</li>
+<li>(6420a51) Fixed: crash when a cell-based <code>CPTableView</code> contained a data view that contained an editable <code>CPTextField</code>.</li>
+<li>(655bc39) Fixed: <code>CPPopover</code>s were blinking in Chrome and Opera.</li>
+<li>(c9e83e0) Fixed: slow drawing on non-retina resolutions due to needless identity transform.</li>
+<li>(3fcc37e) Fixed: <code>CPTabView</code> did not accept the first mouse event when the <code>CPTabView</code> was in an unfocused window.</li>
+<li>(7a0b2c9) Fixed: crash with the <code>CPRuleEditor</code> when dragging the first row.</li>
+<li>(4ac6395) Fixed: <code>CPToolTip</code> did not work in an external <code>CPWindow</code>.</li>
+<li>(448c2a2) Fixed: view based <code>CPTableView</code> broken after the <code>CPAppearance</code> feature was added.</li>
+<li>(448c2a2) Refactoring: <code>CPAppearance</code> and <code>CPVisualEffectView</code>.</li>
+<li>(526181a) Fixed: <code>CPImage -size</code> returned internal object ref.</li>
+<li>(d5b90c9) New: <code>CPTabView</code> improvements. The methods <code>CPTabViewItem -tabViewItemWithViewController:</code> and <code>CPTabViewItem -setImage:</code> have been added. New bindings options (<code>CPContentBinding</code> - <code>CPSelectedIndexBinding</code> - <code>CPSelectionIndexesBinding</code>) have been added to <code>CPTabView</code>.</li>
+<li>(d5b90c9) Fixed: <code>CPTabView -insertTabViewItem:atIndex:</code>.</li>
+<li>(c30f8b0) Fixed: warning when compiling AppKit.</li>
+<li>(40a9f19) Fixed: crash when a new <code>CPPlatformWindow</code> was blocked by the browser when opening (e.g. by a popup blocker).</li>
+<li>(f062fda) Optimization: <code>CPView -layoutSubviews</code> and <code>CPView -viewWillLayout</code>.</li>
+<li>(b04e576) Tests: new unit tests for the method <code>CPString -stringByReplacingCharactersInRange:</code>.</li>
+<li>(d4b1680) Fixed: copy and paste did not work properly in a new <code>CPPlatformWindow</code>.</li>
+<li>(d5f38fe) Fixed: timing key responder issue when a <code>CPTextField</code> became the first key responder.</li>
+<li>(b929a8f) Fixed: cib performances improved through a better way to handle <code>CPThemeAttribute</code>. Speed improvements of up 20% when loading a cib.</li>
+<li>(5e94aaa) Fixed: default selection of a <code>CPTabView</code> didn’t not work.</li>
+<li>(0bc02de) Fixed: <code>CPBundle +loadCibNamed:owner:</code> was asynchronous instead of synchronous.</li>
+<li>(78e29d2) Fixed: cursor position of a <code>CPTextField</code> was wrong when the <code>CPTextField</code> became the first responder.</li>
+<li>(e214bf3) Fixed: refactored <code>CPString -charPositionOfString:withFont:forPoint:</code>.</li>
+<li>(411a282) Fixed: manual test SmartFoldersDemo fixed.</li>
+<li>(0ac0845) Fixed: subquery expressions containing variables of a <code>CPPredicate</code> were ignored.</li>
+<li>(912fdea) Fixed: new manual test for <code>CPTabViewBindings</code>.</li>
+<li>(5ec5198) Fixed: added a manual test to check the behavior of a <code>CPSplitView</code> divider when having one view.</li>
+<li>(8908fb7) Fixed: view hierarchy was not updated while processing events and using the <code>CPTrackingArea</code>.</li>
+<li>(2dda326) Fixed: <code>CPRadioButton</code> cropped in the manual test Theme Kitchen Sink.</li>
+<li>(8403e36) New: Theme Kitchen Sink test looks better.</li>
+<li>(5d88d07) Fixed: <code>CPPredicate</code>’s predicateFormat with a <code>CPNull</code> value as right expression wasn’t working.</li>
+<li>(96ae3da) Fixed: replace loops with <code>CPArray -arrayByApplyingBlock:</code>.</li>
+<li>(4f13df6) Fixed: some manual tests were broken.</li>
+<li>(f2528b5) Changed the name of the method <code>CPDomDisplayServerSetStyleBackgroundSize</code> to <code>CPDOMDisplayServerSetStyleBackgroundSize</code>.</li>
+<li>(63f634a) Fixed: unreachable code in <code>CPDOMDisplayServer.h</code>.</li>
+<li>(02f301d) Fixed: the <code>CPStepper</code> class initializer methods returned an object of type <code>id</code> instead of <code>CPStepper</code>.</li>
+<li>(f9ce1d1)(01e69ce)(a2b38c8)(d50df6a)(cec746d)(71c0ba6) The <code>CPTableView</code> class has been refactored and optimized. The methods <code>CPTableView -preparedViewAtColumn:row:</code> and <code>CPTableView -enumerateAvailableViewsUsingblock:</code> have been added.</li>
+<li>(ee688d9) Fixed: theme showcase didn’t work.</li>
+<li>(187a017) Fixed: duplicated unit tests.</li>
+<li>(c0a2da4) Fixed: <code>CPDatePicker</code> will now raise <code>CPInvalidArgumentException</code> if given an invalid date.</li>
+<li>(7c4cdef) Fixed: wrong divider color of a <code>CPSegmentedControl</code>.</li>
+<li>(7c60ffa) Fixed: <code>CPPopover</code> didn’t update its position when the frame of one of its superviews changed.</li>
+<li>(9cb3eef) Fixed: when the auto-complete menu for a <code>CPTokenField</code> was open, the enter key was not consumed by the menu but forwarded to the application.</li>
+<li>(8f11917) Fixed: race condition when editing a <code>CPTextField</code> in a <code>CPTableView</code>.</li>
+</ul>
+
+<h2>Objective-J</h2>
+
+<p>(8c2f0ba) Optimization: runtime methods <code>objj_msgSend</code>, <code>objj_msgSendSuper</code> and <code>objj_method</code> are now faster. Arrays and dictionaries use more efficient code. This improves app speed by up to 20%.
+New: ability to inline functions when compiling with the option <code>-O2</code> or the compiler flag <code>InlineMsgSend</code>.
+* (751e76b) New: include type signatures by default when compiling an Objective-J file. This can be disabled by removing the compiler flag <code>IncludeTypeSignatures</code> or compiling with the <code>-T</code> option.
+* (751e76b) New: runtime methods <code>method_copyReturnType</code>, <code>method_copyArgumentType</code> and <code>method_getNumberOfArguments</code>.
+* (4b81e0d) Some AppKit speed improvements through the use of the new <code>objj_msgSend</code> in some places including <code>CPTableView</code> and <code>CPWindow</code>.</p>
+
+<h2>XcodeCapp</h2>
+
+<ul>
+<li>(47611b7)(d317744)(340d827) New: XcodeCapp 4.0.</li>
+</ul>
+
+<p><em>Bug Fixes:</em></p>
+
+<ul>
+<li>(5457ddb) Fixed: XcodeCapp ignored the resources folder.</li>
+<li>(2b17e17) Fixed: XcodeCapp did not ignore its own xib when the XcodeCapp folder was in a Cappuccino project.</li>
+<li>(671ed3c)(bacb701) Fixed: memory leaks in XcodeCapp.</li>
+<li>(2b17e17) Fixed: reload the operations and errors table views only when they are visible in XcodeCapp.</li>
+<li>(f41504c)(51a88a2) Refactored: do not use Lumberjack in XcodeCapp anymore.</li>
+<li>(50d7e8d) Fixed: typos and grammar in XcodeCapp.</li>
+<li>(50d7e8d) Fixed: uneven margins and spacing in XcodeCapp settings.</li>
+</ul>
+
+<h2>Nib2cib</h2>
+
+<p><em>Bug Fixes:</em></p>
+
+<ul>
+<li>(2f5e7f3) Fixed: <code>nib2cib</code> failed when having a custom formatter in a cell.</li>
+<li>(0326b7d)(00bdbcf)(d527139) Fixed: <code>nib2cib</code> failed when having a <code>CPTableView</code> in a <code>CPBox</code>.</li>
+<li>(808591d) Fixed: <code>CPObjectController</code> didn’t get <code>entityName</code> and <code>lazyFetching</code> attributes from the xib/cib file.</li>
+</ul>
+
+<h2>Misc</h2>
+
+<ul>
+<li>(06c5976) New: added the tool <code>objj2objcskeleton</code>. This tool converts an Objective-J files to a basic Objective-C file containing an interface representing the original file.</li>
+<li>(a0277ab) New: added the option <code>-x</code> (alternatively <code>--xml</code>) to <code>objj</code>. This option allows you to specify the output format of <code>objj</code> to be XML.</li>
+<li>(245da9b)(0f62926)(c9f391d) New: <code>capp_env</code> has been added to Cappuccino. This tools allows you to create virtual environments for Cappuccino.</li>
+<li>(3f88e02) New: <code>-n</code> option added to <code>objj2objcskeleton</code>. This option allows you to specify the name of the generated file.</li>
+<li>(d358f0) New: the XML output format of the command <code>objj</code> now has the key <code>sourcePath</code> instead of <code>path</code>.</li>
+</ul>
+
+<p><em>Bug Fixes:</em></p>
+
+<ul>
+<li>(5bba109) Fixed: “too many open files” error when compiling an app or Cappuccino itself using <code>jake</code>. Jake now properly closes files when done with them.</li>
+<li>(8cc075) Fixed: <code>objj2objcskeleton</code> did not transform Objective-J categories.</li>
+<li>(0e4136) Fixed: the <code>--xml</code> option for the <code>objj</code> command did not output every error in XML.</li>
+<li>(3d79799) Fixed: Cappuccino installation as a whole failed if <code>XcodeCapp</code> build failed.</li>
+<li>(662db00) Fixed: build in directory with a space in the path would fail.</li>
+</ul>
+
+<h2>OJTest</h2>
+
+<ul>
+<li>(964fc8b) New: the method <code>verifyThatAllExpectationsHaveBeenMetInOrder:</code> has been added to <code>OJMoq</code>. This method allows you to check if certain registered methods are called in order.</li>
+<li>(7c47306) New: the option <code>-x</code> to stop the suite of tests when a test fails.</li>
+<li>(d19e968) New: <code>jake install</code> will update OJTest on your system.</li>
+<li>(f8c73aa) New: OJTest raises a warning when a test method has already been declared in the same test class.</li>
+</ul>
+
+<p><em>Bug Fixes:</em></p>
+
+<ul>
+<li>(09de5a2) Fixed: counting of a selector with <code>OBJMoq</code> and <code>OJMockSpy</code> worked incorrectly if set up multiple times with different arguments.</li>
+<li>(f799634) Fixed: attribute names were used directly instead of through runtime functions.</li>
+<li>(def9006) Fixed: <code>CPRunLoop</code> was not called at the end of every tests.</li>
+<li>(522fcdf) Fixed: duplicated unit tests.</li>
+<li>(1f6cc19) Fixed: the coverage option wasn’t working.</li>
+</ul>
+
+<h2>Cucapp</h2>
+
+<ul>
+<li>(986db18) New: nodes <code>backgroundColor</code>, <code>textColor</code> and <code>borderColor</code> in generated XML.</li>
+<li>(af4fbc7) New:<code>-simulateScrollWheelOnPoint:</code>.</li>
+<li>(b432bd2) New: Cucapp now generates an error message for every Objective-J exception caught.</li>
+<li>(e0f276e) New: <code>jake install</code> for Cucapp. The command will install Cucapp in <code>narwhal</code> and the gems required (Cucumber, Thin, Nokogiri, Launchy and JSON).</li>
+<li>(e0f276e) New: added the command <code>cucapp</code>. This command allows you to create a testing architecture in your Cappuccino application. The architecture provides a new command <code>jake cucumber-test</code>, creates a soft link to where Cucapp is installed and creates every file needed to create Ceucumber tests.</li>
+<li>(27f03e4) New: Cucapp now uses <code>watir-webdriver</code> as support for the browser.</li>
+<li>(a12e068) New: environment variables <code>WATIR_CHROME_DRIVER</code> and <code>WATIR_CHROME_SWITCHES</code> to configure <code>watir</code> for Chrome.</li>
+<li>(61b1906) New: files <code>CPResponder+CuCapp.j</code> and <code>CuCapp+Record.j</code> are now copied to the targeted folder when using the <code>cucapp</code> command.</li>
+<li>(7f830c1) New: Cucapp now dispatches <code>DOM</code> events to the main document instead of sending events to the <code>CPApp</code>.</li>
+<li>(8075435) New: default steps such as clicking, hitting a key and checking a <code>CPControl</code> value in <code>test_application_steps.rb</code>.</li>
+<li>(8075435) New: environment variables <code>BROWSER_SIZE_WIDTH</code> and <code>BROWSER_SIZE_HEIGHT</code> to specify the size of the browser when testing.</li>
+<li>(3472386) New: possibility to create screenshots from Cucapp.</li>
+<li>(10b3ff2) New: support for phantomjs.</li>
+<li>(30786c5) New: abstract layer of steps. These steps can be used to quickly and easily write tests in Cucumber. They are totally abstract and can be used for every Cappuccino application. They provide an API to simulate any action a user could perform and to check values in the application.</li>
+<li>(b172e5a) New: the environment variable <code>CAPP_INSTALL_DIR</code> can be used to specify where Cucapp should be installed when using <code>jake install</code>.</li>
+<li>(76551a5) New: Ruby methods to generate mouse up and down events.</li>
+<li>(76551a5) New: the environment variable <code>BROWSER_FULL_SCREEN</code> can be set to have the browser in full screen when testing.</li>
+<li>(a7b6fa1) New: added a sleep of 5 ms between every keyboard event generated by Cucapp.</li>
+</ul>
+
+<p><em>Bug Fixes:</em></p>
+
+<ul>
+<li>(a266833) Fixed: the command <code>simulateScrollWheel:</code> did not work in a <code>CPScrollView</code>.</li>
+<li>(e07bc84) Fixed: the command <code>simulateScrollWheel:</code> did not return a result.</li>
+<li>(01b7ddc) Fixed: methods <code>textFor:</code> and <code>objectValue</code> did not return the string value of a <code>CPPopUpButton</code>.</li>
+<li>(e93d795) Fixed: <code>CPWindow</code>s of the application not all closed when the test was over.</li>
+<li>(fa281e8) Fixed: <code>CPRunLoop</code> was not called between every event simulated.</li>
+<li>(76551a5) Refactoring of the class <code>Encumber</code>. Drag and drop events were generated from the Cappuccino side. They are now generated from the Cucumber side instead.</li>
+<li>(a87e514)(531645a) Fixed: it wasn’t possible to launch the tests other than on port 3000.</li>
+<li>(1854fd2) Fixed: the <code>document</code> used to dispatch the events generated by Cucapp could be null.</li>
+<li>(1854fd2) Fixed: installation of gems could not be completed due to permission.</li>
+<li>(74a7a3c) Fixed: documentation about how to install phantomjs has been added to the documentation.</li>
+<li>(bfd7537) Fixed: style in <code>cappuccino_mappings.rb</code>.</li>
+<li>(0f2fb70) Fixed: extraneous note about PhantomJS in the Readme.</li>
+<li>(feedf75) Fixed: Cucapp imported <code>&lt;AppKit/AppKit.j&gt;</code>. This could raise exceptions when testing a compiled application.</li>
+<li>(111c56f) Fixed: The Cucapp’s CLI now logs informations when clicking on a <code>CPView</code>.</li>
+</ul>
+
+<h2>Other Changes</h2>
+
+<ul>
+<li>(a439688) Fixed: private variables were shown in Cappuccino’s documentation.</li>
+<li>(6b4a1b) New: added the Gitter chat link to the README.</li>
+<li>(c468440) Fixed: tutorials have been updated with the latest features of XcodeCapp, Safari and Objective-J.</li>
+<li>(5e3fe13) New: added Twitter account to the README.</li>
+</ul>
+
+<p>The changes above summarize a few hundred of the most important changes in Cappuccino 0.9.9. You can review the other 250 or so changes in the <a href="https://github.com/cappuccino/cappuccino/compare/0.9.8...0.9.9">0.9.8…0.9.9 compare view</a>.</p>
+
 <h2>What’s New in Cappuccino 0.9.8</h2>
 
 <p><em>Release date : 2015-03-29</em></p>
@@ -70,7 +517,7 @@
 <li>New: multi-line support for <code>CPTextField</code>.</li>
 <li>New: <code>CFError</code>, <code>CPURLErrors</code> and <code>CFError</code>.</li>
 <li>New: <code>CPControl -setControlSize:</code>.</li>
-<li>Redesigned ‘CPPredicateEditor’ and 'CPRuleEditor’.</li>
+<li>Redesigned 'CPPredicateEditor’ and ‘CPRuleEditor’.</li>
 <li>New: all <code>@protocols</code> in Foundation and AppKit.</li>
 <li>New: support for <code>capp_lint</code> and <code>objj</code> to XcodeCapp (now version 3.2).</li>
 <li>Added Cucapp as part of the Cappuccino Project (<a href="https://github.com/cappuccino/cucapp">https://github.com/cappuccino/cucapp</a>)</li>
@@ -85,14 +532,14 @@
 <li>(a1ea371) New: <code>CPCoding</code> for <code>CPAttributedString</code>.</li>
 <li>(7c6ef51) New: <code>CPDate +dateByAddingTimeInterval:</code>.</li>
 <li>(e7ae969) New: <code>CPNotificationCenter -addObserverName:object:queue:usingBlock:</code>.</li>
-<li>(fa5fd1e) New: <code>CPDiacriticInsensitiveSearch</code> support in <code>CPString</code> for the method <code>-(CPRange)rangeOfString:options:range:</code>. Added support for strip variants of 'E’ 'I’ 'O’ 'U’.</li>
+<li>(fa5fd1e) New: <code>CPDiacriticInsensitiveSearch</code> support in <code>CPString</code> for the method <code>-(CPRange)rangeOfString:options:range:</code>. Added support for strip variants of ‘E’ ‘I’ ‘O’ ‘U’.</li>
 </ul>
 
 <p><em>Bug Fixes:</em></p>
 
 <ul>
 <li>(1dc84f9) Fixed: issue with <code>CPDateFormatter -_dateWithTimeZone:</code> when timeZone is null.</li>
-<li>(acd5442) Fixed: <code>CPDateFormatter</code>’s <code>relativeDateFormating</code> didn’t work in January and was inaccurate for some time intervals around daylight saving time changes.</li>
+<li>(acd5442) Fixed: <code>CPDateFormatter</code>‘s <code>relativeDateFormating</code> didn’t work in January and was inaccurate for some time intervals around daylight saving time changes.</li>
 <li>(d176dd0) Fixed: <code>CPNumber +numberWithBool:</code> broke <code>CPComparisonPredicate</code>.</li>
 <li>(a31ad2c) Fixed: <code>CPAttributedString -isEqual:</code> true despite attribute differences.</li>
 <li>(9119e08) Fixed: <code>CPDateFormatter</code> didn’t work for non-“en” locales.</li>
@@ -428,7 +875,7 @@
 <li>(f4b08a9) New: <code>- CPObject performSelector:withObject:afterDelay:</code> and related methods.</li>
 <li>(34faf36) New: @ref and @deref in Objective-J 2.0.</li>
 <li>(c550cd7) New: optimise <code>- CPArray enumerateObjectsWithOptions:usingBlock:</code>.</li>
-<li>(ecc1e77) New: added macro/identifier concatenation with the ’##’ operator.</li>
+<li>(ecc1e77) New: added macro/identifier concatenation with the ‘##’ operator.</li>
 <li>(a373081) New: <code>CFBundle.identifier</code>, <code>CFBundle.bundleWithIdentifier</code>, <code>- CPBundle -bundleWithIdentifier</code>.</li>
 <li>(fe26e6c) New: <code>+ CPException raise:format:</code>.</li>
 <li>(1f280b3) New: <code>- CPNumberFormatter localizedStringFromNumber:numberStyle:</code>.</li>
@@ -581,7 +1028,7 @@
 <li>(3d9b69a) Fixed: broken corners on primary <code>CPBox</code> in Chrome.</li>
 <li>(6b0565e) Fixed: <code>CPBox</code> with <code>CPBezelBorder</code> had unexpected inner shadow.</li>
 <li>(4991913) Fixed: blurry popovers in Chrome.</li>
-<li>(baa69ff) Fixed: “cannot read property ’_tokenScrollView’ of null.”</li>
+<li>(baa69ff) Fixed: “cannot read property ‘_tokenScrollView’ of null.”</li>
 <li>(535b8e5) Fixed: orphan token field autocomplete menus.</li>
 <li>(933a1be) Fixed: <code>- CPWindow setRepresentedFilename:</code> set as a string, not a <code>CPURL</code>.</li>
 <li>(ab49c63) Fixed: <code>CPArrayController add:</code> adding wrong object, <code>insert:</code> not inserting in right position when there’s a selection.</li>
@@ -677,7 +1124,7 @@
 <li>(6ef776e) Fixed: <code>- CPView nextValidKeyView</code> infinite loop.</li>
 <li>(e7ecd92) Fixed: custom <code>CPWindow</code> subclasses breaking flatten.</li>
 <li>(d61d4eb) Fixed: <code>-CPImage initWithContentsOfFile:nil</code> created broken image.</li>
-<li>(54d13c8) Fixed: <code>CPImageView</code>’s _DOMImageElement was not created during initWithCoder.</li>
+<li>(54d13c8) Fixed: <code>CPImageView</code>‘s _DOMImageElement was not created during initWithCoder.</li>
 <li>(64f962e) Fixed: <code>viewDidHide</code> and <code>viewDidUnhide</code> were not called when a view was being added to/removed from hidden ancestor.</li>
 <li>(7788435) Fixed: <code>CPTextField</code> would not become/resign key responder when first responder and unhidden/hidden.</li>
 <li>(650bc77) Fixed: number formatter was called twice for every <code>setObjectValue</code>.</li>
@@ -852,7 +1299,7 @@
 <li>(0a18990) Fixed: notify <code>CPOutlineView</code> delegate that item did collapse after reloading them.</li>
 <li>(905d23d) Fixed: small graphical fix in <code>CPPredicateEditor</code>.</li>
 <li>(c37783c) Fixed: fixed table column header styling.</li>
-<li>(da91ab9) Fixed: implicitly set <code>selectionIndexes</code>. <code>CPTableView</code>’s <code>selectionIndexes</code> binding shouldn’t be set automatically unless the content binding was also set automatically (through a table column binding). Assume that manual content binding implies a desire to manually bind selection indexes (and sort descriptors) as well.</li>
+<li>(da91ab9) Fixed: implicitly set <code>selectionIndexes</code>. <code>CPTableView</code>‘s <code>selectionIndexes</code> binding shouldn’t be set automatically unless the content binding was also set automatically (through a table column binding). Assume that manual content binding implies a desire to manually bind selection indexes (and sort descriptors) as well.</li>
 <li>(0f5d459) Fixed: collection view crash on unepexted drag events.</li>
 <li>(90d2713) Fixed: relative URLs were deemed to fail the SOP test by web views.</li>
 <li>(0d9973a) Fixed: out of place table headers and other text positioning errors.</li>
@@ -967,7 +1414,7 @@
 <li>Fixed: <code>LOG</code> global function.</li>
 <li>Fixed: <code>CPString</code> path methods should collect <code>//</code> into <code>/</code>.</li>
 <li>Fixed: main bundle URL missing final <code>/</code> when running in CommonJS.</li>
-<li>Fixed: <code>CPDateReferenceDate</code> should be 'Jan 1 2001’ instead of 'Feb 1 2001’</li>
+<li>Fixed: <code>CPDateReferenceDate</code> should be 'Jan 1 2001’ instead of ‘Feb 1 2001’</li>
 <li>Match <code>CPDate distantPast</code> and <code>distantFuture</code> with Cocoa.</li>
 <li>Fixed: removed redundant <code>CPCopyRange</code> function.</li>
 <li>Fixed: incorrect change information sent to observers when the top level object of an observed key path changes.</li>
@@ -981,7 +1428,7 @@
 <li>Correct <code>CPNumberFormatter maximumFractionalDigits</code> default.</li>
 <li>Fix <code>CPNumberFormatter</code> maximum fraction digits property name.</li>
 <li>Extend <code>CPNumberFormatter</code> CPCoding support and fix rounding default.</li>
-<li>Fixed: <code>CPDecimal</code> would not accept strings such as ’.003’ or ’-.003’ (no integer component).</li>
+<li>Fixed: <code>CPDecimal</code> would not accept strings such as ‘.003’ or ‘-.003’ (no integer component).</li>
 </ul>
 
 <h3>AppKit</h3>
@@ -1054,7 +1501,7 @@
 <li>New: <code>CPComboBox</code>.</li>
 <li>Better focus ring for <code>CPTextField</code> and all subclasses, and improved drawing of disabled contents.</li>
 <li>New: themable <code>CPColorWell</code> with Aristo look. Highlighted and disabled visuals.</li>
-<li>Standardise <code>CPColorWell</code>’s mouse handling and highlighting. Switch to <code>setNeedsLayout</code> based drawing.</li>
+<li>Standardise <code>CPColorWell</code>‘s mouse handling and highlighting. Switch to <code>setNeedsLayout</code> based drawing.</li>
 <li>New: <code>CGRectInsetByInset</code>.</li>
 <li>New: the system font can now be changed at runtime, even for archived UI (e.g. through <code>nib2cib</code>.) There is no need to recompile if the system font is changed in Info.plist.</li>
 <li>New: <code>CPControl</code> now archives its formatter. This allows you to use a formatter with a table column’s data view.</li>
@@ -1325,7 +1772,7 @@
 <ul>
 <li>Fixed: empty <code>CPTabView</code>s could not be converted.</li>
 <li>Fixed: toolbars with standard items such as <code>NSToolbarShowColorsItem</code> didn’t convert right.</li>
-<li>Fixed: <code>CPBox</code> title position 'none’ was converted to 'on top’.</li>
+<li>Fixed: <code>CPBox</code> title position 'none’ was converted to ‘on top’.</li>
 <li>Support for <code>CPWindow autorecalculatesKeyViewLoop</code>.</li>
 <li>Fixed: base64 data could not be decoded from nib files.</li>
 <li>Fixed: search fields had the bottom pixel cut off.</li>
@@ -1481,7 +1928,7 @@
 <li>Improved split view performance: eliminate excessive <code>splitViewDidResizeSubviews:</code> messages.</li>
 <li>New: support for collapsing views towards the right in split views.</li>
 <li>New: split view auto save support.</li>
-<li>New: 'overlay’ style scrollbars which fade out when not in use. Old style scrollbars are also supported and automatically enabled if the browser does not use overlay style scrollbars (e.g. OS X Lion with a touch enabled input device uses overlay style scrollbars, but a Windows XP machine with a mousewheel would not.)</li>
+<li>New: ‘overlay’ style scrollbars which fade out when not in use. Old style scrollbars are also supported and automatically enabled if the browser does not use overlay style scrollbars (e.g. OS X Lion with a touch enabled input device uses overlay style scrollbars, but a Windows XP machine with a mousewheel would not.)</li>
 <li>New: <code>CPWindow setMovable:</code> support which specifies whether a window can be dragged (issue #1358).</li>
 <li>New: <code>CPPopover</code> control to create small “pop up” widgets attached to other controls, similar to the Downloads pop-over in Safari 5 (issue #1316).</li>
 <li>Allow almost anything as a key equivalent unless a text field is the first responder. E.g. pressing “a” with no modifiers can now trigger a button.</li>
@@ -1529,10 +1976,10 @@
 <li>Fixed: <code>CPInvalidArgumentException: Unsupported method on CPArray</code> when attempting to bind to a <code>CPArrayController's arrangedObjects</code> before calling <code>setContent:</code>.</li>
 <li>Fixed #1174: <code>CPArrayController _arrangedObjects</code> initialisation error.</li>
 <li>Fixed: <code>CPOutlineView</code> provided dragged items in reverse order.</li>
-<li>Fixed: once a table view drag and drop was retargeted, the new target would 'stick’ as the drag continued.</li>
+<li>Fixed: once a table view drag and drop was retargeted, the new target would ‘stick’ as the drag continued.</li>
 <li>Fixed: the content view of a decoded <code>CPBox</code> would have the wrong autoresizing mask.</li>
 <li>Fixed: unhandled keyboard events of a window did not travel past the window.</li>
-<li>Fixed: JS objects 'randomly’ failed to unarchive due to a caching problem. One visible symptom was that <code>CPTextField's</code> custom inset would decode fine, but a subclass of a <code>CPTextField</code> would fail to decode the inset.</li>
+<li>Fixed: JS objects ‘randomly’ failed to unarchive due to a caching problem. One visible symptom was that <code>CPTextField's</code> custom inset would decode fine, but a subclass of a <code>CPTextField</code> would fail to decode the inset.</li>
 <li>Fixed: table headers didn’t scroll with the rest of the table during drag and drop.</li>
 <li>Fixed: <code>CGGradientCreateWithColorComponents</code> assumed there’d only be two colors in each gradient.</li>
 <li>Fixed #1242: color space was missing for colors created by <code>CGColorCreateGenericGray</code>, <code>CGColorCreateGenericRGB</code> and <code>CGColorCreateGenericCMYK</code>.</li>
@@ -1583,7 +2030,7 @@
 <ul>
 <li>New: <code>CPProgressIndicator</code> support.</li>
 <li>New: Support for image views in table views.</li>
-<li>New: Support 'enabled’ state for controls.</li>
+<li>New: Support ‘enabled’ state for controls.</li>
 <li>Much improved font support (issue #1197 among others.)</li>
 <li>Support for <code>sendsActionOnEndEditing</code> flag.</li>
 <li>Improved support for radio buttons (issue #1197).</li>
@@ -1643,15 +2090,16 @@
 <a href="/contribute.html#bug-reports">Bug reports</a>
 <a href="https://github.com/cappuccino/cappuccino">Source code</a>
 <a href="https://github.com/cappuccino/cappuccino/wiki">Wiki</a>
+<a href="https://gratipay.com/cappuccino/">Donate</a>
 </div>
 <div class="span2">
 <h4>Get Answers</h4>
 <a href="/support/">Support</a>
 <a href="http://groups.google.com/group/objectivej">Mailing list</a>
 <a href="https://gitter.im/cappuccino/cappuccino">Cappuccino Gitter</a>
-<a href="http://webchat.freenode.net/?channels=cappuccino">#cappuccino IRC</a>
 <a href="/blog/">Blog</a>
 <a href="/support/faq.html">FAQ</a>
+<a href="http://www.meetup.com/World-Cappuccino-Meetup/">Meetup</a>
 </div>
 </div>
 </div>
@@ -1675,7 +2123,7 @@
 </a>
 </div>
 <div class="span8 copyright2">
-<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="https://pages.github.com">GithubPages</a>. Copyright © 2013 - Cappuccino Project.</p>
+<p><img width="18" height="13" src="/img/minisofa-4aa3e405.png"> Logo by <a href="http://madebysofa.com">Sofa</a>. Hosted by <a href="http://slevenbits.com">SlevenBits</a>. Copyright © 2013-2019 - Cappuccino Project.</p>
 </div>
 <div class="pull-right forkme">
 <p>
@@ -1686,7 +2134,7 @@
 
 </div>
 </div>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="/js/bootstrap.min-f6d9c45d.js"></script>
 <script src="/js/theme-09250c02.js"></script>
 </body>

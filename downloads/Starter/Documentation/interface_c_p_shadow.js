@@ -8,5 +8,5 @@ var interface_c_p_shadow =
     [ "shadowBlurRadius", "interface_c_p_shadow.html#af446e8aad64ded554442b80b39da3c48", null ],
     [ "shadowColor", "interface_c_p_shadow.html#a66ca0ad711bd20dbb2d7bf4aa7902fd7", null ],
     [ "shadowOffset", "interface_c_p_shadow.html#a00ae1c7da8de29506fce34ce63b6e5ce", null ],
-    [ "shadowWithOffset:blurRadius:color:", "interface_c_p_shadow.html#af53a16c94751a3aff3d6a8912567607a", null ]
+    [ "shadowWithOffset:blurRadius:color:", "interface_c_p_shadow.html#af4c8284aba909f58d1944beb772d22c0", null ]
 ];

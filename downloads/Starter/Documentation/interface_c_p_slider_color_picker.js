@@ -3,7 +3,7 @@ var interface_c_p_slider_color_picker =
     [ "controlTextDidEndEditing:", "interface_c_p_slider_color_picker.html#a91f63f88f672f423d6f24e4b288676d7", null ],
     [ "currentMode", "interface_c_p_slider_color_picker.html#a59ef8e9386d9544e08b23cf225ef870b", null ],
     [ "initView", "interface_c_p_slider_color_picker.html#ad5db023f89e307b276ad3cb24d054971", null ],
-    [ "initWithPickerMask:colorPanel:", "interface_c_p_slider_color_picker.html#ac2d0c60c963c039b88db9e0aac8a5dc6", null ],
+    [ "initWithPickerMask:colorPanel:", "interface_c_p_slider_color_picker.html#af12c0a7836959f08677e69a0966b6ce8", null ],
     [ "provideNewAlternateButtonImage", "interface_c_p_slider_color_picker.html#a611560db9e741a99cc20da96448c6af1", null ],
     [ "provideNewButtonImage", "interface_c_p_slider_color_picker.html#ac7d4c2593a429dde32c904e78eda734b", null ],
     [ "provideNewView:", "interface_c_p_slider_color_picker.html#a6e3a3495ba84a4bdb69c91074e833ac2", null ],

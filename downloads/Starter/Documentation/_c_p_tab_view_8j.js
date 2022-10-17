@@ -1,6 +1,6 @@
 var _c_p_tab_view_8j =
 [
-    [ "<CPTabViewDelegate>", "protocol_c_p_tab_view_delegate-p.html", "protocol_c_p_tab_view_delegate-p" ],
+    [ "<CPTabViewDelegate >", "protocol_c_p_tab_view_delegate_01-p.html", "protocol_c_p_tab_view_delegate_01-p" ],
     [ "CPTopTabsBezelBorder", "_c_p_tab_view_8j.html#ac482e6815c133b978f438e4e947c63e0", null ],
     [ "CPBottomTabsBezelBorder", "_c_p_tab_view_8j.html#a4ad8580f6b6ba546b9df335f2277df9a", null ],
     [ "CPNoTabsBezelBorder", "_c_p_tab_view_8j.html#af4629023d15a39ad0290a074b2a3b659", null ],
