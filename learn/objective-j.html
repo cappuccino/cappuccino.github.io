@@ -139,7 +139,7 @@ class that contains one member variable, name:</p>
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="n">CPString</span> <span class="n">name</span><span class="p">;</span>
+    <span class="nb">CPString</span> <span class="n">name</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
@@ -201,7 +201,7 @@ colon after “setName” - it indicates that a parameter follows.</p>
 by a colon. In the declaration of such a method, parameters are split by
 a label, followed by a colon, the type, and the parameter name:</p>
 
-<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="k">void</span><span class="p">)</span><span class="n">setJobTitle</span><span class="o">:</span><span class="p">(</span><span class="n">CPString</span><span class="p">)</span><span class="n">aJobTitle</span> <span class="n">company</span><span class="o">:</span><span class="p">(</span><span class="n">CPString</span><span class="p">)</span><span class="n">aCompany</span>
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="k">void</span><span class="p">)</span><span class="n">setJobTitle</span><span class="o">:</span><span class="p">(</span><span class="nb">CPString</span><span class="p">)</span><span class="n">aJobTitle</span> <span class="n">company</span><span class="o">:</span><span class="p">(</span><span class="nb">CPString</span><span class="p">)</span><span class="n">aCompany</span>
 </pre></div>
 
 <p>In Objective-J, method names are split across all of the arguments to a
@@ -267,7 +267,7 @@ instance.</p>
 <p>Some classes specify their own custom <code>init</code> method, like <code>CPView</code>, which
 uses the following signature:</p>
 
-<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">initWithFrame</span><span class="o">:</span><span class="p">(</span><span class="n">CGRect</span><span class="p">)</span><span class="n">aFrame</span>
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">initWithFrame</span><span class="o">:</span><span class="p">(</span><span class="nb">CGRect</span><span class="p">)</span><span class="n">aFrame</span>
 </pre></div>
 
 <p>Every subclass should be sure to call its parent class’s init method.
@@ -276,14 +276,14 @@ directly:</p>
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">initWithName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aName
 <span class="p">{</span>
-    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">];</span>
+    <span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">super</span> <span class="n">init</span><span class="p">];</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">aName</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -308,7 +308,7 @@ objects. Note that in class methods, <code>self</code> refers to the class itsel
 
 <div class="highlight"><pre><span class="o">+</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">personWithName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aName
 <span class="p">{</span>
-    <span class="k">return</span> <span class="p">[[</span><span class="nb">self</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithName</span><span class="o">:</span><span class="n">aName</span><span class="p">];</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="kr">self</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithName</span><span class="o">:</span><span class="n">aName</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -355,7 +355,7 @@ implement the optional methods.</p>
 
 <p>Create a protocol:</p>
 
-<div class="highlight"><pre><span class="k">@protocol</span> <span class="nc">Move</span> <span class="o">&lt;</span><span class="n">CPObject</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span class="k">@protocol</span> <span class="nc">Move</span> <span class="o">&lt;</span><span class="nb">CPObject</span><span class="o">&gt;</span>
 
 <span class="c1">// Required methods</span>
 <span class="err">@</span><span class="n">required</span>
@@ -373,7 +373,7 @@ implement the optional methods.</p>
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span> <span class="o">&lt;</span><span class="n">Move</span><span class="o">&gt;</span>
 <span class="p">{</span>
-    <span class="n">CPString</span> <span class="n">name</span><span class="p">;</span>
+    <span class="nb">CPString</span> <span class="n">name</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
@@ -398,10 +398,10 @@ like this:</p>
 <span class="o">-</span> <span class="p">(</span><span class="kt">CPString</span><span class="p">)</span><span class="nf">reverse</span>
 <span class="p">{</span>
     <span class="kd">var</span> <span class="n">reversedString</span> <span class="o">=</span> <span class="s">""</span><span class="p">,</span>
-        <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">length</span><span class="p">];</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">length</span><span class="p">];</span>
 
     <span class="k">while</span><span class="p">(</span><span class="n">index</span><span class="o">--</span><span class="p">)</span>
-        <span class="n">reversedString</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">characterAtIndex</span><span class="o">:</span><span class="n">index</span><span class="p">];</span>
+        <span class="n">reversedString</span> <span class="o">+=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">characterAtIndex</span><span class="o">:</span><span class="n">index</span><span class="p">];</span>
 
     <span class="k">return</span> <span class="n">reversedString</span><span class="p">;</span>
 <span class="p">}</span>
@@ -465,7 +465,7 @@ single class they can be thought of as “class variables”.</p>
 
 <span class="k">@implementation</span> <span class="nc">Foo</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="n">CPString</span> <span class="n">objectScoped</span><span class="p">;</span>
+    <span class="nb">CPString</span> <span class="n">objectScoped</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">baz</span>
@@ -488,8 +488,8 @@ you need to write for getting and setting instance variables. Take the following
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="n">CPString</span> <span class="n">firstName</span><span class="p">;</span>
-    <span class="n">CPString</span> <span class="n">lastName</span><span class="p">;</span>
+    <span class="nb">CPString</span> <span class="n">firstName</span><span class="p">;</span>
+    <span class="nb">CPString</span> <span class="n">lastName</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setFirstName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aString
@@ -519,8 +519,8 @@ you need to write for getting and setting instance variables. Take the following
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="n">CPString</span> <span class="n">firstName</span>    <span class="k">@accessors</span><span class="p">;</span>
-    <span class="n">CPString</span> <span class="n">lastName</span>     <span class="k">@accessors</span><span class="p">;</span>
+    <span class="nb">CPString</span> <span class="n">firstName</span>    <span class="k">@accessors</span><span class="p">;</span>
+    <span class="nb">CPString</span> <span class="n">lastName</span>     <span class="k">@accessors</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
@@ -532,8 +532,8 @@ some additional processing before returning the variable:</p>
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="n">CPString</span> <span class="n">firstName</span>    <span class="k">@accessors</span><span class="p">;</span>
-    <span class="n">CPString</span> <span class="n">lastName</span>     <span class="k">@accessors</span><span class="p">;</span>
+    <span class="nb">CPString</span> <span class="n">firstName</span>    <span class="k">@accessors</span><span class="p">;</span>
+    <span class="nb">CPString</span> <span class="n">lastName</span>     <span class="k">@accessors</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">CPString</span><span class="p">)</span><span class="nf">firstName</span>
@@ -550,8 +550,8 @@ hides the underlying variable name and gives you a way of configuring the getter
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">Person</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="n">CPString</span> <span class="n">_firstName</span>    <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">firstName</span><span class="p">);</span>
-    <span class="n">CPString</span> <span class="n">_lastName</span>     <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">lastName</span><span class="p">);</span>
+    <span class="nb">CPString</span> <span class="n">_firstName</span>    <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">firstName</span><span class="p">);</span>
+    <span class="nb">CPString</span> <span class="n">_lastName</span>     <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">lastName</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
@@ -581,7 +581,7 @@ hides the underlying variable name and gives you a way of configuring the getter
 
 <h5>Before</h5>
 
-<div class="highlight"><pre><span class="k">return</span> <span class="p">[</span><span class="n">CPDictionary</span> <span class="n">dictionaryWithObjects</span><span class="o">:</span><span class="p">[[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="nf">CGSizeMakeZero</span><span class="p">(),</span> <span class="mf">6.0</span><span class="p">,</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="nf">CGSizeMakeZero</span><span class="p">()]</span>
+<div class="highlight"><pre><span class="k">return</span> <span class="p">[</span><span class="nb">CPDictionary</span> <span class="n">dictionaryWithObjects</span><span class="o">:</span><span class="p">[[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="p">[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="nb">CGSizeMakeZero</span><span class="p">(),</span> <span class="mf">6.0</span><span class="p">,</span> <span class="p">[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="nb">CGSizeMakeZero</span><span class="p">()]</span>
                                    <span class="n">forKeys</span><span class="o">:</span><span class="p">[</span>   <span class="s">@"background-color"</span><span class="p">,</span>
                                                <span class="s">@"border-color"</span><span class="p">,</span>
                                                <span class="s">@"border-width"</span><span class="p">,</span>
@@ -594,15 +594,15 @@ hides the underlying variable name and gives you a way of configuring the getter
 
 <h5>After</h5>
 
-<div class="highlight"><pre><span class="k">return</span> <span class="err">@</span><span class="p">{</span>
-        <span class="s">@"background-color"</span><span class="o">:</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span>
-        <span class="s">@"border-color"</span><span class="o">:</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span>
+<div class="highlight"><pre><span class="k">return</span> <span class="p">@{</span>
+        <span class="s">@"background-color"</span><span class="o">:</span> <span class="p">[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span>
+        <span class="s">@"border-color"</span><span class="o">:</span> <span class="p">[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span>
         <span class="s">@"border-width"</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
         <span class="s">@"corner-radius"</span><span class="o">:</span> <span class="mf">3.0</span><span class="p">,</span>
-        <span class="s">@"inner-shadow-offset"</span><span class="o">:</span> <span class="nf">CGSizeMakeZero</span><span class="p">(),</span>
+        <span class="s">@"inner-shadow-offset"</span><span class="o">:</span> <span class="nb">CGSizeMakeZero</span><span class="p">(),</span>
         <span class="s">@"inner-shadow-size"</span><span class="o">:</span> <span class="mf">6.0</span><span class="p">,</span>
-        <span class="s">@"inner-shadow-color"</span><span class="o">:</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span>
-        <span class="s">@"content-margin"</span><span class="o">:</span> <span class="nf">CGSizeMakeZero</span><span class="p">(),</span>
+        <span class="s">@"inner-shadow-color"</span><span class="o">:</span> <span class="p">[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span>
+        <span class="s">@"content-margin"</span><span class="o">:</span> <span class="nb">CGSizeMakeZero</span><span class="p">(),</span>
     <span class="p">};</span>
 </pre></div>
 
@@ -611,7 +611,7 @@ hides the underlying variable name and gives you a way of configuring the getter
 <p>Regular JavaScript dictionaries will continue to work as normal.</p>
 
 <div class="highlight"><pre><span class="c1">// Objective-J Dictionary Literal</span>
-<span class="kd">var</span> <span class="n">a</span> <span class="o">=</span> <span class="err">@</span><span class="p">{</span> <span class="s">@"count"</span><span class="o">:</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="n">a</span> <span class="o">=</span> <span class="p">@{</span> <span class="s">@"count"</span><span class="o">:</span> <span class="mi">2</span> <span class="p">};</span>
 
 <span class="c1">// JavaScript Object</span>
 <span class="kd">var</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span> <span class="s">@"count"</span><span class="o">:</span> <span class="mi">2</span> <span class="p">};</span>
@@ -631,25 +631,25 @@ hides the underlying variable name and gives you a way of configuring the getter
 <p>Whereas in Objective-J you would use the <code>@ref</code> and <code>@deref</code> methods:</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="n">a</span><span class="p">,</span>
-    <span class="n">aRef</span> <span class="o">=</span> <span class="err">@</span><span class="nf">ref</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">aRef</span> <span class="o">=</span> <span class="k">@ref</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
 
-<span class="err">@</span><span class="nf">deref</span><span class="p">(</span><span class="n">aRef</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="err">@</span><span class="nf">deref</span><span class="p">(</span><span class="n">aRef</span><span class="p">));</span>  <span class="c1">// Logs 5.</span>
+<span class="k">@deref</span><span class="p">(</span><span class="n">aRef</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">@deref</span><span class="p">(</span><span class="n">aRef</span><span class="p">));</span>  <span class="c1">// Logs 5.</span>
 <span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>             <span class="c1">// Also logs 5.</span>
 </pre></div>
 
 <p>Once you have a reference you can pass it around, save it, and dereference it as needed. It’s not an actual pointer though so pointer arithmetic is not possible. This is especially useful if you wish to have two return values. From <code>CPNumberFormatter.j</code>:</p>
 
-<div class="highlight"><pre><span class="o">-</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="n">getObjectValue</span><span class="o">:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">anObjectRef</span> <span class="n">forString</span><span class="o">:</span><span class="p">(</span><span class="n">CPString</span><span class="p">)</span><span class="n">aString</span> <span class="n">errorDescription</span><span class="o">:</span><span class="p">(</span><span class="n">CPStringRef</span><span class="p">)</span><span class="n">anErrorRef</span>
+<div class="highlight"><pre><span class="o">-</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="n">getObjectValue</span><span class="o">:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">anObjectRef</span> <span class="n">forString</span><span class="o">:</span><span class="p">(</span><span class="nb">CPString</span><span class="p">)</span><span class="n">aString</span> <span class="n">errorDescription</span><span class="o">:</span><span class="p">(</span><span class="nb">CPStringRef</span><span class="p">)</span><span class="n">anErrorRef</span>
 </pre></div>
 
 <p>This method returns a BOOL to indicate whether the object value was a valid value. However, with this method you can also pass in a string for the <code>errorDescription</code> parameter which, in the case of an error, will be populated with a description of why the value was not valid:</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="n">myError</span> <span class="o">=</span> <span class="s">@""</span><span class="p">,</span>
-    <span class="n">isValid</span> <span class="o">=</span> <span class="p">[</span><span class="n">numberFormatter</span> <span class="n">getObjectValue</span><span class="o">:</span><span class="n">someObject</span> <span class="n">forString</span><span class="o">:</span><span class="n">someString</span> <span class="n">errorDescription</span><span class="o">:</span><span class="err">@</span><span class="nf">ref</span><span class="p">(</span><span class="n">myError</span><span class="p">)];</span>
+    <span class="n">isValid</span> <span class="o">=</span> <span class="p">[</span><span class="n">numberFormatter</span> <span class="n">getObjectValue</span><span class="o">:</span><span class="n">someObject</span> <span class="n">forString</span><span class="o">:</span><span class="n">someString</span> <span class="n">errorDescription</span><span class="o">:</span><span class="k">@ref</span><span class="p">(</span><span class="n">myError</span><span class="p">)];</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isValid</span><span class="p">)</span>
-    <span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s">"The value "</span> <span class="o">+</span> <span class="n">someString</span> <span class="o">+</span> <span class="s">" is not a valid! Error: "</span> <span class="o">+</span> <span class="err">@</span><span class="nf">deref</span><span class="p">(</span><span class="n">myError</span><span class="p">));</span>
+    <span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s">"The value "</span> <span class="o">+</span> <span class="n">someString</span> <span class="o">+</span> <span class="s">" is not a valid! Error: "</span> <span class="o">+</span> <span class="k">@deref</span><span class="p">(</span><span class="n">myError</span><span class="p">));</span>
 </pre></div>
 
 <h3>Forward Class Declaration and Global Variables</h3>
@@ -666,17 +666,17 @@ hides the underlying variable name and gives you a way of configuring the getter
 
 <p>The <code>@global</code> declaration is needed to tell the compiler about a variable that is not yet declared. For example CPObject.j uses the global variable CPInvalidArgumentException which is actually declared in CPException.j but cannot be used for the same reason as above. To use it, declare it at the top of your file:</p>
 
-<div class="highlight"><pre><span class="err">@</span><span class="n">global</span> <span class="n">CPInvalidArgumentException</span>
+<div class="highlight"><pre><span class="k">@global</span> <span class="nb">CPInvalidArgumentException</span>
 </pre></div>
 
 <h3>Declaring new types</h3>
 
 <p>The <code>@typdef</code> declaration is used to tell the compiler about new variable types. For example <code>CPButton.j</code> creates the <code>CPButtonType</code> out of a regular integer. Thanks to the keyword typedef, the compiler will not raise any warning when using this type in class interfaces. Here’s how it’s done:</p>
 
-<div class="highlight"><pre><span class="err">@</span><span class="n">typedef</span> <span class="n">CPButtonType</span>
-<span class="n">CPMomentaryLightButton</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">CPPushOnPushOffButton</span>   <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">CPToggleButton</span>          <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<div class="highlight"><pre><span class="kd">@typedef</span> <span class="nb">CPButtonType</span>
+<span class="nb">CPMomentaryLightButton</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nb">CPPushOnPushOffButton</span>   <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nb">CPToggleButton</span>          <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 </pre></div>
 
 <h3>Wrapping Up</h3>

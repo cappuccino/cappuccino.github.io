@@ -182,13 +182,13 @@ Usage: ojtest <span class="o">[</span>OPTIONS<span class="o">]</span> INPUT_FILE
 <span class="c1">// Called before each test.</span>
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setUp</span>
 <span class="p">{</span>
-    <span class="n">_date</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPDate</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithString</span><span class="o">:</span><span class="s">@"2011-10-05 16:34:38 -0900"</span><span class="p">];</span>
+    <span class="n">_date</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPDate</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithString</span><span class="o">:</span><span class="s">@"2011-10-05 16:34:38 -0900"</span><span class="p">];</span>
 
-    <span class="n">_dateFormatter</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPDateFormatter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setDateStyle</span><span class="o">:</span><span class="n">CPDateFormatterMediumStyle</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setTimeStyle</span><span class="o">:</span><span class="n">CPDateFormatterShortStyle</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setLocale</span><span class="o">:</span><span class="p">[[</span><span class="n">CPLocale</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithLocaleIdentifier</span><span class="o">:</span><span class="s">@"en_US"</span><span class="p">]];</span>
-    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setTimeZone</span><span class="o">:</span><span class="p">[</span><span class="n">CPTimeZone</span> <span class="n">timeZoneWithAbbreviation</span><span class="o">:</span><span class="s">@"PDT"</span><span class="p">]];</span>
+    <span class="n">_dateFormatter</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPDateFormatter</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setDateStyle</span><span class="o">:</span><span class="nb">CPDateFormatterMediumStyle</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setTimeStyle</span><span class="o">:</span><span class="nb">CPDateFormatterShortStyle</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setLocale</span><span class="o">:</span><span class="p">[[</span><span class="nb">CPLocale</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithLocaleIdentifier</span><span class="o">:</span><span class="s">@"en_US"</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setTimeZone</span><span class="o">:</span><span class="p">[</span><span class="nb">CPTimeZone</span> <span class="n">timeZoneWithAbbreviation</span><span class="o">:</span><span class="s">@"PDT"</span><span class="p">]];</span>
 <span class="p">}</span>
 
 <span class="c1">// Called after each test.</span>
@@ -207,14 +207,14 @@ Usage: ojtest <span class="o">[</span>OPTIONS<span class="o">]</span> INPUT_FILE
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">testStringFromDateDateFullStyleTimeFullStyle</span>
 <span class="p">{</span>
     <span class="c1">// Configure the environment we want to test.</span>
-    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setDateStyle</span><span class="o">:</span><span class="n">CPDateFormatterFullStyle</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setTimeStyle</span><span class="o">:</span><span class="n">CPDateFormatterFullStyle</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setDateStyle</span><span class="o">:</span><span class="nb">CPDateFormatterFullStyle</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">setTimeStyle</span><span class="o">:</span><span class="nb">CPDateFormatterFullStyle</span><span class="p">];</span>
 
     <span class="c1">// Send a message, stringFromDate, to an instance of CPDateFormatter.</span>
     <span class="kd">var</span> <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">_dateFormatter</span> <span class="n">stringFromDate</span><span class="o">:</span><span class="n">_date</span><span class="p">];</span>
 
     <span class="c1">// Test if the result is the one we expect.</span>
-    <span class="p">[</span><span class="nb">self</span> <span class="n">assert</span><span class="o">:</span><span class="n">result</span> <span class="n">equals</span><span class="o">:</span><span class="s">@"Wednesday, October 5, 2011 6:34:38 PM Pacific Daylight Time"</span><span class="p">];</span>
+    <span class="p">[</span><span class="kr">self</span> <span class="n">assert</span><span class="o">:</span><span class="n">result</span> <span class="n">equals</span><span class="o">:</span><span class="s">@"Wednesday, October 5, 2011 6:34:38 PM Pacific Daylight Time"</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -249,9 +249,9 @@ Usage: ojtest <span class="o">[</span>OPTIONS<span class="o">]</span> INPUT_FILE
 
 <span class="k">@implementation</span> <span class="nc">CPTableViewTest</span> <span class="o">:</span> <span class="nc">OJTestCase</span>
 <span class="p">{</span>
-    <span class="n">CPArray</span>         <span class="n">_datas</span><span class="p">;</span>
-    <span class="n">CPTableView</span>     <span class="n">_tableView</span><span class="p">;</span>
-    <span class="n">CPTableColumn</span>   <span class="n">_tableColumn</span><span class="p">;</span>
+    <span class="nb">CPArray</span>         <span class="n">_datas</span><span class="p">;</span>
+    <span class="nb">CPTableView</span>     <span class="n">_tableView</span><span class="p">;</span>
+    <span class="nb">CPTableColumn</span>   <span class="n">_tableColumn</span><span class="p">;</span>
 
     <span class="n">OJMoqSpy</span>        <span class="n">dataSourceSpy</span>
 <span class="p">}</span>
@@ -259,20 +259,20 @@ Usage: ojtest <span class="o">[</span>OPTIONS<span class="o">]</span> INPUT_FILE
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setUp</span>
 <span class="p">{</span>
     <span class="c1">// AppKit requires this to work.</span>
-    <span class="p">[[</span><span class="n">CPApplication</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+    <span class="p">[[</span><span class="nb">CPApplication</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
 
     <span class="n">_datas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
 
     <span class="c1">// Create our CPTableView.</span>
-    <span class="n">_tableView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPTableView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
-    <span class="n">_tableColumn</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPTableColumn</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithIdentifier</span><span class="o">:</span><span class="s">@"Foo"</span><span class="p">];</span>
+    <span class="n">_tableView</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPTableView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
+    <span class="n">_tableColumn</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPTableColumn</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithIdentifier</span><span class="o">:</span><span class="s">@"Foo"</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">_tableView</span> <span class="n">addTableColumn</span><span class="o">:</span><span class="n">_tableColumn</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">_tableView</span> <span class="n">setDataSource</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">_tableView</span> <span class="n">setDataSource</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
     <span class="c1">// Create a spy which will spy the class CPTableViewTest.</span>
-    <span class="n">dataSourceSpy</span> <span class="o">=</span> <span class="nf">spy</span><span class="p">(</span><span class="nb">self</span><span class="p">);</span>
+    <span class="n">dataSourceSpy</span> <span class="o">=</span> <span class="nf">spy</span><span class="p">(</span><span class="kr">self</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">tearDown</span>
@@ -298,7 +298,7 @@ Usage: ojtest <span class="o">[</span>OPTIONS<span class="o">]</span> INPUT_FILE
 
     <span class="c1">// We reload the data here and flush the run loop.</span>
     <span class="p">[</span><span class="n">_tableView</span> <span class="n">reloadData</span><span class="p">];</span>
-    <span class="p">[[</span><span class="n">CPRunLoop</span> <span class="n">currentRunLoop</span><span class="p">]</span> <span class="n">limitDateForMode</span><span class="o">:</span><span class="n">CPDefaultRunLoopMode</span><span class="p">];</span>
+    <span class="p">[[</span><span class="nb">CPRunLoop</span> <span class="n">currentRunLoop</span><span class="p">]</span> <span class="n">limitDateForMode</span><span class="o">:</span><span class="nb">CPDefaultRunLoopMode</span><span class="p">];</span>
 
     <span class="c1">// Were our expectations met?</span>
     <span class="p">[</span><span class="n">dataSourceSpy</span> <span class="n">verifyThatAllExpectationsHaveBeenMetInOrder</span><span class="p">];</span>

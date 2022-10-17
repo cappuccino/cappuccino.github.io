@@ -186,20 +186,20 @@ We’ll add a button that toggles the text on the screen between “Hello
 World!” and “Goodbye!”. After the line that contains <code>[contentView
 addSubview:label]</code> (line 31), add the following code snippet:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="n">button</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPButton</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span> <span class="nf">CGRectMake</span><span class="p">(</span>
-                <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span>
-                <span class="nf">CGRectGetMaxY</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">])</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">button</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPButton</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span> <span class="nb">CGRectMake</span><span class="p">(</span>
+                <span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span>
+                <span class="nb">CGRectGetMaxY</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">])</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span>
                 <span class="mi">80</span><span class="p">,</span> <span class="mi">24</span>
              <span class="p">)];</span>
 
-<span class="p">[</span><span class="n">button</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewMinXMargin</span> <span class="o">|</span>
-                            <span class="n">CPViewMaxXMargin</span> <span class="o">|</span>
-                            <span class="n">CPViewMinYMargin</span> <span class="o">|</span>
-                            <span class="n">CPViewMaxYMargin</span><span class="p">];</span>
+<span class="p">[</span><span class="n">button</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewMinXMargin</span> <span class="o">|</span>
+                            <span class="nb">CPViewMaxXMargin</span> <span class="o">|</span>
+                            <span class="nb">CPViewMinYMargin</span> <span class="o">|</span>
+                            <span class="nb">CPViewMaxYMargin</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">button</span> <span class="n">setTitle</span><span class="o">:</span><span class="s">"swap"</span><span class="p">];</span>
 
-<span class="p">[</span><span class="n">button</span> <span class="n">setTarget</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+<span class="p">[</span><span class="n">button</span> <span class="n">setTarget</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 <span class="p">[</span><span class="n">button</span> <span class="n">setAction</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">swap</span><span class="o">:</span><span class="p">)];</span>
 
 <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">button</span><span class="p">];</span>
@@ -210,9 +210,9 @@ addSubview:label]</code> (line 31), add the following code snippet:</p>
 to do when the button is pressed. Before we do that, let’s quickly go
 over what each of the previous lines does:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="n">button</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPButton</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span> <span class="nf">CGRectMake</span><span class="p">(</span>
-                <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span>
-                <span class="nf">CGRectGetMaxY</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">])</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">button</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPButton</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span> <span class="nb">CGRectMake</span><span class="p">(</span>
+                <span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span>
+                <span class="nb">CGRectGetMaxY</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">])</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span>
                 <span class="mi">80</span><span class="p">,</span> <span class="mi">24</span>
              <span class="p">)];</span>
 </pre></div>
@@ -226,10 +226,10 @@ that describes the size and positioning of every view in Cappuccino.
 positioning information. <code>[label frame]</code> return the <code>CGRect</code> of the label,
 including its position information.</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">button</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewMinXMargin</span> <span class="o">|</span>
-                            <span class="n">CPViewMaxXMargin</span> <span class="o">|</span>
-                            <span class="n">CPViewMinYMargin</span> <span class="o">|</span>
-                            <span class="n">CPViewMaxYMargin</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">button</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewMinXMargin</span> <span class="o">|</span>
+                            <span class="nb">CPViewMaxXMargin</span> <span class="o">|</span>
+                            <span class="nb">CPViewMinYMargin</span> <span class="o">|</span>
+                            <span class="nb">CPViewMaxYMargin</span><span class="p">];</span>
 </pre></div>
 
 <p>Auto-resize flags define how a view resizes when its parent resizes
@@ -242,7 +242,7 @@ In other words, stay in the center, and don’t change size.</p>
 
 <p>Set the title of the button to “swap”.</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">button</span> <span class="n">setTarget</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">button</span> <span class="n">setTarget</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 <span class="p">[</span><span class="n">button</span> <span class="n">setAction</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">swap</span><span class="o">:</span><span class="p">)];</span>
 </pre></div>
 
@@ -281,7 +281,7 @@ simply need to add it to our class declaration by replacing:</p>
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="n">CPTextField</span> <span class="n">label</span><span class="p">;</span>
+    <span class="nb">CPTextField</span> <span class="n">label</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 

@@ -161,12 +161,12 @@ that is left in <code>applicationDidFinishLaunching:</code> is the following:</p
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidFinishLaunching:</span><span class="p">(</span><span class="kt">CPNotification</span><span class="p">)</span>aNotification
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPWindow</span> <span class="n">alloc</span><span class="p">]</span>
-                        <span class="n">initWithContentRect</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()</span>
-                        <span class="n">styleMask</span><span class="o">:</span><span class="n">CPBorderlessBridgeWindowMask</span><span class="p">],</span>
+    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPWindow</span> <span class="n">alloc</span><span class="p">]</span>
+                        <span class="n">initWithContentRect</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()</span>
+                        <span class="n">styleMask</span><span class="o">:</span><span class="nb">CPBorderlessBridgeWindowMask</span><span class="p">],</span>
         <span class="n">contentView</span> <span class="o">=</span> <span class="p">[</span><span class="n">theWindow</span> <span class="n">contentView</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -200,7 +200,7 @@ buttons, text fields, etc. Let’s go ahead and set the color of our
 content view to be black by adding this code right after the
 declaration:</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">contentView</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">blackColor</span><span class="p">]];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">contentView</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">blackColor</span><span class="p">]];</span>
 </pre></div>
 
 <p>If you refresh now, you’ll see that the entire browser window has turned
@@ -214,13 +214,13 @@ heads-up-display (HUD) controller that we mentioned earlier. First,
 let’s just make a HUD panel. A panel is a type of window that floats on
 top of other windows. Create a panel in the <code>applicationDidFinishLaunching:</code> method:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="n">HUDPanel</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPPanel</span> <span class="n">alloc</span><span class="p">]</span>
-    <span class="n">initWithContentRect</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">125</span><span class="p">)</span>
-    <span class="n">styleMask</span><span class="o">:</span><span class="n">CPHUDBackgroundWindowMask</span> <span class="o">|</span> <span class="n">CPClosableWindowMask</span><span class="p">];</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">HUDPanel</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPPanel</span> <span class="n">alloc</span><span class="p">]</span>
+    <span class="n">initWithContentRect</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">125</span><span class="p">)</span>
+    <span class="n">styleMask</span><span class="o">:</span><span class="nb">CPHUDBackgroundWindowMask</span> <span class="o">|</span> <span class="nb">CPClosableWindowMask</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">HUDPanel</span> <span class="n">setFloatingPanel</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
 
-<span class="p">[</span><span class="n">HUDPanel</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+<span class="p">[</span><span class="n">HUDPanel</span> <span class="n">orderFront</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 </pre></div>
 
 <p>Now if you refresh, you’ll see a little HUD panel show up at the top
@@ -249,9 +249,9 @@ the main window, we will grab the contentView of the HUD panel to place
 these sliders in:</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="n">panelContentView</span> <span class="o">=</span> <span class="p">[</span><span class="n">HUDPanel</span> <span class="n">contentView</span><span class="p">],</span>
-    <span class="n">centerX</span> <span class="o">=</span> <span class="p">(</span><span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">panelContentView</span> <span class="n">bounds</span><span class="p">])</span> <span class="o">-</span> <span class="mf">135.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">;</span>
+    <span class="n">centerX</span> <span class="o">=</span> <span class="p">(</span><span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">panelContentView</span> <span class="n">bounds</span><span class="p">])</span> <span class="o">-</span> <span class="mf">135.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">;</span>
 
-<span class="kd">var</span> <span class="n">scaleSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPSlider</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">,</span> <span class="mf">135.0</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">)];</span>
+<span class="kd">var</span> <span class="n">scaleSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPSlider</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">,</span> <span class="mf">135.0</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">)];</span>
 
 <span class="p">[</span><span class="n">scaleSlider</span> <span class="n">setMinValue</span><span class="o">:</span><span class="mi">50</span><span class="p">];</span>
 <span class="p">[</span><span class="n">scaleSlider</span> <span class="n">setMaxValue</span><span class="o">:</span><span class="mi">150</span><span class="p">];</span>
@@ -259,19 +259,19 @@ these sliders in:</p>
 
 <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scaleSlider</span><span class="p">];</span>
 
-<span class="kd">var</span> <span class="n">scaleStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"50%"</span><span class="p">],</span>
-    <span class="n">scaleEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"150%"</span><span class="p">];</span>
+<span class="kd">var</span> <span class="n">scaleStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"50%"</span><span class="p">],</span>
+    <span class="n">scaleEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"150%"</span><span class="p">];</span>
 
-<span class="p">[</span><span class="n">scaleStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span>
-    <span class="n">centerX</span> <span class="o">-</span> <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">scaleStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
+<span class="p">[</span><span class="n">scaleStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span>
+    <span class="n">centerX</span> <span class="o">-</span> <span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">scaleStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
 <span class="p">[</span><span class="n">scaleEndLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span>
-    <span class="nf">CGPointMake</span><span class="p">(</span><span class="nf">CGRectGetMaxX</span><span class="p">([</span><span class="n">scaleSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
+    <span class="nb">CGPointMake</span><span class="p">(</span><span class="nb">CGRectGetMaxX</span><span class="p">([</span><span class="n">scaleSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
 
 <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scaleStartLabel</span><span class="p">];</span>
 <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scaleEndLabel</span><span class="p">];</span>
 
-<span class="n">rotationSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPSlider</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span>
-    <span class="nf">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">24</span><span class="p">)];</span>
+<span class="n">rotationSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPSlider</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span>
+    <span class="nb">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">24</span><span class="p">)];</span>
 
 <span class="p">[</span><span class="n">rotationSlider</span> <span class="n">setMinValue</span><span class="o">:</span><span class="mi">0</span><span class="p">];</span>
 <span class="p">[</span><span class="n">rotationSlider</span> <span class="n">setMaxValue</span><span class="o">:</span><span class="mi">360</span><span class="p">];</span>
@@ -279,11 +279,11 @@ these sliders in:</p>
 
 <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">rotationSlider</span><span class="p">];</span>
 
-<span class="kd">var</span> <span class="n">rotationStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"0\u00B0"</span><span class="p">],</span>
-    <span class="n">rotationEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"360\u00B0"</span><span class="p">];</span>
+<span class="kd">var</span> <span class="n">rotationStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"0\u00B0"</span><span class="p">],</span>
+    <span class="n">rotationEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"360\u00B0"</span><span class="p">];</span>
 
-<span class="p">[</span><span class="n">rotationStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span><span class="n">centerX</span> <span class="o">-</span> <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">rotationStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
-<span class="p">[</span><span class="n">rotationEndLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span><span class="nf">CGRectGetMaxX</span><span class="p">([</span><span class="n">rotationSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
+<span class="p">[</span><span class="n">rotationStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span><span class="n">centerX</span> <span class="o">-</span> <span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">rotationStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
+<span class="p">[</span><span class="n">rotationEndLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span><span class="nb">CGRectGetMaxX</span><span class="p">([</span><span class="n">rotationSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
 
 <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">rotationStartLabel</span><span class="p">];</span>
 <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">rotationEndLabel</span><span class="p">];</span>
@@ -294,10 +294,10 @@ have not yet defined. Go ahead and define it in AppController like so:</p>
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">CPTextField</span><span class="p">)</span><span class="nf">labelWithTitle:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aTitle
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPTextField</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()];</span>
+    <span class="kd">var</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPTextField</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()];</span>
 
     <span class="p">[</span><span class="n">label</span> <span class="n">setStringValue</span><span class="o">:</span><span class="n">aTitle</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">label</span> <span class="n">setTextColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">label</span> <span class="n">setTextColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
 
     <span class="p">[</span><span class="n">label</span> <span class="n">sizeToFit</span><span class="p">];</span>
 
@@ -331,29 +331,29 @@ sliders. So, your code should now look like this:</p>
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidFinishLaunching:</span><span class="p">(</span><span class="kt">CPNotification</span><span class="p">)</span>aNotification
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPWindow</span> <span class="n">alloc</span><span class="p">]</span>
-                        <span class="n">initWithContentRect</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()</span>
-                        <span class="n">styleMask</span><span class="o">:</span><span class="n">CPBorderlessBridgeWindowMask</span><span class="p">],</span>
+    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPWindow</span> <span class="n">alloc</span><span class="p">]</span>
+                        <span class="n">initWithContentRect</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()</span>
+                        <span class="n">styleMask</span><span class="o">:</span><span class="nb">CPBorderlessBridgeWindowMask</span><span class="p">],</span>
         <span class="n">contentView</span> <span class="o">=</span> <span class="p">[</span><span class="n">theWindow</span> <span class="n">contentView</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
-    <span class="kd">var</span> <span class="n">HUDPanel</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPPanel</span> <span class="n">alloc</span><span class="p">]</span>
-        <span class="n">initWithContentRect</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">125</span><span class="p">)</span>
-        <span class="n">styleMask</span><span class="o">:</span><span class="n">CPHUDBackgroundWindowMask</span> <span class="o">|</span> <span class="n">CPClosableWindowMask</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="n">HUDPanel</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPPanel</span> <span class="n">alloc</span><span class="p">]</span>
+        <span class="n">initWithContentRect</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">125</span><span class="p">)</span>
+        <span class="n">styleMask</span><span class="o">:</span><span class="nb">CPHUDBackgroundWindowMask</span> <span class="o">|</span> <span class="nb">CPClosableWindowMask</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">HUDPanel</span> <span class="n">setFloatingPanel</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">HUDPanel</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">HUDPanel</span> <span class="n">orderFront</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">HUDPanel</span> <span class="n">setTitle</span><span class="o">:</span><span class="s">"Inspector"</span><span class="p">];</span>
 
     <span class="kd">var</span> <span class="n">panelContentView</span> <span class="o">=</span> <span class="p">[</span><span class="n">HUDPanel</span> <span class="n">contentView</span><span class="p">],</span>
-        <span class="n">centerX</span> <span class="o">=</span> <span class="p">(</span><span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">panelContentView</span> <span class="n">bounds</span><span class="p">])</span>
+        <span class="n">centerX</span> <span class="o">=</span> <span class="p">(</span><span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">panelContentView</span> <span class="n">bounds</span><span class="p">])</span>
         <span class="o">-</span> <span class="mi">135</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
 
-    <span class="kd">var</span> <span class="n">scaleSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPSlider</span> <span class="n">alloc</span><span class="p">]</span>
-        <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">24</span><span class="p">)];</span>
+    <span class="kd">var</span> <span class="n">scaleSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPSlider</span> <span class="n">alloc</span><span class="p">]</span>
+        <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">24</span><span class="p">)];</span>
 
     <span class="p">[</span><span class="n">scaleSlider</span> <span class="n">setMinValue</span><span class="o">:</span><span class="mi">50</span><span class="p">];</span>
     <span class="p">[</span><span class="n">scaleSlider</span> <span class="n">setMaxValue</span><span class="o">:</span><span class="mi">150</span><span class="p">];</span>
@@ -361,19 +361,19 @@ sliders. So, your code should now look like this:</p>
 
     <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scaleSlider</span><span class="p">];</span>
 
-    <span class="kd">var</span> <span class="n">scaleStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"50%"</span><span class="p">],</span>
-        <span class="n">scaleEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"150%"</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="n">scaleStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"50%"</span><span class="p">],</span>
+        <span class="n">scaleEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"150%"</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">scaleStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span><span class="n">centerX</span> <span class="o">-</span>
-        <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">scaleStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
+    <span class="p">[</span><span class="n">scaleStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span><span class="n">centerX</span> <span class="o">-</span>
+        <span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">scaleStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
     <span class="p">[</span><span class="n">scaleEndLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span>
-        <span class="nf">CGPointMake</span><span class="p">(</span><span class="nf">CGRectGetMaxX</span><span class="p">([</span><span class="n">scaleSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
+        <span class="nb">CGPointMake</span><span class="p">(</span><span class="nb">CGRectGetMaxX</span><span class="p">([</span><span class="n">scaleSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
 
     <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scaleStartLabel</span><span class="p">];</span>
     <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scaleEndLabel</span><span class="p">];</span>
 
-    <span class="n">rotationSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPSlider</span> <span class="n">alloc</span><span class="p">]</span>
-        <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">24</span><span class="p">)];</span>
+    <span class="n">rotationSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPSlider</span> <span class="n">alloc</span><span class="p">]</span>
+        <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">24</span><span class="p">)];</span>
 
     <span class="p">[</span><span class="n">rotationSlider</span> <span class="n">setMinValue</span><span class="o">:</span><span class="mi">0</span><span class="p">];</span>
     <span class="p">[</span><span class="n">rotationSlider</span> <span class="n">setMaxValue</span><span class="o">:</span><span class="mi">360</span><span class="p">];</span>
@@ -381,13 +381,13 @@ sliders. So, your code should now look like this:</p>
 
     <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">rotationSlider</span><span class="p">];</span>
 
-    <span class="kd">var</span> <span class="n">rotationStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"0\u00B0"</span><span class="p">],</span>
-        <span class="n">rotationEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"360\u00B0"</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="n">rotationStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"0\u00B0"</span><span class="p">],</span>
+        <span class="n">rotationEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"360\u00B0"</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">rotationStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span><span class="n">centerX</span> <span class="o">-</span>
-        <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">rotationStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
+    <span class="p">[</span><span class="n">rotationStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span><span class="n">centerX</span> <span class="o">-</span>
+        <span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">rotationStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
     <span class="p">[</span><span class="n">rotationEndLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span>
-        <span class="nf">CGPointMake</span><span class="p">(</span><span class="nf">CGRectGetMaxX</span><span class="p">([</span><span class="n">rotationSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
+        <span class="nb">CGPointMake</span><span class="p">(</span><span class="nb">CGRectGetMaxX</span><span class="p">([</span><span class="n">rotationSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
 
     <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">rotationStartLabel</span><span class="p">];</span>
     <span class="p">[</span><span class="n">panelContentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">rotationEndLabel</span><span class="p">];</span>
@@ -395,10 +395,10 @@ sliders. So, your code should now look like this:</p>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">CPTextField</span><span class="p">)</span><span class="nf">labelWithTitle:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aTitle
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPTextField</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()];</span>
+    <span class="kd">var</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPTextField</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()];</span>
 
     <span class="p">[</span><span class="n">label</span> <span class="n">setStringValue</span><span class="o">:</span><span class="n">aTitle</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">label</span> <span class="n">setTextColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">label</span> <span class="n">setTextColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
 
     <span class="p">[</span><span class="n">label</span> <span class="n">sizeToFit</span><span class="p">];</span>
 
@@ -427,22 +427,22 @@ to it, namely the <code>labelWithTitle</code> method and view creation code:</p>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">init</span>
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPPanel</span> <span class="n">alloc</span><span class="p">]</span>
-        <span class="n">initWithContentRect</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">125</span><span class="p">)</span>
-        <span class="n">styleMask</span><span class="o">:</span><span class="n">CPHUDBackgroundWindowMask</span> <span class="o">|</span> <span class="n">CPClosableWindowMask</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPPanel</span> <span class="n">alloc</span><span class="p">]</span>
+        <span class="n">initWithContentRect</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">225</span><span class="p">,</span> <span class="mi">125</span><span class="p">)</span>
+        <span class="n">styleMask</span><span class="o">:</span><span class="nb">CPHUDBackgroundWindowMask</span> <span class="o">|</span> <span class="nb">CPClosableWindowMask</span><span class="p">];</span>
 
-    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">initWithWindow</span><span class="o">:</span><span class="n">theWindow</span><span class="p">];</span>
+    <span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">super</span> <span class="n">initWithWindow</span><span class="o">:</span><span class="n">theWindow</span><span class="p">];</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="p">[</span><span class="n">theWindow</span> <span class="n">setTitle</span><span class="o">:</span><span class="s">@"Inspector"</span><span class="p">];</span>
         <span class="p">[</span><span class="n">theWindow</span> <span class="n">setFloatingPanel</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
 
         <span class="kd">var</span> <span class="n">contentView</span> <span class="o">=</span> <span class="p">[</span><span class="n">theWindow</span> <span class="n">contentView</span><span class="p">],</span>
-            <span class="n">centerX</span> <span class="o">=</span> <span class="p">(</span><span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">])</span> <span class="o">-</span> <span class="mi">135</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="n">centerX</span> <span class="o">=</span> <span class="p">(</span><span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">])</span> <span class="o">-</span> <span class="mi">135</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
 
-        <span class="n">scaleSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPSlider</span> <span class="n">alloc</span><span class="p">]</span>
-            <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">24</span><span class="p">)];</span>
+        <span class="n">scaleSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPSlider</span> <span class="n">alloc</span><span class="p">]</span>
+            <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">24</span><span class="p">)];</span>
 
         <span class="p">[</span><span class="n">scaleSlider</span> <span class="n">setMinValue</span><span class="o">:</span><span class="mi">50</span><span class="p">];</span>
         <span class="p">[</span><span class="n">scaleSlider</span> <span class="n">setMaxValue</span><span class="o">:</span><span class="mi">150</span><span class="p">];</span>
@@ -450,19 +450,19 @@ to it, namely the <code>labelWithTitle</code> method and view creation code:</p>
 
         <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scaleSlider</span><span class="p">];</span>
 
-        <span class="kd">var</span> <span class="n">scaleStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"50%"</span><span class="p">],</span>
-            <span class="n">scaleEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"150%"</span><span class="p">];</span>
+        <span class="kd">var</span> <span class="n">scaleStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"50%"</span><span class="p">],</span>
+            <span class="n">scaleEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"150%"</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="n">scaleStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span><span class="n">centerX</span> <span class="o">-</span>
-            <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">scaleStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
+        <span class="p">[</span><span class="n">scaleStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span><span class="n">centerX</span> <span class="o">-</span>
+            <span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">scaleStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
         <span class="p">[</span><span class="n">scaleEndLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span>
-            <span class="nf">CGPointMake</span><span class="p">(</span><span class="nf">CGRectGetMaxX</span><span class="p">([</span><span class="n">scaleSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
+            <span class="nb">CGPointMake</span><span class="p">(</span><span class="nb">CGRectGetMaxX</span><span class="p">([</span><span class="n">scaleSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">10</span><span class="p">)];</span>
 
         <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scaleStartLabel</span><span class="p">];</span>
         <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scaleEndLabel</span><span class="p">];</span>
 
-        <span class="n">rotationSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPSlider</span> <span class="n">alloc</span><span class="p">]</span>
-            <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">24</span><span class="p">)];</span>
+        <span class="n">rotationSlider</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPSlider</span> <span class="n">alloc</span><span class="p">]</span>
+            <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">24</span><span class="p">)];</span>
 
         <span class="p">[</span><span class="n">rotationSlider</span> <span class="n">setMinValue</span><span class="o">:</span><span class="mi">0</span><span class="p">];</span>
         <span class="p">[</span><span class="n">rotationSlider</span> <span class="n">setMaxValue</span><span class="o">:</span><span class="mi">360</span><span class="p">];</span>
@@ -470,27 +470,27 @@ to it, namely the <code>labelWithTitle</code> method and view creation code:</p>
 
         <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">rotationSlider</span><span class="p">];</span>
 
-        <span class="kd">var</span> <span class="n">rotationStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"0\u00B0"</span><span class="p">],</span>
-            <span class="n">rotationEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"360\u00B0"</span><span class="p">];</span>
+        <span class="kd">var</span> <span class="n">rotationStartLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"0\u00B0"</span><span class="p">],</span>
+            <span class="n">rotationEndLabel</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">labelWithTitle</span><span class="o">:</span><span class="s">"360\u00B0"</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="n">rotationStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span><span class="n">centerX</span> <span class="o">-</span>
-            <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">rotationStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
+        <span class="p">[</span><span class="n">rotationStartLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span><span class="n">centerX</span> <span class="o">-</span>
+            <span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">rotationStartLabel</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
         <span class="p">[</span><span class="n">rotationEndLabel</span> <span class="n">setFrameOrigin</span><span class="o">:</span>
-            <span class="nf">CGPointMake</span><span class="p">(</span><span class="nf">CGRectGetMaxX</span><span class="p">([</span><span class="n">rotationSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
+            <span class="nb">CGPointMake</span><span class="p">(</span><span class="nb">CGRectGetMaxX</span><span class="p">([</span><span class="n">rotationSlider</span> <span class="n">frame</span><span class="p">]),</span> <span class="mi">40</span><span class="p">)];</span>
 
         <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">rotationStartLabel</span><span class="p">];</span>
         <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">rotationEndLabel</span><span class="p">];</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">CPTextField</span><span class="p">)</span><span class="nf">labelWithTitle:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aTitle
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPTextField</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()];</span>
+    <span class="kd">var</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPTextField</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()];</span>
 
     <span class="p">[</span><span class="n">label</span> <span class="n">setStringValue</span><span class="o">:</span><span class="n">aTitle</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">label</span> <span class="n">setTextColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">label</span> <span class="n">setTextColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
 
     <span class="p">[</span><span class="n">label</span> <span class="n">sizeToFit</span><span class="p">];</span>
 
@@ -514,18 +514,18 @@ AppController code to the following:</p>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidFinishLaunching:</span><span class="p">(</span><span class="kt">CPNotification</span><span class="p">)</span>aNotification
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPWindow</span> <span class="n">alloc</span><span class="p">]</span>
-                        <span class="n">initWithContentRect</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()</span>
-                        <span class="n">styleMask</span><span class="o">:</span><span class="n">CPBorderlessBridgeWindowMask</span><span class="p">],</span>
+    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPWindow</span> <span class="n">alloc</span><span class="p">]</span>
+                        <span class="n">initWithContentRect</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()</span>
+                        <span class="n">styleMask</span><span class="o">:</span><span class="nb">CPBorderlessBridgeWindowMask</span><span class="p">],</span>
         <span class="n">contentView</span> <span class="o">=</span> <span class="p">[</span><span class="n">theWindow</span> <span class="n">contentView</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">contentView</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">blackColor</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">contentView</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">blackColor</span><span class="p">]];</span>
 
-    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
     <span class="kd">var</span> <span class="n">theInspector</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PhotoInspector</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">theInspector</span> <span class="n">showWindow</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theInspector</span> <span class="n">showWindow</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
@@ -570,21 +570,21 @@ We can add layers to views by making them <strong>layer-backed</strong>:</p>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">initWithFrame:</span><span class="p">(</span><span class="kt">CGRect</span><span class="p">)</span>aFrame
 <span class="p">{</span>
-    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">aFrame</span><span class="p">];</span>
+    <span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">super</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">aFrame</span><span class="p">];</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">_rootLayer</span> <span class="o">=</span> <span class="p">[</span><span class="n">CALayer</span> <span class="n">layer</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="nb">self</span> <span class="n">setWantsLayer</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
-        <span class="p">[</span><span class="nb">self</span> <span class="n">setLayer</span><span class="o">:</span><span class="n">_rootLayer</span><span class="p">];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">setWantsLayer</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">setLayer</span><span class="o">:</span><span class="n">_rootLayer</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="n">_rootLayer</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
+        <span class="p">[</span><span class="n">_rootLayer</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
 
         <span class="p">[</span><span class="n">_rootLayer</span> <span class="n">setNeedsDisplay</span><span class="p">];</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
@@ -607,7 +607,7 @@ displays. We will be implementing panes as layers:</p>
     <span class="kt">float</span>       <span class="n">_rotationRadians</span><span class="p">;</span>
     <span class="kt">float</span>       <span class="n">_scale</span><span class="p">;</span>
 
-    <span class="n">CPImage</span>     <span class="n">_image</span><span class="p">;</span>
+    <span class="nb">CPImage</span>     <span class="n">_image</span><span class="p">;</span>
     <span class="n">CALayer</span>     <span class="n">_imageLayer</span><span class="p">;</span>
 
     <span class="n">PageView</span>    <span class="n">_pageView</span><span class="p">;</span>
@@ -615,9 +615,9 @@ displays. We will be implementing panes as layers:</p>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">initWithPageView:</span><span class="p">(</span><span class="kt">PageView</span><span class="p">)</span>aPageView
 <span class="p">{</span>
-    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">];</span>
+    <span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">super</span> <span class="n">init</span><span class="p">];</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">_pageView</span> <span class="o">=</span> <span class="n">aPageView</span><span class="p">;</span>
 
@@ -625,12 +625,12 @@ displays. We will be implementing panes as layers:</p>
         <span class="n">_scale</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
 
         <span class="n">_imageLayer</span> <span class="o">=</span> <span class="p">[</span><span class="n">CALayer</span> <span class="n">layer</span><span class="p">];</span>
-        <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setDelegate</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setDelegate</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="nb">self</span> <span class="n">addSublayer</span><span class="o">:</span><span class="n">_imageLayer</span><span class="p">];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">addSublayer</span><span class="o">:</span><span class="n">_imageLayer</span><span class="p">];</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">PageView</span><span class="p">)</span><span class="nf">pageView</span>
@@ -640,11 +640,11 @@ displays. We will be implementing panes as layers:</p>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setBounds:</span><span class="p">(</span><span class="kt">CGRect</span><span class="p">)</span>aRect
 <span class="p">{</span>
-    <span class="p">[</span><span class="nb">super</span> <span class="n">setBounds</span><span class="o">:</span><span class="n">aRect</span><span class="p">];</span>
+    <span class="p">[</span><span class="kr">super</span> <span class="n">setBounds</span><span class="o">:</span><span class="n">aRect</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setPosition</span><span class="o">:</span>
-        <span class="nf">CGPointMake</span><span class="p">(</span><span class="nf">CGRectGetMidX</span><span class="p">(</span><span class="n">aRect</span><span class="p">),</span>
-        <span class="nf">CGRectGetMidY</span><span class="p">(</span><span class="n">aRect</span><span class="p">))];</span>
+        <span class="nb">CGPointMake</span><span class="p">(</span><span class="nb">CGRectGetMidX</span><span class="p">(</span><span class="n">aRect</span><span class="p">),</span>
+        <span class="nb">CGRectGetMidY</span><span class="p">(</span><span class="n">aRect</span><span class="p">))];</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setImage:</span><span class="p">(</span><span class="kt">CPImage</span><span class="p">)</span>anImage
@@ -655,7 +655,7 @@ displays. We will be implementing panes as layers:</p>
     <span class="n">_image</span> <span class="o">=</span> <span class="n">anImage</span><span class="p">;</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">_image</span><span class="p">)</span>
-        <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setBounds</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setBounds</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>
             <span class="p">[</span><span class="n">_image</span> <span class="n">size</span><span class="p">].</span><span class="n">width</span><span class="p">,</span> <span class="p">[</span><span class="n">_image</span> <span class="n">size</span><span class="p">].</span><span class="n">height</span><span class="p">)];</span>
 
     <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setNeedsDisplay</span><span class="p">];</span>
@@ -668,8 +668,8 @@ displays. We will be implementing panes as layers:</p>
 
     <span class="n">_rotationRadians</span> <span class="o">=</span> <span class="n">radians</span><span class="p">;</span>
 
-    <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setAffineTransform</span><span class="o">:</span><span class="nf">CGAffineTransformScale</span><span class="p">(</span>
-        <span class="nf">CGAffineTransformMakeRotation</span><span class="p">(</span><span class="n">_rotationRadians</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setAffineTransform</span><span class="o">:</span><span class="nb">CGAffineTransformScale</span><span class="p">(</span>
+        <span class="nb">CGAffineTransformMakeRotation</span><span class="p">(</span><span class="n">_rotationRadians</span><span class="p">),</span>
         <span class="n">_scale</span><span class="p">,</span> <span class="n">_scale</span><span class="p">)];</span>
 <span class="p">}</span>
 
@@ -680,15 +680,15 @@ displays. We will be implementing panes as layers:</p>
 
     <span class="n">_scale</span> <span class="o">=</span> <span class="n">aScale</span><span class="p">;</span>
 
-    <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setAffineTransform</span><span class="o">:</span><span class="nf">CGAffineTransformScale</span><span class="p">(</span>
-        <span class="nf">CGAffineTransformMakeRotation</span><span class="p">(</span><span class="n">_rotationRadians</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setAffineTransform</span><span class="o">:</span><span class="nb">CGAffineTransformScale</span><span class="p">(</span>
+        <span class="nb">CGAffineTransformMakeRotation</span><span class="p">(</span><span class="n">_rotationRadians</span><span class="p">),</span>
         <span class="n">_scale</span><span class="p">,</span> <span class="n">_scale</span><span class="p">)];</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">drawInContext:</span><span class="p">(</span><span class="kt">CGContext</span><span class="p">)</span>aContext
 <span class="p">{</span>
-    <span class="nf">CGContextSetFillColor</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="p">[</span><span class="n">CPColor</span> <span class="n">grayColor</span><span class="p">]);</span>
-    <span class="nf">CGContextFillRect</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="p">[</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">]);</span>
+    <span class="nb">CGContextSetFillColor</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="p">[</span><span class="nb">CPColor</span> <span class="n">grayColor</span><span class="p">]);</span>
+    <span class="nb">CGContextFillRect</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="p">[</span><span class="kr">self</span> <span class="n">bounds</span><span class="p">]);</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">imageDidLoad:</span><span class="p">(</span><span class="kt">CPImage</span><span class="p">)</span>anImage
@@ -701,10 +701,10 @@ displays. We will be implementing panes as layers:</p>
     <span class="kd">var</span> <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">aLayer</span> <span class="n">bounds</span><span class="p">];</span>
 
     <span class="k">if</span> <span class="p">([</span><span class="n">_image</span> <span class="n">loadStatus</span><span class="p">]</span> <span class="o">!=</span>
-        <span class="n">CPImageLoadStatusCompleted</span><span class="p">)</span>
-        <span class="p">[</span><span class="n">_image</span> <span class="n">setDelegate</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+        <span class="nb">CPImageLoadStatusCompleted</span><span class="p">)</span>
+        <span class="p">[</span><span class="n">_image</span> <span class="n">setDelegate</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
     <span class="k">else</span>
-        <span class="nf">CGContextDrawImage</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">_image</span><span class="p">);</span>
+        <span class="nb">CGContextDrawImage</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">_image</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
@@ -736,10 +736,10 @@ want to implement <code>drawLayer:inContext:</code></p>
 <span class="p">{</span>
     <span class="kd">var</span> <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">aLayer</span> <span class="n">bounds</span><span class="p">];</span>
 
-    <span class="k">if</span> <span class="p">([</span><span class="n">_image</span> <span class="n">loadStatus</span><span class="p">]</span> <span class="o">!=</span> <span class="n">CPImageLoadStatusCompleted</span><span class="p">)</span>
-        <span class="p">[</span><span class="n">_image</span> <span class="n">setDelegate</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">([</span><span class="n">_image</span> <span class="n">loadStatus</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">CPImageLoadStatusCompleted</span><span class="p">)</span>
+        <span class="p">[</span><span class="n">_image</span> <span class="n">setDelegate</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
     <span class="k">else</span>
-        <span class="nf">CGContextDrawImage</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">_image</span><span class="p">);</span>
+        <span class="nb">CGContextDrawImage</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">_image</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -779,7 +779,7 @@ and we use <code>setImage:</code> to set the image of the layer:</p>
     <span class="n">_image</span> <span class="o">=</span> <span class="n">anImage</span><span class="p">;</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">_image</span><span class="p">)</span>
-        <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setBounds</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setBounds</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>
             <span class="p">[</span><span class="n">_image</span> <span class="n">size</span><span class="p">].</span><span class="n">width</span><span class="p">,</span> <span class="p">[</span><span class="n">_image</span> <span class="n">size</span><span class="p">].</span><span class="n">height</span><span class="p">)];</span>
 
     <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setNeedsDisplay</span><span class="p">];</span>
@@ -804,8 +804,8 @@ all that is necessary in Cappuccino to rotate and scale layers.</p>
 
     <span class="n">_rotationRadians</span> <span class="o">=</span> <span class="n">radians</span><span class="p">;</span>
 
-    <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setAffineTransform</span><span class="o">:</span><span class="nf">CGAffineTransformScale</span><span class="p">(</span>
-        <span class="nf">CGAffineTransformMakeRotation</span><span class="p">(</span><span class="n">_rotationRadians</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setAffineTransform</span><span class="o">:</span><span class="nb">CGAffineTransformScale</span><span class="p">(</span>
+        <span class="nb">CGAffineTransformMakeRotation</span><span class="p">(</span><span class="n">_rotationRadians</span><span class="p">),</span>
         <span class="n">_scale</span><span class="p">,</span> <span class="n">_scale</span><span class="p">)];</span>
 <span class="p">}</span>
 
@@ -816,8 +816,8 @@ all that is necessary in Cappuccino to rotate and scale layers.</p>
 
     <span class="n">_scale</span> <span class="o">=</span> <span class="n">aScale</span><span class="p">;</span>
 
-    <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setAffineTransform</span><span class="o">:</span><span class="nf">CGAffineTransformScale</span><span class="p">(</span>
-        <span class="nf">CGAffineTransformMakeRotation</span><span class="p">(</span><span class="n">_rotationRadians</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">_imageLayer</span> <span class="n">setAffineTransform</span><span class="o">:</span><span class="nb">CGAffineTransformScale</span><span class="p">(</span>
+        <span class="nb">CGAffineTransformMakeRotation</span><span class="p">(</span><span class="n">_rotationRadians</span><span class="p">),</span>
         <span class="n">_scale</span><span class="p">,</span> <span class="n">_scale</span><span class="p">)];</span>
 <span class="p">}</span>
 </pre></div>
@@ -833,30 +833,30 @@ all that is necessary in Cappuccino to rotate and scale layers.</p>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">initWithFrame:</span><span class="p">(</span><span class="kt">CGRect</span><span class="p">)</span>aFrame
 <span class="p">{</span>
-    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">aFrame</span><span class="p">];</span>
+    <span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">super</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">aFrame</span><span class="p">];</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">_rootLayer</span> <span class="o">=</span> <span class="p">[</span><span class="n">CALayer</span> <span class="n">layer</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="nb">self</span> <span class="n">setWantsLayer</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
-        <span class="p">[</span><span class="nb">self</span> <span class="n">setLayer</span><span class="o">:</span><span class="n">_rootLayer</span><span class="p">];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">setWantsLayer</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">setLayer</span><span class="o">:</span><span class="n">_rootLayer</span><span class="p">];</span>
 
         <span class="p">[</span><span class="n">_rootLayer</span> <span class="n">setBackgroundColor</span><span class="o">:</span>
-            <span class="p">[</span><span class="n">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
+            <span class="p">[</span><span class="nb">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
 
         <span class="n">_paneLayer</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PaneLayer</span> <span class="n">alloc</span><span class="p">]</span>
-            <span class="n">initWithPageView</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+            <span class="n">initWithPageView</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setBounds</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setBounds</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
             <span class="mi">400</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">40</span><span class="p">,</span> <span class="mf">400.</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)];</span>
-        <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setAnchorPoint</span><span class="o">:</span><span class="nf">CGPointMakeZero</span><span class="p">()];</span>
-        <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setPosition</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">)];</span>
+        <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setAnchorPoint</span><span class="o">:</span><span class="nb">CGPointMakeZero</span><span class="p">()];</span>
+        <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setPosition</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">)];</span>
 
-        <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setImage</span><span class="o">:</span><span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+        <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setImage</span><span class="o">:</span><span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
             <span class="n">initWithContentsOfFile</span><span class="o">:</span>
             <span class="s">@"Resources/sample.jpg"</span>
-            <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">430</span><span class="p">)]];</span>
+            <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">430</span><span class="p">)]];</span>
 
         <span class="p">[</span><span class="n">_rootLayer</span> <span class="n">addSublayer</span><span class="o">:</span><span class="n">_paneLayer</span><span class="p">];</span>
 
@@ -865,7 +865,7 @@ all that is necessary in Cappuccino to rotate and scale layers.</p>
         <span class="p">[</span><span class="n">_rootLayer</span> <span class="n">setNeedsDisplay</span><span class="p">];</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
@@ -890,9 +890,9 @@ following code after <code>[_rootLayer addSublayer:_paneLayer]</code> in
 
 <div class="highlight"><pre><span class="n">_borderLayer</span> <span class="o">=</span> <span class="p">[</span><span class="n">CALayer</span> <span class="n">layer</span><span class="p">];</span>
 
-<span class="p">[</span><span class="n">_borderLayer</span> <span class="n">setAnchorPoint</span><span class="o">:</span><span class="nf">CGPointMakeZero</span><span class="p">()];</span>
-<span class="p">[</span><span class="n">_borderLayer</span> <span class="n">setBounds</span><span class="o">:</span><span class="p">[</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">]];</span>
-<span class="p">[</span><span class="n">_borderLayer</span> <span class="n">setDelegate</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+<span class="p">[</span><span class="n">_borderLayer</span> <span class="n">setAnchorPoint</span><span class="o">:</span><span class="nb">CGPointMakeZero</span><span class="p">()];</span>
+<span class="p">[</span><span class="n">_borderLayer</span> <span class="n">setBounds</span><span class="o">:</span><span class="p">[</span><span class="kr">self</span> <span class="n">bounds</span><span class="p">]];</span>
+<span class="p">[</span><span class="n">_borderLayer</span> <span class="n">setDelegate</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">_rootLayer</span> <span class="n">addSublayer</span><span class="o">:</span><span class="n">_borderLayer</span><span class="p">];</span>
 </pre></div>
@@ -914,18 +914,18 @@ we are making ourselves the delegate of <code>_borderLayer</code>, so add
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">drawLayer:</span><span class="p">(</span><span class="kt">CALayer</span><span class="p">)</span>aLayer <span class="nf">inContext:</span><span class="p">(</span><span class="kt">CGContext</span><span class="p">)</span>aContext
 <span class="p">{</span>
-    <span class="nf">CGContextSetFillColor</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="p">[</span><span class="n">CPColor</span> <span class="n">whiteColor</span><span class="p">]);</span>
+    <span class="nb">CGContextSetFillColor</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="p">[</span><span class="nb">CPColor</span> <span class="n">whiteColor</span><span class="p">]);</span>
 
     <span class="kd">var</span> <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">aLayer</span> <span class="n">bounds</span><span class="p">],</span>
-        <span class="n">width</span> <span class="o">=</span> <span class="nf">CGRectGetWidth</span><span class="p">(</span><span class="n">bounds</span><span class="p">),</span>
-        <span class="n">height</span> <span class="o">=</span> <span class="nf">CGRectGetHeight</span><span class="p">(</span><span class="n">bounds</span><span class="p">);</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">CGRectGetWidth</span><span class="p">(</span><span class="n">bounds</span><span class="p">),</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="nb">CGRectGetHeight</span><span class="p">(</span><span class="n">bounds</span><span class="p">);</span>
 
-    <span class="nf">CGContextFillRect</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mi">40</span><span class="p">));</span>
-    <span class="nf">CGContextFillRect</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="nb">CGContextFillRect</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mi">40</span><span class="p">));</span>
+    <span class="nb">CGContextFillRect</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span>
         <span class="mi">40</span><span class="p">,</span> <span class="n">height</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">40</span><span class="p">));</span>
-    <span class="nf">CGContextFillRect</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="nf">CGRectMake</span><span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="nb">CGContextFillRect</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="nb">CGRectMake</span><span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span>
         <span class="mi">40</span><span class="p">,</span> <span class="n">height</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">40</span><span class="p">));</span>
-    <span class="nf">CGContextFillRect</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">height</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="nb">CGContextFillRect</span><span class="p">(</span><span class="n">aContext</span><span class="p">,</span> <span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">height</span> <span class="o">-</span> <span class="mi">40</span><span class="p">,</span>
         <span class="n">width</span><span class="p">,</span> <span class="mi">40</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
@@ -953,8 +953,8 @@ the <code>PhotoInspector</code> declaration:</p>
 
 <span class="k">@implementation</span> <span class="nc">PhotoInspector</span> <span class="o">:</span> <span class="nc">CPWindowController</span>
 <span class="p">{</span>
-    <span class="n">CPSlider</span>    <span class="n">_scaleSlider</span><span class="p">;</span>
-    <span class="n">CPSlider</span>    <span class="n">_rotationSlider</span><span class="p">;</span>
+    <span class="nb">CPSlider</span>    <span class="n">_scaleSlider</span><span class="p">;</span>
+    <span class="nb">CPSlider</span>    <span class="n">_rotationSlider</span><span class="p">;</span>
 
     <span class="n">PaneLayer</span>   <span class="n">_paneLayer</span><span class="p">;</span>
 <span class="p">}</span>
@@ -967,8 +967,8 @@ since there’s only ever one used in the application:</p>
 
 <span class="k">@implementation</span> <span class="nc">PhotoInspector</span> <span class="o">:</span> <span class="nc">CPWindowController</span>
 <span class="p">{</span>
-    <span class="n">CPSlider</span>    <span class="n">_scaleSlider</span><span class="p">;</span>
-    <span class="n">CPSlider</span>    <span class="n">_rotationSlider</span><span class="p">;</span>
+    <span class="nb">CPSlider</span>    <span class="n">_scaleSlider</span><span class="p">;</span>
+    <span class="nb">CPSlider</span>    <span class="n">_rotationSlider</span><span class="p">;</span>
 
     <span class="n">PaneLayer</span>   <span class="n">_paneLayer</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1015,11 +1015,11 @@ inspecting:</p>
     <span class="k">if</span> <span class="p">(</span><span class="n">_paneLayer</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="kd">var</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">[</span><span class="n">page</span> <span class="n">convertRect</span><span class="o">:</span><span class="p">[</span><span class="n">page</span> <span class="n">bounds</span><span class="p">]</span> <span class="n">toView</span><span class="o">:</span><span class="kc">nil</span><span class="p">],</span>
-            <span class="n">windowSize</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">self</span> <span class="nb">window</span><span class="p">]</span> <span class="n">frame</span><span class="p">].</span><span class="n">size</span><span class="p">;</span>
+            <span class="n">windowSize</span> <span class="o">=</span> <span class="p">[[</span><span class="kr">self</span> <span class="nb">window</span><span class="p">]</span> <span class="n">frame</span><span class="p">].</span><span class="n">size</span><span class="p">;</span>
 
-        <span class="p">[[</span><span class="nb">self</span> <span class="nb">window</span><span class="p">]</span> <span class="n">setFrameOrigin</span><span class="o">:</span>
-            <span class="nf">CGPointMake</span><span class="p">(</span><span class="nf">CGRectGetMidX</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span> <span class="o">-</span>
-            <span class="n">windowSize</span><span class="p">.</span><span class="n">width</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span> <span class="nf">CGRectGetMidY</span><span class="p">(</span><span class="n">frame</span><span class="p">))];</span>
+        <span class="p">[[</span><span class="kr">self</span> <span class="nb">window</span><span class="p">]</span> <span class="n">setFrameOrigin</span><span class="o">:</span>
+            <span class="nb">CGPointMake</span><span class="p">(</span><span class="nb">CGRectGetMidX</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span> <span class="o">-</span>
+            <span class="n">windowSize</span><span class="p">.</span><span class="n">width</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span> <span class="nb">CGRectGetMidY</span><span class="p">(</span><span class="n">frame</span><span class="p">))];</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -1033,14 +1033,14 @@ described above). We then position our window at the center of the pane.</p>
 <p>Let’s actually make our two sliders useful now by giving them
 <code>targets</code> and <code>actions</code> in our <code>init</code> method after they are created:</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">rotationSlider</span> <span class="n">setTarget</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">rotationSlider</span> <span class="n">setTarget</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 <span class="p">[</span><span class="n">rotationSlider</span> <span class="n">setAction</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">rotate</span><span class="o">:</span><span class="p">)];</span>
 </pre></div>
 
 <blockquote>
 </blockquote>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">scaleSlider</span> <span class="n">setTarget</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">scaleSlider</span> <span class="n">setTarget</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 <span class="p">[</span><span class="n">scaleSlider</span> <span class="n">setAction</span><span class="o">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">scale</span><span class="o">:</span><span class="p">)];</span>
 </pre></div>
 
@@ -1084,16 +1084,16 @@ nil, so instead of having to do:</p>
 
 <div class="highlight"><pre><span class="o">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">inspectPaneLayer:</span><span class="p">(</span><span class="kt">PaneLayer</span><span class="p">)</span>anPaneLayer
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">inspector</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">sharedPhotoInspector</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="n">inspector</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">sharedPhotoInspector</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">inspector</span> <span class="n">setPaneLayer</span><span class="o">:</span><span class="n">anPaneLayer</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">inspector</span> <span class="n">showWindow</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">inspector</span> <span class="n">showWindow</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">windowWillClose:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>aSender
 <span class="p">{</span>
-    <span class="p">[</span><span class="nb">self</span> <span class="n">setPaneLayer</span><span class="o">:</span><span class="kc">nil</span><span class="p">];</span>
+    <span class="p">[</span><span class="kr">self</span> <span class="n">setPaneLayer</span><span class="o">:</span><span class="kc">nil</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1106,12 +1106,12 @@ make ourselves the delegate of our window, which we can do in the init
 method:</p>
 
 <div class="highlight"><pre><span class="c1">//...</span>
-<span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="kr">self</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="n">theWindow</span> <span class="n">setTitle</span><span class="o">:</span><span class="s">@"Inspector"</span><span class="p">];</span>
     <span class="p">[</span><span class="n">theWindow</span> <span class="n">setFloatingPanel</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">theWindow</span> <span class="n">setDelegate</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">setDelegate</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 <span class="c1">//...</span>
 </pre></div>
 
@@ -1137,42 +1137,42 @@ is a double click.</p>
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidFinishLaunching:</span><span class="p">(</span><span class="kt">CPNotification</span><span class="p">)</span>aNotification
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPWindow</span> <span class="n">alloc</span><span class="p">]</span>
-            <span class="n">initWithContentRect</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()</span>
-            <span class="n">styleMask</span><span class="o">:</span><span class="n">CPBorderlessBridgeWindowMask</span><span class="p">],</span>
+    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPWindow</span> <span class="n">alloc</span><span class="p">]</span>
+            <span class="n">initWithContentRect</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()</span>
+            <span class="n">styleMask</span><span class="o">:</span><span class="nb">CPBorderlessBridgeWindowMask</span><span class="p">],</span>
         <span class="n">contentView</span> <span class="o">=</span> <span class="p">[</span><span class="n">theWindow</span> <span class="n">contentView</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">contentView</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">blackColor</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">contentView</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">blackColor</span><span class="p">]];</span>
 
-    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
     <span class="kd">var</span> <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">],</span>
         <span class="n">pageView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PageView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span>
-            <span class="nf">CGRectMake</span><span class="p">(</span><span class="nf">CGRectGetWidth</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-            <span class="o">-</span> <span class="mi">200</span><span class="p">,</span> <span class="nf">CGRectGetHeight</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">200</span><span class="p">,</span>
+            <span class="nb">CGRectMake</span><span class="p">(</span><span class="nb">CGRectGetWidth</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="o">-</span> <span class="mi">200</span><span class="p">,</span> <span class="nb">CGRectGetHeight</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">200</span><span class="p">,</span>
             <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">)];</span>
 
-    <span class="p">[</span><span class="n">pageView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span>  <span class="n">CPViewMinXMargin</span> <span class="o">|</span>
-                                    <span class="n">CPViewMaxXMargin</span> <span class="o">|</span>
-                                    <span class="n">CPViewMinYMargin</span> <span class="o">|</span>
-                                    <span class="n">CPViewMaxYMargin</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">pageView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span>  <span class="nb">CPViewMinXMargin</span> <span class="o">|</span>
+                                    <span class="nb">CPViewMaxXMargin</span> <span class="o">|</span>
+                                    <span class="nb">CPViewMinYMargin</span> <span class="o">|</span>
+                                    <span class="nb">CPViewMaxYMargin</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">pageView</span><span class="p">];</span>
 
-    <span class="kd">var</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPTextField</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()];</span>
+    <span class="kd">var</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPTextField</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()];</span>
 
-    <span class="p">[</span><span class="n">label</span> <span class="n">setTextColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">label</span> <span class="n">setTextColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
     <span class="p">[</span><span class="n">label</span> <span class="n">setStringValue</span><span class="o">:</span><span class="s">@"Double Click to Edit Photo"</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">label</span> <span class="n">sizeToFit</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">label</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span><span class="nf">CGRectGetWidth</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span>
-        <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="nf">CGRectGetMinY</span><span class="p">([</span><span class="n">pageView</span> <span class="n">frame</span><span class="p">])</span> <span class="o">-</span>
-        <span class="nf">CGRectGetHeight</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">]))];</span>
-    <span class="p">[</span><span class="n">label</span> <span class="n">setAutoresizingMask</span><span class="o">:</span> <span class="n">CPViewMinXMargin</span> <span class="o">|</span>
-                                <span class="n">CPViewMaxXMargin</span> <span class="o">|</span>
-                                <span class="n">CPViewMinYMargin</span> <span class="o">|</span>
-                                <span class="n">CPViewMaxYMargin</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">label</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span><span class="nb">CGRectGetWidth</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span>
+        <span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nb">CGRectGetMinY</span><span class="p">([</span><span class="n">pageView</span> <span class="n">frame</span><span class="p">])</span> <span class="o">-</span>
+        <span class="nb">CGRectGetHeight</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">]))];</span>
+    <span class="p">[</span><span class="n">label</span> <span class="n">setAutoresizingMask</span><span class="o">:</span> <span class="nb">CPViewMinXMargin</span> <span class="o">|</span>
+                                <span class="nb">CPViewMaxXMargin</span> <span class="o">|</span>
+                                <span class="nb">CPViewMinYMargin</span> <span class="o">|</span>
+                                <span class="nb">CPViewMaxYMargin</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">label</span><span class="p">];</span>
 <span class="p">}</span>
@@ -1192,42 +1192,42 @@ is a double click.</p>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidFinishLaunching:</span><span class="p">(</span><span class="kt">CPNotification</span><span class="p">)</span>aNotification
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPWindow</span> <span class="n">alloc</span><span class="p">]</span>
-            <span class="n">initWithContentRect</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()</span>
-            <span class="n">styleMask</span><span class="o">:</span><span class="n">CPBorderlessBridgeWindowMask</span><span class="p">],</span>
+    <span class="kd">var</span> <span class="n">theWindow</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPWindow</span> <span class="n">alloc</span><span class="p">]</span>
+            <span class="n">initWithContentRect</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()</span>
+            <span class="n">styleMask</span><span class="o">:</span><span class="nb">CPBorderlessBridgeWindowMask</span><span class="p">],</span>
         <span class="n">contentView</span> <span class="o">=</span> <span class="p">[</span><span class="n">theWindow</span> <span class="n">contentView</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">contentView</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">blackColor</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">contentView</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">blackColor</span><span class="p">]];</span>
 
-    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
     <span class="kd">var</span> <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">],</span>
         <span class="n">pageView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PageView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span>
-            <span class="nf">CGRectMake</span><span class="p">(</span><span class="nf">CGRectGetWidth</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-            <span class="o">-</span> <span class="mi">200</span><span class="p">,</span> <span class="nf">CGRectGetHeight</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">200</span><span class="p">,</span>
+            <span class="nb">CGRectMake</span><span class="p">(</span><span class="nb">CGRectGetWidth</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="o">-</span> <span class="mi">200</span><span class="p">,</span> <span class="nb">CGRectGetHeight</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">200</span><span class="p">,</span>
             <span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">)];</span>
 
-    <span class="p">[</span><span class="n">pageView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span>  <span class="n">CPViewMinXMargin</span> <span class="o">|</span>
-                                    <span class="n">CPViewMaxXMargin</span> <span class="o">|</span>
-                                    <span class="n">CPViewMinYMargin</span> <span class="o">|</span>
-                                    <span class="n">CPViewMaxYMargin</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">pageView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span>  <span class="nb">CPViewMinXMargin</span> <span class="o">|</span>
+                                    <span class="nb">CPViewMaxXMargin</span> <span class="o">|</span>
+                                    <span class="nb">CPViewMinYMargin</span> <span class="o">|</span>
+                                    <span class="nb">CPViewMaxYMargin</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">pageView</span><span class="p">];</span>
 
-    <span class="kd">var</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPTextField</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()];</span>
+    <span class="kd">var</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPTextField</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()];</span>
 
-    <span class="p">[</span><span class="n">label</span> <span class="n">setTextColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">label</span> <span class="n">setTextColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
     <span class="p">[</span><span class="n">label</span> <span class="n">setStringValue</span><span class="o">:</span><span class="s">@"Double Click to Edit Photo"</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">label</span> <span class="n">sizeToFit</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">label</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span><span class="nf">CGRectGetWidth</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span>
-        <span class="nf">CGRectGetWidth</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="nf">CGRectGetMinY</span><span class="p">([</span><span class="n">pageView</span> <span class="n">frame</span><span class="p">])</span> <span class="o">-</span>
-        <span class="nf">CGRectGetHeight</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">]))];</span>
-    <span class="p">[</span><span class="n">label</span> <span class="n">setAutoresizingMask</span><span class="o">:</span> <span class="n">CPViewMinXMargin</span> <span class="o">|</span>
-                                <span class="n">CPViewMaxXMargin</span> <span class="o">|</span>
-                                <span class="n">CPViewMinYMargin</span> <span class="o">|</span>
-                                <span class="n">CPViewMaxYMargin</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">label</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span><span class="nb">CGRectGetWidth</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span>
+        <span class="nb">CGRectGetWidth</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nb">CGRectGetMinY</span><span class="p">([</span><span class="n">pageView</span> <span class="n">frame</span><span class="p">])</span> <span class="o">-</span>
+        <span class="nb">CGRectGetHeight</span><span class="p">([</span><span class="n">label</span> <span class="n">frame</span><span class="p">]))];</span>
+    <span class="p">[</span><span class="n">label</span> <span class="n">setAutoresizingMask</span><span class="o">:</span> <span class="nb">CPViewMinXMargin</span> <span class="o">|</span>
+                                <span class="nb">CPViewMaxXMargin</span> <span class="o">|</span>
+                                <span class="nb">CPViewMinYMargin</span> <span class="o">|</span>
+                                <span class="nb">CPViewMaxYMargin</span><span class="p">];</span>
 
     <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">label</span><span class="p">];</span>
 <span class="p">}</span>

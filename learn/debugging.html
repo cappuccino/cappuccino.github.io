@@ -176,10 +176,10 @@ application.</li>
 <span class="p">{</span>
     <span class="c1">// [...]</span>
     <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">label</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 <span class="err"> </span>
     <span class="c1">// log the content of the label</span>
-    <span class="n">CPLog</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"The content of the label is: "</span> <span class="o">+</span> <span class="p">[</span><span class="n">label</span> <span class="n">stringValue</span><span class="p">]);</span>
+    <span class="nb">CPLog</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"The content of the label is: "</span> <span class="o">+</span> <span class="p">[</span><span class="n">label</span> <span class="n">stringValue</span><span class="p">]);</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -208,10 +208,10 @@ will see nothing!</p>
 <span class="p">{</span>
     <span class="c1">// [...]</span>
     <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">label</span><span class="p">];</span>
-    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">theWindow</span> <span class="n">orderFront</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
     <span class="c1">// log the content of the label</span>
-    <span class="n">CPLog</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"The content of the label is: "</span> <span class="o">+</span> <span class="p">[</span><span class="n">label</span> <span class="n">stringValue</span><span class="p">]);</span>
+    <span class="nb">CPLog</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s">"The content of the label is: "</span> <span class="o">+</span> <span class="p">[</span><span class="n">label</span> <span class="n">stringValue</span><span class="p">]);</span>
 
     <span class="c1">// I'm gonna crash!</span>
     <span class="p">[</span><span class="n">notDefinedVariable</span> <span class="n">doSomethingNotDefined</span><span class="o">:</span><span class="n">withAnotherNotDefinedVariable</span><span class="p">];</span>

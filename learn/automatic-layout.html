@@ -174,7 +174,7 @@ you wanted a view to use both the <code>CPViewWidthSizable</code> flag and the
 <code>CPViewHeightSizable</code> flag, you can put them together with the <code>|</code> operator
 like so:</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">myView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewWidthSizable</span> <span class="o">|</span> <span class="n">CPViewHeightSizable</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">myView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewWidthSizable</span> <span class="o">|</span> <span class="nb">CPViewHeightSizable</span><span class="p">];</span>
 </pre></div>
 
 <p>You can then retrieve the mask by using the autoresizingMask method.</p>
@@ -225,11 +225,11 @@ should remain <strong>constant</strong>. A good example of using these flags is 
 you want to <strong>center</strong> a view. In this case, we want flexible space all
 around the view so that it stays put in the center:</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">view</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nf">CGPointMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="n">centerY</span><span class="p">)];</span>
-<span class="p">[</span><span class="n">view</span> <span class="n">setAutoresizingMask</span><span class="o">:</span>  <span class="n">CPViewMinXMargin</span> <span class="o">|</span>
-                            <span class="n">CPViewMaxXMargin</span> <span class="o">|</span>
-                            <span class="n">CPViewMinYMargin</span> <span class="o">|</span>
-                            <span class="n">CPViewMaxYMargin</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">view</span> <span class="n">setFrameOrigin</span><span class="o">:</span><span class="nb">CGPointMake</span><span class="p">(</span><span class="n">centerX</span><span class="p">,</span> <span class="n">centerY</span><span class="p">)];</span>
+<span class="p">[</span><span class="n">view</span> <span class="n">setAutoresizingMask</span><span class="o">:</span>  <span class="nb">CPViewMinXMargin</span> <span class="o">|</span>
+                            <span class="nb">CPViewMaxXMargin</span> <span class="o">|</span>
+                            <span class="nb">CPViewMinYMargin</span> <span class="o">|</span>
+                            <span class="nb">CPViewMaxYMargin</span><span class="p">];</span>
 </pre></div>
 
 <p>Notice that just as before, we begin by placing the view where it should
@@ -259,7 +259,7 @@ its bottom and right:</p>
 
 <p>And so, we should use both <code>CPViewMaxXMargin</code> and <code>CPViewMaxYMargin</code>:</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">iconView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewMaxXMargin</span> <span class="o">|</span> <span class="n">CPViewMaxYMargin</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">iconView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewMaxXMargin</span> <span class="o">|</span> <span class="nb">CPViewMaxYMargin</span><span class="p">];</span>
 </pre></div>
 
 <p>The text blurb is also quite simple, as it should simply grow along with
@@ -270,7 +270,7 @@ the window:</p>
 <p>Since we want it to stretch in both directions, we’ll use
 <code>CPViewWidthSizable</code> and <code>CPViewHeightSizable</code>:</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">textField</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewWidthSizable</span> <span class="o">|</span> <span class="n">CPViewHeightSizable</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">textField</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewWidthSizable</span> <span class="o">|</span> <span class="nb">CPViewHeightSizable</span><span class="p">];</span>
 </pre></div>
 
 <p>Now, the buttons on the bottom are actually almost the same case as the
@@ -324,7 +324,7 @@ flexible space on its right:</p>
 <p>So for the first time, we will combine our sizing and positioning flags
 and use <code>CPViewHeightSizable</code> alongside <code>CPViewMaxXMargin</code>:</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">navigationArea</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewHeightSizable</span> <span class="o">|</span> <span class="n">CPViewMaxXMargin</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">navigationArea</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewHeightSizable</span> <span class="o">|</span> <span class="nb">CPViewMaxXMargin</span><span class="p">];</span>
 </pre></div>
 
 <p>The content area on the other hand is quite simple, as it just grows and
@@ -347,7 +347,7 @@ anchored there:</p>
 <code>CPViewMinYMargin</code> for flexible space above it, and <code>CPViewMaxXMargin</code> for
 flexible space to the right:</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">metaDataArea</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewMinYMargin</span> <span class="o">|</span> <span class="n">CPViewMaxXMargin</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="n">metaDataArea</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewMinYMargin</span> <span class="o">|</span> <span class="nb">CPViewMaxXMargin</span><span class="p">];</span>
 </pre></div>
 
 <p>After this, the general layout should work. It seems a bit

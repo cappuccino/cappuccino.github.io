@@ -67,7 +67,7 @@ Solving the JavaScript Memory Management Problem
 
 <p>To do this right, we’ve created a global object table. These objects aren’t going anywhere on their own! If you don’t release an object, it will stick around forever, ensuring you’ll always have it when you need it. This global table acts as a lookup table for any object, allowing us to finally implement pointers in JavaScript. Since $ has become the coolest way to do completely non-standard lookups in an almost indecipherable way, we thought we’d jump on the bandwagon. Pass any pointer to $ and you’ll get the associated object! How do you get a pointer you ask? $$ of course! For example:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="n">o</span> <span class="o">=</span> <span class="p">[</span><span class="n">CPobject</span> <span class="k">new</span><span class="p">];</span> <span class="c1">// +new returns with a retain count of 1!</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">o</span> <span class="o">=</span> <span class="p">[</span><span class="nb">CPobject</span> <span class="k">new</span><span class="p">];</span> <span class="c1">// +new returns with a retain count of 1!</span>
 <span class="kd">var</span> <span class="n">p</span> <span class="o">=</span> <span class="n">$</span><span class="nf">$</span><span class="p">(</span><span class="n">o</span><span class="p">);</span> <span class="c1">// returns a pointer to o</span>
 
 <span class="n">o</span> <span class="o">===</span> <span class="nf">$</span><span class="p">(</span><span class="n">p</span><span class="p">);</span> <span class="c1">// we dereference the pointer and get the right object!</span>

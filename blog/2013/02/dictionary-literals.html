@@ -63,7 +63,7 @@ Dictionary Literals
 
 <h5>Before</h5>
 
-<div class="highlight"><pre><span class="k">return</span> <span class="p">[</span><span class="n">CPDictionary</span> <span class="n">dictionaryWithObjects</span><span class="o">:</span><span class="p">[[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="nf">CGSizeMakeZero</span><span class="p">(),</span> <span class="mf">6.0</span><span class="p">,</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="nf">CGSizeMakeZero</span><span class="p">()]</span>
+<div class="highlight"><pre><span class="k">return</span> <span class="p">[</span><span class="nb">CPDictionary</span> <span class="n">dictionaryWithObjects</span><span class="o">:</span><span class="p">[[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="p">[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="nb">CGSizeMakeZero</span><span class="p">(),</span> <span class="mf">6.0</span><span class="p">,</span> <span class="p">[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span> <span class="nb">CGSizeMakeZero</span><span class="p">()]</span>
                                    <span class="n">forKeys</span><span class="o">:</span><span class="p">[</span>   <span class="s">@"background-color"</span><span class="p">,</span>
                                                <span class="s">@"border-color"</span><span class="p">,</span>
                                                <span class="s">@"border-width"</span><span class="p">,</span>
@@ -76,15 +76,15 @@ Dictionary Literals
 
 <h5>After</h5>
 
-<div class="highlight"><pre><span class="k">return</span> <span class="err">@</span><span class="p">{</span>
-        <span class="s">@"background-color"</span><span class="o">:</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span>
-        <span class="s">@"border-color"</span><span class="o">:</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span>
+<div class="highlight"><pre><span class="k">return</span> <span class="p">@{</span>
+        <span class="s">@"background-color"</span><span class="o">:</span> <span class="p">[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span>
+        <span class="s">@"border-color"</span><span class="o">:</span> <span class="p">[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span>
         <span class="s">@"border-width"</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span>
         <span class="s">@"corner-radius"</span><span class="o">:</span> <span class="mf">3.0</span><span class="p">,</span>
-        <span class="s">@"inner-shadow-offset"</span><span class="o">:</span> <span class="nf">CGSizeMakeZero</span><span class="p">(),</span>
+        <span class="s">@"inner-shadow-offset"</span><span class="o">:</span> <span class="nb">CGSizeMakeZero</span><span class="p">(),</span>
         <span class="s">@"inner-shadow-size"</span><span class="o">:</span> <span class="mf">6.0</span><span class="p">,</span>
-        <span class="s">@"inner-shadow-color"</span><span class="o">:</span> <span class="p">[</span><span class="n">CPNull</span> <span class="kc">null</span><span class="p">],</span>
-        <span class="s">@"content-margin"</span><span class="o">:</span> <span class="nf">CGSizeMakeZero</span><span class="p">(),</span>
+        <span class="s">@"inner-shadow-color"</span><span class="o">:</span> <span class="p">[</span><span class="nb">CPNull</span> <span class="kc">null</span><span class="p">],</span>
+        <span class="s">@"content-margin"</span><span class="o">:</span> <span class="nb">CGSizeMakeZero</span><span class="p">(),</span>
     <span class="p">};</span>
 </pre></div>
 
@@ -93,7 +93,7 @@ Dictionary Literals
 <p>Regular JavaScript dictionaries will continue to work as normal.</p>
 
 <div class="highlight"><pre><span class="c1">// Objective-J Dictionary Literal</span>
-<span class="kd">var</span> <span class="n">a</span> <span class="o">=</span> <span class="err">@</span><span class="p">{</span> <span class="s">@"count"</span><span class="o">:</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="n">a</span> <span class="o">=</span> <span class="p">@{</span> <span class="s">@"count"</span><span class="o">:</span> <span class="mi">2</span> <span class="p">};</span>
 
 <span class="c1">// JavaScript Object</span>
 <span class="kd">var</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span> <span class="s">@"count"</span><span class="o">:</span> <span class="mi">2</span> <span class="p">};</span>

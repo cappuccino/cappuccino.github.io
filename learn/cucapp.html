@@ -213,11 +213,11 @@ nib2cib Resources/MainMenu.xib
 <span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
     <span class="cm">/* this "outlet" is connected automatically by the Cib */</span>
-    <span class="n">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
+    <span class="nb">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
 
     <span class="cm">/* We create the outlets of the textfields here */</span>
-    <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myTextField</span><span class="p">;</span>
-    <span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">myLabel</span> <span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="nb">CPTextField</span> <span class="n">myTextField</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="nb">CPTextField</span> <span class="n">myLabel</span> <span class="p">;</span>
 
     <span class="cm">/* As you can see, the label is also a CPTextField, it's just not editable and not bordered.</span>
 <span class="cm">       It is important you declare correctly the class names of the outlets, or Xcode, won't see them.</span>

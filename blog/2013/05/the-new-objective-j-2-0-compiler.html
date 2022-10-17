@@ -106,31 +106,31 @@ The New Objective-J 2.0 Compiler
 
 <div class="highlight"><pre><span class="cp">#define ERROR_MSG_FORMAT "An error occurred: %@. Would you like to continue?"</span>
 
-<span class="p">[</span><span class="n">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="n">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="n">ERROR_MSG_FORMAT</span><span class="p">,</span> <span class="n">someError</span><span class="p">];</span>
+<span class="p">[</span><span class="nb">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="nb">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="n">ERROR_MSG_FORMAT</span><span class="p">,</span> <span class="n">someError</span><span class="p">];</span>
 
 <span class="c1">// more code</span>
 
-<span class="p">[</span><span class="n">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="n">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="n">ERROR_MSG_FORMAT</span><span class="p">,</span> <span class="n">anotherError</span><span class="p">];</span>
+<span class="p">[</span><span class="nb">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="nb">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="n">ERROR_MSG_FORMAT</span><span class="p">,</span> <span class="n">anotherError</span><span class="p">];</span>
 </pre></div>
 
 <p>compiles to:</p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="n">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="s">"An error occurred: %@. Would you like to continue?"</span><span class="p">,</span> <span class="n">someError</span><span class="p">];</span>
+<div class="highlight"><pre><span class="p">[</span><span class="nb">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="nb">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="s">"An error occurred: %@. Would you like to continue?"</span><span class="p">,</span> <span class="n">someError</span><span class="p">];</span>
 
 <span class="c1">// more code</span>
 
-<span class="p">[</span><span class="n">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="n">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="s">"An error occurred: %@. Would you like to continue?"</span><span class="p">,</span> <span class="n">anotherError</span><span class="p">];</span>
+<span class="p">[</span><span class="nb">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="nb">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="s">"An error occurred: %@. Would you like to continue?"</span><span class="p">,</span> <span class="n">anotherError</span><span class="p">];</span>
 </pre></div>
 
 <p>Notice that ERROR_MSG_FORMAT was replaced with the longish string every time it was referenced, which increased the size of your code. A better way:</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="n">ERROR_MSG_FORMAT</span> <span class="o">=</span> <span class="s">"An error occurred: %@. Would you like to continue?"</span><span class="p">;</span>
 
-<span class="p">[</span><span class="n">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="n">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="n">ERROR_MSG_FORMAT</span><span class="p">,</span> <span class="n">someError</span><span class="p">];</span>
+<span class="p">[</span><span class="nb">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="nb">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="n">ERROR_MSG_FORMAT</span><span class="p">,</span> <span class="n">someError</span><span class="p">];</span>
 
 <span class="c1">// more code</span>
 
-<span class="p">[</span><span class="n">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="n">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="n">ERROR_MSG_FORMAT</span><span class="p">,</span> <span class="n">anotherError</span><span class="p">];</span>
+<span class="p">[</span><span class="nb">CPException</span> <span class="n">raise</span><span class="o">:</span><span class="nb">CPGenericException</span> <span class="n">format</span><span class="o">:</span><span class="n">ERROR_MSG_FORMAT</span><span class="p">,</span> <span class="n">anotherError</span><span class="p">];</span>
 </pre></div>
 
 <h4>Examples: using #define for macros</h4>
@@ -153,8 +153,8 @@ The New Objective-J 2.0 Compiler
 
 <span class="cp">#define CGRectMakeCopy(r)  CGRectMake(r.origin.x, r.origin.y, r.size.width, r.size.height)</span>
 
-<span class="kd">var</span> <span class="n">rect</span> <span class="o">=</span> <span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
-    <span class="n">copy</span> <span class="o">=</span> <span class="nf">CGRectMakeCopy</span><span class="p">(</span><span class="n">rect</span><span class="p">);</span>
+<span class="kd">var</span> <span class="n">rect</span> <span class="o">=</span> <span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
+    <span class="n">copy</span> <span class="o">=</span> <span class="nb">CGRectMakeCopy</span><span class="p">(</span><span class="n">rect</span><span class="p">);</span>
 </pre></div>
 
 <p>This compiles to:</p>
@@ -165,32 +165,32 @@ The New Objective-J 2.0 Compiler
 
 <p>Because everything is generated inline, you end up with much larger source code. Depending on how often you use these macros, that might not be so bad. But there is a hidden performance penalty if you aren’t careful. Consider this example:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="n">rect</span> <span class="o">=</span> <span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
-    <span class="n">copy</span> <span class="o">=</span> <span class="nf">CGRectMakeCopy</span><span class="p">([</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">]);</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">rect</span> <span class="o">=</span> <span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
+    <span class="n">copy</span> <span class="o">=</span> <span class="nb">CGRectMakeCopy</span><span class="p">([</span><span class="kr">self</span> <span class="n">bounds</span><span class="p">]);</span>
 </pre></div>
 
 <p>which compiles to:</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="n">rect</span> <span class="o">=</span> <span class="p">{</span><span class="n">origin</span><span class="o">:</span><span class="p">{</span><span class="n">x</span><span class="o">:</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">:</span><span class="mi">20</span><span class="p">},</span> <span class="n">size</span><span class="o">:</span><span class="p">{</span><span class="n">width</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">:</span><span class="mi">400</span><span class="p">}},</span>
-    <span class="n">copy</span> <span class="o">=</span> <span class="p">{</span><span class="n">origin</span><span class="o">:</span><span class="p">{</span><span class="n">x</span><span class="o">:</span><span class="p">[</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">].</span><span class="n">origin</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">:</span><span class="p">[</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">].</span><span class="n">origin</span><span class="p">.</span><span class="n">y</span><span class="p">},</span> <span class="n">size</span><span class="o">:</span><span class="p">{</span><span class="n">width</span><span class="o">:</span><span class="p">[</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">].</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">:</span><span class="p">[</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">].</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="p">}};</span>
+    <span class="n">copy</span> <span class="o">=</span> <span class="p">{</span><span class="n">origin</span><span class="o">:</span><span class="p">{</span><span class="n">x</span><span class="o">:</span><span class="p">[</span><span class="kr">self</span> <span class="n">bounds</span><span class="p">].</span><span class="n">origin</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">:</span><span class="p">[</span><span class="kr">self</span> <span class="n">bounds</span><span class="p">].</span><span class="n">origin</span><span class="p">.</span><span class="n">y</span><span class="p">},</span> <span class="n">size</span><span class="o">:</span><span class="p">{</span><span class="n">width</span><span class="o">:</span><span class="p">[</span><span class="kr">self</span> <span class="n">bounds</span><span class="p">].</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">:</span><span class="p">[</span><span class="kr">self</span> <span class="n">bounds</span><span class="p">].</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="p">}};</span>
 </pre></div>
 
 <p>Notice that <code>CGRectMakeCopy</code> has not only generated <strong>way</strong> more code than a function call, it also generates four relatively expensive method calls. Ouch!</p>
 
 <p>For this reason, we actually ended replacing macros like this in Cappuccino with JavaScript functions:</p>
 
-<div class="highlight"><pre><span class="kd">function</span> <span class="nf">CGRectMake</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<div class="highlight"><pre><span class="kd">function</span> <span class="nb">CGRectMake</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span><span class="n">origin</span><span class="o">:</span><span class="p">{</span><span class="n">x</span><span class="o">:</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">:</span><span class="n">y</span><span class="p">},</span> <span class="n">size</span><span class="o">:</span><span class="p">{</span><span class="n">width</span><span class="o">:</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">:</span><span class="n">height</span><span class="p">}};</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nf">CGRectMakeCopy</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+<span class="kd">function</span> <span class="nb">CGRectMakeCopy</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span><span class="n">origin</span><span class="o">:</span><span class="p">{</span><span class="n">x</span><span class="o">:</span><span class="n">rect</span><span class="p">.</span><span class="n">origin</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">:</span><span class="n">rect</span><span class="p">.</span><span class="n">origin</span><span class="p">.</span><span class="n">y</span><span class="p">},</span> <span class="n">size</span><span class="o">:</span><span class="p">{</span><span class="n">width</span><span class="o">:</span><span class="n">rect</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">:</span><span class="n">rect</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="p">}};</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="n">rect</span> <span class="o">=</span> <span class="nf">CGRectMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
-    <span class="n">copy</span> <span class="o">=</span> <span class="nf">CGRectMakeCopy</span><span class="p">([</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">]);</span>
+<span class="kd">var</span> <span class="n">rect</span> <span class="o">=</span> <span class="nb">CGRectMake</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span>
+    <span class="n">copy</span> <span class="o">=</span> <span class="nb">CGRectMakeCopy</span><span class="p">([</span><span class="kr">self</span> <span class="n">bounds</span><span class="p">]);</span>
 </pre></div>
 
 <p>The compiled code is exactly the same as the written code, which is much smaller than with macros, and in this case <code>[self bounds]</code> is evaluated only once before being passed to <code>CGRectMakeCopy</code>, which is much faster.</p>

@@ -171,18 +171,18 @@ place in a <code>CPWindowController</code>:</p>
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">init</span>
 <span class="p">{</span>
-    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">initWithContentRect</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">300.0</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">)</span>
-                           <span class="n">styleMask</span><span class="o">:</span><span class="n">CPHUDBackgroundWindowMask</span> <span class="o">|</span>
-                                     <span class="n">CPClosableWindowMask</span> <span class="o">|</span>
-                                     <span class="n">CPResizableWindowMask</span><span class="p">];</span>
+    <span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">initWithContentRect</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">300.0</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">)</span>
+                           <span class="n">styleMask</span><span class="o">:</span><span class="nb">CPHUDBackgroundWindowMask</span> <span class="o">|</span>
+                                     <span class="nb">CPClosableWindowMask</span> <span class="o">|</span>
+                                     <span class="nb">CPResizableWindowMask</span><span class="p">];</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="p">[</span><span class="nb">self</span> <span class="n">setTitle</span><span class="o">:</span><span class="s">"Photos"</span><span class="p">];</span>
-        <span class="p">[</span><span class="nb">self</span> <span class="n">setFloatingPanel</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">setTitle</span><span class="o">:</span><span class="s">"Photos"</span><span class="p">];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">setFloatingPanel</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -208,21 +208,21 @@ definition of our PhotoPanel class:</p>
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">PhotoView</span> <span class="o">:</span> <span class="nc">CPView</span>
 <span class="p">{</span>
-    <span class="n">CPImageView</span> <span class="n">_imageView</span><span class="p">;</span>
+    <span class="nb">CPImageView</span> <span class="n">_imageView</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setRepresentedObject:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>anObject
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">_imageView</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="kd">var</span> <span class="n">frame</span> <span class="o">=</span> <span class="nf">CGRectInset</span><span class="p">([</span><span class="nb">self</span> <span class="n">bounds</span><span class="p">],</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="n">frame</span> <span class="o">=</span> <span class="nb">CGRectInset</span><span class="p">([</span><span class="kr">self</span> <span class="n">bounds</span><span class="p">],</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">);</span>
 
-        <span class="n">_imageView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPImageView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">frame</span><span class="p">];</span>
+        <span class="n">_imageView</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPImageView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">frame</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="n">_imageView</span> <span class="n">setImageScaling</span><span class="o">:</span><span class="n">CPScaleProportionally</span><span class="p">];</span>
-        <span class="p">[</span><span class="n">_imageView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewWidthSizable</span> <span class="o">|</span> <span class="n">CPViewHeightSizable</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">_imageView</span> <span class="n">setImageScaling</span><span class="o">:</span><span class="nb">CPScaleProportionally</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">_imageView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewWidthSizable</span> <span class="o">|</span> <span class="nb">CPViewHeightSizable</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="nb">self</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">_imageView</span><span class="p">];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">_imageView</span><span class="p">];</span>
     <span class="p">}</span>
 
     <span class="p">[</span><span class="n">_imageView</span> <span class="n">setImage</span><span class="o">:</span><span class="n">anObject</span><span class="p">];</span>
@@ -230,7 +230,7 @@ definition of our PhotoPanel class:</p>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setSelected:</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span>isSelected
 <span class="p">{</span>
-    <span class="p">[</span><span class="nb">self</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="n">isSelected</span> <span class="o">?</span> <span class="p">[</span><span class="n">CPColor</span> <span class="n">grayColor</span><span class="p">]</span> <span class="o">:</span> <span class="kc">nil</span><span class="p">];</span>
+    <span class="p">[</span><span class="kr">self</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="n">isSelected</span> <span class="o">?</span> <span class="p">[</span><span class="nb">CPColor</span> <span class="n">grayColor</span><span class="p">]</span> <span class="o">:</span> <span class="kc">nil</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
@@ -253,67 +253,67 @@ PhotoPanel’s init method and create a collection view:</p>
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">init</span>
 <span class="p">{</span>
-    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">initWithContentRect</span><span class="o">:</span><span class="nf">CGRectMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">300.0</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">)</span>
-                           <span class="n">styleMask</span><span class="o">:</span><span class="n">CPHUDBackgroundWindowMask</span> <span class="o">|</span>
-                                     <span class="n">CPClosableWindowMask</span> <span class="o">|</span>
-                                     <span class="n">CPResizableWindowMask</span><span class="p">];</span>
+    <span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">initWithContentRect</span><span class="o">:</span><span class="nb">CGRectMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">300.0</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">)</span>
+                           <span class="n">styleMask</span><span class="o">:</span><span class="nb">CPHUDBackgroundWindowMask</span> <span class="o">|</span>
+                                     <span class="nb">CPClosableWindowMask</span> <span class="o">|</span>
+                                     <span class="nb">CPResizableWindowMask</span><span class="p">];</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="p">[</span><span class="nb">self</span> <span class="n">setTitle</span><span class="o">:</span><span class="s">"Photos"</span><span class="p">];</span>
-        <span class="p">[</span><span class="nb">self</span> <span class="n">setFloatingPanel</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">setTitle</span><span class="o">:</span><span class="s">"Photos"</span><span class="p">];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">setFloatingPanel</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
 
-        <span class="kd">var</span> <span class="n">contentView</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">contentView</span><span class="p">],</span>
+        <span class="kd">var</span> <span class="n">contentView</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">contentView</span><span class="p">],</span>
             <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">];</span>
 
         <span class="n">bounds</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span> <span class="o">-=</span> <span class="mf">20.0</span><span class="p">;</span>
 
-        <span class="kd">var</span> <span class="n">photosView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPCollectionView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">bounds</span><span class="p">];</span>
+        <span class="kd">var</span> <span class="n">photosView</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPCollectionView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">bounds</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="n">photosView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewWidthSizable</span><span class="p">];</span>
-        <span class="p">[</span><span class="n">photosView</span> <span class="n">setMinItemSize</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
-        <span class="p">[</span><span class="n">photosView</span> <span class="n">setMaxItemSize</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
+        <span class="p">[</span><span class="n">photosView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewWidthSizable</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">photosView</span> <span class="n">setMinItemSize</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
+        <span class="p">[</span><span class="n">photosView</span> <span class="n">setMaxItemSize</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
 
-        <span class="kd">var</span> <span class="n">itemPrototype</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPCollectionViewItem</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">],</span>
-            <span class="n">photoView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PhotoView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()];</span>
+        <span class="kd">var</span> <span class="n">itemPrototype</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPCollectionViewItem</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">],</span>
+            <span class="n">photoView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PhotoView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()];</span>
 
         <span class="p">[</span><span class="n">itemPrototype</span> <span class="n">setView</span><span class="o">:</span><span class="n">photoView</span><span class="p">];</span>
 
         <span class="p">[</span><span class="n">photosView</span> <span class="n">setItemPrototype</span><span class="o">:</span><span class="n">itemPrototype</span><span class="p">];</span>
 
-        <span class="kd">var</span> <span class="n">scrollView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPScrollView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">bounds</span><span class="p">];</span>
+        <span class="kd">var</span> <span class="n">scrollView</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPScrollView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">bounds</span><span class="p">];</span>
 
         <span class="p">[</span><span class="n">scrollView</span> <span class="n">setDocumentView</span><span class="o">:</span><span class="n">photosView</span><span class="p">];</span>
-        <span class="p">[</span><span class="n">scrollView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewWidthSizable</span> <span class="o">|</span> <span class="n">CPViewHeightSizable</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">scrollView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewWidthSizable</span> <span class="o">|</span> <span class="nb">CPViewHeightSizable</span><span class="p">];</span>
         <span class="p">[</span><span class="n">scrollView</span> <span class="n">setAutohidesScrollers</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
 
-        <span class="p">[[</span><span class="n">scrollView</span> <span class="n">contentView</span><span class="p">]</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
+        <span class="p">[[</span><span class="n">scrollView</span> <span class="n">contentView</span><span class="p">]</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
 
         <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scrollView</span><span class="p">];</span>
 
-        <span class="n">images</span> <span class="o">=</span> <span class="p">[</span>  <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="p">[</span>  <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                         <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample.jpg"</span>
-                                          <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">430.0</span><span class="p">)],</span>
-                    <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+                                          <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">430.0</span><span class="p">)],</span>
+                    <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                         <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample2.jpg"</span>
-                                          <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">389.0</span><span class="p">)],</span>
-                    <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+                                          <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">389.0</span><span class="p">)],</span>
+                    <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                         <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample3.jpg"</span>
-                                          <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">413.0</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">)],</span>
-                    <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+                                          <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">413.0</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">)],</span>
+                    <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                         <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample4.jpg"</span>
-                                          <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)],</span>
-                    <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+                                          <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)],</span>
+                    <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                         <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample5.jpg"</span>
-                                          <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)],</span>
-                    <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+                                          <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)],</span>
+                    <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                         <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample6.jpg"</span>
-                                          <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)]];</span>
+                                          <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)]];</span>
 
         <span class="p">[</span><span class="n">photosView</span> <span class="n">setContent</span><span class="o">:</span><span class="n">images</span><span class="p">];</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -321,16 +321,16 @@ PhotoPanel’s init method and create a collection view:</p>
 see that it’s really quite straight forward. Let’s start with the first
 part:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="n">contentView</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">contentView</span><span class="p">],</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">contentView</span> <span class="o">=</span> <span class="p">[</span><span class="kr">self</span> <span class="n">contentView</span><span class="p">],</span>
     <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">contentView</span> <span class="n">bounds</span><span class="p">];</span>
 
 <span class="n">bounds</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span> <span class="o">-=</span> <span class="mf">20.0</span><span class="p">;</span>
 
-<span class="kd">var</span> <span class="n">photosView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPCollectionView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">bounds</span><span class="p">];</span>
+<span class="kd">var</span> <span class="n">photosView</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPCollectionView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">bounds</span><span class="p">];</span>
 
-<span class="p">[</span><span class="n">photosView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewWidthSizable</span><span class="p">];</span>
-<span class="p">[</span><span class="n">photosView</span> <span class="n">setMinItemSize</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
-<span class="p">[</span><span class="n">photosView</span> <span class="n">setMaxItemSize</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
+<span class="p">[</span><span class="n">photosView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewWidthSizable</span><span class="p">];</span>
+<span class="p">[</span><span class="n">photosView</span> <span class="n">setMinItemSize</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
+<span class="p">[</span><span class="n">photosView</span> <span class="n">setMaxItemSize</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)];</span>
 </pre></div>
 
 <p>This is just very rudimentary layout code. We are grabbing our panel’s
@@ -347,8 +347,8 @@ optionally choose to allow them to resize, causing the images to becomes
 larger as the collection view becomes larger, and smaller as it shrinks.
 Following this, we create the item prototype we spoke about earlier:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="n">itemPrototype</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPCollectionViewItem</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">],</span>
-    <span class="n">photoView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PhotoView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nf">CGRectMakeZero</span><span class="p">()];</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">itemPrototype</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPCollectionViewItem</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">],</span>
+    <span class="n">photoView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PhotoView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="nb">CGRectMakeZero</span><span class="p">()];</span>
 
 <span class="p">[</span><span class="n">itemPrototype</span> <span class="n">setView</span><span class="o">:</span><span class="n">photoView</span><span class="p">];</span>
 
@@ -362,13 +362,13 @@ bother giving our PhotoView a meaningful size, since this is handled by
 the min and max item sizes we defined earlier. The following section is
 probably also new to you:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="n">scrollView</span> <span class="o">=</span> <span class="p">[[</span><span class="n">CPScrollView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">bounds</span><span class="p">];</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">scrollView</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">CPScrollView</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">bounds</span><span class="p">];</span>
 
 <span class="p">[</span><span class="n">scrollView</span> <span class="n">setDocumentView</span><span class="o">:</span><span class="n">photosView</span><span class="p">];</span>
-<span class="p">[</span><span class="n">scrollView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="n">CPViewWidthSizable</span> <span class="o">|</span> <span class="n">CPViewHeightSizable</span><span class="p">];</span>
+<span class="p">[</span><span class="n">scrollView</span> <span class="n">setAutoresizingMask</span><span class="o">:</span><span class="nb">CPViewWidthSizable</span> <span class="o">|</span> <span class="nb">CPViewHeightSizable</span><span class="p">];</span>
 <span class="p">[</span><span class="n">scrollView</span> <span class="n">setAutohidesScrollers</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
 
-<span class="p">[[</span><span class="n">scrollView</span> <span class="n">contentView</span><span class="p">]</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
+<span class="p">[[</span><span class="n">scrollView</span> <span class="n">contentView</span><span class="p">]</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="nb">CPColor</span> <span class="n">whiteColor</span><span class="p">]];</span>
 
 <span class="p">[</span><span class="n">contentView</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">scrollView</span><span class="p">];</span>
 </pre></div>
@@ -413,24 +413,24 @@ white, and add the scoll view to the panel’s content view. After this,
 we finally create our static array of images and set it as the content
 of our collection view:</p>
 
-<div class="highlight"><pre><span class="n">images</span> <span class="o">=</span> <span class="p">[</span>  <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+<div class="highlight"><pre><span class="n">images</span> <span class="o">=</span> <span class="p">[</span>  <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                 <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample.jpg"</span>
-                                  <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">430.0</span><span class="p">)],</span>
-            <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+                                  <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">430.0</span><span class="p">)],</span>
+            <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                 <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample2.jpg"</span>
-                                  <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">389.0</span><span class="p">)],</span>
-            <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+                                  <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">389.0</span><span class="p">)],</span>
+            <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                 <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample3.jpg"</span>
-                                  <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">413.0</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">)],</span>
-            <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+                                  <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">413.0</span><span class="p">,</span> <span class="mf">400.0</span><span class="p">)],</span>
+            <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                 <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample4.jpg"</span>
-                                  <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)],</span>
-            <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+                                  <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)],</span>
+            <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                 <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample5.jpg"</span>
-                                  <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)],</span>
-            <span class="p">[[</span><span class="n">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
+                                  <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)],</span>
+            <span class="p">[[</span><span class="nb">CPImage</span> <span class="n">alloc</span><span class="p">]</span>
                 <span class="n">initWithContentsOfFile</span><span class="o">:</span><span class="s">"Resources/sample6.jpg"</span>
-                                  <span class="n">size</span><span class="o">:</span><span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)]];</span>
+                                  <span class="n">size</span><span class="o">:</span><span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">375.0</span><span class="p">)]];</span>
 
 <span class="p">[</span><span class="n">photosView</span> <span class="n">setContent</span><span class="o">:</span><span class="n">images</span><span class="p">];</span>
 </pre></div>
@@ -440,7 +440,7 @@ housekeeping in the PhotoPanel class declaration:</p>
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">PhotoPanel</span> <span class="o">:</span> <span class="nc">CPPanel</span>
 <span class="p">{</span>
-    <span class="n">CPArray</span> <span class="n">images</span><span class="p">;</span>
+    <span class="nb">CPArray</span> <span class="n">images</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">@end</span>
 </pre></div>
@@ -549,7 +549,7 @@ the drag session is successfully completed:</p>
 <span class="p">{</span>
     <span class="kd">var</span> <span class="n">firstIndex</span> <span class="o">=</span> <span class="p">[</span><span class="n">indices</span> <span class="n">firstIndex</span><span class="p">];</span>
 
-    <span class="k">return</span> <span class="p">[</span><span class="n">CPKeyedArchiver</span> <span class="n">archivedDataWithRootObject</span><span class="o">:</span><span class="n">images</span><span class="p">[</span><span class="n">firstIndex</span><span class="p">]];</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">CPKeyedArchiver</span> <span class="n">archivedDataWithRootObject</span><span class="o">:</span><span class="n">images</span><span class="p">[</span><span class="n">firstIndex</span><span class="p">]];</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -594,16 +594,16 @@ and add the following line to the <code>initWithFrame:</code> method:</p>
 
 <span class="c1">// ...</span>
 
-        <span class="p">[</span><span class="n">_borderLayer</span> <span class="n">setDelegate</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+        <span class="p">[</span><span class="n">_borderLayer</span> <span class="n">setDelegate</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
         <span class="p">[</span><span class="n">_rootLayer</span> <span class="n">addSublayer</span><span class="o">:</span><span class="n">_borderLayer</span><span class="p">];</span>
 
         <span class="p">[</span><span class="n">_rootLayer</span> <span class="n">setNeedsDisplay</span><span class="p">];</span>
 
-        <span class="p">[</span><span class="nb">self</span> <span class="n">registerForDraggedTypes</span><span class="o">:</span><span class="p">[</span><span class="n">PhotoDragType</span><span class="p">]];</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">registerForDraggedTypes</span><span class="o">:</span><span class="p">[</span><span class="n">PhotoDragType</span><span class="p">]];</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -615,7 +615,7 @@ left to do, which is implement <code>performDragOperation:</code> on PageView:</
 <span class="p">{</span>
     <span class="kd">var</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="n">aSender</span> <span class="n">draggingPasteboard</span><span class="p">]</span> <span class="n">dataForType</span><span class="o">:</span><span class="n">PhotoDragType</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setImage</span><span class="o">:</span><span class="p">[</span><span class="n">CPKeyedUnarchiver</span> <span class="n">unarchiveObjectWithData</span><span class="o">:</span><span class="n">data</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setImage</span><span class="o">:</span><span class="p">[</span><span class="nb">CPKeyedUnarchiver</span> <span class="n">unarchiveObjectWithData</span><span class="o">:</span><span class="n">data</span><span class="p">]];</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -680,21 +680,21 @@ times:</p>
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">performDragOperation:</span><span class="p">(</span><span class="kt">CPDraggingInfo</span><span class="p">)</span>aSender
 <span class="p">{</span>
-    <span class="p">[</span><span class="nb">self</span> <span class="n">setActive</span><span class="o">:</span><span class="kc">NO</span><span class="p">];</span>
+    <span class="p">[</span><span class="kr">self</span> <span class="n">setActive</span><span class="o">:</span><span class="kc">NO</span><span class="p">];</span>
 
     <span class="kd">var</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="n">aSender</span> <span class="n">draggingPasteboard</span><span class="p">]</span> <span class="n">dataForType</span><span class="o">:</span><span class="n">PhotoDragType</span><span class="p">];</span>
 
-    <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setImage</span><span class="o">:</span><span class="p">[</span><span class="n">CPKeyedUnarchiver</span> <span class="n">unarchiveObjectWithData</span><span class="o">:</span><span class="n">data</span><span class="p">]];</span>
+    <span class="p">[</span><span class="n">_paneLayer</span> <span class="n">setImage</span><span class="o">:</span><span class="p">[</span><span class="nb">CPKeyedUnarchiver</span> <span class="n">unarchiveObjectWithData</span><span class="o">:</span><span class="n">data</span><span class="p">]];</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">draggingEntered:</span><span class="p">(</span><span class="kt">CPDraggingInfo</span><span class="p">)</span>aSender
 <span class="p">{</span>
-    <span class="p">[</span><span class="nb">self</span> <span class="n">setActive</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
+    <span class="p">[</span><span class="kr">self</span> <span class="n">setActive</span><span class="o">:</span><span class="kc">YES</span><span class="p">];</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">draggingExited:</span><span class="p">(</span><span class="kt">CPDraggingInfo</span><span class="p">)</span>aSender
 <span class="p">{</span>
-    <span class="p">[</span><span class="nb">self</span> <span class="n">setActive</span><span class="o">:</span><span class="kc">NO</span><span class="p">];</span>
+    <span class="p">[</span><span class="kr">self</span> <span class="n">setActive</span><span class="o">:</span><span class="kc">NO</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 

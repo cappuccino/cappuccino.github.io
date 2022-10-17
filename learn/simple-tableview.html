@@ -138,9 +138,9 @@ Tutorial: Simple Table View
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="kt">@outlet</span> <span class="n">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
-    <span class="kt">@outlet</span> <span class="n">CPTableView</span> <span class="n">tableView</span><span class="p">;</span>
-    <span class="n">CPMutableArray</span>      <span class="n">_names</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="nb">CPWindow</span>    <span class="n">theWindow</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="nb">CPTableView</span> <span class="n">tableView</span><span class="p">;</span>
+    <span class="nb">CPMutableArray</span>      <span class="n">_names</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -148,11 +148,11 @@ Tutorial: Simple Table View
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">init</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">super</span> <span class="n">init</span><span class="p">])</span>
     <span class="p">{</span>
         <span class="n">_names</span> <span class="o">=</span> <span class="err">@</span><span class="p">[</span><span class="s">"Alpha"</span><span class="p">,</span> <span class="s">"Beta"</span><span class="p">,</span> <span class="s">"Charlie"</span><span class="p">,</span> <span class="s">"Delta"</span><span class="p">];</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -240,12 +240,12 @@ Tutorial: Simple Table View
 
 <p>Define the CPTextField as an outlet in the AppController. This will help us to get its value.</p>
 
-<div class="highlight"><pre><span class="kt">@outlet</span> <span class="n">CPTextField</span> <span class="n">textField</span><span class="p">;</span>
+<div class="highlight"><pre><span class="kt">@outlet</span> <span class="nb">CPTextField</span> <span class="n">textField</span><span class="p">;</span>
 </pre></div>
 
 <p>Create the CPButton as an action.</p>
 
-<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">@action</span><span class="p">)</span><span class="n">addItem</span><span class="o">:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">sender</span>
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">@action</span><span class="p">)</span><span class="nf">addItem:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>sender
 <span class="p">{</span>
     <span class="c1">// Get CPTextField value and add to our CPMutableArray</span>
     <span class="p">[</span><span class="n">_names</span> <span class="n">addObject</span><span class="o">:</span> <span class="p">[</span><span class="n">textField</span> <span class="n">stringValue</span><span class="p">]];</span>
@@ -278,7 +278,7 @@ Tutorial: Simple Table View
 
 <p>When the user selects a row in the table, that’s the element they want to remove. Using the <code>selectedRow</code> attribute on the table we can find the row index to delete. Then we can delete it using <code>CPMutableArray removeObject:</code>. Here’s the code:</p>
 
-<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">@action</span><span class="p">)</span><span class="n">removeItem</span><span class="o">:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="n">sender</span>
+<div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">@action</span><span class="p">)</span><span class="nf">removeItem:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span>sender
 <span class="p">{</span>
     <span class="c1">// Check if any row is selected; if not the value is -1.</span>
     <span class="k">if</span> <span class="p">([</span><span class="n">tableView</span> <span class="n">selectedRow</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>

@@ -65,16 +65,16 @@ Pass by Reference
 
 <p>All you have to do is to provide somewhere for it to be written to.</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="n">nf</span> <span class="o">=</span> <span class="p">[</span><span class="n">CPNumberFormatter</span> <span class="k">new</span><span class="p">],</span>
+<div class="highlight"><pre><span class="kd">var</span> <span class="n">nf</span> <span class="o">=</span> <span class="p">[</span><span class="nb">CPNumberFormatter</span> <span class="k">new</span><span class="p">],</span>
     <span class="n">valueOut</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
     <span class="n">errorOut</span> <span class="o">=</span> <span class="s">@""</span><span class="p">;</span>
 
-<span class="k">if</span> <span class="p">([</span><span class="n">nf</span> <span class="n">getObjectValue</span><span class="o">:</span><span class="err">@</span><span class="nf">ref</span><span class="p">(</span><span class="n">valueOut</span><span class="p">)</span> <span class="n">forString</span><span class="o">:</span><span class="s">@"10"</span> <span class="n">errorDescription</span><span class="o">:</span><span class="err">@</span><span class="nf">ref</span><span class="p">(</span><span class="n">errorOut</span><span class="p">)])</span>
-    <span class="n">CPLog</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="n">valueOut</span><span class="p">);</span> <span class="c1">// now valueOut == 10.</span>
+<span class="k">if</span> <span class="p">([</span><span class="n">nf</span> <span class="n">getObjectValue</span><span class="o">:</span><span class="k">@ref</span><span class="p">(</span><span class="n">valueOut</span><span class="p">)</span> <span class="n">forString</span><span class="o">:</span><span class="s">@"10"</span> <span class="n">errorDescription</span><span class="o">:</span><span class="k">@ref</span><span class="p">(</span><span class="n">errorOut</span><span class="p">)])</span>
+    <span class="nb">CPLog</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="n">valueOut</span><span class="p">);</span> <span class="c1">// now valueOut == 10.</span>
 
 <span class="p">[</span><span class="n">nf</span> <span class="n">setMinimum</span><span class="o">:</span><span class="mi">100</span><span class="p">];</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="n">nf</span> <span class="n">getObjectValue</span><span class="o">:</span><span class="err">@</span><span class="nf">ref</span><span class="p">(</span><span class="n">valueOut</span><span class="p">)</span> <span class="n">forString</span><span class="o">:</span><span class="s">@"10"</span> <span class="n">errorDescription</span><span class="o">:</span><span class="err">@</span><span class="nf">ref</span><span class="p">(</span><span class="n">errorOut</span><span class="p">)])</span>
-    <span class="n">CPLog</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="n">errorOut</span><span class="p">);</span> <span class="c1">// now valueOut is unchanged, but errorOut == @"Value is less than the minimum allowed value".</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="n">nf</span> <span class="n">getObjectValue</span><span class="o">:</span><span class="k">@ref</span><span class="p">(</span><span class="n">valueOut</span><span class="p">)</span> <span class="n">forString</span><span class="o">:</span><span class="s">@"10"</span> <span class="n">errorDescription</span><span class="o">:</span><span class="k">@ref</span><span class="p">(</span><span class="n">errorOut</span><span class="p">)])</span>
+    <span class="nb">CPLog</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="n">errorOut</span><span class="p">);</span> <span class="c1">// now valueOut is unchanged, but errorOut == @"Value is less than the minimum allowed value".</span>
 </pre></div>
 
 <p>The number formatter is returning values by writing them into the storage you provided for it: <code>valueOut</code> and <code>errorOut</code> in your local scope.</p>
@@ -90,10 +90,10 @@ Pass by Reference
 <p>Whereas in Objective-J you would write:</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="n">a</span><span class="p">,</span>
-    <span class="n">aRef</span> <span class="o">=</span> <span class="err">@</span><span class="nf">ref</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">aRef</span> <span class="o">=</span> <span class="k">@ref</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
 
-<span class="err">@</span><span class="nf">deref</span><span class="p">(</span><span class="n">aRef</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-<span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="err">@</span><span class="nf">deref</span><span class="p">(</span><span class="n">aRef</span><span class="p">));</span> <span class="c1">// logs 5</span>
+<span class="k">@deref</span><span class="p">(</span><span class="n">aRef</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="k">@deref</span><span class="p">(</span><span class="n">aRef</span><span class="p">));</span> <span class="c1">// logs 5</span>
 </pre></div>
 
 <p>Once you have a reference you can pass it around, save it, and dereference it as needed. It’s not an actual pointer though so pointer arithmetic is not possible.</p>

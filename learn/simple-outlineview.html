@@ -141,20 +141,20 @@ Tutorial: Simple Outline View
 
 <span class="k">@implementation</span> <span class="nc">Employee</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="n">CPString</span>       <span class="n">_name</span>      <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">name</span><span class="p">);</span>
-    <span class="n">CPString</span>       <span class="n">_title</span>     <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">title</span><span class="p">);</span>
-    <span class="n">CPMutableArray</span> <span class="n">_employees</span> <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">employees</span><span class="p">);</span>
+    <span class="nb">CPString</span>       <span class="n">_name</span>      <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">name</span><span class="p">);</span>
+    <span class="nb">CPString</span>       <span class="n">_title</span>     <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">title</span><span class="p">);</span>
+    <span class="nb">CPMutableArray</span> <span class="n">_employees</span> <span class="k">@accessors</span><span class="p">(</span><span class="n">property</span><span class="o">=</span><span class="n">employees</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">initWithName:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aName <span class="nf">title:</span><span class="p">(</span><span class="kt">CPString</span><span class="p">)</span>aTitle
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">super</span> <span class="n">init</span><span class="p">])</span>
     <span class="p">{</span>
         <span class="n">_name</span> <span class="o">=</span> <span class="n">aName</span><span class="p">;</span>
         <span class="n">_title</span> <span class="o">=</span> <span class="n">aTitle</span><span class="p">;</span>
-        <span class="n">_employees</span> <span class="o">=</span> <span class="p">[</span><span class="n">CPMutableArray</span> <span class="n">array</span><span class="p">];</span>
+        <span class="n">_employees</span> <span class="o">=</span> <span class="p">[</span><span class="nb">CPMutableArray</span> <span class="n">array</span><span class="p">];</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
@@ -169,8 +169,8 @@ Tutorial: Simple Outline View
 
 <div class="highlight"><pre><span class="k">@implementation</span> <span class="nc">AppController</span> <span class="o">:</span> <span class="nc">CPObject</span>
 <span class="p">{</span>
-    <span class="kt">@outlet</span> <span class="n">CPWindow</span>        <span class="n">theWindow</span><span class="p">;</span>
-    <span class="kt">@outlet</span> <span class="n">CPOutlineView</span>   <span class="n">outlineView</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="nb">CPWindow</span>        <span class="n">theWindow</span><span class="p">;</span>
+    <span class="kt">@outlet</span> <span class="nb">CPOutlineView</span>   <span class="n">outlineView</span><span class="p">;</span>
     <span class="n">Employee</span>                <span class="n">_ceo</span><span class="p">;</span> <span class="c1">// This will hold our root item</span>
 <span class="p">}</span>
 </pre></div>
@@ -187,7 +187,7 @@ Tutorial: Simple Outline View
 
 <div class="highlight"><pre><span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">init</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">super</span> <span class="n">init</span><span class="p">])</span>
     <span class="p">{</span>
 
         <span class="c1">// First we create our root item, the CEO.</span>
@@ -217,7 +217,7 @@ Tutorial: Simple Outline View
         <span class="p">[[</span><span class="n">_ceo</span> <span class="n">employees</span><span class="p">]</span> <span class="n">addObject</span><span class="o">:</span><span class="n">dick</span><span class="p">];</span>
 
     <span class="p">}</span>
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -298,7 +298,7 @@ Tutorial: Simple Outline View
 <span class="p">{</span>
     <span class="kd">var</span> <span class="n">identifier</span> <span class="o">=</span> <span class="p">[</span><span class="n">tableColumn</span> <span class="n">identifier</span><span class="p">];</span>
 
-    <span class="kd">var</span> <span class="n">view</span> <span class="o">=</span> <span class="p">[</span><span class="n">outlineView</span> <span class="n">makeViewWithIdentifier</span><span class="o">:</span><span class="s">"NameCell"</span> <span class="n">owner</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="n">view</span> <span class="o">=</span> <span class="p">[</span><span class="n">outlineView</span> <span class="n">makeViewWithIdentifier</span><span class="o">:</span><span class="s">"NameCell"</span> <span class="n">owner</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">identifier</span> <span class="o">==</span> <span class="s">"NameColumn"</span><span class="p">)</span>
     <span class="p">{</span>
@@ -306,7 +306,7 @@ Tutorial: Simple Outline View
     <span class="p">}</span>
     <span class="k">else</span>
     <span class="p">{</span>
-        <span class="kd">var</span> <span class="n">view</span> <span class="o">=</span> <span class="p">[</span><span class="n">outlineView</span> <span class="n">makeViewWithIdentifier</span><span class="o">:</span><span class="s">"TitleCell"</span> <span class="n">owner</span><span class="o">:</span><span class="nb">self</span><span class="p">];</span>
+        <span class="kd">var</span> <span class="n">view</span> <span class="o">=</span> <span class="p">[</span><span class="n">outlineView</span> <span class="n">makeViewWithIdentifier</span><span class="o">:</span><span class="s">"TitleCell"</span> <span class="n">owner</span><span class="o">:</span><span class="kr">self</span><span class="p">];</span>
         <span class="p">[[</span><span class="n">view</span> <span class="n">textField</span><span class="p">]</span> <span class="n">setStringValue</span><span class="o">:</span><span class="p">[</span><span class="n">item</span> <span class="n">title</span><span class="p">]];</span>
     <span class="p">}</span>
 

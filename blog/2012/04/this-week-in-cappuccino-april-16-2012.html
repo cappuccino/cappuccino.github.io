@@ -74,42 +74,42 @@ Cappuccino News
 
 <span class="o">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">initialize</span>
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="n">bezelColor</span> <span class="o">=</span> <span class="nf">CPColorWithImages</span><span class="p">(</span>
+    <span class="kd">var</span> <span class="n">bezelColor</span> <span class="o">=</span> <span class="nb">CPColorWithImages</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="p">[</span><span class="s">"button-bezel-left.png"</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">ToolbarButtonHeight</span><span class="p">],</span>
         <span class="p">[</span><span class="s">"button-bezel-center.png"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">ToolbarButtonHeight</span><span class="p">],</span>
         <span class="p">[</span><span class="s">"button-bezel-right.png"</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">ToolbarButtonHeight</span><span class="p">]</span>
     <span class="p">],</span>
-    <span class="n">CPColorPatternIsHorizontal</span><span class="p">),</span>
+    <span class="nb">CPColorPatternIsHorizontal</span><span class="p">),</span>
 
-    <span class="n">highlightedBezelColor</span> <span class="o">=</span> <span class="nf">CPColorWithImages</span><span class="p">(</span>
+    <span class="n">highlightedBezelColor</span> <span class="o">=</span> <span class="nb">CPColorWithImages</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="p">[</span><span class="s">"button-bezel-highlighted-left.png"</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">ToolbarButtonHeight</span><span class="p">],</span>
         <span class="p">[</span><span class="s">"button-bezel-highlighted-center.png"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">ToolbarButtonHeight</span><span class="p">],</span>
         <span class="p">[</span><span class="s">"button-bezel-highlighted-right.png"</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">ToolbarButtonHeight</span><span class="p">]</span>
     <span class="p">],</span>
-    <span class="n">CPColorPatternIsHorizontal</span><span class="p">);</span>
+    <span class="nb">CPColorPatternIsHorizontal</span><span class="p">);</span>
 
     <span class="n">ToolbarButtonThemeValues</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">[</span><span class="s">@"font"</span><span class="p">,</span>               <span class="p">[</span><span class="n">CPFont</span> <span class="n">systemFontOfSize</span><span class="o">:</span><span class="mf">17.0</span><span class="p">],</span> <span class="n">CPThemeStateBordered</span><span class="p">],</span>
-        <span class="p">[</span><span class="s">@"text-color"</span><span class="p">,</span>         <span class="p">[</span><span class="n">CPColor</span> <span class="n">colorWithHexString</span><span class="o">:</span><span class="s">@"c7c8ca"</span><span class="p">]],</span>
-        <span class="p">[</span><span class="s">@"text-shadow-color"</span><span class="p">,</span>  <span class="p">[</span><span class="n">CPColor</span> <span class="n">clearColor</span><span class="p">],</span> <span class="n">CPThemeStateBordered</span><span class="p">],</span>
-        <span class="p">[</span><span class="s">@"text-shadow-color"</span><span class="p">,</span>  <span class="p">[</span><span class="n">CPColor</span> <span class="n">clearColor</span><span class="p">],</span> <span class="n">CPThemeStateBordered</span> <span class="o">|</span> <span class="n">CPThemeStateDisabled</span><span class="p">],</span>
-        <span class="p">[</span><span class="s">@"bezel-color"</span><span class="p">,</span>        <span class="n">bezelColor</span><span class="p">,</span> <span class="n">CPThemeStateBordered</span><span class="p">],</span>
-        <span class="p">[</span><span class="s">@"bezel-color"</span><span class="p">,</span>        <span class="n">highlightedBezelColor</span><span class="p">,</span> <span class="n">CPThemeStateBordered</span> <span class="o">|</span> <span class="n">CPThemeStateHighlighted</span><span class="p">],</span>
-        <span class="p">[</span><span class="s">@"min-size"</span><span class="p">,</span>           <span class="nf">CGSizeMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">ToolbarButtonHeight</span><span class="p">)],</span>
-        <span class="p">[</span><span class="s">@"max-size"</span><span class="p">,</span>           <span class="nf">CGSizeMake</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">ToolbarButtonHeight</span><span class="p">)],</span>
+        <span class="p">[</span><span class="s">@"font"</span><span class="p">,</span>               <span class="p">[</span><span class="nb">CPFont</span> <span class="n">systemFontOfSize</span><span class="o">:</span><span class="mf">17.0</span><span class="p">],</span> <span class="nb">CPThemeStateBordered</span><span class="p">],</span>
+        <span class="p">[</span><span class="s">@"text-color"</span><span class="p">,</span>         <span class="p">[</span><span class="nb">CPColor</span> <span class="n">colorWithHexString</span><span class="o">:</span><span class="s">@"c7c8ca"</span><span class="p">]],</span>
+        <span class="p">[</span><span class="s">@"text-shadow-color"</span><span class="p">,</span>  <span class="p">[</span><span class="nb">CPColor</span> <span class="n">clearColor</span><span class="p">],</span> <span class="nb">CPThemeStateBordered</span><span class="p">],</span>
+        <span class="p">[</span><span class="s">@"text-shadow-color"</span><span class="p">,</span>  <span class="p">[</span><span class="nb">CPColor</span> <span class="n">clearColor</span><span class="p">],</span> <span class="nb">CPThemeStateBordered</span> <span class="o">|</span> <span class="nb">CPThemeStateDisabled</span><span class="p">],</span>
+        <span class="p">[</span><span class="s">@"bezel-color"</span><span class="p">,</span>        <span class="n">bezelColor</span><span class="p">,</span> <span class="nb">CPThemeStateBordered</span><span class="p">],</span>
+        <span class="p">[</span><span class="s">@"bezel-color"</span><span class="p">,</span>        <span class="n">highlightedBezelColor</span><span class="p">,</span> <span class="nb">CPThemeStateBordered</span> <span class="o">|</span> <span class="nb">CPThemeStateHighlighted</span><span class="p">],</span>
+        <span class="p">[</span><span class="s">@"min-size"</span><span class="p">,</span>           <span class="nb">CGSizeMake</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">ToolbarButtonHeight</span><span class="p">)],</span>
+        <span class="p">[</span><span class="s">@"max-size"</span><span class="p">,</span>           <span class="nb">CGSizeMake</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">ToolbarButtonHeight</span><span class="p">)],</span>
     <span class="p">];</span>
 <span class="p">}</span>
 
 <span class="o">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">initWithFrame:</span><span class="p">(</span><span class="kt">CGRect</span><span class="p">)</span>aFrame
 <span class="p">{</span>
-    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">aFrame</span><span class="p">];</span>
+    <span class="kr">self</span> <span class="o">=</span> <span class="p">[</span><span class="kr">super</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">aFrame</span><span class="p">];</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span>
-        <span class="p">[</span><span class="nb">self</span> <span class="n">registerThemeValues</span><span class="o">:</span><span class="n">ToolbarButtonThemeValues</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="kr">self</span><span class="p">)</span>
+        <span class="p">[</span><span class="kr">self</span> <span class="n">registerThemeValues</span><span class="o">:</span><span class="n">ToolbarButtonThemeValues</span><span class="p">];</span>
 
-    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kr">self</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="k">@end</span>
